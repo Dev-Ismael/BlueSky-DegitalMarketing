@@ -1,5 +1,16 @@
-body
-{
+body {
     height: 10000px;
     font-family: $font-family-sans-serif;
+}
+
+body::-webkit-scrollbar {
+    background-color: $opacity-blue;
+    width: 12px;
+    right: -10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $dark-blue;
+    border-radius: 8px;
+    right: -10px;
 }

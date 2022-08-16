@@ -13,13 +13,20 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
+    <!------- FontAwesome  ------->
+    <script src="https://kit.fontawesome.com/bc98e6aa51.js" crossorigin="anonymous"></script>
+
+
+    <!------- Bootstrap 5 ---------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
     {{-- <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="{{ mix('js/app.js') }}" defer></script>
-
-    <!------- Bootstrap 5 ---------->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
 
 
@@ -27,23 +34,20 @@
 <body>
     <div id="app">
 
-
         <div id="customize-nav">
             <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
-            <label for="menu-icon"></label>
+            <label for="menu-icon" class="nav-btn"></label>
             <nav class="nav">
                 <ul class="pt-5">
-                    <li><a href="#">Work</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">News</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
         </div>
 
-
-    @yield('content')
-
+        @yield('content')
 
     </div>
 </body>
