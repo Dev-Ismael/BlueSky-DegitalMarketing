@@ -1,0 +1,45 @@
+#services {
+    #sb-1 {
+        border-right: 3px solid $light-blue;
+        border-bottom: 3px solid $light-blue;
+    }
+
+    #sb-2 {
+        border-bottom: 3px solid $light-blue;
+    }
+
+    #sb-4,
+    #sb-5 {
+        border-right: 3px solid $light-blue;
+    }
+
+    .sbox-3 {
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .b-icon {
+        margin-bottom: 30px;
+    }
+
+    .white-color .rose-icon span,
+    .rose-icon span {
+        color: #a7c94b;
+    }
+
+
+    .sbox-3 {
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    ul{
+        li{
+            text-align: left;
+
+        }
+    }
+
+
+
+}
