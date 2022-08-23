@@ -1,3 +1,3 @@
 blue color: #2662ab ;
 purple Color: #b71f5a
-purple Color: #892f87
+yellow Color: #d38000
