@@ -64,51 +64,15 @@
 
 
 
-
         <!--header section start-->
         <header class="header">
-            <!--topbar start-->
-            {{-- <div id="header-top-bar" class="primary-bg py-2">
-                <div class="container">
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-md-7 col-lg-7 d-none d-md-block d-lg-block">
-                            <div class="topbar-text text-white">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item"><span class="fas fa-headphones-alt mr-1"></span> 24x7 Technical Support</li>
-                                    <li class="list-inline-item"><span class="fas fa-phone-alt mr-1"></span> 883-4565-123456</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-4">
-                            <div class="topbar-text text-white">
-                                <ul class="list-inline text-md-right text-lg-right text-left  mb-0">
-                                    <li class="list-inline-item">
-                                        <a href="#" class="rounded"><span class="fab fa-facebook-f"></span></a>
-                                    </li>
-                                    <li class="list-inline-item"><a href="#" class="rounded"><span
-                                            class="fab fa-twitter"></span></a>
-                                    </li>
-                                    <li class="list-inline-item"><a href="#" class="rounded"><span
-                                            class="fab fa-linkedin-in"></span></a>
-                                    </li>
-                                    <li class="list-inline-item"><a href="#" class="rounded"><span
-                                            class="fab fa-dribbble"></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            <!--topbar end-->
             <!--start navbar-->
-            <nav class="navbar navbar-expand-lg fixed-top white-bg">
+            <nav class="navbar navbar-expand-lg custom-nav-3 fixed-top">
                 <div class="container">
                     <a class="navbar-brand" href="index.html">
-                        <img src="{{ asset('images/BlueSky-Logo.png') }}" alt="logo" class="img-fluid" width="120"/>
+                        <img src="{{ asset("images/BlueSky-Logo.png") }}" alt="logo" width="120" class="img-fluid">
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="ti-menu"></span>
                     </button>
                     <div class="collapse navbar-collapse h-auto" id="navbarSupportedContent">
@@ -179,8 +143,6 @@
             </nav>
         </header>
         <!--header section end-->
-
-
 
         @yield('content')
 

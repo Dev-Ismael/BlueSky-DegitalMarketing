@@ -215,7 +215,7 @@ strong, b {
 }
 
 .secondary-bg {
-    background: #e80566
+    background: #b71f5a
 }
 
 .color-primary {
@@ -223,11 +223,11 @@ strong, b {
 }
 
 .color-secondary {
-    color: #e80566;
+    color: #b71f5a;
 }
 
 .gradient-bg {
-    background: linear-gradient(75deg, #2662ab 10%, #e80566) !important;
+    background: linear-gradient(75deg, #2662ab 10%, #b71f5a) !important;
 }
 
 .white-bg {
@@ -239,7 +239,7 @@ a {
 }
 
 a:hover {
-    color: #e80566;
+    color: #b71f5a;
     text-decoration: none;
 }
 
@@ -324,23 +324,23 @@ a:hover {
 
 .secondary-solid-btn {
     color: #fff;
-    background: #e80566;
-    border: 1px solid #e80566;
+    background: #b71f5a;
+    border: 1px solid #b71f5a;
 }
 
 .secondary-solid-btn:hover {
     background: transparent;
-    color: #e80566;
+    color: #b71f5a;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 .secondary-outline-btn{
-    color: #e80566;
+    color: #b71f5a;
     display: inline-block;
-    border: 1px solid #e80566
+    border: 1px solid #b71f5a
 }
 .secondary-outline-btn:hover{
-    background: #e80566;
+    background: #b71f5a;
     color: #ffffff;
 }
 .outline-btn {
@@ -400,7 +400,7 @@ a:hover {
     padding: 8px 20px !important;
 }
 a.check-btn:hover{
-    color: #e80566 !important;
+    color: #b71f5a !important;
 }
 a.check-btn.solid-white-btn{
     color: #2662ab !important;
@@ -484,7 +484,7 @@ select.form-control.has-value{
     display: block;
     width: 115px;
     height: 3px;
-    background: #e80566;
+    background: #b71f5a;
     overflow: hidden;
 }
 .animate-border:after {
@@ -598,7 +598,7 @@ select.form-control.has-value{
 }
 
 .topbar-text ul li a:hover {
-    color: #e80566;
+    color: #b71f5a;
 }
 
 .gradient-bg .topbar-text ul li, .gradient-bg .topbar-text ul li a{
@@ -644,7 +644,7 @@ select.form-control.has-value{
 }
 
 .bg-transparent.affix {
-    background: linear-gradient(75deg, #2662ab 10%, #e80566) !important;
+    background: linear-gradient(75deg, #2662ab 10%, #b71f5a) !important;
 }
 
 .navbar-toggler{
@@ -678,16 +678,22 @@ select.form-control.has-value{
 }
 
 .menu li a {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     padding: 20px 12px;
     display: block;
     transition: all 0.3s ease-in-out 0s;
-    color: #353535;
+    color: #fff;
     opacity: 0.8;
 }
+/*===============*/
+.navbar.affix .menu li a{
+    color: #2662ab;
+}
+
+
 .white-bg> .menu li a{
     color: #081d43 !important;
 }
@@ -827,7 +833,7 @@ select.form-control.has-value{
 
 @media (min-width: 320px) and (max-width: 992px) {
     .navbar {
-        background: linear-gradient(75deg, #2662ab 10%, #e80566) !important;
+        background: linear-gradient(75deg, #2662ab 10%, #b71f5a) !important;
         padding: .45rem 1rem !important;
     }
     .menu li{
@@ -1008,15 +1014,13 @@ select.form-control.has-value{
     right: 0;
 }
 .hero-slider-content h1{
-    font-size: 40px;
+    font-size: 50px !important;
     line-height: initial;
-    font-weight: 700;
+    font-weight: 800;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .hero-slider-content h1{
-        font-size: 60px;
-        line-height: initial;
-        font-weight: 700;
+        font-size: 65px;
     }
 }
 
@@ -1173,10 +1177,10 @@ select.form-control.has-value{
     background: #ffffff;
 }
 .custom-dot.owl-theme .owl-dots button.owl-dot span:hover{
-    background: #e80566;
+    background: #b71f5a;
 }
 .custom-dot.owl-theme .owl-dots button.owl-dot.active span{
-    background: #e80566;
+    background: #b71f5a;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.12);
 }
 .custom-dot.owl-theme .owl-dots .owl-dot span{
@@ -1192,15 +1196,15 @@ select.form-control.has-value{
 }
 
 .custom-arrow.owl-theme .owl-nav button:hover{
-    background: #e80566;
-    border-color: #e80566;
+    background: #b71f5a;
+    border-color: #b71f5a;
 }
 .custom-arrow.owl-theme .owl-nav button:hover span{
     color: #ffffff;
 }
 .custom-arrow.owl-theme .owl-nav button span{
     font-size: 25px;
-    color: #e80566;
+    color: #b71f5a;
 }
 .custom-arrow-bottom-center.owl-theme .owl-nav{
     width: 100%;
@@ -1261,7 +1265,7 @@ select.form-control.has-value{
     font-weight: 600;
 }
 .custom-indicators li.active button{
-    background: #e80566;
+    background: #b71f5a;
     color: #ffffff;
 }
 .custom-indicators li.active button span{
@@ -1418,14 +1422,14 @@ select.form-control.has-value{
     left: 0;
     top: 0;
     content: '';
-    background-color: #e80566;
+    background-color: #b71f5a;
     z-index: -1;
     display: none;
 }
 @media only screen and (min-width: 320px) and (max-width: 768px){
     .call-to-action-video::before{
         background-image: none !important;
-        background: #e80566 !important;
+        background: #b71f5a !important;
         width: 100%;
     }
 }
@@ -1518,7 +1522,7 @@ select.form-control.has-value{
     display: inline-block;
     text-transform: uppercase;
     font-weight: 700;
-    background: #e80566;
+    background: #b71f5a;
     color: #fff;
     padding: 14px 37px;
     border-radius: 50px;
@@ -1573,7 +1577,7 @@ select.form-control.has-value{
 }
 
 .core-services-single:hover {
-    background: linear-gradient(75deg, #2662ab 10%, #e80566);
+    background: linear-gradient(75deg, #2662ab 10%, #b71f5a);
     color: #fff;
 }
 
@@ -1712,7 +1716,7 @@ select.form-control.has-value{
     color: #fff;
     text-align: center;
     white-space: nowrap;
-    background-color: #e80566;
+    background-color: #b71f5a;
     transition: width .6s ease;
 }
 .progress-item + .progress-item {
@@ -1736,7 +1740,7 @@ select.form-control.has-value{
 }
 
 .progress-line {
-    background-color: #e80566;
+    background-color: #b71f5a;
     -webkit-animation: progressBar 3s ease-in-out;
     -webkit-animation-fill-mode:both;
     -moz-animation: progressBar 3s ease-in-out;
@@ -1888,7 +1892,7 @@ select.form-control.has-value{
 
 .services-single:hover {
     transition: all 0.3s ease-in;
-    background: linear-gradient(75deg, #2662ab 10%, #e80566);
+    background: linear-gradient(75deg, #2662ab 10%, #b71f5a);
     color: #fff;
 }
 .services-single:hover .services-single:after{
@@ -1917,7 +1921,7 @@ select.form-control.has-value{
 }
 
 .filter-btn:hover {
-    color: #e80566;
+    color: #b71f5a;
 }
 
 button.filter-btn:focus {
@@ -1928,7 +1932,7 @@ button.filter-btn:focus {
     border-bottom: 2px solid #2662ab;
 }
 .mixitup-control-active {
-    color: #e80566;
+    color: #b71f5a;
 }
 
 .mixitup-control-active[data-filter]:after {
@@ -1968,8 +1972,8 @@ button.filter-btn:focus {
 
 .portfolio-wrapper .content-overlay {
     background: #2662ab;
-    background: -webkit-linear-gradient(left, #2662ab 2%, #e80566 82%);
-    background: linear-gradient(to right, #2662ab 2%, #e80566 82%);
+    background: -webkit-linear-gradient(left, #2662ab 2%, #b71f5a 82%);
+    background: linear-gradient(to right, #2662ab 2%, #b71f5a 82%);
     position: absolute;
     height: 100%;
     width: 100%;
@@ -2074,7 +2078,7 @@ button.filter-btn:focus {
     margin-bottom: 25px;
 }
 .single-blog-card img{
-    border-bottom: 3px solid #e80566;
+    border-bottom: 3px solid #b71f5a;
     position: relative;
     display: block;
     top: 0;
@@ -2084,7 +2088,7 @@ button.filter-btn:focus {
     right: 20px;
     width: 55px;
     height: 55px;
-    background: #e80566;
+    background: #b71f5a;
     border-radius: 50%;
     text-align: center;
     color: #fff;
@@ -2122,7 +2126,7 @@ button.filter-btn:focus {
     text-decoration: none;
 }
 .single-blog-card a:hover{
-    color: #e80566;
+    color: #b71f5a;
 }
 a.detail-link {
     display: inline-block;
@@ -2139,12 +2143,12 @@ a.detail-link span {
     vertical-align: middle;
     -webkit-transition-duration: .3s;
     transition-duration: .3s;
-    color: #e80566;
+    color: #b71f5a;
 }
 
 
 a.detail-link:hover {
-    color: #e80566;
+    color: #b71f5a;
 }
 a.detail-link:hover span{
     transform: translateX(3px);
@@ -2453,7 +2457,7 @@ a.detail-link:hover span{
     z-index: 1;
 }
 .process-step-number{
-    background: #e80566;
+    background: #b71f5a;
     text-align: center;
     margin: 0 auto;
     color: #fff;
@@ -2469,7 +2473,7 @@ a.detail-link:hover span{
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    border: 8px solid #e80566;
+    border: 8px solid #b71f5a;
     box-shadow: 0 0 0 4px #2662ab;
     margin: auto 0;
     position: absolute;
@@ -2492,7 +2496,7 @@ a.detail-link:hover span{
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    border: 8px solid #e80566;
+    border: 8px solid #b71f5a;
     box-shadow: 0 0 0 4px #2662ab;
     margin: auto 0;
     position: absolute;
@@ -2525,9 +2529,9 @@ a.detail-link:hover span{
 .process-step-number:after{
     content: "";
     border-top: 8px solid #04889800;
-    border-bottom: 8px solid #e80566;
+    border-bottom: 8px solid #b71f5a;
     border-left: 8px solid #04889800;
-    border-right: 8px solid #e80566;
+    border-right: 8px solid #b71f5a;
     display: inline-grid;
     position: absolute;
     left: -16px;
@@ -2536,8 +2540,8 @@ a.detail-link:hover span{
 .process-step-number:before{
     content: "";
     border-top: 8px solid #ff000000;
-    border-bottom: 8px solid #e80566;
-    border-left: 8px solid #e80566;
+    border-bottom: 8px solid #b71f5a;
+    border-left: 8px solid #b71f5a;
     border-right: 8px solid #ff000000;
     display: inline-grid;
     position: absolute;
@@ -2545,7 +2549,7 @@ a.detail-link:hover span{
     top: 0;
 }
 .process-line-l{
-    background: #e80566;
+    background: #b71f5a;
     height: 4px;
     position: absolute;
     width: 130px;
@@ -2554,7 +2558,7 @@ a.detail-link:hover span{
     z-index: 9;
 }
 .process-line-r{
-    background: #e80566;
+    background: #b71f5a;
     height: 4px;
     position: absolute;
     width: 130px;
@@ -2707,10 +2711,10 @@ a.detail-link:hover span{
 
 .feature-tabs li a.active:before{
     width: 100%;
-    background: #e80566;
+    background: #b71f5a;
 }
 .feature-tabs li a.active{
-    color: #e80566 !important;
+    color: #b71f5a !important;
 }
 
 /*=========================================
@@ -2850,9 +2854,9 @@ a.detail-link:hover span{
 
 .staff-member .overlay {
     background: #2662ab;
-    background: -moz-linear-gradient(left, #2662ab 2%, #e80566 82%);
-    background: -webkit-linear-gradient(left, #2662ab 2%, #e80566 82%);
-    background: linear-gradient(to right, #2662ab 2%, #e80566 82%);
+    background: -moz-linear-gradient(left, #2662ab 2%, #b71f5a 82%);
+    background: -webkit-linear-gradient(left, #2662ab 2%, #b71f5a 82%);
+    background: linear-gradient(to right, #2662ab 2%, #b71f5a 82%);
     color: #fff;
     position: absolute;
     top: 0;
@@ -2923,7 +2927,7 @@ a.detail-link:hover span{
     display: block;
 }
 .staff-member .overlay ul.social li a:hover span{
-    color: #e80566;
+    color: #b71f5a;
 }
 .staff-member .overlay ul.social {
     -webkit-transform: translateY(10px);
@@ -3252,7 +3256,7 @@ a.video-play-icon-without-bip:hover{
     font-weight:900;
     font-size: 1.25rem;
     line-height: 1.5rem;
-    color: #e80566;
+    color: #b71f5a;
 }
 .promo-col:nth-child(2n+2) {
     margin-top: 30px;
@@ -3547,7 +3551,7 @@ a.video-play-icon-without-bip:hover{
     width: 98%;
     height: 80%;
     content: "";
-    background: #e80566;
+    background: #b71f5a;
     -webkit-transform: rotate(-6deg);
     transform: rotate(-6deg);
     z-index: -1;
@@ -4183,7 +4187,7 @@ a.pricing-value {
     position: absolute;
     top: 8px;
     z-index: 1;
-    color: #e80566;
+    color: #b71f5a;
 }
 .form-switch span.beforeinput{
     left: 33px;
@@ -4196,7 +4200,7 @@ a.pricing-value {
     display: inline-block;
     width: 200px;
     height: 35px;
-    border: 2px solid #e80566;
+    border: 2px solid #b71f5a;
     border-radius: 15px;
     transition: all 0.3s linear;
     margin: 0 15px;
@@ -4210,7 +4214,7 @@ a.pricing-value {
     left: 4px;
     width: 100px;
     height: 33px;
-    background-color: #e80566;
+    background-color: #b71f5a;
     border-radius: 15px;
     transform: translate3d(-6px, 0, 0);
     transition: all 0.2s ease-in-out;
@@ -4576,7 +4580,7 @@ a .single-promo-2 p {
     color: #5d5d5d;
 }
 .post-header .post-title a:hover{
-    color: #e80566;
+    color: #b71f5a;
 }
 .post-meta {
     list-style: none;
@@ -4589,10 +4593,10 @@ a .single-promo-2 p {
     opacity: 0.8;
 }
 .post-meta li i{
-    color: #e80566;
+    color: #b71f5a;
 }
 .post-meta a:hover{
-    color: #e80566;
+    color: #b71f5a;
     opacity: 1;
 }
 .post-meta > li {
@@ -4628,7 +4632,7 @@ a .single-promo-2 p {
     transition: all .3s ease-in-out;
 }
 .post-content blockquote:hover {
-    border-color: #e80566;
+    border-color: #b71f5a;
 }
 .blockquote {
     font-weight: 500;
@@ -4697,7 +4701,7 @@ a .single-promo-2 p {
     color: #222;
 }
 .comment-reply > a:hover, .comment-reply > a:focus, .comment-reply-shop > a:hover, .comment-reply-shop > a:focus {
-    background: #e80566;;
+    background: #b71f5a;;
     color: #fff;
 }
 
@@ -4726,7 +4730,7 @@ a .single-promo-2 p {
     color: #2662ab;
 }
 .custom-pagination-nav ul li a.page-link:hover{
-    background: #e80566;
+    background: #b71f5a;
     color: #FFFFFF;
 }
 .custom-pagination-nav ul li.page-item:first-child .page-link,
@@ -4737,11 +4741,11 @@ a .single-promo-2 p {
 }
 .custom-pagination-nav ul li.page-item:first-child .page-link:hover,
 .custom-pagination-nav ul li.page-item:last-child .page-link:hover{
-    color: #e80566;
+    color: #b71f5a;
 }
 .custom-pagination-nav ul li.page-item.active .page-link{
-    background-color: #e80566;
-    border-color: #e80566;
+    background-color: #b71f5a;
+    border-color: #b71f5a;
 }
 /*blog sidebar*/
 
@@ -4804,7 +4808,7 @@ button, [type="button"], [type="reset"], [type="submit"] {
     font-size: 14px;
 }
 .widget a:hover{
-    color: #e80566;
+    color: #b71f5a;
 }
 .widget-recent-entries-custom .wi {
     float: left;
