@@ -2,6 +2,10 @@
 
 @section('content')
 
+
+
+
+
     <!------ Header ------>
     <section class="hero-section ptb-100 gradient-overlay" style="background: url('{{ asset('digimark_template/img/header-bg-5.jpg') }}')no-repeat center center / cover">
         <div class="container">
@@ -260,5 +264,9 @@
             <!-- ============ -->
         </div>
     </section>
+
+
+
+
 
 @endsection

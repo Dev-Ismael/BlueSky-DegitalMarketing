@@ -136,7 +136,7 @@
                             <li><a href="{{ route("about") }}"> <i class="fa-solid fa-circle-info"></i> About</a></li>
                             <li><a href="services.html"> <i class="fa-solid fa-handshake-angle"></i> Services</a></li>
                             <li><a href="project.html"> <i class="fa-solid fa-sitemap"></i> Portfolio </a></li>
-                            <li><a href="contact-us.html"> <i class="fa-solid fa-message"></i> Contact Us</a></li>
+                            <li><a href="{{ route("contact") }}"> <i class="fa-solid fa-message"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
