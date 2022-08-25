@@ -1,4 +1,29 @@
-/*======== Navbar =========*/
+/*==========================================================
+====== Global
+===========================================================*/
+.gradient-bg{
+    background: linear-gradient(75deg, #2662ab 10%, #2662abe0) !important;
+}
+
+/*==========================================================
+====== navBar
+===========================================================*/
+.menu li a {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    padding: 20px 12px;
+    display: block;
+    transition: all 0.3s ease-in-out 0s;
+    color: #fff;
+    opacity: 0.8;
+}
+/*=== Affix ====*/
+.navbar.affix .menu li a{
+    color: #2662ab;
+}
+/*== toggler btn ==*/
 button.navbar-toggler {
     color: #2396d2;
     border: 1px solid #2396d2;
@@ -8,7 +33,16 @@ button.navbar-toggler {
 }
 
 
-/*======== Video =========*/
+
+
+/*==========================================================
+====== Video
+===========================================================*/
+
+
+/*==========================================================
+====== Video
+===========================================================*/
 .free-trial-image:before{
     background: #2662aba6 !important;
 }
@@ -16,8 +50,9 @@ button.navbar-toggler {
 
 
 
-
-/*======== Header =========*/
+/*==========================================================
+====== Header
+===========================================================*/
 .hero-slider-content .lead{
     color: #202020;
 }

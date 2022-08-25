@@ -1,3 +1,15 @@
-blue color: #2662ab ;
-purple Color: #b71f5a
-yellow Color: #d38000
+Primary  ==> Blue color: #2662ab ;
+secondry ==> Yellow Color: #ebb010
+
+
+
+
+
+
+
+
+
+
+
+1- Add Vue router
+2- Add sign in page SPA & link it with

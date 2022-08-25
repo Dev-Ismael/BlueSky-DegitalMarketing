@@ -132,8 +132,8 @@
                                     <li><a href="services-details.html">Services Details</a></li>
                                 </ul>
                             </li> --}}
-                            <li><a href="services.html"> <i class="fa-solid fa-house-user"></i> Home</a></li>
-                            <li><a href="services.html"> <i class="fa-solid fa-circle-info"></i> About</a></li>
+                            <li><a href="{{ route("home") }}"> <i class="fa-solid fa-house-user"></i> Home</a></li>
+                            <li><a href="{{ route("about") }}"> <i class="fa-solid fa-circle-info"></i> About</a></li>
                             <li><a href="services.html"> <i class="fa-solid fa-handshake-angle"></i> Services</a></li>
                             <li><a href="project.html"> <i class="fa-solid fa-sitemap"></i> Portfolio </a></li>
                             <li><a href="contact-us.html"> <i class="fa-solid fa-message"></i> Contact Us</a></li>
@@ -145,6 +145,31 @@
         <!--header section end-->
 
         @yield('content')
+
+
+
+
+
+
+        <!----------- Call Section ----------->
+        <section class="call-to-action py-5 gray-light-bg">
+            <div class="container">
+                <div class="row justify-content-around align-items-center">
+                    <div class="col-md-7">
+                        <div class="subscribe-content">
+                            <h3 class="mb-1">Consulting Agency for Your Business</h3>
+                            <p>Rapidiously engage fully tested e-commerce with progressive architectures.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="action-btn text-lg-right text-sm-left">
+                            <a href="#" class="btn secondary-solid-btn">Contact With Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
 
 
@@ -280,6 +305,8 @@
             <!--footer copyright end-->
         </footer>
         <!--footer section end-->
+
+
 
         <!--bottom to top button start-->
         <button class="scroll-top scroll-to-target" data-target="html">
