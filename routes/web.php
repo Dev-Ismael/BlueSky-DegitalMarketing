@@ -22,3 +22,5 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 Route::get('/service', [App\Http\Controllers\ServiceController::class, 'index'])->name('service');
+Route::get('/portfolio', [App\Http\Controllers\ProjectController::class, 'index'])->name('portfolio');
+Route::get('/portfolio/{slug}', [App\Http\Controllers\ProjectController::class, 'show'])->name('portfolio.project');

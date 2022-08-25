@@ -682,7 +682,7 @@ select.form-control.has-value{
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    padding: 20px 12px;
+    padding: 12px;
     display: block;
     transition: all 0.3s ease-in-out 0s;
     color: #353535;
@@ -759,8 +759,8 @@ select.form-control.has-value{
     font-family: 'Montserrat', sans-serif;
 }
 .menu ul li a:hover, .menu ul li:hover>a {
-    color: #ffffff;
-    background: #ebb010;
+    color: #2662ab;
+    background: #ebb1101a;
 }
 
 .menu ul.sub-menu li:first-child a:hover,
@@ -914,7 +914,6 @@ select.form-control.has-value{
     }
 
     .menu li a:hover,.menu li:hover>a {
-        background: #ebb010;
         color: #fff;
     }
 
@@ -1008,7 +1007,8 @@ select.form-control.has-value{
     right: 0;
 }
 .hero-slider-content h1{
-    font-size: 40px;
+    color: #0c4681;
+    font-size: 60px;
     line-height: initial;
     font-weight: 700;
 }
@@ -3190,14 +3190,14 @@ a.video-play-icon-without-bip:hover{
     right: 0;
     z-index: -1;
     top: -30px;
-    color: #f2f2f2;
+    color: #ebb1103a;
     font-size: 115px;
     line-height: 120px;
     font-weight: 700;
     position: absolute;
     font-family: 'Montserrat', sans-serif;
     -webkit-animation: mover 2s infinite alternate;
-    animation: mover 2s infinite alternate;
+    animation: mover 1s infinite alternate;
 }
 @-webkit-keyframes mover {
     0% {
@@ -4001,7 +4001,7 @@ figure {
     display: block;
     width: 100%;
     border: none;
-    border-radius: 30px;
+    border-radius: 5px;
     font-size: 14px;
     font-weight: 600;
     font-family: "Open Sans", sans-serif;
@@ -4016,21 +4016,21 @@ figure {
     top: 0;
     height: 45px;
     border: none;
-    border-radius: 0 30px 30px 0;
+    border-radius: 0 5px 5px 0;
     background-color: #ebb010;
     display: inline-block;
     text-transform: uppercase;
     color: #ffffff;
     -webkit-transition: 0.5s;
     transition: 0.5s;
-    padding-left: 40px;
+    padding-left: 15px;
     padding-right: 40px;
     font-size: 14px;
     font-weight: 600;
 }
 .newsletter-form button i {
     position: absolute;
-    right: 35px;
+    right: 20px;
     top: 50%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -4856,7 +4856,7 @@ button.scroll-top:focus{
     bottom: 105%;
     right: 50px;
     font-size: 16px;
-    border-radius: 50%;
+    border-radius: 20%;
     z-index: 99;
     color: #ffffff;
     text-align: center;

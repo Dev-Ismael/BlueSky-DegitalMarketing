@@ -4,20 +4,24 @@
 .gradient-bg{
     background: linear-gradient(75deg, #2662ab 10%, #2662abe0) !important;
 }
+body::-webkit-scrollbar {
+    background-color: #2662ab5b;
+    width: 10px;
+    right: -10px;
+  }
 
+body::-webkit-scrollbar-thumb {
+    background-color: #2662ab;
+    border-radius: 8px;
+    right: -10px;
+}
 /*==========================================================
 ====== navBar
 ===========================================================*/
 .menu li a {
-    font-size: 12px;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    padding: 20px 12px;
-    display: block;
-    transition: all 0.3s ease-in-out 0s;
+    font-size: 14px;
+    padding:  12px;
     color: #fff;
-    opacity: 0.8;
 }
 /*=== Affix ====*/
 .navbar.affix .menu li a{
@@ -31,15 +35,6 @@ button.navbar-toggler {
     border-radius: 8px;
     box-shadow: 0px 1px 17px 1px #99999900;
 }
-
-
-
-
-/*==========================================================
-====== Video
-===========================================================*/
-
-
 /*==========================================================
 ====== Video
 ===========================================================*/
@@ -69,12 +64,25 @@ button.navbar-toggler {
 ====== Resonsive
 ===========================================================*/
 @media (max-width: 992px) {
+    /*==========================================================
+    ====== navBar
+    ===========================================================*/
     .navbar {
         background: #fff !important;
         padding: .45rem 1rem !important;
     }
-    .menu li a:hover, .menu li:hover>a {
-        background: inherit !important;
-        color: #fff;
+
+    .menu li a {
+        color: #2662ab;
+    }
+    .menu li a:hover{
+        color: #2662ab;
+        background-color: #ebb11023;
+    }
+    /*==========================================================
+    ====== Header
+    ===========================================================*/
+    .hero-slider-content h1{
+        font-size: 50px;
     }
 }

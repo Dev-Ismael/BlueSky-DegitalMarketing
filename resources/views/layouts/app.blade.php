@@ -86,7 +86,7 @@
                                     <li><a href="{{ route("service") }}"> service </a></li>
                                 </ul>
                             </li>
-                            <li><a href="project.html"> <i class="fa-solid fa-sitemap"></i> Portfolio </a></li>
+                            <li><a href="{{ route("portfolio") }}"> <i class="fa-solid fa-sitemap"></i> Portfolio </a></li>
                             <li><a href="{{ route("contact") }}"> <i class="fa-solid fa-message"></i> Contact Us</a></li>
                         </ul>
                     </div>
@@ -94,6 +94,15 @@
             </nav>
         </header>
         <!--header section end-->
+
+
+
+
+
+
+
+
+
 
         @yield('content')
 
@@ -261,7 +270,7 @@
 
         <!--bottom to top button start-->
         <button class="scroll-top scroll-to-target" data-target="html">
-            <span class="ti-angle-up"></span>
+            <i class="fa-solid fa-turn-up" style="font-size: 24px"></i>
         </button>
         <!--bottom to top button end-->
 
