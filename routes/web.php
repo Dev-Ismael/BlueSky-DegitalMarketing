@@ -24,3 +24,7 @@ Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])
 Route::get('/service', [App\Http\Controllers\ServiceController::class, 'index'])->name('service');
 Route::get('/portfolio', [App\Http\Controllers\ProjectController::class, 'index'])->name('portfolio');
 Route::get('/portfolio/{slug}', [App\Http\Controllers\ProjectController::class, 'show'])->name('portfolio.project');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
