@@ -6,15 +6,19 @@ secondry ==> Yellow Color: #ebb010
 Menna tasks:
 ==============
 
-    
 
 
 
 
 
 
-Advanced feature at blueskyint:
+
+Advanced feature in blueskyint project:
 ==================================
 1- Add Vue router
 2- Add sign in page SPA & link it with
 3-
+4-
+5-
+6-
+7-
