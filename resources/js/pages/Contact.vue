@@ -1,11 +1,10 @@
-@extends('layouts.app')
-
-@section('content')
+<template>
+    <div class="contact-page">
 
 
 
     <!------ Header ------>
-    <section class="hero-section ptb-100 gradient-overlay" style="background: url('{{ asset('digimark_template/img/header-bg-5.jpg') }}')no-repeat center center / cover">
+    <section class="hero-section ptb-100 gradient-overlay" style="background: url('digimark_template/img/header-bg-5.jpg')no-repeat center center / cover">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-7">
@@ -140,4 +139,10 @@
     </section>
 
 
-@endsection
+    </div>
+</template>
+<script>
+   export default {
+
+   }
+</script>

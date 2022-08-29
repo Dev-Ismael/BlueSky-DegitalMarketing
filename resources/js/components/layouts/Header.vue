@@ -12,18 +12,14 @@
                 <div class="collapse navbar-collapse h-auto" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto menu">
                         <li> <router-link to="/">  <i class="fa-solid fa-house-user"></i> Home  </router-link></li>
-                        <li> <router-link to="/about">  <i class="fa-solid fa-circle-info"></i> About  </router-link></li>
-                        <!-- <li><a href="{{ route("home") }}"> <i class="fa-solid fa-house-user"></i> Home</a></li> -->
-                        <!-- <li><a href="{{ route("about") }}"> <i class="fa-solid fa-circle-info"></i> About</a></li> -->
-                        <!-- <li><a href="#" class="dropdown-toggle-inner"> <i class="fa-solid fa-handshake-angle"></i> Services </a>
+                        <li> <router-link to="/about">  <i class="fa-solid fa-circle-info"></i> About </router-link></li>
+                        <li><a href="#" class="dropdown-toggle-inner"> <i class="fa-solid fa-handshake-angle"></i> Services </a>
                             <ul class="sub-menu">
-                                <li><a href="{{ route("service") }}"> service </a></li>
-                                <li><a href="{{ route("service") }}"> service </a></li>
-                                <li><a href="{{ route("service") }}"> service </a></li>
+                                <li><router-link to="/service"> service </router-link></li>
                             </ul>
                         </li>
-                        <li><a href="{{ route("portfolio") }}"> <i class="fa-solid fa-sitemap"></i> Portfolio </a></li>
-                        <li><a href="{{ route("contact") }}"> <i class="fa-solid fa-message"></i> Contact Us</a></li> -->
+                        <li><router-link to="/portfolio"> <i class="fa-solid fa-sitemap"></i> Portfolio </router-link></li>
+                        <li><router-link to="/contact"> <i class="fa-solid fa-message"></i> Contact Us </router-link></li>
                     </ul>
                 </div>
             </div>
