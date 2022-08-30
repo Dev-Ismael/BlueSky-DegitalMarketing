@@ -13,7 +13,7 @@
                     <ul class="navbar-nav ml-auto menu">
                         <li> <router-link to="/">  <i class="fa-solid fa-house-user"></i> Home  </router-link></li>
                         <li> <router-link to="/about">  <i class="fa-solid fa-circle-info"></i> About </router-link></li>
-                        <li><a href="#" class="dropdown-toggle-inner"> <i class="fa-solid fa-handshake-angle"></i> Services </a>
+                        <li><a href="#" class="dropdown-toggle-inner prevent-defualt"> <i class="fa-solid fa-handshake-angle"></i> Services </a>
                             <ul class="sub-menu">
                                 <li><router-link to="/service"> service </router-link></li>
                             </ul>

@@ -22,9 +22,7 @@
 // 14. gallery carousel
 // 15. wow js
 
-
-jQuery(function ($) {
-
+$( document ).ready(function() {
   'use strict';
 
   // 1. preloader
@@ -93,7 +91,7 @@ jQuery(function ($) {
   });
 
     // 6. monthly and yearly pricing switch
-    $("#js-contcheckbox").change(function () {
+    $(document).on('change', '#js-contcheckbox', function () {
         if (this.checked) {
             $('.monthly-price').css('display', 'none');
             $('.yearly-price').css('display', 'block');
@@ -554,4 +552,11 @@ jQuery(function ($) {
       }
   }
 
-}); // JQuery end
+
+    // preventDefault buttons
+    $(document).on('click', 'a.dropdown-toggle-inner.prevent-defualt', function (e) {
+        e.preventDefault();
+    });
+
+
+});
