@@ -5,7 +5,7 @@
         <div class="row m-0">
             <div class="col-lg-6 col-md-12 p-0">
                 <div class="free-trial-image text-center">
-                    <img src="{{ asset('digimark_template/img/cta-2-girl-img.jpg') }}" alt="image" class="img-fluid">
+                    <img src="digimark_template/img/cta-2-girl-img.png" alt="image" class="img-fluid">
                     <a href="https://www.youtube.com/watch?v=9No-FiEInLA" class="popup-youtube video-play-icon white-bip shadow"><span class="ti-control-play"></span> </a>
                 </div>
             </div>
@@ -18,5 +18,4 @@
             </div>
         </div>
     </section>
-    
 </template>

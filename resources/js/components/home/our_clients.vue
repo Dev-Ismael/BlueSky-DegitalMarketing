@@ -1,7 +1,7 @@
 <template>
 
     <!------- Our Clients ----------->
-    <div class="client-section ptb-100" style="background: url('digimark_template/img/client-bg.jpg')no-repeat center center / cover">
+    <div class="client-section ptb-100">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-6">

@@ -1033,7 +1033,7 @@ select.form-control.has-value{
 .gradient-overlay:before{
     position: absolute;
     content: '';
-    background-image: linear-gradient(75deg, #2662abf6 10%, #2662ab8c ) !important;
+    background-image: linear-gradient(75deg, #2662ab77 10%, #2662ab8c ) !important;
     width: 100%;
     height: 100%;
     top: 0;
@@ -1376,7 +1376,7 @@ select.form-control.has-value{
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../img/cta-2-girl-img.jpg");
+    background-image: url("../img/cta-2-girl-img.png");
 }
 .free-trial-image:before {
     position: absolute;
@@ -3257,8 +3257,8 @@ a.video-play-icon-without-bip:hover{
 }
 .promo-item {
     border-radius: 10px;
-    -webkit-filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.07));
-    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.07));
+    -webkit-filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.20));
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.20));
     background-color: #ffffff;
     padding: 30px;
     margin-top: 30px;
@@ -3289,7 +3289,8 @@ a.video-play-icon-without-bip:hover{
     width: 100%;
     height: 100%;
     border-radius: 0;
-    background-color: #2662ab;
+    /* background-color: #2662ab; */
+    background-color: #2662abd1;
 }
 .promo-item:hover h5, .promo-item:hover p {
     color: #fff;

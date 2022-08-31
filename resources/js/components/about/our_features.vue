@@ -7,34 +7,34 @@
                 <div class="col-md-6 col-lg-3 promo-col">
                     <div class="promo-item">
                         <div class="promo-img">
-                            <img src="{{ asset('digimark_template/img/increase_1.gif') }}" alt="prevention" width="75">
+                            <img src="digimark_template/img/Good-quality.gif" alt="prevention" width="75">
                         </div>
-                        <h5>Increased Traffic</h5>
-                        <p>Wash your hands frequently more then 20s</p>
+                        <h5>High Quality</h5>
+                        <p>Helping you to get the best quality.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 promo-col">
                     <div class="promo-item">
                         <div class="promo-img">
-                            <img src="{{ asset('digimark_template/img/interface-2.gif') }}" alt="prevention" width="75">
+                            <img src="digimark_template/img/support-service.gif" alt="prevention" width="75">
                         </div>
-                        <h5>Page Rankings</h5>
-                        <p>Wash your hands frequently more then 20s</p>
+                        <h5>Technical Support</h5>
+                        <p>We respond to your needs with helpful solutions.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 promo-col">
                     <div class="promo-item">
                         <div class="promo-img">
-                            <img src="{{ asset('digimark_template/img/search-engine_188.svg') }}" alt="prevention" width="75">
+                            <img src="digimark_template/img/24-8.gif" alt="prevention" width="75">
                         </div>
-                        <h5>Site Optimisation</h5>
-                        <p>If you have fever, cough and difficulty breathing, seek medical care early</p>
+                        <h5>24/7</h5>
+                        <p>We are always here to serve you.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 promo-col">
                     <div class="promo-item">
                         <div class="promo-img">
-                            <img src="{{ asset('digimark_template/img/credit-card.gif') }}" alt="prevention" width="75">
+                            <img src="digimark_template/img/phonecall.gif" alt="prevention" width="75">
                         </div>
                         <h5>Call For Expert</h5>
                         <a href="tel:+445431234567" class="emergency-btn">

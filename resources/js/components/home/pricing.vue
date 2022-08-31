@@ -36,7 +36,7 @@
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="card text-center single-pricing-pack">
                         <div class="price-img pt-5">
-                            <img src="img/priching-img-1.png" alt="price" width="120" class="img-fluid">
+                            <img src="digimark_template/img/priching-img-1.png" alt="price" width="120" class="img-fluid">
                         </div>
                         <div class="card-header py-4 border-0 pricing-header">
                             <div class="price text-center mb-0 monthly-price">$19<span>.99</span></div>
@@ -60,7 +60,7 @@
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="card popular-price text-center single-pricing-pack">
                         <div class="price-img pt-5">
-                            <img src="img/priching-img-2.png" alt="price" width="120" class="img-fluid">
+                            <img src="digimark_template/img/priching-img-2.png" alt="price" width="120" class="img-fluid">
                         </div>
                         <div class="card-header py-4 border-0 pricing-header">
                             <div class="price text-center mb-0 monthly-price">$49<span>.99</span></div>
@@ -84,7 +84,7 @@
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="card text-center single-pricing-pack">
                         <div class="price-img pt-5">
-                            <img src="img/priching-img-3.png" alt="price" width="120" class="img-fluid">
+                            <img src="digimark_template/img/priching-img-3.png" alt="price" width="120" class="img-fluid">
                         </div>
                         <div class="card-header py-4 border-0 pricing-header">
                             <div class="price text-center mb-0 monthly-price">$69<span>.99</span></div>
