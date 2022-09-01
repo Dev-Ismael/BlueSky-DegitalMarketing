@@ -4,6 +4,14 @@
 .gradient-bg{
     background: linear-gradient(75deg, #2662ab 10%, #2662abe0) !important;
 }
+.gradient-bg-secondry-color{
+    background: linear-gradient(75deg, #ebb010 10%, #ebb110da) !important;
+}
+.footer-box{
+    background-color: #2662ab;
+    padding: 50px 0px;
+    border-radius: 25px;
+}
 body::-webkit-scrollbar {
     background-color: #2662ab5b;
     width: 10px;
@@ -15,6 +23,8 @@ body::-webkit-scrollbar-thumb {
     border-radius: 8px;
     right: -10px;
 }
+
+
 /*==========================================================
 ====== navBar
 ===========================================================*/
@@ -39,12 +49,45 @@ button.navbar-toggler {
 ====== Video
 ===========================================================*/
 .free-trial-image:before{
-    background: #2662aba6 !important;
+    background: #2662ab5e  !important;
 }
 
 
 
 
+/*==========================================================
+====== Services
+===========================================================*/
+.promo-single-wrap{
+    margin: 20px 0px;
+    min-height: 460px;
+}
+.promo-single-wrap img{
+    animation-name: up-move-animation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+ /* animation */
+ @keyframes up-move-animation {
+    0%{
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    50%{
+        -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    100%{
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
 /*==========================================================
 ====== Header
 ===========================================================*/

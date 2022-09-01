@@ -4397,8 +4397,8 @@ a .single-promo-2 p {
 .social-nav ul li a{
     opacity: 0.8;
     transition: all 0.3s ease-in;
-    padding: 3px 8px;
-    font-size: 14px;
+    padding: 5px 10px;
+    font-size: 20px;
 }
 
 
@@ -4470,7 +4470,7 @@ a .single-promo-2 p {
 .loader1 {
     display: block;
     position: relative;
-    left: 45%;
+    left: 48%;
     top: 50%;
 }
 

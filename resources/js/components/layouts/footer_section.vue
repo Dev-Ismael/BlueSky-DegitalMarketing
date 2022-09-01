@@ -29,9 +29,9 @@
                             <div class="row footer-top-wrap">
                                 <div class="col-md-4 col-sm-6">
                                     <div class="footer-nav-wrap text-white">
-                                        <img src="/images/BlueSky-WhiteLogo.png" width="160" alt="logo">
+                                        <img src="/images/BlueSky-WhiteLogo.png" class="img-fluid" alt="logo">
                                         <!-- <p>Continually myocardinate inexpensive catalysts for change with seamless initiatives.</p> -->
-                                        <div class="social-nav mt-4">
+                                        <div class="social-nav mt-4 text-center">
                                             <ul class="list-unstyled social-list mb-0">
                                                 <li class="list-inline-item tooltip-hover">
                                                     <a href="#" class="rounded"><span
@@ -127,26 +127,6 @@
             </div>
             <!--footer top end-->
 
-            <!--footer copyright start-->
-            <!-- <div class="footer-bottom gray-light-bg py-2">
-                <div class="container">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-md-5 col-lg-5">
-                            <p class="copyright-text pb-0 mb-0">Copyrights © 2020. All
-                                rights reserved by
-                                <a href="https://themeforest.net/user/themetags" target="_blank">ThemeTags</a>
-                            </p>
-                        </div>
-                        <div class="col-md-7 col-lg-6 d-none d-md-block d-lg-block">
-                            <ul class="list-inline policy-nav text-right social-list">
-                                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                                <li class="list-inline-item"><a href="#">Terms & Conditions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!--footer copyright end-->
         </footer>
         <!--footer section end-->
 
@@ -158,7 +138,7 @@
         <!--bottom to top button end-->
 
 
-        <div id="preloader" style="display: none;">
+        <div id="preloader">
             <div class="loader1">
                 <span></span>
                 <span></span>

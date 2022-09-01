@@ -27,7 +27,7 @@ $( document ).ready(function() {
 
   // 1. preloader
   $(window).ready(function () {
-    $('#preloader').delay(200).fadeOut('fade');
+    $('#preloader').delay(400).fadeOut('fade');
   });
 
   // 2. fixed navbar
