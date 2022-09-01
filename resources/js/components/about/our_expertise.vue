@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="image-wrap">
-                        <img src="{{ asset('digimark_template/img/tab-img.png') }}" alt="email" class="img-fluid m-auto">
+                        <img src="/digimark_template/img/about.gif" alt="email" class="img-fluid m-auto">
                     </div>
                 </div>
             </div>

@@ -19,10 +19,12 @@ const app = createApp({});
 import main_navbar from './components/layouts/main_navbar.vue';
 import main_header from './components/layouts/main_header.vue';
 import min_header from './components/layouts/min_header.vue';
+import footer_section from './components/layouts/footer_section.vue';
 
 app.component('main_navbar', main_navbar);
 app.component('main_header', main_header);
 app.component('min_header', min_header);
+app.component('footer_section', footer_section);
 
 // Home Page
 import services from './components/home/services.vue';

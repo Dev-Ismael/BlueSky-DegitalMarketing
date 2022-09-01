@@ -17467,6 +17467,20 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/layouts/footer_section.vue?vue&type=script&lang=js":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/layouts/footer_section.vue?vue&type=script&lang=js ***!
+  \****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/layouts/main_navbar.vue?vue&type=script&lang=js":
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/layouts/main_navbar.vue?vue&type=script&lang=js ***!
@@ -17491,7 +17505,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    icon: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    url: {
+      type: String,
+      required: true
+    }
+  }
+});
 
 /***/ }),
 
@@ -17508,7 +17537,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"outstanding-section ptb-100 gray-light-bg\"><div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-md-9 col-lg-8\"><div class=\"section-heading text-center mb-1\"><strong class=\"color-secondary\">Our Expertise</strong><h2>Outstanding Experience</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\">Distinctively grow go forward manufactured products and optimal networks. Enthusiastically disseminate user-centric outsourcing revolutionary</p></div></div></div><div class=\"row align-items-center ptb-100\"><div class=\"col-lg-6 col-md-6\"><div class=\"content-wrap\"><h3>Grow Your Business With Experienced SEO Experts</h3><p>Intrinsicly recaptiualize alternative internal or &quot;organic&quot; sources for inexpensive outsourcing. Monotonectally create sustainable applications before premier vortals. Holisticly productivate stand-alone value and cost effective users. </p><p>Holisticly syndicate cooperative ideas after pandemic human capital. Professionally provide access to bricks-and-clicks functionalities for visionary customer service. Completely reconceptualize cross-media data for frictionless architectures. </p><div class=\"action-btns mt-4\"><a href=\"#\" class=\"btn secondary-solid-btn mr-3\">Start Now</a><a href=\"#\" class=\"btn secondary-outline-btn\">Learn More</a></div></div></div><div class=\"col-lg-6 col-md-6\"><div class=\"image-wrap\"><img src=\"{{ asset(&#39;digimark_template/img/tab-img.png&#39;) }}\" alt=\"email\" class=\"img-fluid m-auto\"></div></div></div></div></section>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"outstanding-section ptb-100 gray-light-bg\"><div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-md-9 col-lg-8\"><div class=\"section-heading text-center mb-1\"><strong class=\"color-secondary\">Our Expertise</strong><h2>Outstanding Experience</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\">Distinctively grow go forward manufactured products and optimal networks. Enthusiastically disseminate user-centric outsourcing revolutionary</p></div></div></div><div class=\"row align-items-center ptb-100\"><div class=\"col-lg-6 col-md-6\"><div class=\"content-wrap\"><h3>Grow Your Business With Experienced SEO Experts</h3><p>Intrinsicly recaptiualize alternative internal or &quot;organic&quot; sources for inexpensive outsourcing. Monotonectally create sustainable applications before premier vortals. Holisticly productivate stand-alone value and cost effective users. </p><p>Holisticly syndicate cooperative ideas after pandemic human capital. Professionally provide access to bricks-and-clicks functionalities for visionary customer service. Completely reconceptualize cross-media data for frictionless architectures. </p><div class=\"action-btns mt-4\"><a href=\"#\" class=\"btn secondary-solid-btn mr-3\">Start Now</a><a href=\"#\" class=\"btn secondary-outline-btn\">Learn More</a></div></div></div><div class=\"col-lg-6 col-md-6\"><div class=\"image-wrap\"><img src=\"/digimark_template/img/about.gif\" alt=\"email\" class=\"img-fluid m-auto\"></div></div></div></div></section>", 1);
 
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("----- Experinced at ------"), _hoisted_1], 2112
@@ -17531,7 +17560,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"promo-block ptb-100\"><div class=\"container\"><div class=\"row\"><div class=\"col-md-6 col-lg-3 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"digimark_template/img/Good-quality.gif\" alt=\"prevention\" width=\"75\"></div><h5>High Quality</h5><p>Helping you to get the best quality.</p></div></div><div class=\"col-md-6 col-lg-3 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"digimark_template/img/support-service.gif\" alt=\"prevention\" width=\"75\"></div><h5>Technical Support</h5><p>We respond to your needs with helpful solutions.</p></div></div><div class=\"col-md-3 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"digimark_template/img/24-8.gif\" alt=\"prevention\" width=\"75\"></div><h5>24/7</h5><p>We are always here to serve you.</p></div></div><div class=\"col-md-3 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"digimark_template/img/phonecall.gif\" alt=\"prevention\" width=\"75\"></div><h5>Call For Expert</h5><a href=\"tel:+445431234567\" class=\"emergency-btn\"> +44 543 1234567 </a></div></div></div></div></section>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"promo-block ptb-100\"><div class=\"container\"><div class=\"row\"><div class=\"col-md-6 col-lg-3 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/Good-quality.gif\" alt=\"prevention\" width=\"75\"></div><h5>High Quality</h5><p>Helping you to get the best quality.</p></div></div><div class=\"col-md-6 col-lg-3 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/support-service.gif\" alt=\"prevention\" width=\"75\"></div><h5>Technical Support</h5><p>We respond to your needs with helpful solutions.</p></div></div><div class=\"col-md-3 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/24-8.gif\" alt=\"prevention\" width=\"75\"></div><h5>24/7</h5><p>We are always here to serve you.</p></div></div><div class=\"col-md-3 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/phonecall.gif\" alt=\"prevention\" width=\"75\"></div><h5>Call For Expert</h5><a href=\"tel:+445431234567\" class=\"emergency-btn\"> +44 543 1234567 </a></div></div></div></div></section>", 1);
 
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("----- Our Features ------"), _hoisted_1], 2112
@@ -17706,7 +17735,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"about-with-promo ptb-100 gray-light-bg\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-lg-6\"><div class=\"about-content-wrap\"><strong class=\"color-secondary\">Digital Marketing Services</strong><h2>Why Your Business Need Digital Marketing</h2><span class=\"animate-border mb-4\"></span><p>Globally parallel task quality methodologies whereas inexpensive sources. Uniquely administrate ubiquitous web services through diverse quality vectors syndicate error-free intellectual capital. </p><ul class=\"check-list-info\"><li><strong>Advance Advisory Team</strong> – often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing. </li><li><strong>Professional Consulting Services</strong> – if spreading in your community. This is especially important for people who are at higher risk of getting very sick brand future-proof intellectual capital. </li><li><strong>24/7 Support Help Center</strong> – with a tissue when you cough or sneeze or use the inside of your elbow. </li><li><strong>Customer Service &amp; Operations</strong> – This includes phones, tables, light switches, doorknobs, countertops, handles, desks, toilets. </li></ul></div></div><div class=\"col-lg-6\"><div class=\"about-promo-wrap\"><div class=\"row\"><div class=\"col-md-6 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"digimark_template/img/increase_1.gif\" alt=\"services\" width=\"60\"></div><h5>Increased Traffic</h5><p>Wash your hands frequently more then 20s</p><div class=\"promo-bottom-shape\"><img src=\"digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"digimark_template/img/search-engine_188.gif\" alt=\"services\" width=\"60\"></div><h5>Site Optimisation</h5><p>Progressively leverage existing resource-leveling methodologies</p><div class=\"promo-bottom-shape\"><img src=\"digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div></div><div class=\"col-md-6 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"digimark_template/img/credit-card.gif\" alt=\"services\" width=\"60\"></div><h5>Cost-effectiveness</h5><p>If you have fever, cough and difficulty breathing, seek medical care early</p><div class=\"promo-bottom-shape\"><img src=\"digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"digimark_template/img/interface-2.gif\" alt=\"services\" width=\"60\"></div><h5>Page Rankings</h5><p>Rapidiously integrate viral infrastructures reliable. </p><div class=\"promo-bottom-shape\"><img src=\"digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div></div></div></div></div></div></div></section>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"about-with-promo ptb-100 gray-light-bg\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-lg-6\"><div class=\"about-content-wrap\"><strong class=\"color-secondary\">Digital Marketing Services</strong><h2>Why Your Business Need Digital Marketing</h2><span class=\"animate-border mb-4\"></span><p>Globally parallel task quality methodologies whereas inexpensive sources. Uniquely administrate ubiquitous web services through diverse quality vectors syndicate error-free intellectual capital. </p><ul class=\"check-list-info\"><li><strong>Advance Advisory Team</strong> – often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing. </li><li><strong>Professional Consulting Services</strong> – if spreading in your community. This is especially important for people who are at higher risk of getting very sick brand future-proof intellectual capital. </li><li><strong>24/7 Support Help Center</strong> – with a tissue when you cough or sneeze or use the inside of your elbow. </li><li><strong>Customer Service &amp; Operations</strong> – This includes phones, tables, light switches, doorknobs, countertops, handles, desks, toilets. </li></ul></div></div><div class=\"col-lg-6\"><div class=\"about-promo-wrap\"><div class=\"row\"><div class=\"col-md-6 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/increase_1.gif\" alt=\"services\" width=\"60\"></div><h5>Increased Traffic</h5><p>Wash your hands frequently more then 20s</p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/search-engine_188.gif\" alt=\"services\" width=\"60\"></div><h5>Site Optimisation</h5><p>Progressively leverage existing resource-leveling methodologies</p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div></div><div class=\"col-md-6 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/credit-card.gif\" alt=\"services\" width=\"60\"></div><h5>Cost-effectiveness</h5><p>If you have fever, cough and difficulty breathing, seek medical care early</p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/interface-2.gif\" alt=\"services\" width=\"60\"></div><h5>Page Rankings</h5><p>Rapidiously integrate viral infrastructures reliable. </p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div></div></div></div></div></div></div></section>", 1);
 
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("--------  About ----------"), _hoisted_1], 2112
@@ -17767,7 +17796,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-03.png",
+  src: "/digimark_template/img/clients-logo-03.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17779,7 +17808,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-04.png",
+  src: "/digimark_template/img/clients-logo-04.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17791,7 +17820,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-05.png",
+  src: "/digimark_template/img/clients-logo-05.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17803,7 +17832,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-06.png",
+  src: "/digimark_template/img/clients-logo-06.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17815,7 +17844,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-07.png",
+  src: "/digimark_template/img/clients-logo-07.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17827,7 +17856,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-08.png",
+  src: "/digimark_template/img/clients-logo-08.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17839,7 +17868,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-01.png",
+  src: "/digimark_template/img/clients-logo-01.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17851,7 +17880,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-02.png",
+  src: "/digimark_template/img/clients-logo-02.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17863,7 +17892,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-03.png",
+  src: "/digimark_template/img/clients-logo-03.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17875,7 +17904,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-04.png",
+  src: "/digimark_template/img/clients-logo-04.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17887,7 +17916,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-05.png",
+  src: "/digimark_template/img/clients-logo-05.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17899,7 +17928,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-06.png",
+  src: "/digimark_template/img/clients-logo-06.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17911,7 +17940,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-07.png",
+  src: "/digimark_template/img/clients-logo-07.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17923,7 +17952,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-08.png",
+  src: "/digimark_template/img/clients-logo-08.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17935,7 +17964,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-01.png",
+  src: "/digimark_template/img/clients-logo-01.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17947,7 +17976,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-02.png",
+  src: "/digimark_template/img/clients-logo-02.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17959,7 +17988,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-03.png",
+  src: "/digimark_template/img/clients-logo-03.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17971,7 +18000,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-04.png",
+  src: "/digimark_template/img/clients-logo-04.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17983,7 +18012,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-05.png",
+  src: "/digimark_template/img/clients-logo-05.png",
   alt: "client logo",
   "class": "client-img"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -17995,7 +18024,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "digimark_template/img/clients-logo-06.png",
+  src: "/digimark_template/img/clients-logo-06.png",
   alt: "client logo",
   "class": "client-img"
 })])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -18039,7 +18068,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"pricing-section ptb-100 gray-light-bg\"><div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-md-9 col-lg-8\"><div class=\"section-heading text-center mb-5\"><strong class=\"color-secondary\">Our Pricing</strong><h2>Flexible Price</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\"> Professional hosting at an affordable price. Distinctively recaptiualize principle-centered core competencies through client-centered core competencies. </p></div></div></div><div class=\"row align-items-center justify-content-between\"><div class=\"col-12\"><div class=\"switch-wrap text-center mb-5\"><label class=\"form-switch\"><span class=\"beforeinput text-success year-switch\"> Monthly </span><input type=\"checkbox\" id=\"js-contcheckbox\"><span class=\"switch-icon gray-light-bg\"></span><span class=\"afterinput year-switch\"> Yearly </span></label></div></div><div class=\"col-lg-4 col-md-4 col-12\"><div class=\"card text-center single-pricing-pack\"><div class=\"price-img pt-5\"><img src=\"digimark_template/img/priching-img-1.png\" alt=\"price\" width=\"120\" class=\"img-fluid\"></div><div class=\"card-header py-4 border-0 pricing-header\"><div class=\"price text-center mb-0 monthly-price\">$19<span>.99</span></div><div class=\"price text-center mb-0 yearly-price\">$69<span>.99</span></div></div><div class=\"price-name\"><h5 class=\"mb-0\">Standard</h5></div><div class=\"card-body\"><ul class=\"list-unstyled mb-4 pricing-feature-list\"><li><span>Track 15</span> Keywords with our tool</li><li><span>50</span> Page Analysis</li><li><span>50</span> Crawl Pages with our crawl</li><li><span>1</span> Project to optimize site</li><li>24/7 Phone Support</li></ul><a href=\"#\" class=\"btn outline-btn mb-3\" target=\"_blank\">Purchase now</a></div></div></div><div class=\"col-lg-4 col-md-4 col-12\"><div class=\"card popular-price text-center single-pricing-pack\"><div class=\"price-img pt-5\"><img src=\"digimark_template/img/priching-img-2.png\" alt=\"price\" width=\"120\" class=\"img-fluid\"></div><div class=\"card-header py-4 border-0 pricing-header\"><div class=\"price text-center mb-0 monthly-price\">$49<span>.99</span></div><div class=\"price text-center mb-0 yearly-price\">$159<span>.99</span></div></div><div class=\"price-name\"><h5 class=\"mb-0\">Premium</h5></div><div class=\"card-body\"><ul class=\"list-unstyled mb-4 pricing-feature-list\"><li><span>Track 15o</span> Keywords with our tool</li><li><span>100</span> Page Analysis</li><li><span>100</span> Crawl Pages with our crawl</li><li><span>5</span> Project to optimize site</li><li>24/7 Phone Support</li></ul><a href=\"#\" class=\"btn secondary-solid-btn mb-3\" target=\"_blank\">Purchase now</a></div></div></div><div class=\"col-lg-4 col-md-4 col-12\"><div class=\"card text-center single-pricing-pack\"><div class=\"price-img pt-5\"><img src=\"digimark_template/img/priching-img-3.png\" alt=\"price\" width=\"120\" class=\"img-fluid\"></div><div class=\"card-header py-4 border-0 pricing-header\"><div class=\"price text-center mb-0 monthly-price\">$69<span>.99</span></div><div class=\"price text-center mb-0 yearly-price\">$259<span>.99</span></div></div><div class=\"price-name\"><h5 class=\"mb-0\">Unlimited</h5></div><div class=\"card-body\"><ul class=\"list-unstyled mb-4 pricing-feature-list\"><li><span>Track 500</span> Keywords with our tool</li><li><span>250</span> Page Analysis</li><li><span>250</span> Crawl Pages with our crawl</li><li><span>10</span> Project to optimize site</li><li>24/7 Phone Support</li></ul><a href=\"#\" class=\"btn outline-btn mb-3\" target=\"_blank\">Purchase now</a></div></div></div><div class=\"col-12\"><div class=\"support-cta text-center mt-5\"><h5 class=\"mb-1\"><span class=\"ti-headphone-alt color-primary mr-3\"></span>We&#39;re Here to Help You </h5><p>Have some questions? <a href=\"#\">Chat with us now</a>, or <a href=\"#\">send us an email</a> to get in touch.</p></div></div></div></div></section>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"pricing-section ptb-100 gray-light-bg\"><div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-md-9 col-lg-8\"><div class=\"section-heading text-center mb-5\"><strong class=\"color-secondary\">Our Pricing</strong><h2>Flexible Price</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\"> Professional hosting at an affordable price. Distinctively recaptiualize principle-centered core competencies through client-centered core competencies. </p></div></div></div><div class=\"row align-items-center justify-content-between\"><div class=\"col-12\"><div class=\"switch-wrap text-center mb-5\"><label class=\"form-switch\"><span class=\"beforeinput text-success year-switch\"> Monthly </span><input type=\"checkbox\" id=\"js-contcheckbox\"><span class=\"switch-icon gray-light-bg\"></span><span class=\"afterinput year-switch\"> Yearly </span></label></div></div><div class=\"col-lg-4 col-md-4 col-12\"><div class=\"card text-center single-pricing-pack\"><div class=\"price-img pt-5\"><img src=\"/digimark_template/img/priching-img-1.png\" alt=\"price\" width=\"120\" class=\"img-fluid\"></div><div class=\"card-header py-4 border-0 pricing-header\"><div class=\"price text-center mb-0 monthly-price\">$19<span>.99</span></div><div class=\"price text-center mb-0 yearly-price\">$69<span>.99</span></div></div><div class=\"price-name\"><h5 class=\"mb-0\">Standard</h5></div><div class=\"card-body\"><ul class=\"list-unstyled mb-4 pricing-feature-list\"><li><span>Track 15</span> Keywords with our tool</li><li><span>50</span> Page Analysis</li><li><span>50</span> Crawl Pages with our crawl</li><li><span>1</span> Project to optimize site</li><li>24/7 Phone Support</li></ul><a href=\"#\" class=\"btn outline-btn mb-3\" target=\"_blank\">Purchase now</a></div></div></div><div class=\"col-lg-4 col-md-4 col-12\"><div class=\"card popular-price text-center single-pricing-pack\"><div class=\"price-img pt-5\"><img src=\"/digimark_template/img/priching-img-2.png\" alt=\"price\" width=\"120\" class=\"img-fluid\"></div><div class=\"card-header py-4 border-0 pricing-header\"><div class=\"price text-center mb-0 monthly-price\">$49<span>.99</span></div><div class=\"price text-center mb-0 yearly-price\">$159<span>.99</span></div></div><div class=\"price-name\"><h5 class=\"mb-0\">Premium</h5></div><div class=\"card-body\"><ul class=\"list-unstyled mb-4 pricing-feature-list\"><li><span>Track 15o</span> Keywords with our tool</li><li><span>100</span> Page Analysis</li><li><span>100</span> Crawl Pages with our crawl</li><li><span>5</span> Project to optimize site</li><li>24/7 Phone Support</li></ul><a href=\"#\" class=\"btn secondary-solid-btn mb-3\" target=\"_blank\">Purchase now</a></div></div></div><div class=\"col-lg-4 col-md-4 col-12\"><div class=\"card text-center single-pricing-pack\"><div class=\"price-img pt-5\"><img src=\"/digimark_template/img/priching-img-3.png\" alt=\"price\" width=\"120\" class=\"img-fluid\"></div><div class=\"card-header py-4 border-0 pricing-header\"><div class=\"price text-center mb-0 monthly-price\">$69<span>.99</span></div><div class=\"price text-center mb-0 yearly-price\">$259<span>.99</span></div></div><div class=\"price-name\"><h5 class=\"mb-0\">Unlimited</h5></div><div class=\"card-body\"><ul class=\"list-unstyled mb-4 pricing-feature-list\"><li><span>Track 500</span> Keywords with our tool</li><li><span>250</span> Page Analysis</li><li><span>250</span> Crawl Pages with our crawl</li><li><span>10</span> Project to optimize site</li><li>24/7 Phone Support</li></ul><a href=\"#\" class=\"btn outline-btn mb-3\" target=\"_blank\">Purchase now</a></div></div></div><div class=\"col-12\"><div class=\"support-cta text-center mt-5\"><h5 class=\"mb-1\"><span class=\"ti-headphone-alt color-primary mr-3\"></span>We&#39;re Here to Help You </h5><p>Have some questions? <a href=\"#\">Chat with us now</a>, or <a href=\"#\">send us an email</a> to get in touch.</p></div></div></div></div></section>", 1);
 
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("--------  pricing ----------"), _hoisted_1], 2112
@@ -18085,12 +18114,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"call-to-action-video\"><div class=\"row m-0\"><div class=\"col-lg-6 col-md-12 p-0\"><div class=\"free-trial-image text-center\"><img src=\"digimark_template/img/cta-2-girl-img.png\" alt=\"image\" class=\"img-fluid\"><a href=\"https://www.youtube.com/watch?v=9No-FiEInLA\" class=\"popup-youtube video-play-icon white-bip shadow\"><span class=\"ti-control-play\"></span></a></div></div><div class=\"col-lg-6 col-md-12 p-0\"><div class=\"free-trial-content text-white\"><h2 class=\"text-white\">Best Consulting Every Business</h2><p>Interactively evisculate performance based ROI whereas premier mindshare. Dramatically matrix real-time convergence rather than empowered manufactured products.</p><a href=\"#\" class=\"btn primary-solid-btn mt-3\">Start Now</a></div></div></div></section>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"call-to-action-video\"><div class=\"row m-0\"><div class=\"col-lg-6 col-md-12 p-0\"><div class=\"free-trial-image text-center\"><img src=\"/digimark_template/img/cta-2-girl-img.png\" alt=\"image\" class=\"img-fluid\"><a href=\"https://www.youtube.com/watch?v=9No-FiEInLA\" class=\"popup-youtube video-play-icon white-bip shadow\"><span class=\"ti-control-play\"></span></a></div></div><div class=\"col-lg-6 col-md-12 p-0\"><div class=\"free-trial-content text-white\"><h2 class=\"text-white\">Best Consulting Every Business</h2><p>Interactively evisculate performance based ROI whereas premier mindshare. Dramatically matrix real-time convergence rather than empowered manufactured products.</p><a href=\"#\" class=\"btn primary-solid-btn mt-3\">Start Now</a></div></div></div></section>", 1);
 
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("------ Video ------------"), _hoisted_1], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/layouts/footer_section.vue?vue&type=template&id=8804d5dc":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/layouts/footer_section.vue?vue&type=template&id=8804d5dc ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "footer"
+};
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"call-to-action py-5 gray-light-bg\"><div class=\"container\"><div class=\"row justify-content-around align-items-center\"><div class=\"col-md-7\"><div class=\"subscribe-content\"><h3 class=\"mb-1\">Consulting Agency for Your Business</h3><p>Rapidiously engage fully tested e-commerce with progressive architectures.</p></div></div><div class=\"col-md-4\"><div class=\"action-btn text-lg-right text-sm-left\"><a href=\"/contact\" class=\"btn secondary-solid-btn\">Contact With Us</a></div></div></div></div></section>", 1);
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<footer class=\"footer-section\"><!--footer top start--><div class=\"footer-top gradient-bg\"><div class=\"container\"><div class=\"row\"><div class=\"col-sm-12 col-md-12 col-lg-9\"><div class=\"row footer-top-wrap\"><div class=\"col-md-4 col-sm-6\"><div class=\"footer-nav-wrap text-white\"><img src=\"/images/BlueSky-WhiteLogo.png\" width=\"160\" alt=\"logo\"><!-- &lt;p&gt;Continually myocardinate inexpensive catalysts for change with seamless initiatives.&lt;/p&gt; --><div class=\"social-nav mt-4\"><ul class=\"list-unstyled social-list mb-0\"><li class=\"list-inline-item tooltip-hover\"><a href=\"#\" class=\"rounded\"><span class=\"ti-facebook\"></span></a><div class=\"tooltip-item\">Facebook</div></li><li class=\"list-inline-item tooltip-hover\"><a href=\"#\" class=\"rounded\"><span class=\"ti-twitter\"></span></a><div class=\"tooltip-item\">Twitter</div></li><li class=\"list-inline-item tooltip-hover\"><a href=\"#\" class=\"rounded\"><span class=\"ti-linkedin\"></span></a><div class=\"tooltip-item\">Linkedin</div></li><li class=\"list-inline-item tooltip-hover\"><a href=\"#\" class=\"rounded\"><span class=\"ti-dribbble\"></span></a><div class=\"tooltip-item\">Dribbble</div></li></ul></div></div></div><div class=\"col-md-4 col-sm-6\"><div class=\"footer-nav-wrap text-white\"><h4 class=\"text-white\">COMPANY</h4><ul class=\"nav flex-column\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">About Our Services</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Our Affiliates Program</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">View Our Blog</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Check Our Careers</a></li></ul></div></div><div class=\"col-md-4 col-sm-6\"><div class=\"footer-nav-wrap text-white\"><h4 class=\"text-white\">LEGAL</h4><ul class=\"nav flex-column\"><li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Legal Information</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Privacy Policy</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Report Abuse</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Terms of Service</a></li></ul></div></div></div></div><div class=\"col-sm-12 col-md-6 col-lg-3\"><div class=\"row footer-top-wrap mt-md-4 mt-sm-0 mt-lg-0\"><div class=\"col-12\"><div class=\"footer-nav-wrap text-white\"><h4 class=\"text-white\">GET IN TOUCH</h4><ul class=\"get-in-touch-list\"><li class=\"d-flex align-items-center py-2\"><span class=\"fas fa-map-marker-alt mr-2\"></span> 1234 Street Name, City Name, USA </li><li class=\"d-flex align-items-center py-2\"><span class=\"fas fa-envelope mr-2\"></span> you@domain.com </li><!--&lt;li class=&quot;d-flex align-items-center py-2&quot;&gt;&lt;span class=&quot;fas fa-phone-alt mr-2&quot;&gt;&lt;/span&gt; (123) 456-7890 - (123) 456-7890&lt;/li&gt;--></ul><form class=\"newsletter-form mt-3\"><input type=\"text\" class=\"input-newsletter\" placeholder=\"Enter your email\" name=\"EMAIL\" required autocomplete=\"off\"><button type=\"submit\" class=\"disabled\" style=\"pointer-events:all;cursor:pointer;\"><i class=\"fas fa-paper-plane\"></i></button></form></div></div></div></div></div></div></div><!--footer top end--><!--footer copyright start--><!-- &lt;div class=&quot;footer-bottom gray-light-bg py-2&quot;&gt;\n                &lt;div class=&quot;container&quot;&gt;\n                    &lt;div class=&quot;row align-items-center justify-content-between&quot;&gt;\n                        &lt;div class=&quot;col-md-5 col-lg-5&quot;&gt;\n                            &lt;p class=&quot;copyright-text pb-0 mb-0&quot;&gt;Copyrights © 2020. All\n                                rights reserved by\n                                &lt;a href=&quot;https://themeforest.net/user/themetags&quot; target=&quot;_blank&quot;&gt;ThemeTags&lt;/a&gt;\n                            &lt;/p&gt;\n                        &lt;/div&gt;\n                        &lt;div class=&quot;col-md-7 col-lg-6 d-none d-md-block d-lg-block&quot;&gt;\n                            &lt;ul class=&quot;list-inline policy-nav text-right social-list&quot;&gt;\n                                &lt;li class=&quot;list-inline-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;\n                                &lt;li class=&quot;list-inline-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Terms &amp; Conditions&lt;/a&gt;&lt;/li&gt;\n                            &lt;/ul&gt;\n                        &lt;/div&gt;\n                    &lt;/div&gt;\n                &lt;/div&gt;\n            &lt;/div&gt; --><!--footer copyright end--></footer>", 1);
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "scroll-top scroll-to-target",
+  "data-target": "html"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-solid fa-turn-up",
+  style: {
+    "font-size": "24px"
+  }
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  id: "preloader",
+  style: {
+    "display": "none"
+  }
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "loader1"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span")])], -1
+/* HOISTED */
+);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("--------- Call Section ---------"), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("footer section start"), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("footer section end"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("bottom to top button start"), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("bottom to top button end"), _hoisted_5]);
 }
 
 /***/ }),
@@ -18108,7 +18186,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"hero-equal-height ptb-70\"><div class=\"hero-shape\" style=\"background:url(&#39;digimark_template/img/Header-01.svg&#39;)no-repeat top right;\"></div><!-- &lt;img src=&quot;{{ asset(&quot;digimark_template/img/cta-2-path-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-1&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;digimark_template/img/cta-2-circle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-2&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;digimark_template/img/cta-2-tringle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-3&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;digimark_template/img/cta-2-tringle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-4&quot;&gt;  --><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-md-12 col-lg-5\"><div class=\"hero-slider-content pt-5\"><strong class=\"color-secondary\">Digital Marketing</strong><h1>Ready <br> For Growth?</h1><p class=\"lead\"> Lead generation, inbound marketing, web development, and marketing automation solutions. </p><div class=\"action-btns mt-3\"><a href=\"#\" class=\"btn secondary-solid-btn\"> Contact us   <!-- &lt;i class=&quot;fa-solid fa-message fa-beat-fade&quot;&gt;&lt;/i&gt; --><i class=\"fa-solid fa-message\"></i></a></div></div></div><div class=\"col-md-12 col-lg-7\"><div class=\"img-wrap\"><img src=\"digimark_template/img/final.gif\" alt=\"hero\" class=\"img-fluid custom-width\"></div></div></div></div></section>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"hero-equal-height ptb-70\"><div class=\"hero-shape\" style=\"background:url(&#39;/digimark_template/img/Header-01.svg&#39;)no-repeat top right;\"></div><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-path-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-1&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-circle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-2&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-tringle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-3&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-tringle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-4&quot;&gt;  --><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-md-12 col-lg-5\"><div class=\"hero-slider-content pt-5\"><strong class=\"color-secondary\">Digital Marketing</strong><h1>Ready <br> For Growth?</h1><p class=\"lead\"> Lead generation, inbound marketing, web development, and marketing automation solutions. </p><div class=\"action-btns mt-3\"><a href=\"#\" class=\"btn secondary-solid-btn\"> Contact us   <!-- &lt;i class=&quot;fa-solid fa-message fa-beat-fade&quot;&gt;&lt;/i&gt; --><i class=\"fa-solid fa-message\"></i></a></div></div></div><div class=\"col-md-12 col-lg-7\"><div class=\"img-wrap\"><img src=\"/digimark_template/img/final.gif\" alt=\"hero\" class=\"img-fluid custom-width\"></div></div></div></div></section>", 1);
 
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("-------- Header ----------"), _hoisted_1], 2112
@@ -18131,7 +18209,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<header class=\"header\"><!--start navbar--><nav class=\"navbar navbar-expand-lg custom-nav-3 fixed-top\"><div class=\"container\"><a class=\"navbar-brand\" href=\"/\"><img src=\"images/BlueSky-Logo.png\" alt=\"logo\" width=\"120\" class=\"img-fluid\"></a><button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"ti-menu\"></span></button><div class=\"collapse navbar-collapse h-auto\" id=\"navbarSupportedContent\"><ul class=\"navbar-nav ml-auto menu\"><li><a href=\"/\"><i class=\"fa-solid fa-house-user\"></i> Home</a></li><li><a href=\"/about\"><i class=\"fa-solid fa-circle-info\"></i> About</a></li><li><a href=\"#\" class=\"dropdown-toggle-inner\"><i class=\"fa-solid fa-handshake-angle\"></i> Services </a><ul class=\"sub-menu\"><li><a href=\"/service\"> service </a></li><li><a href=\"/service\"> service </a></li><li><a href=\"/service\"> service </a></li></ul></li><li><a href=\"/portfolio\"><i class=\"fa-solid fa-sitemap\"></i> Portfolio </a></li><li><a href=\"/contact\"><i class=\"fa-solid fa-message\"></i> Contact Us</a></li></ul></div></div></nav></header>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<header class=\"header\"><!--start navbar--><nav class=\"navbar navbar-expand-lg custom-nav-3 fixed-top\"><div class=\"container\"><a class=\"navbar-brand\" href=\"/\"><img src=\"/images/BlueSky-Logo.png\" alt=\"logo\" width=\"120\" class=\"logo-dark img-fluid\"><img src=\"/images/BlueSky-WhiteLogo.png\" alt=\"logo\" width=\"120\" class=\"logo-white img-fluid\"></a><button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"ti-menu\"></span></button><div class=\"collapse navbar-collapse h-auto\" id=\"navbarSupportedContent\"><ul class=\"navbar-nav ml-auto menu\"><li><a href=\"/\"><i class=\"fa-solid fa-house-user\"></i> Home</a></li><li><a href=\"/about\"><i class=\"fa-solid fa-circle-info\"></i> About</a></li><li><a href=\"#\" class=\"dropdown-toggle-inner\"><i class=\"fa-solid fa-handshake-angle\"></i> Services </a><ul class=\"sub-menu\"><li><a href=\"/service\"> service </a></li><li><a href=\"/service\"> service </a></li><li><a href=\"/service\"> service </a></li></ul></li><li><a href=\"/portfolio\"><i class=\"fa-solid fa-sitemap\"></i> Portfolio </a></li><li><a href=\"/contact\"><i class=\"fa-solid fa-message\"></i> Contact Us </a></li></ul></div></div></nav></header>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("header section start"), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("header section end")], 2112
@@ -18153,11 +18231,55 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  "class": "hero-section padding-heading-100 gradient-overlay",
+  style: {
+    "background": "url('/digimark_template/img/header-bg-5.jpg')no-repeat center center / cover"
+  }
+};
+var _hoisted_2 = {
+  "class": "container"
+};
+var _hoisted_3 = {
+  "class": "row justify-content-center"
+};
+var _hoisted_4 = {
+  "class": "col-md-8 col-lg-7"
+};
+var _hoisted_5 = {
+  "class": "page-header-content text-white text-center pt-sm-5 pt-md-5 pt-lg-0"
+};
+var _hoisted_6 = {
+  "class": "text-white mb-0"
+};
+var _hoisted_7 = {
+  "class": "custom-breadcrumb"
+};
+var _hoisted_8 = {
+  "class": "breadcrumb d-inline-block bg-transparent list-inline py-0"
+};
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"hero-section ptb-100 gradient-overlay\" style=\"background:url(&#39;digimark_template/img/header-bg-5.jpg&#39;)no-repeat center center / cover;\"><div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-md-8 col-lg-7\"><div class=\"page-header-content text-white text-center pt-sm-5 pt-md-5 pt-lg-0\"><h1 class=\"text-white mb-0\"><i class=\"fa-solid fa-circle-info\"></i> About Us </h1><div class=\"custom-breadcrumb\"><ol class=\"breadcrumb d-inline-block bg-transparent list-inline py-0\"><li class=\"list-inline-item breadcrumb-item\"><a href=\"#\">Home</a></li><li class=\"list-inline-item breadcrumb-item active\">About Us</li></ol></div></div></div></div></div></section>", 1);
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  "class": "list-inline-item breadcrumb-item"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#"
+}, "Home")], -1
+/* HOISTED */
+);
 
+var _hoisted_10 = {
+  "class": "list-inline-item breadcrumb-item active"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("---- Header ----"), _hoisted_1], 2112
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("---- Header ----"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.icon)
+  }, null, 2
+  /* CLASS */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ol", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.url), 1
+  /* TEXT */
+  )])])])])])])])], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }
@@ -18180,7 +18302,7 @@ var _hoisted_1 = {
   "class": "our-portfolio-section ptb-100"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-lg-8\"><div class=\"section-heading text-center mb-4\"><strong class=\"color-secondary\">Previous Project</strong><h2>Our Case Studies</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\">Dynamically pursue reliable convergence rather than 24/7 process improvements. Intrinsicly develop end-to-end customer service without extensive data.</p></div></div></div><div class=\"row\"><div class=\"col-md-12\"><div class=\"text-center pb-2\"><button type=\"button\" class=\"filter-btn mixitup-control-active\" data-mixitup-control=\"\" data-filter=\"all\">Digital Marketing </button><button type=\"button\" class=\"filter-btn\" data-mixitup-control=\"\" data-filter=\".branding\">Marketing Strategy </button><button type=\"button\" class=\"filter-btn\" data-mixitup-control=\"\" data-filter=\".animation\">Content Marketing </button><button type=\"button\" class=\"filter-btn\" data-mixitup-control=\"\" data-filter=\".other\">SEO Services </button></div><div class=\"portfolio-container\" id=\"MixItUp\" style=\"\"><div class=\"mix portfolio-item branding\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"{{ asset(&#39;digimark_template/img/portfolios/3.jpg&#39;) }}\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Creative Design</h5><p>Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"mix portfolio-item other animation\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"{{ asset(&#39;digimark_template/img/portfolios/2.jpg&#39;) }}\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Web UI/UX Design</h5><p>Web, Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"mix portfolio-item animation\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"{{ asset(&#39;digimark_template/img/portfolios/4.jpg&#39;) }}\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Corporate Flyer Design</h5><p>Flyer Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"mix portfolio-item branding\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"{{ asset(&#39;digimark_template/img/portfolios/1.jpg&#39;) }}\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Web UI/UX Design</h5><p>Web, Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"mix portfolio-item animation other\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"{{ asset(&#39;digimark_template/img/portfolios/5.jpg&#39;) }}\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Wall Painting Design</h5><p>Painting Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"mix portfolio-item branding\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"{{ asset(&#39;digimark_template/img/portfolios/6.jpg&#39;) }}\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Corporate Identity Design</h5><p>Corporate Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div></div></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-lg-8\"><div class=\"section-heading text-center mb-4\"><strong class=\"color-secondary\">Previous Project</strong><h2>Our Case Studies</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\">Dynamically pursue reliable convergence rather than 24/7 process improvements. Intrinsicly develop end-to-end customer service without extensive data.</p></div></div></div><div class=\"row\"><div class=\"col-md-12\"><div class=\"text-center pb-2\"><button type=\"button\" class=\"filter-btn mixitup-control-active\" data-mixitup-control=\"\" data-filter=\"all\">Digital Marketing </button><button type=\"button\" class=\"filter-btn\" data-mixitup-control=\"\" data-filter=\".branding\">Marketing Strategy </button><button type=\"button\" class=\"filter-btn\" data-mixitup-control=\"\" data-filter=\".animation\">Content Marketing </button><button type=\"button\" class=\"filter-btn\" data-mixitup-control=\"\" data-filter=\".other\">SEO Services </button></div><div class=\"portfolio-container\" id=\"MixItUp\" style=\"\"><div class=\"mix portfolio-item branding\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"/digimark_template/img/portfolios/3.jpg\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Creative Design</h5><p>Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"mix portfolio-item other animation\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"/digimark_template/img/portfolios/2.jpg\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Web UI/UX Design</h5><p>Web, Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"mix portfolio-item animation\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"/digimark_template/img/portfolios/4.jpg\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Corporate Flyer Design</h5><p>Flyer Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"mix portfolio-item branding\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"/digimark_template/img/portfolios/1.jpg\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Web UI/UX Design</h5><p>Web, Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"mix portfolio-item animation other\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"/digimark_template/img/portfolios/5.jpg\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Wall Painting Design</h5><p>Painting Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"mix portfolio-item branding\" data-ref=\"mixitup-target\" style=\"\"><div class=\"portfolio-wrapper\"><a href=\"project-details.html\" target=\"_blank\"><div class=\"content-overlay\"></div><img class=\"img-fluid\" src=\"/digimark_template/img/portfolios/6.jpg\" alt=\"portfolio\"><div class=\"content-details fadeIn-bottom text-white\"><h5 class=\"text-white mb-1\">Corporate Identity Design</h5><p>Corporate Design</p></div></a><div class=\"text-center p-4\"><h5 class=\"mb-1\">Market Research Analysis</h5><span>Sales, SEO, Marketing</span></div></div></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div></div></div></div></div>", 1);
 
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache) {
@@ -18205,7 +18327,7 @@ var _hoisted_1 = {
   "class": "project-details-section ptb-100"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container\"><div class=\"row justify-content-between\"><div class=\"col-md-12 col-lg-8\"><div class=\"img-wrap mb-md-4 mb-lg-0\"><img src=\"{{ asset(&#39;digimark_template/img/hero-bg7.jpg&#39;) }}\" alt=\"project\" class=\"img-fluid rounded shadow-sm\"></div></div><div class=\"col-md-12 col-lg-4\"><div class=\"project-details-sidebar\"><ul class=\"project-info-list\"><li class=\"d-flex align-items-center mb-3 p-4 rounded\"><span class=\"ti-user icon-sm color-secondary d-block mr-3\"></span><div class=\"d-block\"><h5 class=\"mb-0\">Company Name</h5><p>ThemeTags Company Limited</p></div></li><li class=\"d-flex align-items-center mb-3 p-4 rounded\"><span class=\"ti-time icon-sm color-secondary d-block mr-3\"></span><div class=\"d-block\"><h5 class=\"mb-0\">Project Duration</h5><p>20 March 2019 - 10 June 2019</p></div></li><li class=\"d-flex align-items-center mb-3 p-4 rounded\"><span class=\"ti-link icon-sm color-secondary d-block mr-3\"></span><div class=\"d-block\"><h5 class=\"mb-0\">Project Address</h5><a href=\"#\">www.themetagscompany.com</a></div></li></ul></div></div></div><!--project details row start--><div class=\"row mt-5\"><div class=\"col-md-12\"><div class=\"project-details-content\"><h5>Project Description</h5><p>Synergistically syndicate frictionless architectures via global e-services. Assertively pontificate adaptive e-tailers rather than cross-unit results. Assertively engineer top-line portals through one-to-one growth strategies. Efficiently.</p><p>Proactively reinvent standards compliant applications before timely ROI. Uniquely negotiate installed base results rather than resource-leveling e-markets. Continually plagiarize magnetic technologies vis-a-vis synergistic infomediaries. Globally communicate progressive users without resource maximizing growth strategies. Objectively evolve enterprise.</p><p>Collaboratively conceptualize flexible best practices via cooperative methodologies. Assertively negotiate an expanded array of alignments with 24/365 &quot;outside the box&quot; thinking. Assertively enable fully researched vortals rather than alternative niche markets.</p></div></div></div><div class=\"row mt-5\"><div class=\"col-md-6\"><div class=\"project-details-feature\"><ul class=\"list-unstyled tech-feature-list\"><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Foreclosure</strong> consultant Human resource consulting </li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Corporate</strong> Immigration consultant, Information consulting </li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>SEO</strong> Optimization Creative consultant</li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Rapidiously</strong> conceptualize strategic before communities</li></ul></div></div><div class=\"col-md-6\"><div class=\"project-details-feature\"><ul class=\"list-unstyled tech-feature-list\"><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Consultant</strong> pharmacist Creative consultant </li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Monotonectally</strong> customize B2B core competencies </li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Immigration</strong> consultant, Information consulting</li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Consultant</strong> pharmacist Creative consultant</li></ul></div></div></div><!--project details row end--></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container\"><div class=\"row justify-content-between\"><div class=\"col-md-12 col-lg-8\"><div class=\"img-wrap mb-md-4 mb-lg-0\"><img src=\"/digimark_template/img/hero-bg7.jpg\" alt=\"project\" class=\"img-fluid rounded shadow-sm\"></div></div><div class=\"col-md-12 col-lg-4\"><div class=\"project-details-sidebar\"><ul class=\"project-info-list\"><li class=\"d-flex align-items-center mb-3 p-4 rounded\"><span class=\"ti-user icon-sm color-secondary d-block mr-3\"></span><div class=\"d-block\"><h5 class=\"mb-0\">Company Name</h5><p>ThemeTags Company Limited</p></div></li><li class=\"d-flex align-items-center mb-3 p-4 rounded\"><span class=\"ti-time icon-sm color-secondary d-block mr-3\"></span><div class=\"d-block\"><h5 class=\"mb-0\">Project Duration</h5><p>20 March 2019 - 10 June 2019</p></div></li><li class=\"d-flex align-items-center mb-3 p-4 rounded\"><span class=\"ti-link icon-sm color-secondary d-block mr-3\"></span><div class=\"d-block\"><h5 class=\"mb-0\">Project Address</h5><a href=\"#\">www.themetagscompany.com</a></div></li></ul></div></div></div><!--project details row start--><div class=\"row mt-5\"><div class=\"col-md-12\"><div class=\"project-details-content\"><h5>Project Description</h5><p>Synergistically syndicate frictionless architectures via global e-services. Assertively pontificate adaptive e-tailers rather than cross-unit results. Assertively engineer top-line portals through one-to-one growth strategies. Efficiently.</p><p>Proactively reinvent standards compliant applications before timely ROI. Uniquely negotiate installed base results rather than resource-leveling e-markets. Continually plagiarize magnetic technologies vis-a-vis synergistic infomediaries. Globally communicate progressive users without resource maximizing growth strategies. Objectively evolve enterprise.</p><p>Collaboratively conceptualize flexible best practices via cooperative methodologies. Assertively negotiate an expanded array of alignments with 24/365 &quot;outside the box&quot; thinking. Assertively enable fully researched vortals rather than alternative niche markets.</p></div></div></div><div class=\"row mt-5\"><div class=\"col-md-6\"><div class=\"project-details-feature\"><ul class=\"list-unstyled tech-feature-list\"><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Foreclosure</strong> consultant Human resource consulting </li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Corporate</strong> Immigration consultant, Information consulting </li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>SEO</strong> Optimization Creative consultant</li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Rapidiously</strong> conceptualize strategic before communities</li></ul></div></div><div class=\"col-md-6\"><div class=\"project-details-feature\"><ul class=\"list-unstyled tech-feature-list\"><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Consultant</strong> pharmacist Creative consultant </li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Monotonectally</strong> customize B2B core competencies </li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Immigration</strong> consultant, Information consulting</li><li class=\"py-1\"><span class=\"ti-check-box mr-2 color-secondary\"></span><strong>Consultant</strong> pharmacist Creative consultant</li></ul></div></div></div><!--project details row end--></div>", 1);
 
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache) {
@@ -18239,7 +18361,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "service-details-wrap"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "{{ asset('digimark_template/img/slider-img-2.jpg') }}",
+  src: "/digimark_template/img/slider-img-2.jpg",
   alt: "services",
   "class": "img-fluid rounded shadow-sm"
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -18251,7 +18373,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "img-wrap"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "{{ asset('digimark_template/img/images.jpg') }}",
+  src: "/digimark_template/img/images.jpg",
   alt: "services",
   "class": "img-fluid"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -18424,19 +18546,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_main_navbar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/layouts/main_navbar.vue */ "./resources/js/components/layouts/main_navbar.vue");
 /* harmony import */ var _components_layouts_main_header_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/layouts/main_header.vue */ "./resources/js/components/layouts/main_header.vue");
 /* harmony import */ var _components_layouts_min_header_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/layouts/min_header.vue */ "./resources/js/components/layouts/min_header.vue");
-/* harmony import */ var _components_home_services_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/home/services.vue */ "./resources/js/components/home/services.vue");
-/* harmony import */ var _components_home_about_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/home/about.vue */ "./resources/js/components/home/about.vue");
-/* harmony import */ var _components_home_pricing_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/home/pricing.vue */ "./resources/js/components/home/pricing.vue");
-/* harmony import */ var _components_home_our_clients_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/home/our_clients.vue */ "./resources/js/components/home/our_clients.vue");
-/* harmony import */ var _components_home_youtube_video_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/home/youtube_video.vue */ "./resources/js/components/home/youtube_video.vue");
-/* harmony import */ var _components_about_our_expertise_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/about/our_expertise.vue */ "./resources/js/components/about/our_expertise.vue");
-/* harmony import */ var _components_about_our_features_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/about/our_features.vue */ "./resources/js/components/about/our_features.vue");
-/* harmony import */ var _components_about_work_progress_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/about/work_progress.vue */ "./resources/js/components/about/work_progress.vue");
-/* harmony import */ var _components_contact_contact_info_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/contact/contact_info.vue */ "./resources/js/components/contact/contact_info.vue");
-/* harmony import */ var _components_contact_contatc_form_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/contact/contatc_form.vue */ "./resources/js/components/contact/contatc_form.vue");
-/* harmony import */ var _components_service_service_details_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/service/service_details.vue */ "./resources/js/components/service/service_details.vue");
-/* harmony import */ var _components_project_project_details_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/project/project_details.vue */ "./resources/js/components/project/project_details.vue");
-/* harmony import */ var _components_portfolio_our_portfolio_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/portfolio/our_portfolio.vue */ "./resources/js/components/portfolio/our_portfolio.vue");
+/* harmony import */ var _components_layouts_footer_section_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/layouts/footer_section.vue */ "./resources/js/components/layouts/footer_section.vue");
+/* harmony import */ var _components_home_services_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/home/services.vue */ "./resources/js/components/home/services.vue");
+/* harmony import */ var _components_home_about_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/home/about.vue */ "./resources/js/components/home/about.vue");
+/* harmony import */ var _components_home_pricing_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/home/pricing.vue */ "./resources/js/components/home/pricing.vue");
+/* harmony import */ var _components_home_our_clients_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/home/our_clients.vue */ "./resources/js/components/home/our_clients.vue");
+/* harmony import */ var _components_home_youtube_video_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/home/youtube_video.vue */ "./resources/js/components/home/youtube_video.vue");
+/* harmony import */ var _components_about_our_expertise_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/about/our_expertise.vue */ "./resources/js/components/about/our_expertise.vue");
+/* harmony import */ var _components_about_our_features_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/about/our_features.vue */ "./resources/js/components/about/our_features.vue");
+/* harmony import */ var _components_about_work_progress_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/about/work_progress.vue */ "./resources/js/components/about/work_progress.vue");
+/* harmony import */ var _components_contact_contact_info_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/contact/contact_info.vue */ "./resources/js/components/contact/contact_info.vue");
+/* harmony import */ var _components_contact_contatc_form_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/contact/contatc_form.vue */ "./resources/js/components/contact/contatc_form.vue");
+/* harmony import */ var _components_service_service_details_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/service/service_details.vue */ "./resources/js/components/service/service_details.vue");
+/* harmony import */ var _components_project_project_details_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/project/project_details.vue */ "./resources/js/components/project/project_details.vue");
+/* harmony import */ var _components_portfolio_our_portfolio_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/portfolio/our_portfolio.vue */ "./resources/js/components/portfolio/our_portfolio.vue");
 /*======= import Vue from dependencies =======*/
  // create vue app & name it var (app)
 
@@ -18451,41 +18574,43 @@ var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)({}); // /*======= impor
 
 
 
+
 app.component('main_navbar', _components_layouts_main_navbar_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
 app.component('main_header', _components_layouts_main_header_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
-app.component('min_header', _components_layouts_min_header_vue__WEBPACK_IMPORTED_MODULE_3__["default"]); // Home Page
+app.component('min_header', _components_layouts_min_header_vue__WEBPACK_IMPORTED_MODULE_3__["default"]);
+app.component('footer_section', _components_layouts_footer_section_vue__WEBPACK_IMPORTED_MODULE_4__["default"]); // Home Page
 
 
 
 
 
 
-app.component('services', _components_home_services_vue__WEBPACK_IMPORTED_MODULE_4__["default"]);
-app.component('about', _components_home_about_vue__WEBPACK_IMPORTED_MODULE_5__["default"]);
-app.component('pricing', _components_home_pricing_vue__WEBPACK_IMPORTED_MODULE_6__["default"]);
-app.component('our_clients', _components_home_our_clients_vue__WEBPACK_IMPORTED_MODULE_7__["default"]);
-app.component('youtube_video', _components_home_youtube_video_vue__WEBPACK_IMPORTED_MODULE_8__["default"]); // About Page
+app.component('services', _components_home_services_vue__WEBPACK_IMPORTED_MODULE_5__["default"]);
+app.component('about', _components_home_about_vue__WEBPACK_IMPORTED_MODULE_6__["default"]);
+app.component('pricing', _components_home_pricing_vue__WEBPACK_IMPORTED_MODULE_7__["default"]);
+app.component('our_clients', _components_home_our_clients_vue__WEBPACK_IMPORTED_MODULE_8__["default"]);
+app.component('youtube_video', _components_home_youtube_video_vue__WEBPACK_IMPORTED_MODULE_9__["default"]); // About Page
 
 
 
 
-app.component('our_expertise', _components_about_our_expertise_vue__WEBPACK_IMPORTED_MODULE_9__["default"]);
-app.component('our_features', _components_about_our_features_vue__WEBPACK_IMPORTED_MODULE_10__["default"]);
-app.component('work_progress', _components_about_work_progress_vue__WEBPACK_IMPORTED_MODULE_11__["default"]); // Contact Page
+app.component('our_expertise', _components_about_our_expertise_vue__WEBPACK_IMPORTED_MODULE_10__["default"]);
+app.component('our_features', _components_about_our_features_vue__WEBPACK_IMPORTED_MODULE_11__["default"]);
+app.component('work_progress', _components_about_work_progress_vue__WEBPACK_IMPORTED_MODULE_12__["default"]); // Contact Page
 
 
 
-app.component('contact_info', _components_contact_contact_info_vue__WEBPACK_IMPORTED_MODULE_12__["default"]);
-app.component('contatc_form', _components_contact_contatc_form_vue__WEBPACK_IMPORTED_MODULE_13__["default"]); // Service Page
+app.component('contact_info', _components_contact_contact_info_vue__WEBPACK_IMPORTED_MODULE_13__["default"]);
+app.component('contatc_form', _components_contact_contatc_form_vue__WEBPACK_IMPORTED_MODULE_14__["default"]); // Service Page
 
 
-app.component('service_details', _components_service_service_details_vue__WEBPACK_IMPORTED_MODULE_14__["default"]); // project Page
+app.component('service_details', _components_service_service_details_vue__WEBPACK_IMPORTED_MODULE_15__["default"]); // project Page
 
 
-app.component('project_details', _components_project_project_details_vue__WEBPACK_IMPORTED_MODULE_15__["default"]); // portfolio Page
+app.component('project_details', _components_project_project_details_vue__WEBPACK_IMPORTED_MODULE_16__["default"]); // portfolio Page
 
 
-app.component('our_portfolio', _components_portfolio_our_portfolio_vue__WEBPACK_IMPORTED_MODULE_16__["default"]);
+app.component('our_portfolio', _components_portfolio_our_portfolio_vue__WEBPACK_IMPORTED_MODULE_17__["default"]);
 app.mount('#app');
 
 /***/ }),
@@ -18775,6 +18900,33 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/layouts/footer_section.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/components/layouts/footer_section.vue ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _footer_section_vue_vue_type_template_id_8804d5dc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./footer_section.vue?vue&type=template&id=8804d5dc */ "./resources/js/components/layouts/footer_section.vue?vue&type=template&id=8804d5dc");
+/* harmony import */ var _footer_section_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer_section.vue?vue&type=script&lang=js */ "./resources/js/components/layouts/footer_section.vue?vue&type=script&lang=js");
+/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_footer_section_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_footer_section_vue_vue_type_template_id_8804d5dc__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/layouts/footer_section.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/layouts/main_header.vue":
 /*!*********************************************************!*\
   !*** ./resources/js/components/layouts/main_header.vue ***!
@@ -18940,6 +19092,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_services_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_services_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./services.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/home/services.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/components/layouts/footer_section.vue?vue&type=script&lang=js":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/layouts/footer_section.vue?vue&type=script&lang=js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_footer_section_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_footer_section_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./footer_section.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/layouts/footer_section.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -19120,6 +19287,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_youtube_video_vue_vue_type_template_id_5885113a__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_youtube_video_vue_vue_type_template_id_5885113a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./youtube_video.vue?vue&type=template&id=5885113a */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/home/youtube_video.vue?vue&type=template&id=5885113a");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/layouts/footer_section.vue?vue&type=template&id=8804d5dc":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/layouts/footer_section.vue?vue&type=template&id=8804d5dc ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_footer_section_vue_vue_type_template_id_8804d5dc__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_footer_section_vue_vue_type_template_id_8804d5dc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./footer_section.vue?vue&type=template&id=8804d5dc */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/layouts/footer_section.vue?vue&type=template&id=8804d5dc");
 
 
 /***/ }),

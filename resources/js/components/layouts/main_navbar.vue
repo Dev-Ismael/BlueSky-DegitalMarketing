@@ -6,7 +6,8 @@
         <nav class="navbar navbar-expand-lg custom-nav-3 fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    <img src="images/BlueSky-Logo.png" alt="logo" width="120" class="img-fluid">
+                    <img src="/images/BlueSky-Logo.png" alt="logo" width="120" class="logo-dark img-fluid">
+                    <img src="/images/BlueSky-WhiteLogo.png" alt="logo" width="120" class="logo-white img-fluid">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="ti-menu"></span>
@@ -23,7 +24,7 @@
                             </ul>
                         </li>
                         <li><a href="/portfolio"> <i class="fa-solid fa-sitemap"></i> Portfolio </a></li>
-                        <li><a href="/contact"> <i class="fa-solid fa-message"></i> Contact Us</a></li>
+                        <li><a href="/contact"> <i class="fa-solid fa-message"></i> Contact Us </a></li>
                     </ul>
                 </div>
             </div>
@@ -37,5 +38,5 @@
    export default {
 
    }
-   
+
 </script>

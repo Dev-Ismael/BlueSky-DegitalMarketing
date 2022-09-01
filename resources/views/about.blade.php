@@ -4,7 +4,7 @@
 
 
 
-    <min_header></min_header>
+    <min_header :icon="'fa-solid fa-circle-info'" :title="'About Us'" :url="'about'"></min_header>
 
     <our_features></our_features>
 

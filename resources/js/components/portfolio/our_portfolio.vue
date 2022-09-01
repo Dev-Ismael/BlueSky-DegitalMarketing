@@ -36,7 +36,7 @@
                             <div class="portfolio-wrapper">
                                 <a href="project-details.html" target="_blank">
                                     <div class="content-overlay"></div>
-                                    <img class="img-fluid" src="{{ asset('digimark_template/img/portfolios/3.jpg') }}" alt="portfolio">
+                                    <img class="img-fluid" src="/digimark_template/img/portfolios/3.jpg" alt="portfolio">
                                     <div class="content-details fadeIn-bottom text-white">
                                         <h5 class="text-white mb-1">Creative Design</h5>
                                         <p>Design</p>
@@ -52,7 +52,7 @@
                             <div class="portfolio-wrapper">
                                 <a href="project-details.html" target="_blank">
                                     <div class="content-overlay"></div>
-                                    <img class="img-fluid" src="{{ asset('digimark_template/img/portfolios/2.jpg') }}" alt="portfolio">
+                                    <img class="img-fluid" src="/digimark_template/img/portfolios/2.jpg" alt="portfolio">
                                     <div class="content-details fadeIn-bottom text-white">
                                         <h5 class="text-white mb-1">Web UI/UX Design</h5>
                                         <p>Web, Design</p>
@@ -68,7 +68,7 @@
                             <div class="portfolio-wrapper">
                                 <a href="project-details.html" target="_blank">
                                     <div class="content-overlay"></div>
-                                    <img class="img-fluid" src="{{ asset('digimark_template/img/portfolios/4.jpg') }}" alt="portfolio">
+                                    <img class="img-fluid" src="/digimark_template/img/portfolios/4.jpg" alt="portfolio">
                                     <div class="content-details fadeIn-bottom text-white">
                                         <h5 class="text-white mb-1">Corporate Flyer Design</h5>
                                         <p>Flyer Design</p>
@@ -84,7 +84,7 @@
                             <div class="portfolio-wrapper">
                                 <a href="project-details.html" target="_blank">
                                     <div class="content-overlay"></div>
-                                    <img class="img-fluid" src="{{ asset('digimark_template/img/portfolios/1.jpg') }}" alt="portfolio">
+                                    <img class="img-fluid" src="/digimark_template/img/portfolios/1.jpg" alt="portfolio">
                                     <div class="content-details fadeIn-bottom text-white">
                                         <h5 class="text-white mb-1">Web UI/UX Design</h5>
                                         <p>Web, Design</p>
@@ -100,7 +100,7 @@
                             <div class="portfolio-wrapper">
                                 <a href="project-details.html" target="_blank">
                                     <div class="content-overlay"></div>
-                                    <img class="img-fluid" src="{{ asset('digimark_template/img/portfolios/5.jpg') }}" alt="portfolio">
+                                    <img class="img-fluid" src="/digimark_template/img/portfolios/5.jpg" alt="portfolio">
                                     <div class="content-details fadeIn-bottom text-white">
                                         <h5 class="text-white mb-1">Wall Painting Design</h5>
                                         <p>Painting Design</p>
@@ -116,7 +116,7 @@
                             <div class="portfolio-wrapper">
                                 <a href="project-details.html" target="_blank">
                                     <div class="content-overlay"></div>
-                                    <img class="img-fluid" src="{{ asset('digimark_template/img/portfolios/6.jpg') }}" alt="portfolio">
+                                    <img class="img-fluid" src="/digimark_template/img/portfolios/6.jpg" alt="portfolio">
                                     <div class="content-details fadeIn-bottom text-white">
                                         <h5 class="text-white mb-1">Corporate Identity Design</h5>
                                         <p>Corporate Design</p>

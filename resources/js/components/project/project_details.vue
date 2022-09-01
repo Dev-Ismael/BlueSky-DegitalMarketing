@@ -5,7 +5,7 @@
             <div class="row justify-content-between">
                 <div class="col-md-12 col-lg-8">
                     <div class="img-wrap mb-md-4 mb-lg-0">
-                        <img src="{{ asset('digimark_template/img/hero-bg7.jpg') }}" alt="project" class="img-fluid rounded shadow-sm">
+                        <img src="/digimark_template/img/hero-bg7.jpg" alt="project" class="img-fluid rounded shadow-sm">
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
@@ -86,5 +86,5 @@
             <!--project details row end-->
         </div>
     </section>
-    
+
 </template>

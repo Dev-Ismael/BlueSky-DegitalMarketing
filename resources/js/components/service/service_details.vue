@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-8">
                     <div class="service-details-wrap">
-                        <img src="{{ asset('digimark_template/img/slider-img-2.jpg') }}" alt="services"
+                        <img src="/digimark_template/img/slider-img-2.jpg" alt="services"
                             class="img-fluid rounded shadow-sm">
                         <div class="services-detail-content mt-4">
                             <h4>Services Details</h4>
@@ -30,7 +30,7 @@
                             <div class="row mt-5">
                                 <div class="col-md-6">
                                     <div class="img-wrap">
-                                        <img src="{{ asset('digimark_template/img/images.jpg') }}" alt="services"
+                                        <img src="/digimark_template/img/images.jpg" alt="services"
                                             class="img-fluid">
                                     </div>
                                 </div>
@@ -173,5 +173,5 @@
             </div>
         </div>
     </section>
-    
+
 </template>

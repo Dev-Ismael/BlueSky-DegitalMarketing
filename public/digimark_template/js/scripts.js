@@ -32,6 +32,7 @@ $( document ).ready(function() {
 
   // 2. fixed navbar
   $(window).on('scroll', function () {
+
     // checks if window is scrolled more than 500px, adds/removes solid class
     if ($(this).scrollTop() > 0) {
       $('.navbar').addClass('affix');
@@ -40,6 +41,7 @@ $( document ).ready(function() {
       $('.navbar').removeClass('affix');
       $('.scroll-to-target').removeClass('open');
     }
+
     // checks if window is scrolled more than 500px, adds/removes top to target class
     if ($(this).scrollTop() > 500) {
       $('.scroll-to-target').addClass('open');
@@ -47,6 +49,28 @@ $( document ).ready(function() {
       $('.scroll-to-target').removeClass('open');
     }
   });
+
+    // checks if home page or another page
+    const currentUrl = window.location.pathname;
+    if( currentUrl == '/' ){  // If Home Page
+        $("img.logo-white").addClass("d-none");
+        $("img.logo-dark").removeClass("d-none");
+    } else {  // If Another Page
+        $("img.logo-white").removeClass("d-none");
+        $("img.logo-dark").addClass("d-none");
+        // At scroll
+        $(window).on('scroll', function () {
+            if ($(this).scrollTop() > 0) {
+                $("img.logo-white").addClass("d-none");
+                $("img.logo-dark").removeClass("d-none");
+            } else {
+                $("img.logo-white").removeClass("d-none");
+                $("img.logo-dark").addClass("d-none");
+            }
+        });
+    }
+
+
 
   // 3. back to top
   if ($('.scroll-to-target').length) {

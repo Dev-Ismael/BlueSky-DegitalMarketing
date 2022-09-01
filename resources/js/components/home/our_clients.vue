@@ -35,102 +35,102 @@
                                 style="transform: translate3d(-1485px, 0px, 0px); transition: all 4.5s linear 0s; width: 2700px;">
                                 <div class="owl-item cloned" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-03.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-03.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item cloned" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-04.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-04.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item cloned" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-05.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-05.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item cloned" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-06.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-06.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item cloned" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-07.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-07.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item cloned" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-08.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-08.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-01.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-01.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-02.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-02.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-03.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-03.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-04.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-04.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-05.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-05.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item active" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-06.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-06.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item active" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-07.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-07.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item active" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-08.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-08.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item cloned active" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-01.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-01.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item cloned active" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-02.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-02.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item cloned active" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-03.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-03.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item cloned" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-04.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-04.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item cloned" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-05.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-05.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                                 <div class="owl-item cloned" style="width: 120px; margin-right: 15px;">
                                     <div class="item single-client">
-                                        <img src="digimark_template/img/clients-logo-06.png" alt="client logo" class="client-img">
+                                        <img src="/digimark_template/img/clients-logo-06.png" alt="client logo" class="client-img">
                                     </div>
                                 </div>
                             </div>

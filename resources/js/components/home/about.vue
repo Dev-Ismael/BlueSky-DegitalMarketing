@@ -37,44 +37,44 @@
                             <div class="col-md-6 col-sm-6 promo-col">
                                 <div class="promo-item">
                                     <div class="promo-img">
-                                        <img src="digimark_template/img/increase_1.gif" alt="services" width="60">
+                                        <img src="/digimark_template/img/increase_1.gif" alt="services" width="60">
                                     </div>
                                     <h5>Increased Traffic</h5>
                                     <p>Wash your hands frequently more then 20s</p>
                                     <div class="promo-bottom-shape">
-                                        <img src="digimark_template/img/promo-box-shape-bottom.png" alt="shape">
+                                        <img src="/digimark_template/img/promo-box-shape-bottom.png" alt="shape">
                                     </div>
                                 </div>
                                 <div class="promo-item">
                                     <div class="promo-img">
-                                        <img src="digimark_template/img/search-engine_188.gif" alt="services" width="60">
+                                        <img src="/digimark_template/img/search-engine_188.gif" alt="services" width="60">
                                     </div>
                                     <h5>Site Optimisation</h5>
                                     <p>Progressively leverage existing resource-leveling methodologies</p>
                                     <div class="promo-bottom-shape">
-                                        <img src="digimark_template/img/promo-box-shape-bottom.png" alt="shape">
+                                        <img src="/digimark_template/img/promo-box-shape-bottom.png" alt="shape">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6 promo-col">
                                 <div class="promo-item">
                                     <div class="promo-img">
-                                        <img src="digimark_template/img/credit-card.gif" alt="services" width="60">
+                                        <img src="/digimark_template/img/credit-card.gif" alt="services" width="60">
                                     </div>
                                     <h5>Cost-effectiveness</h5>
                                     <p>If you have fever, cough and difficulty breathing, seek medical care early</p>
                                     <div class="promo-bottom-shape">
-                                        <img src="digimark_template/img/promo-box-shape-bottom.png" alt="shape">
+                                        <img src="/digimark_template/img/promo-box-shape-bottom.png" alt="shape">
                                     </div>
                                 </div>
                                 <div class="promo-item">
                                     <div class="promo-img">
-                                        <img src="digimark_template/img/interface-2.gif" alt="services" width="60">
+                                        <img src="/digimark_template/img/interface-2.gif" alt="services" width="60">
                                     </div>
                                     <h5>Page Rankings</h5>
                                     <p>Rapidiously integrate viral infrastructures reliable. </p>
                                     <div class="promo-bottom-shape">
-                                        <img src="digimark_template/img/promo-box-shape-bottom.png" alt="shape">
+                                        <img src="/digimark_template/img/promo-box-shape-bottom.png" alt="shape">
                                     </div>
                                 </div>
                             </div>
