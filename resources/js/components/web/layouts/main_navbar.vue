@@ -1,5 +1,4 @@
 <template>
-
     <!--header section start-->
     <header class="header">
         <!--start navbar-->
@@ -14,29 +13,35 @@
                 </button>
                 <div class="collapse navbar-collapse h-auto" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto menu">
-                        <li><a href="/"> <i class="fa-solid fa-house-user"></i> Home</a></li>
-                        <li><a href="/about"> <i class="fa-solid fa-circle-info"></i> About</a></li>
-                        <li><a href="#" class="dropdown-toggle-inner"> <i class="fa-solid fa-handshake-angle"></i> Services </a>
+                        <li><a href="/"  :class="{active : currentUrl == '/' }"> <i class="fa-solid fa-house-user"></i> Home </a></li>
+                        <li><a href="/about" :class="{active : currentUrl.includes('about') }"> <i class="fa-solid fa-circle-info"></i> About</a></li>
+                        <li><a href="#" class="dropdown-toggle-inner" :class="{ active : currentUrl.includes('service') }"> <i class="fa-solid fa-handshake-angle"></i>
+                                Services </a>
                             <ul class="sub-menu">
                                 <li><a href="/service"> service </a></li>
                                 <li><a href="/service"> service </a></li>
                                 <li><a href="/service"> service </a></li>
                             </ul>
                         </li>
-                        <li><a href="/portfolio"> <i class="fa-solid fa-sitemap"></i> Portfolio </a></li>
-                        <li><a href="/contact"> <i class="fa-solid fa-message"></i> Contact Us </a></li>
+                        <li><a href="/portfolio" :class="{active : currentUrl.includes('portfolio') }"> <i class="fa-solid fa-sitemap"></i> Portfolio </a></li>
+                        <li><a href="/contact" :class="{active : currentUrl.includes('contact') }"> <i class="fa-solid fa-message"></i> Contact </a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <!--header section end-->
-
 </template>
+
 <script>
-
-   export default {
-
-   }
-
+    export default {
+        data() {
+            return {
+                currentUrl: '',
+            }
+        },
+        mounted() {
+            this.currentUrl = window.location.pathname;
+        },
+    }
 </script>
