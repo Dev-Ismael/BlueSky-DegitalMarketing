@@ -1,7 +1,7 @@
 <template>
 
     <!---------- Header ------------>
-    <section class="hero-equal-height ptb-70">
+    <section class="hero-equal-height ptb-70 header-section">
         <div class="hero-shape" style="background: url('/digimark_template/img/Header-01.svg')no-repeat top right"></div>
         <!-- <img src="{{ asset("/digimark_template/img/cta-2-path-shape.png") }}" alt="group shape" class="img-fluid group-shape-1"> -->
         <!-- <img src="{{ asset("/digimark_template/img/cta-2-circle-shape.png") }}" alt="group shape" class="img-fluid group-shape-2"> -->
@@ -29,6 +29,7 @@
                 <div class="col-md-12 col-lg-7">
                     <div class="img-wrap">
                         <img src="/digimark_template/img/final.gif" alt="hero" class="img-fluid custom-width">
+                        <!-- <img src="/digimark_template/img/about.png" alt="hero" class="img-fluid custom-width"> -->
                     </div>
                 </div>
             </div>

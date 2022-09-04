@@ -18,6 +18,9 @@
                     </div>
                 </div>
             </div>
+
+
+            
             <!-- ============ step 1 =========== -->
             <div class="row mt-5">
                 <div class="col-md-12 col-lg-5 process-width">
@@ -30,8 +33,8 @@
                                 </div>
                             </div>
                             <div class="col-md-7">
-                                <h5>Technical Audit</h5>
-                                <p>Monotonectally optimize granular quality vectors vis-a-vis interdependent.</p>
+                                <h5>Set a goal</h5>
+                                <p>Sounds simple, but requires you to come up with a detailed and specific set of goals.</p>
                             </div>
                         </div>
                         <div class="process-line-l"></div>
@@ -58,8 +61,8 @@
                                 </div>
                             </div>
                             <div class="col-md-7">
-                                <h5>Technical SEO</h5>
-                                <p>Completely synthesize one-to-one interfaces vis-a-vis client-focused alignments.</p>
+                                <h5>Evaluate </h5>
+                                <p>This step will help you understand what to focus on to achieve your current goals.</p>
                             </div>
                         </div>
                         <div class="process-line-r"></div>
@@ -79,8 +82,8 @@
                                 </div>
                             </div>
                             <div class="col-md-7">
-                                <h5>Select Keywords</h5>
-                                <p>Progressively streamline cooperative sources whereas stand-alone channels.</p>
+                                <h5>Understand </h5>
+                                <p>the arc of your buyer’s journey from a stranger to a repeat or long-term customer.</p>
                             </div>
                         </div>
                         <div class="process-line-l"></div>
@@ -107,17 +110,16 @@
                                 </div>
                             </div>
                             <div class="col-md-7">
-                                <h5>Demographics</h5>
-                                <p>Objectively underwhelm one-to-one deliverables whereas impactful solutions. </p>
+                                <h5>Build </h5>
+                                <p>know who your audience is before you attempt to successfully reach out to them.</p>
                             </div>
                         </div>
                         <div class="process-line-r"></div>
                     </div>
                 </div>
 
-
             </div>
-            <!-- ============ step 3 =========== -->
+            <!-- ============ step 5 =========== -->
             <div class="row">
                 <div class="col-md-12 col-lg-5 process-width">
                     <div class="process-box process-left">
@@ -129,8 +131,58 @@
                                 </div>
                             </div>
                             <div class="col-md-7">
-                                <h5>Engine Ranking</h5>
-                                <p>Interactively seize innovative platforms vis-a-vis ubiquitous portals.</p>
+                                <h5>Locate </h5>
+                                <p>You have to locate your customers at different stages of the funnel.</p>
+                            </div>
+                        </div>
+                        <div class="process-line-l"></div>
+                    </div>
+                </div>
+                <div class="col-md-2 process-none"></div>
+                <div class="col-md-5 col-lg-5 process-none">
+                    <div class="process-point-right"></div>
+                </div>
+            </div>
+            <!-- ============ step 6 =========== -->
+            <div class="row">
+                <div class="col-md-5 col-lg-5 process-none">
+                    <div class="process-point-left"></div>
+                </div>
+                <div class="col-md-2 process-none"></div>
+                <div class="col-md-12 col-lg-5 process-width">
+                    <div class="process-box process-right">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="process-step-number">
+                                    <strong>Step</strong>
+                                    <h2 class="m-0">06</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <h5> Create </h5>
+                                <p>develop a specific marketing strategy for every channel that attracts your customers. </p>
+                            </div>
+                        </div>
+                        <div class="process-line-r"></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- ============ step 7 =========== -->
+            <div class="row">
+                <div class="col-md-12 col-lg-5 process-width">
+                    <div class="process-box process-left">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="process-step-number">
+                                    <strong>Step</strong>
+                                    <h2 class="m-0">07</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <h5>Analyze results</h5>
+                                <p>Once you have a strategy in place, practice this step at intervals.</p>
                             </div>
                         </div>
                         <div class="process-line-l"></div>
@@ -141,7 +193,9 @@
                     <div class="process-point-right process-last"></div>
                 </div>
             </div>
-            <!-- ============ -->
+
+
+
         </div>
     </section>
 </template>

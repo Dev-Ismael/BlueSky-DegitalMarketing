@@ -23,8 +23,42 @@ body::-webkit-scrollbar-thumb {
     border-radius: 8px;
     right: -10px;
 }
-
-
+/* animation Up Movement */
+@keyframes up-move-animation {
+    0%{
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    50%{
+        -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    100%{
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
+/* animation Right Movement */
+@keyframes right-move-animation {
+    0%{
+        -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    50%{
+        -webkit-transform: translateX(15px);
+        -ms-transform: translateX(15px);
+        transform: translateX(15px);
+    }
+    100%{
+        -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
 /*==========================================================
 ====== navBar
 ===========================================================*/
@@ -56,6 +90,18 @@ button.navbar-toggler {
 
 
 /*==========================================================
+====== Pricing
+===========================================================*/
+.price-img img{
+    animation-name: right-move-animation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+/*==========================================================
 ====== Services
 ===========================================================*/
 .promo-single-wrap{
@@ -64,37 +110,38 @@ button.navbar-toggler {
 }
 .promo-single-wrap img{
     animation-name: up-move-animation;
-    animation-duration: 5s;
+    animation-duration: 7s;
     animation-timing-function: linear;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-direction: normal;
 }
- /* animation */
- @keyframes up-move-animation {
-    0%{
-        -webkit-transform: translateY(20px);
-        -ms-transform: translateY(20px);
-        transform: translateY(20px);
-    }
-    50%{
-        -webkit-transform: translateY(10px);
-        -ms-transform: translateY(10px);
-        transform: translateY(10px);
-    }
-    100%{
-        -webkit-transform: translateY(20px);
-        -ms-transform: translateY(20px);
-        transform: translateY(20px);
-    }
-}
+
 /*==========================================================
-====== Header
+====== main Header
 ===========================================================*/
 .hero-slider-content .lead{
     color: #202020;
 }
-
+/* .header-section .img-wrap img{
+    animation-name: up-move-animation;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+} */
+/*==========================================================
+====== About Page
+===========================================================*/
+.outstanding-section img{
+    animation-name: up-move-animation;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
 
 
 

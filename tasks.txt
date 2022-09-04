@@ -9,15 +9,9 @@ Menna tasks:
 
 
 
-
-
-
-
 Advanced feature in blueskyint project:
 ==================================
 1- Add Vue router
 2- Add sign in page SPA & link it with
-3- preloader
 5- Logo in min-header in screen sizes
 6-
-7-

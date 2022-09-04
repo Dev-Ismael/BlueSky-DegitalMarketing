@@ -51,7 +51,7 @@
                         </address>
                         <br>
                         <span>Phone: +1234567890123</span> <br>
-                        <span>Email: <a href="mailto:email@yourdomain.com" class="link-color">email@yourdomain.com</a></span>
+                        <span>Email: <a href="mailto:sales@bluskyint.com" class="link-color">sales@bluskyint.com</a></span>
 
                     </div>
                 </div>
