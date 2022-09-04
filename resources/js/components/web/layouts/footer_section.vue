@@ -25,11 +25,11 @@
             <div class="footer-top gradient-bg">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-9">
+                        <div class="col-sm-12 col-md-12">
                             <div class="row footer-top-wrap">
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="footer-nav-wrap text-white">
-                                        <img src="/images/BlueSky-WhiteLogo.png" class="img-fluid" alt="logo">
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="footer-nav-wrap text-white text-center">
+                                        <img src="/images/BlueSky-WhiteLogo.png" class="img-fluid logo" alt="logo">
                                         <!-- <p>Continually myocardinate inexpensive catalysts for change with seamless initiatives.</p> -->
                                         <div class="social-nav mt-4 text-center">
                                             <ul class="list-unstyled social-list mb-0">
@@ -54,50 +54,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="footer-nav-wrap text-white">
-                                        <h4 class="text-white">COMPANY</h4>
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">About Our Services</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Our Affiliates Program</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">View Our Blog</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Check Our Careers</a>
-                                            </li>
-                                        </ul>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="">
 
+                                            </div>
+                                        </div>
                                     </div>
+                                    <h5 class="text-white"> <i class="fa-solid fa-seedling"></i> Our Passege</h5>
+                                    <p class="text-white"> Seamlessly administrate synergistic growth strategies and collaborative markets. Globally empower inexpensive infomediaries after sustainable mindshare customize principle-centered users with fully tested.</p>
                                 </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="footer-nav-wrap text-white">
-                                        <h4 class="text-white">LEGAL</h4>
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Legal Information</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Privacy Policy</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Report Abuse</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Terms of Service</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-3">
-                            <div class="row footer-top-wrap mt-md-4 mt-sm-0 mt-lg-0">
-                                <div class="col-12">
+                                <div class="col-md-3 col-sm-12">
                                     <div class="footer-nav-wrap text-white">
                                         <h4 class="text-white">GET IN TOUCH</h4>
                                         <ul class="get-in-touch-list">
@@ -118,8 +86,7 @@
                                                 style="pointer-events: all; cursor: pointer;"><i
                                                     class="fas fa-paper-plane"></i></button>
                                         </form>
-                                    </div>
-                                </div>
+                                    </div>                                </div>
                             </div>
                         </div>
                     </div>
