@@ -60,4 +60,9 @@ import our_portfolio from './components/web/pages/portfolio/our_portfolio.vue';
 app.component('our_portfolio', our_portfolio);
 
 
+// Login Page
+import login from './components/web/pages/login.vue';
+app.component('login', login);
+
+
 app.mount('#app');

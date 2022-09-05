@@ -2,6 +2,7 @@
 
 @section('content')
 
+    <main_navbar :dark-logo="true"></main_navbar>
 
     <main_header></main_header>
 
@@ -15,5 +16,5 @@
 
     <youtube_video></youtube_video>
 
-    
+
 @endsection

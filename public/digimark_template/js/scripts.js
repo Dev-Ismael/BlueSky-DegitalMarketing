@@ -60,26 +60,6 @@ $(document).ready(function () {
         }
     });
 
-    // checks if home page or another page
-    const currentUrl = window.location.pathname;
-    if (currentUrl == '/') {  // If Home Page
-        $("img.logo-white").addClass("d-none");
-        $("img.logo-dark").removeClass("d-none");
-    } else {  // If Another Page
-        $("img.logo-white").removeClass("d-none");
-        $("img.logo-dark").addClass("d-none");
-        // At scroll
-        $(window).on('scroll', function () {
-            if ($(this).scrollTop() > 0) {
-                $("img.logo-white").addClass("d-none");
-                $("img.logo-dark").removeClass("d-none");
-            } else {
-                $("img.logo-white").removeClass("d-none");
-                $("img.logo-dark").addClass("d-none");
-            }
-        });
-    }
-
 
 
     // 3. back to top

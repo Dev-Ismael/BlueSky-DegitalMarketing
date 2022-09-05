@@ -5,8 +5,8 @@
         <nav class="navbar navbar-expand-lg custom-nav-3 fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    <img src="/images/BlueSky-Logo.png" alt="logo" width="120" class="logo-dark img-fluid">
-                    <img src="/images/BlueSky-WhiteLogo.png" alt="logo" width="120" class="logo-white img-fluid">
+                    <img v-if="darkLogo" src="/images/BlueSky-Logo.png" alt="logo" width="120" class="logo-dark img-fluid">
+                    <img v-else src="/images/BlueSky-WhiteLogo.png" alt="logo" width="120" class="logo-white img-fluid">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="ti-menu"></span>
@@ -35,13 +35,20 @@
 
 <script>
     export default {
+        props: {
+            darkLogo: {
+                type: String,
+                required: true
+            }
+        },
         data() {
             return {
                 currentUrl: '',
+                darkLogo: this.darkLogo
             }
         },
         mounted() {
             this.currentUrl = window.location.pathname;
-        },
+        }
     }
 </script>

@@ -54,14 +54,11 @@
     <div id="app">
 
 
-
-        <main_navbar></main_navbar>
-
         @yield('content')
 
-        <footer_section></footer_section>
-
-
+        @if( !str_contains(url()->current(), 'login'))
+            <footer_section></footer_section>
+        @endif
 
 
     </div>

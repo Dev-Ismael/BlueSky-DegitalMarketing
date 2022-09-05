@@ -25,3 +25,7 @@ Route::get('/service', [App\Http\Controllers\ServiceController::class, 'index'])
 Route::get('/portfolio', [App\Http\Controllers\ProjectController::class, 'index'])->name('portfolio');
 Route::get('/portfolio/{slug}', [App\Http\Controllers\ProjectController::class, 'show'])->name('portfolio.project');
 
+// Admin
+Route::get("admin/{any}", function(){
+    return view('layouts.admin');
+}) -> where([ "any" => ".*" ]);

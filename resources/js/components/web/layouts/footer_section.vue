@@ -54,26 +54,21 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="">
-
-                                            </div>
-                                        </div>
+                                <div class="col-md-6 col-sm-12 d-flex justify-content-end align-items-center">
+                                    <div>
+                                        <h5 class="text-white"> <i class="fa-solid fa-seedling"></i> Our Goal</h5>
+                                        <p class="text-white"> Seamlessly administrate synergistic growth strategies and collaborative markets. Globally empower inexpensive infomediaries after sustainable mindshare customize principle-centered users with fully tested.</p>
                                     </div>
-                                    <h5 class="text-white"> <i class="fa-solid fa-seedling"></i> Our Passege</h5>
-                                    <p class="text-white"> Seamlessly administrate synergistic growth strategies and collaborative markets. Globally empower inexpensive infomediaries after sustainable mindshare customize principle-centered users with fully tested.</p>
                                 </div>
                                 <div class="col-md-3 col-sm-12">
                                     <div class="footer-nav-wrap text-white">
-                                        <h4 class="text-white">GET IN TOUCH</h4>
+                                        <h5 class="text-white">GET IN TOUCH</h5>
                                         <ul class="get-in-touch-list">
-                                            <li class="d-flex align-items-center py-2"><span
+                                            <li class="d-flex align-items-center py-1"><span
                                                     class="fas fa-map-marker-alt mr-2"></span> 1234 Street Name, City
                                                 Name, USA
                                             </li>
-                                            <li class="d-flex align-items-center py-2"><span
+                                            <li class="d-flex align-items-center py-1"><span
                                                     class="fas fa-envelope mr-2"></span> you@domain.com
                                             </li>
                                             <!--<li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span> (123) 456-7890 - (123) 456-7890</li>-->
