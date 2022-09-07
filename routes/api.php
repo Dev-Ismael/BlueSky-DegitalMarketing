@@ -3,6 +3,13 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+/*======================================================
+========== Controllers
+=======================================================*/
+use App\Http\Controllers\Admin\HomeController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,4 +23,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group([ 'prefix' => 'admin' ] , function(){     // URL ==> 'api/admin' ,
+
+    Route::get('user',  [HomeController::class, 'index']);
+
 });

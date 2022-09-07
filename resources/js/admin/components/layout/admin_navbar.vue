@@ -12,17 +12,17 @@
             </div>
             <div>
                 <a class="navbar-brand brand-logo" href="./">
-                    <img src="/images/BlueSky-Logo.png" alt="logo"/>
+                    <img src="/images/BlueSky-Logo.png" alt="logo" />
                 </a>
                 <a class="navbar-brand brand-logo-mini" href="./">
-                    <img src="/images/favicon.png" alt="logo"/>
+                    <img src="/images/favicon.png" alt="logo" />
                 </a>
             </div>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-top">
             <ul class="navbar-nav">
                 <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                    <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">John Doe</span></h1>
+                    <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">{{ user.name }}</span></h1>
                     <h3 class="welcome-sub-text">Your Dashoard For Manage Website Data </h3>
                 </li>
             </ul>
@@ -114,14 +114,13 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                         <div class="dropdown-header text-center">
-                            <img class="img-md rounded-circle" src="/admin/images/faces/face8.jpg"
-                                alt="Profile image">
-                            <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-                            <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
+                            <img class="img-md rounded-circle" src="/admin/images/faces/face8.jpg" alt="Profile image">
+                            <p class="mb-1 mt-3 font-weight-semibold">{{ user.name }}</p>
+                            <p class="fw-light text-muted mb-0">{{ user.email }}</p>
                         </div>
                         <a class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
-                            </a>
+                        </a>
                         <a class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i>
                             Messages</a>
@@ -140,5 +139,28 @@
 </template>
 
 <script>
+import axios from 'axios';
 
+export default {
+    data() {
+        return {
+            user: {}
+        }
+    },
+    mounted() {
+        this.getSiteName();
+    },
+    methods: {
+        getSiteName() {
+            axios.get("/api/admin/user")
+            .then(
+                resquest => {
+                    // console.log(resquest.data.user[0]);
+                    this.user = resquest.data.user[0]
+                }
+            )
+            .catch(error => console.log(error))
+        }
+    }
+}
 </script>
