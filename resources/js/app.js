@@ -64,5 +64,14 @@ app.component('our_portfolio', our_portfolio);
 import login from './components/web/pages/login.vue';
 app.component('login', login);
 
+/*====================================================
+===== Admin Component
+====================================================*/
+// Layout
+import admin_navbar from './admin/components/layout/admin_navbar.vue';
+import admin_sidebar from './admin/components/layout/admin_sidebar.vue';
+app.component('admin_navbar', admin_navbar);
+app.component('admin_sidebar', admin_sidebar);
+
 
 app.mount('#app');
