@@ -4,6 +4,11 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 
+/*======= import Vue router =======*/
+import router from './admin/router/vue-router';
+app.use(router);
+
+
 /*========== Component ================*/
 // Layouts
 import main_navbar from './components/web/layouts/main_navbar.vue';
@@ -70,8 +75,10 @@ app.component('login', login);
 // Layout
 import admin_navbar from './admin/components/layout/admin_navbar.vue';
 import admin_sidebar from './admin/components/layout/admin_sidebar.vue';
+import right_sidebar from './admin/components/layout/right_sidebar.vue';
 app.component('admin_navbar', admin_navbar);
 app.component('admin_sidebar', admin_sidebar);
+app.component('right_sidebar', right_sidebar);
 
 
 app.mount('#app');
