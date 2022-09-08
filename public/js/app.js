@@ -19946,7 +19946,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      services: {}
+      services: {},
+      service: {}
     };
   },
   mounted: function mounted() {
@@ -19961,6 +19962,16 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/admin/service?page=' + page).then(function (response) {
         // console.log(response.data);
         _this.services = response.data;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+
+    /*===========  GET Service =========*/
+    showService: function showService(service) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/admin/service/' + messege.id).then(function (resquest) {
+        // this.messege = resquest.data
+        console.log(resquest.data);
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -20604,13 +20615,7 @@ var _hoisted_2 = {
   "class": "card-body"
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
-  "class": "card-title"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa-solid mdi mdi-book-multiple"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Services table")], -1
-/* HOISTED */
-);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row\"><div class=\"col-6\"><h4 class=\"card-title\"><i class=\"fa-solid mdi mdi-book-multiple\"></i> Services table</h4></div><div class=\"col-6 text-end\"><button type=\"button\" class=\"btn btn-danger btn-rounded btn-icon p-2\" data-bs-toggle=\"modal\" data-bs-target=\"#showDataModal\" data-whatever=\"@mdo\">Create New</button></div></div>", 1);
 
 var _hoisted_4 = {
   "class": "row"
@@ -20626,7 +20631,21 @@ var _hoisted_7 = {
   "class": "dataTables_wrapper dt-bootstrap4 no-footer pt-3"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row\"><div class=\"col-sm-12 col-md-6\"><div id=\"order-listing_filter\" class=\"dataTables_filter\"><label><input type=\"search\" class=\"form-control\" placeholder=\"Search By Title...\" aria-controls=\"order-listing\"></label></div></div><div class=\"col-sm-12 col-md-6 text-end\"><div class=\"dataTables_length\" id=\"order-listing_length\"><label>Show <select name=\"order-listing_length\" aria-controls=\"order-listing\" class=\"custom-select custom-select-sm form-control\"><option value=\"5\">5</option><option value=\"10\">10</option><option value=\"15\">15</option><option value=\"-1\">All</option></select> entries</label></div></div></div>", 1);
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "row"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-sm-12 col-md-6"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  id: "order-listing_filter",
+  "class": "dataTables_filter"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "search",
+  "class": "form-control",
+  placeholder: "Search By Title...",
+  "aria-controls": "order-listing"
+})])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"col-sm-12 col-md-6 text-end\">\n                                    <div class=\"dataTables_length\" id=\"order-listing_length\"><label>Show <select\n                                                name=\"order-listing_length\" aria-controls=\"order-listing\"\n                                                class=\"custom-select custom-select-sm form-control\">\n                                                <option value=\"10\">10</option>\n                                                <option value=\"30\">30</option>\n                                                <option value=\"50\">50</option>\n                                                <option value=\"100\">100</option>\n                                            </select> entries</label></div>\n                                </div> ")], -1
+/* HOISTED */
+);
 
 var _hoisted_9 = {
   "class": "row"
@@ -20670,30 +20689,80 @@ var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 var _hoisted_15 = {
   "class": "row"
 };
-
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_16 = {
   "class": "col-sm-12 col-md-5"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_17 = {
   "class": "dataTables_info",
   id: "order-listing_info",
   role: "status",
   "aria-live": "polite"
-}, "Showing 1 to 10 of 10 entries")], -1
-/* HOISTED */
-);
-
-var _hoisted_17 = {
-  "class": "col-sm-12 col-md-7"
 };
 var _hoisted_18 = {
+  "class": "col-sm-12 col-md-7"
+};
+var _hoisted_19 = {
   "class": "dataTables_paginate paging_simple_numbers"
 };
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "< ", -1
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "< ", -1
 /* HOISTED */
 );
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, " >", -1
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, " >", -1
+/* HOISTED */
+);
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-6 col-xl-4 grid-margin stretch-card"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-body"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "modal fade",
+  id: "showDataModal",
+  tabindex: "-1",
+  role: "dialog",
+  "aria-labelledby": "ModalLabel",
+  "aria-hidden": "true"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "modal-dialog",
+  role: "document"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "modal-content"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "modal-header"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "modal-title",
+  id: "ModalLabel"
+}, "Show Service Data"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "close",
+  "data-bs-dismiss": "modal",
+  "aria-label": "Close"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "aria-hidden": "true"
+}, "×")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "modal-body"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <form>\n                                        <div class=\"form-group\">\n                                            <label for=\"recipient-name\" class=\"col-form-label\">Recipient:</label>\n                                            <input type=\"text\" class=\"form-control\" id=\"recipient-name\">\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <label for=\"message-text\" class=\"col-form-label\">Message:</label>\n                                            <textarea class=\"form-control\" id=\"message-text\"></textarea>\n                                        </div>\n                                    </form> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "form-group"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <label for=\"recipient-name\" class=\"col-form-label\">Recipient:</label>\n                                        <input type=\"text\" class=\"form-control\" id=\"recipient-name\"> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "h5 fw-bold"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "mdi mdi-format-title"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" title : ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "h6"
+}, " asd ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "modal-footer"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-success"
+}, "Send message"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-light",
+  "data-bs-dismiss": "modal"
+}, "Close")])])])])])])], -1
 /* HOISTED */
 );
 
@@ -20707,30 +20776,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.img), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.title), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.title.substring(0, 20) + '...'), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.summary), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.summary.substring(0, 50) + '...'), 1
     /* TEXT */
     ), _hoisted_14]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" pagination Component "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Pagination :data=\"services\" @pagination-change-page=\"getServices\" :limit=\"1\"/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_pagination, {
+  ))])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, "Showing " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.services.total + 1 - $data.services.from) + " to " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.services.total + 1 - $data.services.to) + " of " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.services.total) + " entries", 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" pagination Component "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Pagination :data=\"services\" @pagination-change-page=\"getServices\" :limit=\"1\"/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_pagination, {
     data: $data.services,
     onPaginationChangePage: $options.getServices,
     limit: 2
   }, {
     "prev-nav": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_19];
+      return [_hoisted_20];
     }),
     "next-nav": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_20];
+      return [_hoisted_21];
     }),
     _: 1
     /* STABLE */
 
   }, 8
   /* PROPS */
-  , ["data", "onPaginationChangePage"])])])])])])])])])]);
+  , ["data", "onPaginationChangePage"])])])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("----- Show Modal ----"), _hoisted_22]);
 }
 
 /***/ }),

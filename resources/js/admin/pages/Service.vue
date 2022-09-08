@@ -2,7 +2,15 @@
 
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title"> <i class="fa-solid mdi mdi-book-multiple"></i> Services table</h4>
+            <div class="row">
+                <div class="col-6">
+                    <h4 class="card-title"> <i class="fa-solid mdi mdi-book-multiple"></i> Services table</h4>
+                </div>
+                <div class="col-6 text-end">
+                    <button type="button" class="btn btn-danger btn-rounded btn-icon p-2" data-bs-toggle="modal" data-bs-target="#showDataModal"
+                    data-whatever="@mdo">Create New</button>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive">
@@ -13,16 +21,16 @@
                                                 class="form-control" placeholder="Search By Title..."
                                                 aria-controls="order-listing"></label></div>
                                 </div>
-                                <div class="col-sm-12 col-md-6 text-end">
+                                <!-- <div class="col-sm-12 col-md-6 text-end">
                                     <div class="dataTables_length" id="order-listing_length"><label>Show <select
                                                 name="order-listing_length" aria-controls="order-listing"
                                                 class="custom-select custom-select-sm form-control">
-                                                <option value="5">5</option>
                                                 <option value="10">10</option>
-                                                <option value="15">15</option>
-                                                <option value="-1">All</option>
+                                                <option value="30">30</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
                                             </select> entries</label></div>
-                                </div>
+                                </div> -->
 
                             </div>
                             <div class="row">
@@ -72,21 +80,24 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="service in services.data"  :key="service.id" >
+                                            <tr v-for="service in services.data" :key="service.id">
                                                 <td class="sorting_1"> {{ service.id }} </td>
-                                                <td>  {{ service.img }} </td>
-                                                <td>  {{ service.title }} </td>
-                                                <td>  {{ service.summary }} </td>
+                                                <td> {{ service.img }} </td>
+                                                <td> {{ service.title.substring(0, 20)  + '...'  }} </td>
+                                                <td> {{ service.summary.substring(0, 50)  + '...' }} </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-secondary btn-rounded btn-icon p-2">
+                                                    <button type="button"
+                                                        class="btn btn-secondary btn-rounded btn-icon p-2">
                                                         <i class="mdi mdi-eye"></i>
                                                     </button>
                                                     &nbsp;
-                                                    <button type="button" class="btn btn-primary btn-rounded btn-icon p-2">
+                                                    <button type="button"
+                                                        class="btn btn-primary btn-rounded btn-icon p-2">
                                                         <i class="ti-marker-alt"></i>
                                                     </button>
                                                     &nbsp;
-                                                    <button type="button" class="btn btn-danger btn-rounded btn-icon p-2">
+                                                    <button type="button"
+                                                        class="btn btn-danger btn-rounded btn-icon p-2">
                                                         <i class="ti-close"></i>
                                                     </button>
                                                 </td>
@@ -98,7 +109,8 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-5">
                                     <div class="dataTables_info" id="order-listing_info" role="status"
-                                        aria-live="polite">Showing 1 to 10 of 10 entries</div>
+                                        aria-live="polite">Showing {{ ( (services.total + 1) - services.from) }} to {{ (
+                                        (services.total + 1) - services.to) }} of {{ services.total }} entries</div>
                                 </div>
                                 <div class="col-sm-12 col-md-7">
                                     <div class="dataTables_paginate paging_simple_numbers">
@@ -120,6 +132,57 @@
                 </div>
             </div>
         </div>
+
+
+
+
+        <!------- Show Modal ------>
+        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="modal fade" id="showDataModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ModalLabel">Show Service Data</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- <form>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Message:</label>
+                                            <textarea class="form-control" id="message-text"></textarea>
+                                        </div>
+                                    </form> -->
+                                    <div class="form-group">
+                                        <!-- <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                        <input type="text" class="form-control" id="recipient-name"> -->
+                                        <span class="h5 fw-bold"> <i class="mdi mdi-format-title"></i> title : </span>
+                                        <span class="h6"> asd </span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success">Send message</button>
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
     </div>
 
 </template>
@@ -133,7 +196,8 @@ export default {
     },
     data() {
         return {
-            services: {}
+            services: {},
+            service: {},
         }
     },
     mounted() {
@@ -142,12 +206,24 @@ export default {
     methods: {
 
         /*===========  GET Service =========*/
-        getServices(page = 1){
+        getServices(page = 1) {
             axios.get('/api/admin/service?page=' + page)
+                .then(
+                    response => {
+                        // console.log(response.data);
+                        this.services = response.data;
+                    }
+                )
+                .catch(error => console.log(error))
+        },
+
+        /*===========  GET Service =========*/
+        showService(service){
+            axios.get('/api/admin/service/' + messege.id )
             .then(
-                response => {
-                    // console.log(response.data);
-                    this.services = response.data;
+                resquest => {
+                    // this.messege = resquest.data
+                    console.log(resquest.data);
                 }
             )
             .catch( error => console.log(error) )

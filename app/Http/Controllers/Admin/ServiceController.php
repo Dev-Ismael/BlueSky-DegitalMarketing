@@ -48,7 +48,28 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+            // Find Record In Db Column
+            $service = Service::where('id', $id )->first();
+
+            if( !$service ){  // If Not Found
+                return response()->json([
+                    'status' => 'error',
+                    'msg'    => '404 not found'
+                ]);
+            }
+
+            return response()->json([ // If Found Success
+                'status' => 'success',
+                "msg"    => "service get successfully",
+                'data'   => $service
+            ]);
+        } catch (\Exception $e) {
+            return response([
+                'status' => 'error',
+                'msg'    => 'server error'
+            ]);
+        }
     }
 
     /**
