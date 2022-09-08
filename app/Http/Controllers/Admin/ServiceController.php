@@ -15,7 +15,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::paginate(50);
+        $services = Service::orderBy('id','desc')->paginate(10);
         return response()->json($services);
     }
 

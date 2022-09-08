@@ -72,7 +72,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="service in services"  :key="service.id" >
+                                            <tr v-for="service in services.data"  :key="service.id" >
                                                 <td class="sorting_1"> {{ service.id }} </td>
                                                 <td>  {{ service.img }} </td>
                                                 <td>  {{ service.title }} </td>
@@ -101,19 +101,17 @@
                                         aria-live="polite">Showing 1 to 10 of 10 entries</div>
                                 </div>
                                 <div class="col-sm-12 col-md-7">
-                                    <div class="dataTables_paginate paging_simple_numbers" id="order-listing_paginate">
-                                        <ul class="pagination">
-                                            <li class="paginate_button page-item previous disabled"
-                                                id="order-listing_previous"><a href="#" aria-controls="order-listing"
-                                                    data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-                                            <li class="paginate_button page-item active"><a href="#"
-                                                    aria-controls="order-listing" data-dt-idx="1" tabindex="0"
-                                                    class="page-link">1</a></li>
-                                            <li class="paginate_button page-item next disabled" id="order-listing_next">
-                                                <a href="#" aria-controls="order-listing" data-dt-idx="2" tabindex="0"
-                                                    class="page-link">Next</a>
-                                            </li>
-                                        </ul>
+                                    <div class="dataTables_paginate paging_simple_numbers">
+                                        <!-- pagination Component -->
+                                        <!-- <Pagination :data="services" @pagination-change-page="getServices" :limit="1"/> -->
+                                        <pagination :data="services" @pagination-change-page="getServices" :limit="2">
+                                            <template #prev-nav>
+                                                <span>&lt; </span>
+                                            </template>
+                                            <template #next-nav>
+                                                <span> &gt;</span>
+                                            </template>
+                                        </pagination>
                                     </div>
                                 </div>
                             </div>
@@ -127,8 +125,12 @@
 </template>
 <script>
 import axios from 'axios';
+import LaravelVuePagination from 'laravel-vue-pagination';
 
 export default {
+    components: {
+        'Pagination': LaravelVuePagination
+    },
     data() {
         return {
             services: {}
@@ -140,12 +142,12 @@ export default {
     methods: {
 
         /*===========  GET Service =========*/
-        getServices(){
-            axios.get('/api/admin/service')
+        getServices(page = 1){
+            axios.get('/api/admin/service?page=' + page)
             .then(
                 response => {
-                    // console.log(response.data.data);
-                    this.services = response.data.data;
+                    // console.log(response.data);
+                    this.services = response.data;
                 }
             )
             .catch( error => console.log(error) )
