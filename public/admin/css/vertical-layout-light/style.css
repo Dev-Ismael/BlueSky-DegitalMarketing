@@ -27564,7 +27564,6 @@ body.avgrund-active {
 }
 .dataTables_wrapper .dataTable .btn i, .dataTables_wrapper .dataTable .wizard > .actions a i, .wizard > .actions .dataTables_wrapper .dataTable a i, .dataTables_wrapper .dataTable .swal2-modal .swal2-buttonswrapper .swal2-styled i, .swal2-modal .swal2-buttonswrapper .dataTables_wrapper .dataTable .swal2-styled i, .dataTables_wrapper .dataTable .ajax-upload-dragdrop .ajax-file-upload i, .ajax-upload-dragdrop .dataTables_wrapper .dataTable .ajax-file-upload i, .dataTables_wrapper .dataTable .fc button i, .fc .dataTables_wrapper .dataTable button i {
   font-size: 0.875rem;
-  margin-right: 0.3rem;
 }
 .dataTables_wrapper .dataTable thead th {
   border-bottom-width: 0;
@@ -29962,6 +29961,7 @@ div.tagsinput span.tag a {
 }
 .navbar .navbar-brand-wrapper .navbar-brand img {
   max-width: 100%;
+  height: 34px;
   margin: auto;
   vertical-align: middle;
 }

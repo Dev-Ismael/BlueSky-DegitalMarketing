@@ -23,6 +23,7 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" id="stylesheet" href="{{ asset('admin/css/vertical-layout-light/style.css') }}">
+    <link rel="stylesheet" id="stylesheet" href="{{ asset('admin/css/custom.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="../../images/favicon.png" />
 </head>

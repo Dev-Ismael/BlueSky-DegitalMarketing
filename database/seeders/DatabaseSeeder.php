@@ -15,5 +15,19 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\User::factory(5)->create();
+
+        \App\Models\Service::factory(100)->create([
+            'title' => 'title',
+            'slug' => 'slug',
+            'seo_title' => 'seo_title',
+            'seo_keywords' => 'seo_keywords',
+            'seo_description' => 'seo_description',
+            'content' => 'content',
+            'summary' => 'summary',
+            'icon' => 'icon',
+            'img' => 'img',
+        ]);
+
+
     }
 }

@@ -154,9 +154,9 @@ export default {
         getSiteName() {
             axios.get("/api/admin/user")
             .then(
-                resquest => {
-                    // console.log(resquest.data.user[0]);
-                    this.user = resquest.data.user[0]
+                response => {
+                    // console.log(response.data.user[0]);
+                    this.user = response.data.user[0]
                 }
             )
             .catch(error => console.log(error))

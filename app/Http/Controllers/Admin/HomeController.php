@@ -22,6 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         // return response()->json([
         //     'messege' => "Connected",
         // ]);
@@ -30,7 +31,6 @@ class HomeController extends Controller
         return response()->json([
             "user" => $user,
         ]);
-
 
     }
 }
