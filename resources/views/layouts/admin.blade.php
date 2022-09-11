@@ -5,10 +5,14 @@
 <!-- Mirrored from www.bootstrapdash.com/demo/star-admin2-pro/template/demo/vertical-default-light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2022 12:44:50 GMT -->
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> BlueSky Dashboard </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('admin/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/vendors/mdi/css/materialdesignicons.min.css') }}">
@@ -77,6 +81,7 @@
     <script src="{{ asset('admin/js/template.js') }}"></script>
     <script src="{{ asset('admin/js/settings.js') }}"></script>
     <script src="{{ asset('admin/js/todolist.js') }}"></script>
+    <script src="{{ asset('admin/js/file-upload.js') }}"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="{{ asset('admin/js/jquery.cookie.js') }}">

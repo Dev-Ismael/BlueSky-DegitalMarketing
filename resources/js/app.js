@@ -9,6 +9,12 @@ import router from './admin/router/vue-router';
 app.use(router);
 
 
+/*======= Sweetalert2 =======*/
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+app.use(VueSweetalert2);
+
+
 /*========== Component ================*/
 // Layouts
 import main_navbar from './components/web/layouts/main_navbar.vue';

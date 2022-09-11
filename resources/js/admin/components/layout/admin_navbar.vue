@@ -11,10 +11,10 @@
                 </button>
             </div>
             <div>
-                <a class="navbar-brand brand-logo" href="./">
+                <a class="navbar-brand brand-logo" href="/">
                     <img src="/images/BlueSky-Logo.png" alt="logo" />
                 </a>
-                <a class="navbar-brand brand-logo-mini" href="./">
+                <a class="navbar-brand brand-logo-mini" href="/">
                     <img src="/images/favicon.png" alt="logo" />
                 </a>
             </div>
