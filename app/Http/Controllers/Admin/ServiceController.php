@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Requests\Services\StoreServiceRequest;
+use Illuminate\Support\Str;
 
 class ServiceController extends Controller
 {
@@ -28,7 +29,66 @@ class ServiceController extends Controller
      */
     public function store(StoreServiceRequest $request)
     {
-        //
+
+        // save all request in one variable
+        $requestData = $request->all();
+
+        // Create img name
+        $img_extention = $request -> img -> getClientOriginalExtension();
+        $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 32632.png
+
+        // Create icon name
+        $icon_extention = $request -> icon -> getClientOriginalExtension();
+        $icon_name = rand(1000000,10000000) . "." . $icon_extention;   // name => 3623628.png
+
+        // Path
+        $path = "images/services" ;
+
+        // Upload
+        $request -> img -> move( $path , $img_name );
+        $request -> icon  -> move( $path , $icon_name );
+
+
+        // Add images names in request array
+        $requestData['img']  = $img_name;
+        $requestData['icon'] = $icon_name;
+
+
+        // add slug in $requestData Array
+        $requestData += [ 'slug' => Str::slug( $request->title , '-') ];
+
+        // return response()->json([
+        //     "requestData" => $requestData,
+        // ]);
+
+        // Store in DB
+        try {
+            
+            // store row in table
+            $service = Service::create( $requestData );
+
+            // if not save in DB
+            if(!$service){
+                return response()->json([
+                    'status' => 'error',
+                    'msg'    => 'Error at store opration'
+                ]);
+            }
+
+            // If Found Success
+            return response()->json([
+                'status' => 'success',
+                "msg"    => "Service store successfully",
+            ]);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'msg'    => 'server error'
+            ]);
+        }
+
+
     }
 
     /**

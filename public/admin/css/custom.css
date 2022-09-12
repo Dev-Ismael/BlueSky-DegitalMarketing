@@ -1,19 +1,39 @@
 div.dataTables_wrapper div.dataTables_filter {
     text-align: initial;
 }
-.form-control{
-    height: inherit !important;
+/*========= Form ========*/
+.modal-body img{
+    box-shadow: 0px 0px 11px 0px #0000001a;
+    padding: 5px;
+}
+/*========= Form ========*/
+.form-group label{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    padding-bottom: 3px;
+}
+.table td img, .jsgrid .jsgrid-table td img {
+    padding: 5px;
+    border-radius: 0 !important;
+    box-shadow: 0px 0px 11px 0px #0000001a;
 }
 .form-group label
 {
     line-height: inherit !important;
     margin-bottom: 0px !important
 }
+input.form-control , textarea.form-control{
+    margin-bottom: 0px !important;
+}
+textarea.form-control{
+    min-height: 5rem !important;
+}
 small.text-danger
 {
     color: #ff3f30;
     margin-left: 5px;
-    font-weight: bold;
+    margin-left: 5px;
 }
 /*==== Customize Modal ======*/
 .swal2-container.swal2-top-end>.swal2-popup, .swal2-container.swal2-top-right>.swal2-popup
@@ -26,4 +46,8 @@ small.text-danger
 }
 .swal2-modal{
     min-height: 260px !important;
+}
+.swal2-popup
+{
+    width: 28em !important;
 }

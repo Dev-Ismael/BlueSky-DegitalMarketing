@@ -38,9 +38,11 @@
                                         <tbody>
                                             <tr v-for="service in services.data" :key="service.id">
                                                 <td class="sorting_1"> {{ service.id }} </td>
-                                                <td> {{ service.img }} </td>
-                                                <td> {{ service.title.substring(0, 20) + '...' }} </td>
-                                                <td> {{ service.summary.substring(0, 50) + '...' }} </td>
+                                                <td class="py-1">
+                                                    <img :src=" '/images/services/'+ service.img " alt="image">
+                                                </td>
+                                                <td> {{ service.title.length > 20 ? service.title.slice(0, 20) + '...' : service.title }} </td>
+                                                <td> {{ service.summary.length > 50 ? service.title.slice(0, 50) + '...' : service.title }} </td>
                                                 <td>
                                                     <button type="button" data-bs-toggle="modal"
                                                         data-bs-target="#showDataModal" @click="showService(service.id)"
@@ -127,14 +129,14 @@
                                     <hr>
                                     <div class="form-group">
                                         <span class="h5 fw-bold"> <i class="mdi mdi-file-image"></i> icon : </span>
-                                        <span class="h6"> <img :src="'/admin/services/' + service.icon "
-                                                alt="service-icon"> </span>
+                                        <span class="h6"> <img :src="'/images/services/' + service.icon "
+                                                alt="service-icon" width="160"> </span>
                                     </div>
                                     <hr>
                                     <div class="form-group">
                                         <span class="h5 fw-bold"> <i class="mdi mdi-file-image"></i> img : </span>
-                                        <span class="h6"> <img :src="'/admin/services/' + service.img "
-                                                alt="service-img"> </span>
+                                        <span class="h6"> <img :src="'/images/services/' + service.img "
+                                                alt="service-img" width="160"> </span>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -170,85 +172,86 @@
 
                                         <!-- title -->
                                         <div class="form-group">
-                                            <label for="recipient-name" class="col-form-label"> <i
-                                                    class="mdi mdi-format-title"></i> Title:</label>
-                                            <input type="text" name="title" v-model="service.title" class="form-control" id="recipient-name">
-                                            <small class="text-danger" >as </small>
-
+                                            <label for="recipient-name" class="col-form-label"> <i class="mdi mdi-format-title"></i> Title </label>
+                                            <input type="text" name="title" v-model="service.title" class="form-control" :class=" errors.title ? 'border-danger' : ''  " id="recipient-name">
+                                            <small class="text-danger" v-if="errors.title"> {{errors.title[0] }} </small>
                                         </div>
 
 
                                         <!-- seo_title -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
-                                                SEO Title:</label>
-                                            <textarea name="seo_title"  v-model="service.seo_title"  class="form-control" id="message-text" rows="4"
+                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i> SEO Title </label>
+                                            <textarea name="seo_title"  v-model="service.seo_title" class="form-control" :class=" errors.seo_title ? 'border-danger' : ''  "  id="message-text" rows="4"
                                                 cols="50"></textarea>
+                                            <small class="text-danger" v-if="errors.seo_title"> {{errors.seo_title[0] }} </small>
                                         </div>
 
 
                                         <!-- seo_keywords -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
-                                                SEO KeyWords:</label>
-                                            <textarea name="seo_keywords"  v-model="service.seo_keywords"  class="form-control" id="message-text"
-                                                rows="4" cols="50"></textarea>
+                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i> SEO KeyWords </label>
+                                            <textarea name="seo_keywords"  v-model="service.seo_keywords" class="form-control" :class=" errors.seo_keywords ? 'border-danger' : ''  "  id="message-text" rows="4"
+                                            cols="50"></textarea>
+                                            <small class="text-danger" v-if="errors.seo_keywords"> {{errors.seo_keywords[0] }} </small>
                                         </div>
 
 
                                         <!-- seo_description -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
-                                                SEO Description:</label>
-                                            <textarea name="seo_description" v-model="service.seo_description"  class="form-control" id="message-text"
-                                                rows="4" cols="50"></textarea>
+                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i> SEO Description </label>
+                                            <textarea name="seo_description"  v-model="service.seo_description" class="form-control" :class=" errors.seo_description ? 'border-danger' : ''  "  id="message-text" rows="4"
+                                            cols="50"></textarea>
+                                            <small class="text-danger" v-if="errors.seo_description"> {{errors.seo_description[0] }} </small>
                                         </div>
 
 
                                         <!-- summary -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i
-                                                    class="mdi mdi-format-align-left"></i> Summary:</label>
-                                            <textarea name="summary"  v-model="service.summary"  class="form-control" id="message-text" rows="4"
-                                                cols="50"></textarea>
+                                            <label for="message-text" class="col-form-label"> <i class="mdi mdi-format-align-left"></i> Summary </label>
+                                            <textarea name="summary"  v-model="service.summary" class="form-control" :class=" errors.summary ? 'border-danger' : ''  "  id="message-text" rows="4"
+                                            cols="50"></textarea>
+                                            <small class="text-danger" v-if="errors.summary"> {{errors.summary[0] }} </small>
                                         </div>
 
 
                                         <!-- content -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i
-                                                    class="mdi mdi-format-align-left"></i> Content:</label>
-                                            <textarea name="content" v-model="service.content"  class="form-control" id="message-text" rows="4"
-                                                cols="50"></textarea>
+                                            <label for="message-text" class="col-form-label"> <i class="mdi mdi-format-align-left"></i> Content </label>
+                                            <textarea name="content"  v-model="service.content" class="form-control" :class=" errors.content ? 'border-danger' : ''  "  id="message-text" rows="4"
+                                            cols="50"></textarea>
+                                            <small class="text-danger" v-if="errors.content"> {{errors.content[0] }} </small>
                                         </div>
 
 
                                         <!-- Icon -->
                                         <div class="form-group">
-                                            <label>Upload Icon</label>
-                                            <input type="file" name="icon" class="file-upload-default">
+                                            <label> <i class="mdi mdi-file-image"></i> Upload Icon </label>
+                                            <input type="file" name="icon" class="file-upload-default" @change="getImageName( $event , 'icon' )">
                                             <div class="input-group col-xs-12">
-                                                <input type="text" name="icon" class="form-control file-upload-info" disabled
+                                                <input type="text" name="icon" class="form-control file-upload-info"  :class=" errors.icon ? 'border-danger' : ''  "  disabled
                                                     placeholder="Upload Image">
                                                 <span class="input-group-append">
                                                     <button class="file-upload-browse btn btn-primary"
                                                         type="button">Upload</button>
                                                 </span>
                                             </div>
+                                            <small class="text-danger" v-if="errors.icon"> {{errors.icon[0] }} </small>
                                         </div>
+
 
                                         <!-- Image -->
                                         <div class="form-group">
-                                            <label>Upload Big Image</label>
-                                            <input type="file" name="img" class="file-upload-default">
+                                            <label> <i class="mdi mdi-file-image"></i> Upload Big Image</label>
+                                            <input type="file" name="img" class="file-upload-default" @change="getImageName( $event , 'img' )">
                                             <div class="input-group col-xs-12">
-                                                <input type="text" name="img" class="form-control file-upload-info" disabled
+                                                <input type="text" name="img" class="form-control file-upload-info"  :class=" errors.img ? 'border-danger' : ''  "  disabled
                                                     placeholder="Upload Image">
                                                 <span class="input-group-append">
                                                     <button class="file-upload-browse btn btn-primary"
                                                         type="button">Upload</button>
                                                 </span>
                                             </div>
+                                            <small class="text-danger" v-if="errors.img"> {{errors.img[0] }} </small>
                                         </div>
 
 
@@ -280,7 +283,16 @@ export default {
     data() {
         return {
             services: {},
-            service: {},
+            service: {
+                title: '',
+                summary: '',
+                content: '',
+                icon: '',
+                img: '',
+                seo_title: '',
+                seo_description: '',
+                seo_keywords: '',
+            },
             errors: {}, // create empty object to insert errors in it to show
             edit: false // set this var to know if modal for create or edit
         }
@@ -291,6 +303,12 @@ export default {
     methods: {
 
 
+        /*======================================================
+        ====== Get Image Name Input File
+        ======================================================*/
+        getImageName(event,imgName){  // at change input set service img name
+            this.service[imgName] = event.target.files[0];
+        },
 
 
         /*======================================================
@@ -308,7 +326,6 @@ export default {
                     error => console.log(error)
                 )
         },
-
 
 
 
@@ -357,46 +374,82 @@ export default {
         setEditFalse() {
             this.edit = false, // set var edit equale 'false' to know that this modal for create
             this.service = {
-                csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                 title: '',
-                slug: '',
                 summary: '',
                 content: '',
-                seo_description: '',
-                seo_keywords: '',
-                seo_title: '',
-                img: '',
                 icon: '',
+                img: '',
+                seo_title: '',
+                seo_keywords: '',
+                seo_description: '',
             }
         },
         createService() {
-            axios.post("/api/admin/service", this.service)
+
+            // Set Config var to send it with data request
+            const config = {
+                headers: { 'content-type': 'multipart/form-data' }
+            }
+
+            // set var from FormData Class
+            let formData = new FormData();
+
+            // Array of inputs
+            const inputs = [ 'title', 'summary', 'content', 'img', 'icon' ,  'seo_title', 'seo_description', 'seo_keywords' ];
+
+            // For Loop To append every item in inputs array
+            inputs.forEach(input => {
+                formData.append( String(input) , this.service[input]);
+            });
+
+            // Send request with axios
+            axios.post("/api/admin/service", formData , config )
             .then(
                 response => {  // if there success request
-                    // console.log(response.data);
+
+                    // if response status
                     if (response.data.status == "success") {
-                        // this.service = response.data.data
-                    } else if (response.data.status == "error" && response.data.msg == "validation failed") {
-                        /*=== Sweet Alert ===*/
-                        this.$swal({
-                            position: 'top-end',
-                            icon: 'error',
-                            title: 'Opps..',
-                            text: 'check validation errors',
-                            title: 'Validation error',
-                            showConfirmButton: false,
-                            timer: 500000
-                        });
-                    } else {
-                        /*=== Sweet Alert ===*/
+
+                        // Close Model
+                        $("#formModal").modal('hide');
+
+                        // reload getServices()
+                        this.getServices();
+
+                        // empty error var
+                        this.errors = {}
+
+                        // empty service var
+                        this.service = {}
+
+                        // Sweet Alert
                         Vue.swal({
                             position: 'top-end',
-                            icon: 'error',
-                            text: 'Server Error',
+                            icon: response.data.status,
+                            text: response.data.msg,
                             showConfirmButton: false,
                             timer: 1500
                         });
+
                     }
+                    // if response validation failed
+                    else if (response.data.status == "error" && response.data.msg == "validation failed") {
+
+                        this.errors = response.data.errors
+
+                    }else{
+
+                        // Sweet Alert
+                        Vue.swal({
+                            position: 'top-end',
+                            icon: response.data.status,
+                            text: response.data.msg,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+
+                    }
+
                 }
             )
             .catch(error => console.log(error));

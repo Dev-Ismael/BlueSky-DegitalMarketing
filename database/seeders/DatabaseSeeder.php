@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(5)->create();
 
-        \App\Models\Service::factory(10000)->create([
+        \App\Models\Service::factory(100)->create([
             'title' => 'title',
             'slug' => 'slug',
             'seo_title' => 'seo_title',

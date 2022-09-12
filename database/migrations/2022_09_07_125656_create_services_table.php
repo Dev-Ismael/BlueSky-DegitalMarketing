@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('title', 100 )->index();
             $table->string('slug')->index();
+            $table->string('summary', 255 );
+            $table->text('content');
+            $table->string('icon');
+            $table->string('img');
             $table->string('seo_title', 500);
             $table->string('seo_keywords', 500);
             $table->string('seo_description', 1000);
-            $table->text('content');
-            $table->string('summary', 255 );
-            $table->string('icon');
-            $table->string('img');
             $table->timestamps();
         });
     }

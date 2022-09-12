@@ -10,16 +10,15 @@ class Service extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
-        'title ',
+        'title',
         'slug',
+        'summary',
+        'content',
+        'icon',
+        'img',
         'seo_title',
         'seo_keywords',
         'seo_description',
-        'content',
-        'summary',
-        'icon',
-        'img',
     ];
 
 }
