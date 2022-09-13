@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Requests\Services\StoreServiceRequest;
+use App\Http\Requests\Services\UpdateServiceRequest;
 use Illuminate\Support\Str;
 
 class ServiceController extends Controller
@@ -63,7 +64,7 @@ class ServiceController extends Controller
 
         // Store in DB
         try {
-            
+
             // store row in table
             $service = Service::create( $requestData );
 
@@ -131,9 +132,84 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateServiceRequest $request, $id)
     {
-        //
+
+        // Find Record In Db Column
+        $service = Service::where('id', $id )->first();
+
+        if( !$service ){  // If Not Found
+            return response()->json([
+                'status' => 'error',
+                'msg'    => '404 not found'
+            ]);
+        }
+
+        // save all request in one variable
+        $requestData = $request->all();
+
+        // Check If There Images Uploaded
+        $path = "images/services" ;
+
+        if( $request -> hasFile("icon") ){
+            //  Upload image & Create name icon
+            $icon_extention = $request -> icon -> getClientOriginalExtension();
+            $icon_name = rand(1000000,10000000) . "." . $icon_extention;   // name => 3628.png
+            $request -> icon -> move( $path , $icon_name );
+        }else{
+            $icon_name = $service->icon;
+        }
+
+        if( $request -> hasFile("img") ){
+            //  Upload image & Create name img
+            $img_extention = $request -> img -> getClientOriginalExtension();
+            $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 3628.png
+            $request -> img -> move( $path , $img_name );
+        }else{
+            $img_name = $service->img;
+        }
+
+        // Add images names in request array
+        $requestData['img']  = $img_name;
+        $requestData['icon'] = $icon_name;
+
+
+        // add slug in $requestData Array
+        $requestData += [ 'slug' => Str::slug( $request->title , '-') ];
+
+
+        // return response()->json([
+        //     'requestData' => $requestData,
+        // ]);
+
+        // Store in DB
+        try {
+
+            // store row in table
+            $update = $service-> update( $requestData );
+
+            // if not save in DB
+            if(!$update){
+                return response()->json([
+                    'status' => 'error',
+                    'msg'    => 'Error at update opration'
+                ]);
+            }
+
+            // If Found Success
+            return response()->json([
+                'status' => 'success',
+                "msg"    => "Service updated successfully",
+            ]);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'msg'    => 'server error'
+            ]);
+        }
+
+
     }
 
     /**
