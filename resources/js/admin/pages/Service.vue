@@ -41,8 +41,10 @@
                                                 <td class="py-1">
                                                     <img :src=" '/images/services/'+ service.img " alt="image">
                                                 </td>
-                                                <td> {{ service.title.length > 20 ? service.title.slice(0, 20) + '...' : service.title }} </td>
-                                                <td> {{ service.summary.length > 50 ? service.summary.slice(0, 50) + '...' : service.title }} </td>
+                                                <td> {{ service.title.length > 20 ? service.title.slice(0, 20) + '...' :
+                                                service.title }} </td>
+                                                <td> {{ service.summary.length > 50 ? service.summary.slice(0, 50) +
+                                                '...' : service.title }} </td>
                                                 <td>
                                                     <button type="button" data-bs-toggle="modal"
                                                         data-bs-target="#showDataModal" @click="showService(service.id)"
@@ -51,11 +53,12 @@
                                                     </button>
                                                     &nbsp;
                                                     <button type="button" data-bs-toggle="modal"
-                                                        data-bs-target="#formModal" @click="editService(service.id)" class="btn btn-primary btn-rounded btn-icon p-2">
+                                                        data-bs-target="#formModal" @click="editService(service.id)"
+                                                        class="btn btn-primary btn-rounded btn-icon p-2">
                                                         <i class="ti-marker-alt"></i>
                                                     </button>
                                                     &nbsp;
-                                                    <button type="button"
+                                                    <button type="button" @click="deletePost(service)"
                                                         class="btn btn-danger btn-rounded btn-icon p-2">
                                                         <i class="ti-close"></i>
                                                     </button>
@@ -166,60 +169,81 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <form  @submit.prevent=" edit ? updateService() :  storeService() " enctype="multipart/form-data" method="POST">
+                                <form @submit.prevent=" edit ? updateService() :  storeService() "
+                                    enctype="multipart/form-data" method="POST">
                                     <div class="modal-body">
 
 
                                         <!-- title -->
                                         <div class="form-group">
-                                            <label for="recipient-name" class="col-form-label"> <i class="mdi mdi-format-title"></i> Title </label>
-                                            <input type="text" name="title" v-model="service.title" class="form-control" :class=" errors.title ? 'border-danger' : ''  " id="recipient-name">
-                                            <small class="text-danger" v-if="errors.title"> {{errors.title[0] }} </small>
+                                            <label for="recipient-name" class="col-form-label"> <i
+                                                    class="mdi mdi-format-title"></i> Title </label>
+                                            <input type="text" name="title" v-model="service.title" class="form-control"
+                                                :class=" errors.title ? 'border-danger' : ''  " id="recipient-name">
+                                            <small class="text-danger" v-if="errors.title"> {{errors.title[0] }}
+                                            </small>
                                         </div>
 
 
                                         <!-- seo_title -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i> SEO Title </label>
-                                            <textarea name="seo_title"  v-model="service.seo_title" class="form-control" :class=" errors.seo_title ? 'border-danger' : ''  "  id="message-text" rows="4"
-                                                cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.seo_title"> {{errors.seo_title[0] }} </small>
+                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
+                                                SEO Title </label>
+                                            <textarea name="seo_title" v-model="service.seo_title" class="form-control"
+                                                :class=" errors.seo_title ? 'border-danger' : ''  " id="message-text"
+                                                rows="4" cols="50"></textarea>
+                                            <small class="text-danger" v-if="errors.seo_title"> {{errors.seo_title[0] }}
+                                            </small>
                                         </div>
 
 
                                         <!-- seo_keywords -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i> SEO KeyWords </label>
-                                            <textarea name="seo_keywords"  v-model="service.seo_keywords" class="form-control" :class=" errors.seo_keywords ? 'border-danger' : ''  "  id="message-text" rows="4"
-                                            cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.seo_keywords"> {{errors.seo_keywords[0] }} </small>
+                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
+                                                SEO KeyWords </label>
+                                            <textarea name="seo_keywords" v-model="service.seo_keywords"
+                                                class="form-control"
+                                                :class=" errors.seo_keywords ? 'border-danger' : ''  " id="message-text"
+                                                rows="4" cols="50"></textarea>
+                                            <small class="text-danger" v-if="errors.seo_keywords">
+                                                {{errors.seo_keywords[0] }} </small>
                                         </div>
 
 
                                         <!-- seo_description -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i> SEO Description </label>
-                                            <textarea name="seo_description"  v-model="service.seo_description" class="form-control" :class=" errors.seo_description ? 'border-danger' : ''  "  id="message-text" rows="4"
-                                            cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.seo_description"> {{errors.seo_description[0] }} </small>
+                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
+                                                SEO Description </label>
+                                            <textarea name="seo_description" v-model="service.seo_description"
+                                                class="form-control"
+                                                :class=" errors.seo_description ? 'border-danger' : ''  "
+                                                id="message-text" rows="4" cols="50"></textarea>
+                                            <small class="text-danger" v-if="errors.seo_description">
+                                                {{errors.seo_description[0] }} </small>
                                         </div>
 
 
                                         <!-- summary -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i class="mdi mdi-format-align-left"></i> Summary </label>
-                                            <textarea name="summary"  v-model="service.summary" class="form-control" :class=" errors.summary ? 'border-danger' : ''  "  id="message-text" rows="4"
-                                            cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.summary"> {{errors.summary[0] }} </small>
+                                            <label for="message-text" class="col-form-label"> <i
+                                                    class="mdi mdi-format-align-left"></i> Summary </label>
+                                            <textarea name="summary" v-model="service.summary" class="form-control"
+                                                :class=" errors.summary ? 'border-danger' : ''  " id="message-text"
+                                                rows="4" cols="50"></textarea>
+                                            <small class="text-danger" v-if="errors.summary"> {{errors.summary[0] }}
+                                            </small>
                                         </div>
 
 
                                         <!-- content -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i class="mdi mdi-format-align-left"></i> Content </label>
-                                            <textarea name="content"  v-model="service.content" class="form-control" :class=" errors.content ? 'border-danger' : ''  "  id="message-text" rows="4"
-                                            cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.content"> {{errors.content[0] }} </small>
+                                            <label for="message-text" class="col-form-label"> <i
+                                                    class="mdi mdi-format-align-left"></i> Content </label>
+                                            <textarea name="content" v-model="service.content" class="form-control"
+                                                :class=" errors.content ? 'border-danger' : ''  " id="message-text"
+                                                rows="4" cols="50"></textarea>
+                                            <small class="text-danger" v-if="errors.content"> {{errors.content[0] }}
+                                            </small>
                                         </div>
 
 
@@ -228,9 +252,11 @@
                                             <label> <i class="mdi mdi-file-image"></i> Upload Icon
                                                 <!-- &nbsp; &nbsp; <img :src=" '/images/services/' + service.icon " class="img-service" alt="img-service" height="60" v-if="edit" > -->
                                             </label>
-                                            <input type="file" name="icon" class="file-upload-default" @change="getImageName( $event , 'icon' )">
+                                            <input type="file" name="icon" class="file-upload-default"
+                                                @change="getImageName( $event , 'icon' )">
                                             <div class="input-group col-xs-12">
-                                                <input type="text" name="icon" class="form-control file-upload-info"  :class=" errors.icon ? 'border-danger' : ''  "  disabled
+                                                <input type="text" name="icon" class="form-control file-upload-info"
+                                                    :class=" errors.icon ? 'border-danger' : ''  " disabled
                                                     placeholder="Upload Image">
                                                 <span class="input-group-append">
                                                     <button class="file-upload-browse btn btn-primary"
@@ -246,9 +272,11 @@
                                             <label> <i class="mdi mdi-file-image"></i> Upload Big Image
                                                 <!-- &nbsp; &nbsp; <img :src=" '/images/services/' + service.img " class="img-service" alt="img-service" height="60" v-if="edit" > -->
                                             </label>
-                                            <input type="file" name="img" class="file-upload-default" @change="getImageName( $event , 'img' )">
+                                            <input type="file" name="img" class="file-upload-default"
+                                                @change="getImageName( $event , 'img' )">
                                             <div class="input-group col-xs-12">
-                                                <input type="text" name="img" class="form-control file-upload-info"  :class=" errors.img ? 'border-danger' : ''  "  disabled
+                                                <input type="text" name="img" class="form-control file-upload-info"
+                                                    :class=" errors.img ? 'border-danger' : ''  " disabled
                                                     placeholder="Upload Image">
                                                 <span class="input-group-append">
                                                     <button class="file-upload-browse btn btn-primary"
@@ -261,7 +289,8 @@
 
                                     </div>
                                     <div class="modal-footer">
-                                        <button @submit.prevent="storeService()" class="btn btn-success">{{ edit ? 'Edit' : 'Save'}}</button>
+                                        <button @submit.prevent="storeService()" class="btn btn-success">{{ edit ?
+                                        'Edit' : 'Save'}}</button>
                                         <!-- <button class="btn btn-light" data-bs-dismiss="modal">Close</button> -->
                                     </div>
                                 </form>
@@ -310,7 +339,7 @@ export default {
         /*======================================================
         ====== Get Image Name Input File
         ======================================================*/
-        getImageName(event,imgName){  // at change input set service img name
+        getImageName(event, imgName) {  // at change input set service img name
             this.service[imgName] = event.target.files[0];
         },
 
@@ -339,35 +368,35 @@ export default {
         ======================================================*/
         showService(service_id) {
             axios.get('/api/admin/service/' + service_id)
-            .then(
-                response => {
-                    // console.log(response.data);
-                    if (response.data.status == "success") {
-                        this.service = response.data.data
-                    } else if (response.data.status == "error" && response.data.msg == "404 not found") {
-                        /*=== Sweet Alert ===*/
-                        this.$swal({
-                            position: 'top-end',
-                            icon: 'error',
-                            text: 'Error 404 not found',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                    } else {
-                        /*=== Sweet Alert ===*/
-                        this.$swal({
-                            position: 'top-end',
-                            icon: 'error',
-                            text: 'Server Error',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
+                .then(
+                    response => {
+                        // console.log(response.data);
+                        if (response.data.status == "success") {
+                            this.service = response.data.data
+                        } else if (response.data.status == "error" && response.data.msg == "404 not found") {
+                            /*=== Sweet Alert ===*/
+                            this.$swal({
+                                position: 'top-end',
+                                icon: 'error',
+                                text: 'Error 404 not found',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        } else {
+                            /*=== Sweet Alert ===*/
+                            this.$swal({
+                                position: 'top-end',
+                                icon: 'error',
+                                text: 'Server Error',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
                     }
-                }
-            )
-            .catch(
-                error => console.log(error)
-            )
+                )
+                .catch(
+                    error => console.log(error)
+                )
         },
 
 
@@ -376,8 +405,8 @@ export default {
         ====== Create Service
         ======================================================*/
         createService() {
-            this.errors = {} , // empty error var
-            this.edit = false // set var edit equale 'false' to know that this modal for update
+            this.errors = {}, // empty error var
+                this.edit = false // set var edit equale 'false' to know that this modal for update
 
             this.service = {
                 title: '',
@@ -395,7 +424,7 @@ export default {
             // Set Config var to send it with data request
             const config = {
                 headers: {
-                    'content-type': 'multipart/form-data' ,
+                    'content-type': 'multipart/form-data',
                     "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
                 }
             }
@@ -404,64 +433,64 @@ export default {
             let formData = new FormData();
 
             // Array of inputs
-            const inputs = [ 'title', 'summary', 'content', 'img', 'icon' ,  'seo_title', 'seo_description', 'seo_keywords' ];
+            const inputs = ['title', 'summary', 'content', 'img', 'icon', 'seo_title', 'seo_description', 'seo_keywords'];
 
             // For Loop To append every item in inputs array
             inputs.forEach(input => {
-                formData.append( String(input) , this.service[input]);
+                formData.append(String(input), this.service[input]);
             });
 
             // Send request with axios
-            axios.post("/api/admin/service", formData , config )
-            .then(
-                response => {  // if there success request
+            axios.post("/api/admin/service", formData, config)
+                .then(
+                    response => {  // if there success request
 
-                    // if response status
-                    if (response.data.status == "success") {
+                        // if response status
+                        if (response.data.status == "success") {
 
-                        // Close Model
-                        $("#formModal").modal('hide');
+                            // Close Model
+                            $("#formModal").modal('hide');
 
-                        // reload getServices()
-                        this.getServices();
+                            // reload getServices()
+                            this.getServices();
 
-                        // empty error var
-                        this.errors = {}
+                            // empty error var
+                            this.errors = {}
 
-                        // empty service var
-                        this.service = {}
+                            // empty service var
+                            this.service = {}
 
-                        // Sweet Alert
-                        this.$swal({
-                            position: 'top-end',
-                            icon: response.data.status,
-                            text: response.data.msg,
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
+                            // Sweet Alert
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+
+                        }
+                        // if response validation failed
+                        else if (response.data.status == "error" && response.data.msg == "validation failed") {
+
+                            this.errors = response.data.errors
+
+                        } else {
+
+                            // Sweet Alert
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+
+                        }
 
                     }
-                    // if response validation failed
-                    else if (response.data.status == "error" && response.data.msg == "validation failed") {
-
-                        this.errors = response.data.errors
-
-                    }else{
-
-                        // Sweet Alert
-                        this.$swal({
-                            position: 'top-end',
-                            icon: response.data.status,
-                            text: response.data.msg,
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-
-                    }
-
-                }
-            )
-            .catch(error => console.log(error));
+                )
+                .catch(error => console.log(error));
         },
 
 
@@ -472,46 +501,46 @@ export default {
         ====== Update Service
         ======================================================*/
         editService(service_id) {
-            this.errors = {} , // empty error var
-            this.edit = true // set var edit equale 'true' to know that this modal for update
+            this.errors = {}, // empty error var
+                this.edit = true // set var edit equale 'true' to know that this modal for update
 
             axios.get('/api/admin/service/' + service_id)
-            .then(
-                response => {
-                    // console.log(response.data);
-                    if (response.data.status == "success") {
+                .then(
+                    response => {
+                        // console.log(response.data);
+                        if (response.data.status == "success") {
 
-                        // save response data in var
-                        this.service = response.data.data
+                            // save response data in var
+                            this.service = response.data.data
 
-                        // empty img , icon to send empty if it was
-                        this.service.img = ''
-                        this.service.icon = ''
+                            // empty img , icon to send empty if it was
+                            this.service.img = ''
+                            this.service.icon = ''
 
-                    } else if (response.data.status == "error" && response.data.msg == "404 not found") {
-                        /*=== Sweet Alert ===*/
-                        this.$swal({
-                            position: 'top-end',
-                            icon: 'error',
-                            text: 'Error 404 not found',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                    } else {
-                        /*=== Sweet Alert ===*/
-                        this.$swal({
-                            position: 'top-end',
-                            icon: 'error',
-                            text: 'Server Error',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
+                        } else if (response.data.status == "error" && response.data.msg == "404 not found") {
+                            /*=== Sweet Alert ===*/
+                            this.$swal({
+                                position: 'top-end',
+                                icon: 'error',
+                                text: 'Error 404 not found',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        } else {
+                            /*=== Sweet Alert ===*/
+                            this.$swal({
+                                position: 'top-end',
+                                icon: 'error',
+                                text: 'Server Error',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
                     }
-                }
-            )
-            .catch(
-                error => console.log(error)
-            )
+                )
+                .catch(
+                    error => console.log(error)
+                )
 
         },
         updateService() {
@@ -520,7 +549,7 @@ export default {
             // Set Config var to send it with data request
             const config = {
                 headers: {
-                    'content-type': 'multipart/form-data' ,
+                    'content-type': 'multipart/form-data',
                     "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
                 }
             }
@@ -531,73 +560,147 @@ export default {
 
 
             // Add method put in form field
-            formData.append( '_method' , 'PUT' );
+            formData.append('_method', 'PUT');
 
 
             // Array of inputs
-            const inputs = [ 'title', 'summary', 'content', 'img', 'icon' ,  'seo_title', 'seo_description', 'seo_keywords' ];
+            const inputs = ['title', 'summary', 'content', 'img', 'icon', 'seo_title', 'seo_description', 'seo_keywords'];
 
 
             // For Loop To append every item in inputs array
             inputs.forEach(input => {
-                formData.append( String(input) , this.service[input] );
+                formData.append(String(input), this.service[input]);
             });
 
 
             // Send request with axios
-            axios.post("/api/admin/service/" + this.service.id , formData , config )
-            .then(
-                response => {  // if there success request
+            axios.post("/api/admin/service/" + this.service.id, formData, config)
+                .then(
+                    response => {  // if there success request
 
-                    console.log(response.data);
+                        console.log(response.data);
 
-                    // if response status
-                    if (response.data.status == "success") {
+                        // if response status
+                        if (response.data.status == "success") {
 
-                        // Close Model
-                        $("#formModal").modal('hide');
+                            // Close Model
+                            $("#formModal").modal('hide');
 
-                        // reload getServices()
-                        this.getServices();
+                            // reload getServices()
+                            this.getServices();
 
-                        // empty error var
-                        this.errors = {}
+                            // empty error var
+                            this.errors = {}
 
-                        // empty service var
-                        this.service = {}
+                            // empty service var
+                            this.service = {}
 
-                        // Sweet Alert
-                        this.$swal({
-                            position: 'top-end',
-                            icon: response.data.status,
-                            text: response.data.msg,
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
+                            // Sweet Alert
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+
+                        }
+                        // if service not Found
+                        else if (response.data.status == "error" && response.data.msg == "404 not found") {
+
+                            // Sweet Alert
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+
+                        }
+                        // if response validation error
+                        else if (response.data.status == "error" && response.data.msg == "validation failed") {
+
+                            this.errors = response.data.errors
+
+                        } else {
+
+                            // Sweet Alert
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+
+                        }
 
                     }
-                    // if response validation failed
-                    else if (response.data.status == "error" && response.data.msg == "validation failed") {
-
-                        this.errors = response.data.errors
-
-                    }else{
-
-                        // Sweet Alert
-                        this.$swal({
-                            position: 'top-end',
-                            icon: response.data.status,
-                            text: response.data.msg,
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-
-                    }
-
-                }
-            )
-            .catch(error => console.log(error));
+                )
+                .catch(error => console.log(error));
         },
+
+
+
+
+        /*======================================================
+        ====== Update Service
+        ======================================================*/
+        deletePost(service) {
+            this.$swal({
+                text: 'Are you sure delete service ?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
+                    // do delete response
+                    axios.delete("/api/admin/service/" + service.id)
+                        .then(
+                            response => {  // if there success request
+
+                                if (response.data.status == "success") {
+
+                                    this.getServices(); // reload getServices()
+                                    this.service = {}      // empty service var
+
+                                    /*======== Sweet Alert ============*/
+                                    this.$swal({
+                                        position: 'top-end',
+                                        icon: response.data.status,
+                                        text: response.data.msg,
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    
+                                }else if (response.data.status == "error") {
+
+                                    /*======== Sweet Alert ============*/
+                                    this.$swal({
+                                        position: 'top-end',
+                                        icon: response.data.status,
+                                        text: response.data.msg,
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+
+                                }
+
+
+                            }
+                        )
+                        .catch(error => console.log(error));
+                }
+            })
+        },
+
+
+
+
+
 
 
 

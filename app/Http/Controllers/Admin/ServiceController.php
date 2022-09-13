@@ -220,6 +220,45 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        // Find Record In Db Column
+        $service = Service::where('id', $id )->first();
+
+        if( !$service ){  // If Not Found
+            return response()->json([
+                'status' => 'error',
+                'msg'    => '404 not found'
+            ]);
+        }
+
+        $delete = $service->delete();
+
+        // Delete Record from DB
+        try {
+            
+            // If Delete Error
+            if( !$delete ){
+                return response()->json([
+                    'status' => 'error',
+                    'msg'    => 'Error at delete opration'
+                ]);
+            }
+
+            // If Delete Succesffuly
+            return response()->json([
+                'status' => 'success',
+                'msg'    => 'Error at delete opration'
+            ]);
+
+        } catch (\Exception $e) {
+
+            // If Delete Succesffuly
+            return response()->json([
+                'status' => 'error',
+                'msg'    => 'server error'
+            ]);
+
+        }
+
     }
 }
