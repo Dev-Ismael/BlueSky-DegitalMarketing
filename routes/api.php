@@ -25,5 +25,8 @@ Route::group([ 'prefix' => 'admin' ] , function(){     // URL ==> 'api/admin' ,
 
     // Services
     Route::resource('service', '\App\Http\Controllers\Admin\ServiceController');
+    Route::post('service/search' , [App\Http\Controllers\Admin\ServiceController::class, 'search'])->name("service.search");
 
+
+    
 });

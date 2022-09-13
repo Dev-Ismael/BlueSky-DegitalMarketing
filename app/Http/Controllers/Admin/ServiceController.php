@@ -231,11 +231,11 @@ class ServiceController extends Controller
             ]);
         }
 
-        $delete = $service->delete();
 
         // Delete Record from DB
         try {
-            
+
+            $delete = $service->delete();
             // If Delete Error
             if( !$delete ){
                 return response()->json([
@@ -247,12 +247,12 @@ class ServiceController extends Controller
             // If Delete Succesffuly
             return response()->json([
                 'status' => 'success',
-                'msg'    => 'Error at delete opration'
+                'msg'    => 'Service deleted successfully'
             ]);
 
         } catch (\Exception $e) {
 
-            // If Delete Succesffuly
+            // If server error
             return response()->json([
                 'status' => 'error',
                 'msg'    => 'server error'
@@ -261,4 +261,39 @@ class ServiceController extends Controller
         }
 
     }
+
+    public function search(Request $request)
+    {
+
+        try {
+
+            // Find Matchs records
+            $services = Service::where('title', 'like', "%{$request->searchVal}%")->paginate( 10 );
+
+            // If Not Delete Record
+            if( !$services ){
+                return response()->json([
+                    'status' => 'error',
+                    'msg'    => 'Error at search opration'
+                ]);
+            }
+
+            return response()->json([
+                'status'   => 'success',
+                'msg'      => 'Searching opration successfully',
+                'data'     => $services,
+            ]);
+
+        } catch (\Exception $e) {
+
+            // If server error
+            return response()->json([
+                'status' => 'error',
+                'msg'    => 'server error'
+            ]);
+
+        }
+
+    }
+
 }

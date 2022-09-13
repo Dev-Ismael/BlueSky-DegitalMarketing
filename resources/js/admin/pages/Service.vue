@@ -17,9 +17,11 @@
                         <div id="order-listing_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer pt-3">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
-                                    <div id="order-listing_filter" class="dataTables_filter"><label><input type="search"
-                                                class="form-control" placeholder="Search By Title..."
-                                                aria-controls="order-listing"></label></div>
+                                    <div id="order-listing_filter" class="dataTables_filter">
+                                        <label>
+                                            <input type="text" class="form-control" placeholder="Search By Title..." name="searchVal" v-model="searchVal" @keyup="searchService()" maxlength="55" aria-controls="order-listing" autocomplete="nope" />
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -47,13 +49,13 @@
                                                 '...' : service.title }} </td>
                                                 <td>
                                                     <button type="button" data-bs-toggle="modal"
-                                                        data-bs-target="#showDataModal" @click="showService(service.id)"
+                                                        data-bs-target="#showDataModal" @click="showService(service)"
                                                         class="btn btn-secondary btn-rounded btn-icon p-2">
                                                         <i class="mdi mdi-eye"></i>
                                                     </button>
                                                     &nbsp;
                                                     <button type="button" data-bs-toggle="modal"
-                                                        data-bs-target="#formModal" @click="editService(service.id)"
+                                                        data-bs-target="#formModal" @click="editService(service)"
                                                         class="btn btn-primary btn-rounded btn-icon p-2">
                                                         <i class="ti-marker-alt"></i>
                                                     </button>
@@ -114,30 +116,30 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <span class="h5 fw-bold"> <i class="mdi mdi-format-title"></i> title : </span>
+                                        <span class="h4 fw-bold"> <i class="mdi mdi-format-title"></i> title : </span>
                                         <span class="h6"> {{ service.title }} </span>
                                     </div>
                                     <hr>
                                     <div class="form-group">
-                                        <span class="h5 fw-bold"> <i class="mdi mdi-format-align-left"></i> summary :
+                                        <span class="h4 fw-bold"> <i class="mdi mdi-format-align-left"></i> summary :
                                         </span>
                                         <span class="h6"> {{ service.summary }} </span>
                                     </div>
                                     <hr>
                                     <div class="form-group">
-                                        <span class="h5 fw-bold"> <i class="mdi mdi-format-align-left"></i> content :
+                                        <span class="h4 fw-bold"> <i class="mdi mdi-format-align-left"></i> content :
                                         </span>
                                         <span class="h6"> {{ service.content }} </span>
                                     </div>
                                     <hr>
                                     <div class="form-group">
-                                        <span class="h5 fw-bold"> <i class="mdi mdi-file-image"></i> icon : </span>
+                                        <span class="h4 fw-bold"> <i class="mdi mdi-file-image"></i> icon : </span>
                                         <span class="h6"> <img :src="'/images/services/' + service.icon "
                                                 alt="service-icon" width="160"> </span>
                                     </div>
                                     <hr>
                                     <div class="form-group">
-                                        <span class="h5 fw-bold"> <i class="mdi mdi-file-image"></i> img : </span>
+                                        <span class="h4 fw-bold"> <i class="mdi mdi-file-image"></i> img : </span>
                                         <span class="h6"> <img :src="'/images/services/' + service.img "
                                                 alt="service-img" width="160"> </span>
                                     </div>
@@ -326,8 +328,9 @@ export default {
                 seo_description: '',
                 seo_keywords: '',
             },
-            errors: {}, // create empty object to insert errors in it to show
-            edit: false // set this var to know if modal for create or edit
+            errors: {},  // create empty object to insert errors in it to show
+            edit: false, // set this var to know if modal for create or edit
+            searchVal: ''
         }
     },
     mounted() {
@@ -366,28 +369,19 @@ export default {
         /*======================================================
         ====== GET Service
         ======================================================*/
-        showService(service_id) {
-            axios.get('/api/admin/service/' + service_id)
+        showService(service) {
+            axios.get('/api/admin/service/' + service.id)
                 .then(
                     response => {
                         // console.log(response.data);
                         if (response.data.status == "success") {
                             this.service = response.data.data
-                        } else if (response.data.status == "error" && response.data.msg == "404 not found") {
+                        } else if (response.data.status == "error") {
                             /*=== Sweet Alert ===*/
                             this.$swal({
                                 position: 'top-end',
-                                icon: 'error',
-                                text: 'Error 404 not found',
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                        } else {
-                            /*=== Sweet Alert ===*/
-                            this.$swal({
-                                position: 'top-end',
-                                icon: 'error',
-                                text: 'Server Error',
+                                icon: response.data.status,
+                                text: response.data.msg,
                                 showConfirmButton: false,
                                 timer: 1500
                             });
@@ -475,7 +469,7 @@ export default {
 
                             this.errors = response.data.errors
 
-                        } else {
+                        } else if (response.data.status == "error") {
 
                             // Sweet Alert
                             this.$swal({
@@ -500,11 +494,11 @@ export default {
         /*======================================================
         ====== Update Service
         ======================================================*/
-        editService(service_id) {
+        editService(service) {
             this.errors = {}, // empty error var
                 this.edit = true // set var edit equale 'true' to know that this modal for update
 
-            axios.get('/api/admin/service/' + service_id)
+            axios.get('/api/admin/service/' + service.id)
                 .then(
                     response => {
                         // console.log(response.data);
@@ -517,21 +511,12 @@ export default {
                             this.service.img = ''
                             this.service.icon = ''
 
-                        } else if (response.data.status == "error" && response.data.msg == "404 not found") {
+                        } else if (response.data.status == "error") {
                             /*=== Sweet Alert ===*/
                             this.$swal({
                                 position: 'top-end',
-                                icon: 'error',
-                                text: 'Error 404 not found',
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                        } else {
-                            /*=== Sweet Alert ===*/
-                            this.$swal({
-                                position: 'top-end',
-                                icon: 'error',
-                                text: 'Server Error',
+                                icon: response.data.status,
+                                text: response.data.msg,
                                 showConfirmButton: false,
                                 timer: 1500
                             });
@@ -578,7 +563,7 @@ export default {
                 .then(
                     response => {  // if there success request
 
-                        console.log(response.data);
+                        // console.log(response.data);
 
                         // if response status
                         if (response.data.status == "success") {
@@ -605,25 +590,14 @@ export default {
                             });
 
                         }
-                        // if service not Found
-                        else if (response.data.status == "error" && response.data.msg == "404 not found") {
-
-                            // Sweet Alert
-                            this.$swal({
-                                position: 'top-end',
-                                icon: response.data.status,
-                                text: response.data.msg,
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-
-                        }
                         // if response validation error
                         else if (response.data.status == "error" && response.data.msg == "validation failed") {
 
                             this.errors = response.data.errors
 
-                        } else {
+                        }
+                        // if service not Found
+                        else if (response.data.status == "error") {
 
                             // Sweet Alert
                             this.$swal({
@@ -675,7 +649,7 @@ export default {
                                         showConfirmButton: false,
                                         timer: 1500
                                     });
-                                    
+
                                 }else if (response.data.status == "error") {
 
                                     /*======== Sweet Alert ============*/
@@ -699,6 +673,58 @@ export default {
 
 
 
+
+
+
+        /*======================================================
+        ====== Search Service
+        ======================================================*/
+        searchService(){
+
+            // Set Config var to send it with data request
+            const config = {
+                headers: {
+                    'content-type': 'multipart/form-data',
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
+                }
+            }
+
+            // set var from FormData Class
+            let formData = new FormData();
+
+            // Add method put in form field
+            formData.append('searchVal', this.searchVal );
+
+            // Send request with axios
+            axios.post("/api/admin/service/search", formData, config)
+            .then(
+                response => {  // if there success request
+
+                    // console.log(response.data)
+
+                    // if response status
+                    if (response.data.status == "success") {
+                        this.services = response.data.data;
+                    }
+
+                    // if service not Found
+                    else if ( response.data.status == "error" ) {
+
+                        // Sweet Alert
+                        this.$swal({
+                            position: 'top-end',
+                            icon: response.data.status,
+                            text: response.data.msg,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+
+                    }
+
+                }
+            )
+            .catch(error => console.log(error));
+        },
 
 
 
