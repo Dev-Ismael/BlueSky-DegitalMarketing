@@ -15,6 +15,13 @@
                     <span class="menu-title">Services</span>
                 </router-link>
             </li>
+            <li class="nav-item nav-category">Help</li>
+            <li class="nav-item">
+                <router-link to="/admin/seo-managment" class="nav-link" >
+                    <i class="mdi mdi-file-find menu-icon"></i>
+                    <span class="menu-title"> SEO Management </span>
+                </router-link>
+            </li>
         </ul>
     </nav>
 

@@ -13,6 +13,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Font Awosome -->
+    <script src="https://kit.fontawesome.com/bc98e6aa51.js" crossorigin="anonymous"></script>
+
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('admin/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/vendors/mdi/css/materialdesignicons.min.css') }}">

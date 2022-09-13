@@ -6,6 +6,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // Import Pages
 import DashboardPage from '../pages/dashboard.vue';
 import ServicePage from '../pages/service.vue';
+import SeoManagmentPage from '../pages/seoManagment.vue';
 import ProfilePage from '../pages/profile.vue';
 import notFoundPage from '../pages/notFoundPage.vue';
 
@@ -13,6 +14,7 @@ import notFoundPage from '../pages/notFoundPage.vue';
 const routes = [
     { path: '/admin/profile' , component: ProfilePage },
     { path: '/admin/service' , component: ServicePage },
+    { path: '/admin/seo-managment' , component: SeoManagmentPage },
     { path: '/admin/dashboard' , component: DashboardPage },
     { path: "/:catchAll(.*)" , component: notFoundPage },
 ];
