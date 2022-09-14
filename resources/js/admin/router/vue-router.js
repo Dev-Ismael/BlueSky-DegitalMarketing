@@ -4,11 +4,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 // Import Pages
-import DashboardPage from '../pages/dashboard.vue';
-import ServicePage from '../pages/service.vue';
-import SeoManagmentPage from '../pages/seoManagment.vue';
-import ProfilePage from '../pages/profile.vue';
-import notFoundPage from '../pages/notFoundPage.vue';
+import DashboardPage from '../views/dashboard.vue';
+import ServicePage from '../views/service.vue';
+import SeoManagmentPage from '../views/seoManagment.vue';
+import ProfilePage from '../views/profile.vue';
+import notFoundPage from '../views/notFoundPage.vue';
 
 // Routes
 const routes = [
