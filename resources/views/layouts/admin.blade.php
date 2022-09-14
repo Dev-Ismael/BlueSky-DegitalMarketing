@@ -71,6 +71,7 @@
     <script defer src="{{ mix('js/app.js') }}"></script>
 
     <!-- plugins:js -->
+    <script src="{{ asset('admin/vendors/select2/select2.min.js') }}"></script>
     <script src="{{ asset('admin/vendors/js/vendor.bundle.base.js') }}"></script>
     <script src="{{ asset('admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
     <!-- endinject -->
@@ -87,11 +88,11 @@
     <script src="{{ asset('admin/js/file-upload.js') }}"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="{{ asset('admin/js/jquery.cookie.js') }}">
-        type = "text/javascript" >
-    </script>
+    <script src="{{ asset('admin/js/jquery.cookie.js') }}"></script>
     <script src="{{ asset('admin/js/dashboard.js') }}"></script>
     <script src="{{ asset('admin/js/Chart.roundedBarCharts.js') }}"></script>
+    <script src="{{ asset('admin/js/select2.js') }}"></script>
+    <script src="{{ asset('admin/js/custom.js') }}"></script>
     <!-- End custom js for this page-->
 
 

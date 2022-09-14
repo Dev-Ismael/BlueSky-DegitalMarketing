@@ -16,10 +16,30 @@
                     <div class="table-responsive">
                         <div id="order-listing_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer pt-3">
                             <div class="row">
-                                <div class="col-sm-12 col-md-6">
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="form-group multi-action">
+                                        <div class="input-group">
+                                            <select name="action" v-model="multiAction.action"
+                                                class="js-example-basic-single">
+                                                <option value="">Choose Action</option>
+                                                <option value="delete">Delete Service</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-facebook" type="button"
+                                                    @click="ChooseMultiAction()">
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <small class="text-danger"> </small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3 offset-md-6 ml-auto">
                                     <div id="order-listing_filter" class="dataTables_filter">
                                         <label>
-                                            <input type="text" class="form-control" placeholder="Search By Title..." name="searchVal" v-model="searchVal" @keyup="searchService()" maxlength="55" aria-controls="order-listing" autocomplete="nope" />
+                                            <input type="text" class="form-control" placeholder="Search By Title..."
+                                                name="searchVal" v-model="searchVal" @keyup="searchService()"
+                                                maxlength="55" aria-controls="order-listing" autocomplete="nope" />
                                         </label>
                                     </div>
                                 </div>
@@ -30,7 +50,15 @@
                                         aria-describedby="order-listing_info">
                                         <thead>
                                             <tr>
-                                                <th> ID # </th>
+                                                <th>
+                                                    <div class="form-check mt-0 mb-0">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" id="main-ckecker" class="form-check-input"
+                                                                @change="ckeckboxClicked($event)" />
+                                                            <i class="input-helper"></i>
+                                                        </label>
+                                                    </div>
+                                                </th>
                                                 <th> Image </th>
                                                 <th> Title </th>
                                                 <th> Summary </th>
@@ -39,7 +67,15 @@
                                         </thead>
                                         <tbody>
                                             <tr v-for="service in services.data" :key="service.id">
-                                                <td class="sorting_1"> {{ service.id }} </td>
+                                                <td class="jsgrid-cell" style="width: 100px;">
+                                                    <div class="form-check mt-0">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input check-item"
+                                                            :value="service.id" v-model="multiAction.id" >
+                                                            <i class="input-helper"></i>
+                                                        </label>
+                                                    </div>
+                                                </td>
                                                 <td class="py-1">
                                                     <img :src=" '/images/services/'+ service.img " alt="image">
                                                 </td>
@@ -330,13 +366,49 @@ export default {
             },
             errors: {},  // create empty object to insert errors in it to show
             edit: false, // set this var to know if modal for create or edit
-            searchVal: ''
+            searchVal: '',
+            multiAction: {
+                id: [],
+                action: ''
+            },
         }
     },
     mounted() {
         this.getServices();
     },
     methods: {
+
+        /*======================================================
+        ====== CheckBox
+        ======================================================*/
+        ckeckboxClicked(event) {
+
+            const checkItems = document.querySelectorAll(".check-item");
+            if (event.target.checked) { // check if main checker checked
+
+                // Push all serivces id multiAction object
+                this.services.data.forEach( service => {
+                    this.multiAction.id.push(service.id)
+                });
+
+                // add checked to checkbox
+                for (var i = 0; i < checkItems.length; i++) {
+                    checkItems[i].checked = true;
+                }
+
+            } else {
+
+                // empty Multi Action Id
+                this.multiAction.id = [];
+
+                // remove checked to checkbox
+                for (var i = 0; i < checkItems.length; i++) {
+                    checkItems[i].checked = false;
+                }
+
+            }
+
+        },
 
 
         /*======================================================
@@ -650,7 +722,7 @@ export default {
                                         timer: 1500
                                     });
 
-                                }else if (response.data.status == "error") {
+                                } else if (response.data.status == "error") {
 
                                     /*======== Sweet Alert ============*/
                                     this.$swal({
@@ -679,7 +751,7 @@ export default {
         /*======================================================
         ====== Search Service
         ======================================================*/
-        searchService(){
+        searchService() {
 
             // Set Config var to send it with data request
             const config = {
@@ -693,42 +765,143 @@ export default {
             let formData = new FormData();
 
             // Add method put in form field
-            formData.append('searchVal', this.searchVal );
+            formData.append('searchVal', this.searchVal);
 
             // Send request with axios
             axios.post("/api/admin/service/search", formData, config)
-            .then(
-                response => {  // if there success request
+                .then(
+                    response => {  // if there success request
 
-                    // console.log(response.data)
+                        // console.log(response.data)
 
-                    // if response status
-                    if (response.data.status == "success") {
-                        this.services = response.data.data;
+                        // if response status
+                        if (response.data.status == "success") {
+                            this.services = response.data.data;
+                        }
+
+                        // if service not Found
+                        else if (response.data.status == "error") {
+
+                            // Sweet Alert
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+
+                        }
+
                     }
-
-                    // if service not Found
-                    else if ( response.data.status == "error" ) {
-
-                        // Sweet Alert
-                        this.$swal({
-                            position: 'top-end',
-                            icon: response.data.status,
-                            text: response.data.msg,
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-
-                    }
-
-                }
-            )
-            .catch(error => console.log(error));
+                )
+                .catch(error => console.log(error));
         },
 
 
 
 
+
+
+
+        /*======================================================
+        ====== Multi Action
+        ======================================================*/
+        ChooseMultiAction() {
+
+            if (this.multiAction.action == '') {
+                /*=== Sweet Alert ===*/
+                this.$swal({
+                    position: 'top-end',
+                    icon: 'error',
+                    text: 'Please Choose Action to do.',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else if (this.multiAction.id == '' ) {
+                /*=== Sweet Alert ===*/
+                this.$swal({
+                    position: 'top-end',
+                    icon: 'error',
+                    text: 'Please select rows.',
+                    showConfirmButton: false,
+                    timer: 50000
+                });
+            } else {
+
+                this.$swal({
+                    text: 'Are you sure ?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, do it!'
+                }).then((result) => {
+                    if (result.value) {
+
+                        // Set Config var to send it with data request
+                        const config = {
+                            headers: {
+                                'content-type': 'multipart/form-data',
+                                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
+                            }
+                        }
+
+                        // set var from FormData Class
+                        let formData = new FormData();
+
+                        // Array of inputs
+                        const inputs = ['id', 'action'];
+
+                        // For Loop To append every item in inputs array
+                        inputs.forEach(input => {
+                            formData.append(String(input), this.multiAction[input]);
+                        });
+
+                        // Send request with axios
+                        axios.post("/api/admin/service/multiAction", formData, config)
+                        .then(
+                            response => {  // if there success request
+
+                                if (response.data.status == "success") {
+
+                                    const mainChecker = document.getElementById("main-ckecker");
+                                    mainChecker.checked = false;
+
+                                    this.getServices(); // reload getServices()
+                                    this.service = {}      // empty service var
+
+                                    /*======== Sweet Alert ============*/
+                                    this.$swal({
+                                        position: 'top-end',
+                                        icon: response.data.status,
+                                        text: response.data.msg,
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+
+                                } else if (response.data.status == "error") {
+
+                                    /*======== Sweet Alert ============*/
+                                    this.$swal({
+                                        position: 'top-end',
+                                        icon: response.data.status,
+                                        text: response.data.msg,
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+
+                                }
+                            }
+                        )
+                        .catch(error => console.log(error));
+
+                    }
+                });
+
+            }
+
+        }
 
     },
 

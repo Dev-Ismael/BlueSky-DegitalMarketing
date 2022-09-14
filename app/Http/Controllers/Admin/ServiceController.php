@@ -296,4 +296,52 @@ class ServiceController extends Controller
 
     }
 
+
+
+
+    public function multiAction(Request $request)
+    {
+
+
+        // return response()->json([
+        //     "requestData" => $request->all(),
+        // ]);
+
+
+        // If Action is Delete
+        if( $request->action == "delete" ){
+
+            $ids = explode(",", $request->id);
+
+
+            try {
+                $delete = Service::destroy( $ids );
+
+                if( !$delete ){
+                    return response()->json([
+                        'status' => 'error',
+                        'msg'    => 'Error at delete opration'
+                    ]);
+                }
+
+                // If Delete Succesffuly
+                return response()->json([
+                    'status' => 'success',
+                    'msg'    => 'Services deleted successfully'
+                ]);
+
+            } catch (\Exception $e) {
+
+                // If server error
+                return response()->json([
+                    'status' => 'error',
+                    'msg'    => 'server error'
+                ]);
+
+            }
+        }
+
+    }
+
+
 }
