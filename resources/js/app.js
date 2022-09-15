@@ -14,6 +14,11 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 app.use(VueSweetalert2);
 
+
+/*======= ckeditor5 =======*/
+import CKEditor from '@ckeditor/ckeditor5-vue';
+app.use( CKEditor );
+
 /*====================================================
 ===== Import Web JS Components
 ====================================================*/
