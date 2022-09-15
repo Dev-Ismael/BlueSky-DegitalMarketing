@@ -18,12 +18,10 @@
                         <li><a href="#" class="dropdown-toggle-inner" :class="{ active : currentUrl.includes('service') }"> <i class="fa-solid fa-handshake-angle"></i>
                                 Services </a>
                             <ul class="sub-menu">
-                                <li><a href="/service"> service </a></li>
-                                <li><a href="/service"> service </a></li>
-                                <li><a href="/service"> service </a></li>
+                                <li v-for=" service in services " :key="service.id"><a :href=" '/' + service.slug "> {{ service.title }} </a></li>
                             </ul>
                         </li>
-                        <li><a href="/portfolio" :class="{active : currentUrl.includes('portfolio') }"> <i class="fa-solid fa-sitemap"></i> Portfolio </a></li>
+                        <!-- <li><a href="/portfolio" :class="{active : currentUrl.includes('portfolio') }"> <i class="fa-solid fa-sitemap"></i> Portfolio </a></li> -->
                         <li><a href="/contact" :class="{active : currentUrl.includes('contact') }"> <i class="fa-solid fa-message"></i> Contact </a></li>
                     </ul>
                 </div>
@@ -34,6 +32,9 @@
 </template>
 
 <script>
+import axios from 'axios';
+
+
     export default {
         props: {
             darkLogo: {
@@ -43,12 +44,34 @@
         },
         data() {
             return {
+                services: '',
                 currentUrl: '',
                 darkLogo: this.darkLogo
             }
         },
         mounted() {
             this.currentUrl = window.location.pathname;
+            this.getServices();
+        },
+        methods: {
+
+
+            /*======================================================
+            ====== GET Services
+            ======================================================*/
+            getServices() {
+                axios.get('/api/services')
+                .then(
+                    response => {
+                        this.services = response.data.data
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                )
+            },
+
+
         }
     }
 </script>

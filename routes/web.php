@@ -16,16 +16,31 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
 Auth::routes();
 
+
+
+
+
+
+/*===========================================================
+====== Web Routes
+============================================================*/
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
-Route::get('/service', [App\Http\Controllers\ServiceController::class, 'index'])->name('service');
-Route::get('/portfolio', [App\Http\Controllers\ProjectController::class, 'index'])->name('portfolio');
-Route::get('/portfolio/{slug}', [App\Http\Controllers\ProjectController::class, 'show'])->name('portfolio.project');
+Route::get('/{service_slug}', [App\Http\Controllers\ServiceController::class, 'show'])->name('service.show');
+// Route::get('/portfolio', [App\Http\Controllers\ProjectController::class, 'index'])->name('portfolio');
+// Route::get('/portfolio/{slug}', [App\Http\Controllers\ProjectController::class, 'show'])->name('portfolio.project');
 
-// Admin
+
+
+
+
+/*===========================================================
+====== Admin Routes
+============================================================*/
 Route::get("admin/{any}", function(){
     return view('layouts.admin');
 }) -> where([ "any" => ".*" ]);

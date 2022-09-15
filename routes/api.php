@@ -19,11 +19,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+/*===========================================================
+====== Web APIs
+============================================================*/
+Route::get('services' , [App\Http\Controllers\ServiceController::class, 'index'])->name("service.index");
+Route::get('service/show/{slug}' , [App\Http\Controllers\ServiceController::class, 'getService'])->name("service.show");
+
+
+/*===========================================================
+====== Admin APIs
+============================================================*/
 Route::group([ 'prefix' => 'admin' ] , function(){     // URL ==> 'api/admin' ,
 
-    
-    Route::get('user',  [\App\Http\Controllers\Admin\HomeController::class, 'index']);
 
+    Route::get('user',  [\App\Http\Controllers\Admin\HomeController::class, 'index']);
 
     // Services
     Route::resource('service', '\App\Http\Controllers\Admin\ServiceController');
