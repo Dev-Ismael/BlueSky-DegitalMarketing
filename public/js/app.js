@@ -19982,8 +19982,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       editor: (_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_2___default()),
-      editorData: '<p> Your Post Content </p>',
-      editorConfig: {},
+      // import ClassicEditor theme to use in checkEditor package
       services: {},
       service: {
         title: '',
@@ -21907,7 +21906,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_84)])])]), _hoisted_85])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("-- Form Model --"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_86, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_87, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_88, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_89, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_90, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_91, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_92, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_93, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.edit ? "Edit Service" : "Create Service"), 1
   /* TEXT */
   ), _hoisted_94]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-    onSubmit: _cache[15] || (_cache[15] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+    onSubmit: _cache[16] || (_cache[16] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return $data.edit ? $options.updateService() : $options.storeService();
     }, ["prevent"])),
     enctype: "multipart/form-data",
@@ -21976,18 +21975,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* CLASS */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.service.summary]]), $data.errors.summary ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_110, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.summary[0]), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_111, [_hoisted_112, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <textarea name=\"content\" v-model=\"service.content\" class=\"form-control\"\n                                                :class=\" errors.content ? 'border-danger' : ''  \" id=\"message-text\"\n                                                rows=\"4\" cols=\"50\"></textarea> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ckeditor, {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_111, [_hoisted_112, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ckeditor, {
     editor: $data.editor,
-    config: $data.editorConfig
+    modelValue: $data.service.content,
+    "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
+      return $data.service.content = $event;
+    }),
+    name: "content"
   }, null, 8
   /* PROPS */
-  , ["editor", "config"]), $data.errors.content ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_113, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.content[0]), 1
+  , ["editor", "modelValue"]), $data.errors.content ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_113, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.content[0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Icon "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_114, [_hoisted_115, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "file",
     name: "icon",
     "class": "file-upload-default",
-    onChange: _cache[12] || (_cache[12] = function ($event) {
+    onChange: _cache[13] || (_cache[13] = function ($event) {
       return $options.getImageName($event, 'icon');
     })
   }, null, 32
@@ -22006,7 +22009,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "file",
     name: "img",
     "class": "file-upload-default",
-    onChange: _cache[13] || (_cache[13] = function ($event) {
+    onChange: _cache[14] || (_cache[14] = function ($event) {
       return $options.getImageName($event, 'img');
     })
   }, null, 32
@@ -22022,7 +22025,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), _hoisted_122]), $data.errors.img ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_123, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.img[0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_124, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onSubmit: _cache[14] || (_cache[14] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+    onSubmit: _cache[15] || (_cache[15] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return $options.storeService();
     }, ["prevent"])),
     "class": "btn btn-success"

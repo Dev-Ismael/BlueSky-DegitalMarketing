@@ -277,10 +277,7 @@
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label"> <i
                                                     class="mdi mdi-format-align-left"></i> Content </label>
-                                            <!-- <textarea name="content" v-model="service.content" class="form-control"
-                                                :class=" errors.content ? 'border-danger' : ''  " id="message-text"
-                                                rows="4" cols="50"></textarea> -->
-                                            <ckeditor :editor="editor" :config="editorConfig"></ckeditor>
+                                            <ckeditor :editor="editor" v-model="service.content" name="content"></ckeditor>
                                             <small class="text-danger" v-if="errors.content"> {{errors.content[0] }}
                                             </small>
                                         </div>
@@ -355,10 +352,7 @@ export default {
     },
     data() {
         return {
-        editor: ClassicEditor,
-            editorData: '<p> Your Post Content </p>',
-            editorConfig:{
-            },
+            editor: ClassicEditor,   // import ClassicEditor theme to use in checkEditor package
             services: {},
             service: {
                 title: '',
