@@ -42,5 +42,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        \App\Models\Messege::factory(10)->create([
+            'name' => 'name',
+            'email' => 'email',
+            'subject' => 'subject',
+            'messege' => 'messege',
+        ]);
+
+
     }
 }

@@ -13,17 +13,17 @@
                             <div class="form-row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="name" placeholder="Enter name" required/>
+                                        <input type="text" class="form-control" name="name" placeholder="Enter Company Name..." required/>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" name="email" placeholder="Enter email" required/>
+                                        <input type="email" class="form-control" name="email" placeholder="Enter E-mail Address..." required/>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea name="message" id="message" class="form-control" rows="7" cols="25" placeholder="Message"></textarea>
+                                        <textarea name="message" id="message" class="form-control" rows="7" cols="25" placeholder="Message..."></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 mt-3">
@@ -40,7 +40,7 @@
                         <h2>Looking for a excellent Business idea?</h2>
                         <p class="lead">Seamlessly deliver pandemic e-services and next-generation initiatives.</p>
 
-                        <a href="#" class="btn outline-btn align-items-center">Get Directions <span class="ti-arrow-right pl-2"></span></a>
+                        <a :href=" settings.location " target="_blank" class="btn outline-btn align-items-center">Get Directions <span class="ti-arrow-right pl-2"></span></a>
 
                         <hr class="my-5">
 

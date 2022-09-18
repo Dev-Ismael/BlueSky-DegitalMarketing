@@ -26,6 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('services' , [App\Http\Controllers\ServiceController::class, 'index'])->name("service.index");
 Route::get('service/show/{slug}' , [App\Http\Controllers\ServiceController::class, 'getService'])->name("service.show");
 Route::get('settings' , [App\Http\Controllers\SettingController::class, 'show'])->name("settings.show");
+Route::get('messege' , [App\Http\Controllers\SettingController::class, 'store'])->name("settings.store");
 
 
 /*===========================================================
