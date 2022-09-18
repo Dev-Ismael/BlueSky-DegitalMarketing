@@ -22,6 +22,12 @@
                     <span class="menu-title"> SEO Management </span>
                 </router-link>
             </li>
+            <li class="nav-item">
+                <router-link to="/admin/settings" class="nav-link" >
+                    <i class="mdi mdi-settings menu-icon"></i>
+                    <span class="menu-title"> Setting </span>
+                </router-link>
+            </li>
         </ul>
     </nav>
 

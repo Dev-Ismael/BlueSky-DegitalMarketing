@@ -25,6 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 ============================================================*/
 Route::get('services' , [App\Http\Controllers\ServiceController::class, 'index'])->name("service.index");
 Route::get('service/show/{slug}' , [App\Http\Controllers\ServiceController::class, 'getService'])->name("service.show");
+Route::get('settings' , [App\Http\Controllers\SettingController::class, 'show'])->name("settings.show");
 
 
 /*===========================================================
@@ -40,6 +41,9 @@ Route::group([ 'prefix' => 'admin' ] , function(){     // URL ==> 'api/admin' ,
     Route::post('service/search' , [App\Http\Controllers\Admin\ServiceController::class, 'search'])->name("service.search");
     Route::post('service/multiAction' , [App\Http\Controllers\Admin\ServiceController::class, 'multiAction'])->name("service.multiAction");
 
+    // Settings
+    Route::get('settings' , [App\Http\Controllers\Admin\SettingController::class, 'show'])->name("settings.show");
+    Route::post('settings' , [App\Http\Controllers\Admin\SettingController::class, 'update'])->name("settings.update");
 
 
 });

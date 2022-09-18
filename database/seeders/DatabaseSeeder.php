@@ -28,5 +28,19 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        \App\Models\Setting::factory(1)->create([
+            'address' => 'address',
+            'location' => 'location',
+            'footer_content' => 'footer_content',
+            'email' => 'email@gmail.com',
+            'phone' => 'phone',
+            'phone_formatted' => 'phone_formatted',
+            'linkedin' => 'linkedin',
+            'facebook' => 'facebook',
+            'twitter' => 'twitter',
+            'youtube' => 'youtube',
+        ]);
+
+
     }
 }

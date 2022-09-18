@@ -18,15 +18,17 @@
             </div>
             <div class="row justify-content-center">
 
-                <div v-for=" service in services " :key="service.id" class="col-md-6 col-lg-4">
+                <div v-for=" ( service , index ) in services "  class="col-md-6 col-lg-4">
                     <div class="promo-single-wrap p-5 text-center custom-shadow rounded">
                         <div class="promo-icon mb-4">
-                            <img :src=" '/images/services/' + service.icon " alt="promo" width="180">
-                            <!-- <span class="number-bg">01</span> -->
+                            <a :href=" '/' + service.slug ">
+                                <img :src=" '/images/services/' + service.icon " alt="promo" width="220">
+                            </a>
+                            <span class="number-bg"> {{ '0' + (index + 1) }} </span>
                         </div>
                         <div class="promo-info">
                             <!-- <strong class="color-secondary">Discuss with Users</strong> -->
-                            <h4 class="color-secondary"> {{ service.title }} </h4>
+                            <h4 class="color-secondary"> <a class="color-secondary" :href=" '/' + service.slug "> {{ service.title }} </a> </h4>
                             <p>{{ service.summary }}</p>
                         </div>
                     </div>

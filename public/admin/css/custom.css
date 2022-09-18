@@ -1,16 +1,31 @@
-div.dataTables_wrapper div.dataTables_filter {
-    text-align: initial;
+
+/*========= Global ========*/
+.w-100{
+    width: 100%;
 }
 /*========= Check Editor ========*/
 .ck-editor__editable {
     min-height: 250px;
 }
-/*========= Modal ========*/
+/*========= table ========*/
 .table td img, .jsgrid .jsgrid-table td img{
     width: auto !important;
     height: 80px !important;
     border: 0px;
     box-shadow: none !important;
+}
+.dataTables_wrapper .dataTable thead th{
+    text-align: center;
+    text-transform: uppercase;
+}
+.table td, .jsgrid .jsgrid-table td{
+    text-align: center;
+}
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: initial;
+}
+div.dataTables_wrapper div.dataTables_filter input{
+    margin-left: 0;
 }
 /*========= Modal ========*/
 .modal-body img{

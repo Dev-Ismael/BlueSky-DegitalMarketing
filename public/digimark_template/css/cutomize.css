@@ -134,29 +134,35 @@ button.navbar-toggler {
     margin: 20px 0px;
     min-height: 460px;
 }
-.promo-single-wrap img{
+/* .promo-single-wrap img{
     animation-name: up-move-animation;
     animation-duration: 7s;
     animation-timing-function: linear;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-direction: normal;
+} */
+.number-bg {
+    left: 0;
+    right: 0;
+    z-index: -1;
+    top: -30px;
+    color: #ebb11038;
+    font-size: 180px;
+    line-height: 120px;
+    font-weight: 700;
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-animation: mover 1.5s infinite alternate;
+    animation: mover 1.5s infinite alternate;
 }
-
 /*==========================================================
 ====== main Header
 ===========================================================*/
 .hero-slider-content .lead{
     color: #202020;
 }
-/* .header-section .img-wrap img{
-    animation-name: up-move-animation;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-} */
+
 /*==========================================================
 ====== About Page
 ===========================================================*/

@@ -36,8 +36,8 @@
                                 </div>
                                 <div class="col-sm-12 col-md-3 offset-md-6 ml-auto">
                                     <div id="order-listing_filter" class="dataTables_filter">
-                                        <label>
-                                            <input type="text" class="form-control" placeholder="Search By Title..."
+                                        <label class="w-100">
+                                            <input type="text" class="form-control w-100" placeholder="Search By Title..." 
                                                 name="searchVal" v-model="searchVal" @keyup="searchService()"
                                                 maxlength="55" aria-controls="order-listing" autocomplete="nope" />
                                         </label>

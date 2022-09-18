@@ -8,6 +8,7 @@ import DashboardPage from '../views/dashboard.vue';
 import ServicePage from '../views/service.vue';
 import SeoManagmentPage from '../views/seoManagment.vue';
 import ProfilePage from '../views/profile.vue';
+import SettingsPage from '../views/settings.vue';
 import notFoundPage from '../views/notFoundPage.vue';
 
 // Routes
@@ -15,6 +16,7 @@ const routes = [
     { path: '/admin/profile' , component: ProfilePage },
     { path: '/admin/service' , component: ServicePage },
     { path: '/admin/seo-managment' , component: SeoManagmentPage },
+    { path: '/admin/settings' , component: SettingsPage },
     { path: '/admin/dashboard' , component: DashboardPage },
     { path: "/:catchAll(.*)" , component: notFoundPage },
 ];

@@ -45,13 +45,9 @@
                         <hr class="my-5">
 
                         <h5>Our Headquarters</h5>
-                        <address>
-                            100 Yellow House, Mn <br>
-                            Factory, United State, 13420
-                        </address>
-                        <br>
-                        <span>Phone: +1234567890123</span> <br>
-                        <span>Email: <a href="mailto:sales@bluskyint.com" class="link-color">sales@bluskyint.com</a></span>
+                        <span>Address: <a class="text-muted" :href=" settings.location " target="_blank"> {{ settings.address }} </a> </span> <br>
+                        <span>Phone: <a class="text-muted" :href=" 'tel:' + settings.phone_formatted "> {{ settings.phone }} </a> </span> <br>
+                        <span>Email: <a class="text-muted" :href=" 'mailto:' + settings.email "> {{ settings.email }} </a> </span>
 
                     </div>
                 </div>
@@ -59,3 +55,42 @@
         </div>
     </section>
 </template>
+<script>
+    import axios from 'axios';
+    export default {
+
+        data() {
+            return {
+                settings: {},
+                errors: {},     // create empty object to insert errors in it to show
+            }
+        },
+        mounted() {
+            this.showSettings();
+        },
+        methods: {
+
+
+            /*======================================================
+            ====== GET Settings
+            ======================================================*/
+            showSettings() {
+                axios.get('/api/settings/')
+                    .then(
+                        response => {
+                            // console.log(response.data);
+                            if (response.data.status == "success") {
+                                this.settings = response.data.data
+                            }
+                        }
+                    )
+                    .catch(
+                        error => console.log(error)
+                    )
+            },
+
+
+        },
+
+    }
+</script>

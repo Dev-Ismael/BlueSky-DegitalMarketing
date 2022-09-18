@@ -34,8 +34,7 @@
                                         <div class="social-nav mt-4 text-center">
                                             <ul class="list-unstyled social-list mb-0">
                                                 <li class="list-inline-item tooltip-hover">
-                                                    <a href="#" class="rounded"><span
-                                                            class="ti-facebook"></span></a>
+                                                    <a href="#" class="rounded"><span class="ti-facebook"></span></a>
                                                     <div class="tooltip-item">Facebook</div>
                                                 </li>
                                                 <li class="list-inline-item tooltip-hover"><a href="#"
@@ -54,10 +53,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-12 d-flex justify-content-end align-items-center">
+                                <div class="col-md-6 col-sm-12 d-flex align-items-center">
                                     <div>
                                         <h5 class="text-white"> <i class="fa-solid fa-seedling"></i> Our Goal</h5>
-                                        <p class="text-white"> Seamlessly administrate synergistic growth strategies and collaborative markets. Globally empower inexpensive infomediaries after sustainable mindshare customize principle-centered users with fully tested.</p>
+                                        <p class="text-white"> {{ settings.footer_content }} </p>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-12">
@@ -65,23 +64,26 @@
                                         <h5 class="text-white">GET IN TOUCH</h5>
                                         <ul class="get-in-touch-list">
                                             <li class="d-flex align-items-center py-1"><span
-                                                    class="fas fa-map-marker-alt mr-2"></span> 1234 Street Name, City
-                                                Name, USA
+                                                    class="fas fa-map-marker-alt mr-2"></span>
+                                                    <a :href="settings.location" target="_blank"> {{ settings.address }} </a>
                                             </li>
                                             <li class="d-flex align-items-center py-1"><span
-                                                    class="fas fa-envelope mr-2"></span> you@domain.com
+                                                    class="fas fa-envelope mr-2"></span>
+                                                    <a :href=" 'mailto:' + settings.email "> {{ settings.email }} </a>
                                             </li>
-                                            <!--<li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span> (123) 456-7890 - (123) 456-7890</li>-->
+                                            <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span>
+                                                <a :href=" 'tel:' + settings.phone_formatted "> {{ settings.phone }} </a>
+                                            </li>
                                         </ul>
                                         <form class="newsletter-form mt-3">
-                                            <input type="text" class="input-newsletter"
-                                                placeholder="Enter your email" name="EMAIL" required
-                                                autocomplete="off">
+                                            <input type="text" class="input-newsletter" placeholder="Enter your email"
+                                                name="EMAIL" required autocomplete="off">
                                             <button type="submit" class="disabled"
                                                 style="pointer-events: all; cursor: pointer;"><i
                                                     class="fas fa-paper-plane"></i></button>
                                         </form>
-                                    </div>                                </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -113,7 +115,41 @@
     </div>
 </template>
 <script>
-    export default {
+import axios from 'axios';
+export default {
 
-    }
+    data() {
+        return {
+            settings: {},
+            errors: {},     // create empty object to insert errors in it to show
+        }
+    },
+    mounted() {
+        this.showSettings();
+    },
+    methods: {
+
+
+        /*======================================================
+        ====== GET Settings
+        ======================================================*/
+        showSettings() {
+            axios.get('/api/settings/')
+                .then(
+                    response => {
+                        // console.log(response.data);
+                        if (response.data.status == "success") {
+                            this.settings = response.data.data
+                        }
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                )
+        },
+
+
+    },
+
+}
 </script>
