@@ -20,7 +20,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::select('id','title','slug')->get();
+        $services = Service::get();
         return response()->json([
             'status' => 'success',
             'msg'    => 'services get successfully',

@@ -8,9 +8,7 @@
                         <img :src=" '/images/services/'+ service.img " alt="service-image" class="img-fluid rounded shadow-sm">
                         <div class="services-detail-content mt-4">
                             <h4> {{ service.title }} </h4>
-                            <span>
-                                {{ service.content }}
-                            </span>
+                            <span class="content" v-html="service.content"></span>
                         </div>
                     </div>
                 </div>

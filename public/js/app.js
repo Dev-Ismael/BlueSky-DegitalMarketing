@@ -20447,7 +20447,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      services: ''
+    };
+  },
+  mounted: function mounted() {
+    this.getServices();
+  },
+  methods: {
+    /*======================================================
+    ====== GET Services
+    ======================================================*/
+    getServices: function getServices() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/services').then(function (response) {
+        _this.services = response.data.data;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -22412,11 +22438,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  "class": "promo-section ptb-100"
+};
+var _hoisted_2 = {
+  "class": "container"
+};
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"promo-section ptb-100\"><div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-md-8\"><div class=\"section-heading text-center mb-5\"><strong class=\"color-secondary\">Our Services</strong><h2>What Can We Do For You</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\">Efficiently aggregate end-to-end core competencies without maintainable ideas. Dynamically foster tactical solutions without enabled value.</p></div></div></div><div class=\"row justify-content-center\"><div class=\"col-md-6 col-lg-4\"><div class=\"promo-single-wrap p-5 text-center custom-shadow rounded\"><div class=\"promo-icon mb-4\"><img src=\"/digimark_template/img/Web-Developement.png\" alt=\"promo\" width=\"180\"><!-- &lt;span class=&quot;number-bg&quot;&gt;01&lt;/span&gt; --></div><div class=\"promo-info\"><!-- &lt;strong class=&quot;color-secondary&quot;&gt;Discuss with Users&lt;/strong&gt; --><h4 class=\"color-secondary\">Web Development</h4><p>Customized interactive development tailored to every client.</p></div></div></div><div class=\"col-md-6 col-lg-4\"><div class=\"promo-single-wrap p-5 text-center custom-shadow rounded\"><div class=\"promo-icon mb-4\"><img src=\"/digimark_template/img/Digital-Marketing.png\" alt=\"promo\" width=\"180\"><!-- &lt;span class=&quot;number-bg&quot;&gt;02&lt;/span&gt; --></div><div class=\"promo-info\"><!-- &lt;strong class=&quot;color-secondary&quot;&gt;Discuss with Users&lt;/strong&gt; --><h4 class=\"color-secondary\">Digital Marketing</h4><p>Crafting visual personas to empower brands through thought provoking designs.</p></div></div></div><div class=\"col-md-6 col-lg-4\"><div class=\"promo-single-wrap p-5 text-center custom-shadow rounded\"><div class=\"promo-icon mb-4\"><img src=\"/digimark_template/img/Branding.png\" alt=\"promo\" width=\"180\"><!-- &lt;span class=&quot;number-bg&quot;&gt;02&lt;/span&gt; --></div><div class=\"promo-info\"><!-- &lt;strong class=&quot;color-secondary&quot;&gt;Discuss with Users&lt;/strong&gt; --><h4 class=\"color-secondary\">Branding</h4><p>Bringing ideas to life while optimizing digital technology to convert leads into customers.</p></div></div></div><div class=\"col-md-6 col-lg-4\"><div class=\"promo-single-wrap p-5 text-center custom-shadow rounded\"><div class=\"promo-icon mb-4\"><img src=\"/digimark_template/img/SEO-Optimization.png\" alt=\"promo\" width=\"180\"><!-- &lt;span class=&quot;number-bg&quot;&gt;02&lt;/span&gt; --></div><div class=\"promo-info\"><!-- &lt;strong class=&quot;color-secondary&quot;&gt;Discuss with Users&lt;/strong&gt; --><h4 class=\"color-secondary\">SEO Optimization</h4><p>No matter how niche or mainstream your market is, great content remains a significant focus for SEO.</p></div></div></div><div class=\"col-md-6 col-lg-4\"><div class=\"promo-single-wrap p-5 text-center custom-shadow rounded\"><div class=\"promo-icon mb-4\"><img src=\"/digimark_template/img/Graphic-Design.png\" alt=\"promo\" width=\"180\"><!-- &lt;span class=&quot;number-bg&quot;&gt;02&lt;/span&gt; --></div><div class=\"promo-info\"><!-- &lt;strong class=&quot;color-secondary&quot;&gt;Discuss with Users&lt;/strong&gt; --><h4 class=\"color-secondary\">Graphic Design</h4><p>Creating Brands to Touch Hearts and Make Them Stand Out.</p></div></div></div><div class=\"col-md-6 col-lg-4\"><div class=\"promo-single-wrap p-5 text-center custom-shadow rounded\"><div class=\"promo-icon mb-4\"><img src=\"/digimark_template/img/IT-Consulting.png\" alt=\"promo\" width=\"180\"><!-- &lt;span class=&quot;number-bg&quot;&gt;02&lt;/span&gt; --></div><div class=\"promo-info\"><!-- &lt;strong class=&quot;color-secondary&quot;&gt;Discuss with Users&lt;/strong&gt; --><h4 class=\"color-secondary\">IT Consultation</h4><p>Consulting can turn a novice into a professional shooter, a dilettante into a professional, and an amateur into a pro.</p></div></div></div></div></div></section>", 1);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row justify-content-center\"><div class=\"col-md-8\"><div class=\"section-heading text-center mb-5\"><strong class=\"color-secondary\">Our Services</strong><h2>What Can We Do For You</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\">Efficiently aggregate end-to-end core competencies without maintainable ideas. Dynamically foster tactical solutions without enabled value.</p></div></div></div>", 1);
 
+var _hoisted_4 = {
+  "class": "row justify-content-center"
+};
+var _hoisted_5 = {
+  "class": "promo-single-wrap p-5 text-center custom-shadow rounded"
+};
+var _hoisted_6 = {
+  "class": "promo-icon mb-4"
+};
+var _hoisted_7 = ["src"];
+var _hoisted_8 = {
+  "class": "promo-info"
+};
+var _hoisted_9 = {
+  "class": "color-secondary"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("--------- services ----------"), _hoisted_1], 2112
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("--------- services ----------"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.services, function (service) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      key: service.id,
+      "class": "col-md-6 col-lg-4"
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      src: '/images/services/' + service.icon,
+      alt: "promo",
+      width: "180"
+    }, null, 8
+    /* PROPS */
+    , _hoisted_7), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <span class=\"number-bg\">01</span> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <strong class=\"color-secondary\">Discuss with Users</strong> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.title), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.summary), 1
+    /* TEXT */
+    )])])]);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])])])], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }
@@ -22555,30 +22620,31 @@ var _hoisted_6 = ["src"];
 var _hoisted_7 = {
   "class": "services-detail-content mt-4"
 };
-var _hoisted_8 = {
+var _hoisted_8 = ["innerHTML"];
+var _hoisted_9 = {
   "class": "col-lg-4 col-md-4"
 };
-var _hoisted_9 = {
+var _hoisted_10 = {
   "class": "sidebar-right pl-4"
 };
-var _hoisted_10 = {
+var _hoisted_11 = {
   "class": "widget widget-categories"
 };
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "widget-title"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, "All Services")], -1
 /* HOISTED */
 );
 
-var _hoisted_12 = {
+var _hoisted_13 = {
   "class": "all-service-list"
 };
-var _hoisted_13 = ["href"];
+var _hoisted_14 = ["href"];
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<aside class=\"widget widget-categories\"><div class=\"widget-title\"><h5>Need Help?</h5></div><p>We are available in 24/7 hours for dedicated support</p><ul class=\"primary-list mt-25\"><li><span class=\"ti-location-pin mr-2 color-primary\"></span> 123 Yellow House, Mn 9007 </li><li><span class=\"ti-mobile mr-2 color-primary\"></span> (+123) 456-789-012</li><li><span class=\"ti-email mr-2 color-primary\"></span> youname@domail.com</li></ul></aside>", 1);
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<aside class=\"widget widget-categories\"><div class=\"widget-title\"><h5>Need Help?</h5></div><p>We are available in 24/7 hours for dedicated support</p><ul class=\"primary-list mt-25\"><li><span class=\"ti-location-pin mr-2 color-primary\"></span> 123 Yellow House, Mn 9007 </li><li><span class=\"ti-mobile mr-2 color-primary\"></span> (+123) 456-789-012</li><li><span class=\"ti-email mr-2 color-primary\"></span> youname@domail.com</li></ul></aside>", 1);
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", {
   "class": "widget widget-categories"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "widget-title"
@@ -22608,19 +22674,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , _hoisted_6), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.service.title), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.service.content), 1
-  /* TEXT */
-  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("all services list"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_12, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.services, function (service) {
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "content",
+    innerHTML: $data.service.content
+  }, null, 8
+  /* PROPS */
+  , _hoisted_8)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("all services list"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_13, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.services, function (service) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       key: service.id
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       href: '/' + service.slug
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.title), 9
     /* TEXT, PROPS */
-    , _hoisted_13)]);
+    , _hoisted_14)]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("need help"), _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Subscribe widget"), _hoisted_15])])])])]);
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("need help"), _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Subscribe widget"), _hoisted_16])])])])]);
 }
 
 /***/ }),
