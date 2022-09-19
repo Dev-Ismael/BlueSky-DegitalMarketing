@@ -1,4 +1,8 @@
 
+/*========= navbar ========*/
+.navbar .navbar-brand-wrapper .navbar-brand img{
+    height: auto !important;
+}
 /*========= Global ========*/
 .w-100{
     width: 100%;
