@@ -41,6 +41,5 @@ Route::get('/{service_slug}', [App\Http\Controllers\ServiceController::class, 's
 /*===========================================================
 ====== Admin Routes
 ============================================================*/
-Route::get("admin/{any}", function(){
-    return view('layouts.admin');
-}) -> where([ "any" => ".*" ]);
+Route::get('admin/{any}', [App\Http\Controllers\Admin\AdminController::class, 'index'])
+    -> where([ "any" => ".*" ]);

@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,6 +15,11 @@ class HomeController extends Controller
      * @return void
      */
 
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Show the application dashboard.
@@ -23,11 +29,16 @@ class HomeController extends Controller
     public function index()
     {
 
-        // return response()->json([
-        //     'messege' => "Connected",
-        // ]);
+        return view('layouts.admin');
 
-        $user = User::where("id", 1 )->get();
+
+    }
+    public function getAuthInfo()
+    {
+
+
+        $user_id = Auth::id();
+        $user = User::where("id", $user_id )->get();
         return response()->json([
             "user" => $user,
         ]);

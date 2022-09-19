@@ -46,7 +46,7 @@ Route::post('subscriber/store' , [App\Http\Controllers\SubscriberController::cla
 Route::group([ 'prefix' => 'admin' ] , function(){     // URL ==> 'api/admin' ,
 
 
-    Route::get('user',  [\App\Http\Controllers\Admin\HomeController::class, 'index']);
+    Route::get('info',  [\App\Http\Controllers\Admin\AdminController::class, 'getAuthInfo']);
 
     // Services
     Route::resource('service', '\App\Http\Controllers\Admin\ServiceController');

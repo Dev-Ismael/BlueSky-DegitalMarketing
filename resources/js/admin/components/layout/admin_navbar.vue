@@ -124,8 +124,9 @@
                         <router-link to="/admin/messege" class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i>
                             Messages</router-link>
-                        <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
+                        <a @click.prevent="logout()" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
                             Out</a>
+
                     </div>
                 </li>
             </ul>
@@ -151,8 +152,13 @@ export default {
         this.getSiteName();
     },
     methods: {
+
+
+        /*======================================================
+        ====== Login opration
+        ======================================================*/
         getSiteName() {
-            axios.get("/api/admin/user")
+            axios.get("/api/admin/info")
             .then(
                 response => {
                     // console.log(response.data.user[0]);
@@ -160,7 +166,64 @@ export default {
                 }
             )
             .catch(error => console.log(error))
+        },
+
+
+        /*======================================================
+        ====== Logout opration
+        ======================================================*/
+        logout(){
+            // alert("good")
+            document.getElementById('logout-form').submit();
         }
+
+
+
+        // /*======================================================
+        // ====== Logout opration
+        // ======================================================*/
+        // logout(){
+
+        //     // Send request with axios
+        //     axios.post("/logout" )
+        //     .then(
+        //         response => {  // if there success request
+
+        //             // console.log(response.data);
+
+        //             // if response status
+        //             if (response.data.status == "success") {
+
+
+        //                 // Sweet Alert
+        //                 this.$swal({
+        //                     position: 'top-end',
+        //                     icon: response.data.status,
+        //                     text: response.data.msg,
+        //                     showConfirmButton: false,
+        //                     timer: 2000
+        //                 });
+
+
+        //                 // redirect to home page
+        //                 setTimeout(function () {
+        //                     window.location.href = '/admin/dashboard';
+        //                 }, 2000);
+
+        //             }
+        //             // if response validation error
+        //             else if (response.data.status == "error" && response.data.msg == "validation failed") {
+
+        //                 this.errors = response.data.errors
+
+        //             }
+
+
+        //         }
+        //     )
+        //     .catch(error => console.log(error));
+        // }
+
     }
 }
 </script>

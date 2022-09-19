@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Passport\HasApiTokens;
 
 class LoginController extends Controller
 {
@@ -80,10 +81,24 @@ class LoginController extends Controller
             "errors" => [ 'credentials' => "Oppes! You have entered invalid credentials" ],
         ]);
 
-
-
     }
 
+
+
+    /*======================================================
+    ====== Overwrite Login Function
+    ======================================================*/
+    public function logout(Request $request)
+    {
+
+        return response()-> json([
+            "connection" => 'good',
+        ]);
+        
+        $user = Auth::user()->token();
+        $user->revoke();
+
+    }
 
 
 }
