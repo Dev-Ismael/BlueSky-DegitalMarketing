@@ -13,7 +13,6 @@ class Messege extends Model
     protected $fillable = [
         'name',
         'email',
-        'subject',
         'body',
     ];
 

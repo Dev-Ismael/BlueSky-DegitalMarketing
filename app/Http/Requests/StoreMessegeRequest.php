@@ -28,7 +28,6 @@ class StoreMessegeRequest extends FormRequest
         return [
             'name'              => ['required' , 'string' , 'max:100' ],
             'email'             => ['required' , 'email' , 'max:100' ],
-            'subject'           => ['required' , 'string' , 'max:100' ],
             'body'              => ['required' , 'string' , 'max:2000' ],
         ];
     }

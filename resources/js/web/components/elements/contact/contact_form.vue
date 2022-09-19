@@ -26,12 +26,6 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" :class=" errors.subject ? 'border-danger' : ''  " name="subject"  v-model="messege.subject" placeholder="Subject..." />
-                                        <small class="text-danger" v-if="errors.subject"> {{errors.subject[0] }}</small>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
                                         <textarea  id="body" name="body" :class=" errors.body ? 'border-danger' : ''  " class="form-control"  v-model="messege.body" rows="7" cols="25" placeholder="Messege..." ></textarea>
                                         <small class="text-danger" v-if="errors.body"> {{errors.body[0] }}</small>
                                     </div>
@@ -74,7 +68,6 @@
                 messege: {
                     name: '',
                     email: '',
-                    subject: '',
                     body: '',
                 },
                 settings: {},
@@ -128,7 +121,7 @@
 
 
                 // Array of inputs
-                const inputs = ['name', 'email', 'subject', 'body'];
+                const inputs = ['name', 'email', 'body'];
 
 
                 // For Loop To append every item in inputs array
@@ -147,11 +140,6 @@
                             // if response status
                             if (response.data.status == "success") {
 
-                                // empty error var
-                                this.messege = {}
-
-                                // empty error var
-                                this.errors = {}
 
                                 // Sweet Alert
                                 this.$swal({
@@ -159,9 +147,15 @@
                                     icon: response.data.status,
                                     text: response.data.msg,
                                     showConfirmButton: false,
-                                    timer: 1500
+                                    timer: 2000
                                 });
 
+
+                                // redirect to home page
+                                setTimeout(function () {
+                                    window.location.href = '/';
+                                }, 2000);
+                                
                             }
                             // if response validation error
                             else if (response.data.status == "error" && response.data.msg == "validation failed") {

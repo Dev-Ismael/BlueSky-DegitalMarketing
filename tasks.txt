@@ -8,14 +8,20 @@ Menna tasks:
 - genral setting (Social Media , footer content , address , email)
 - subscripers table
 - messeges
+- mail
+- show messege table in admin
+- create admin session
+- fix logo (Dark & white)
 -
+
+
 
 Advanced feature in blueskyint project:
 ==================================
 1- Add Vue router
 2- Add sign in page SPA & link it with
 5- Logo in min-header in screen sizes
-6- 
+6-
 7- Add multi actions
 8-
 
