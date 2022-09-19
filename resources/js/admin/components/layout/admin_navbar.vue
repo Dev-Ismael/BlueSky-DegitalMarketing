@@ -27,7 +27,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
                         <i class="icon-mail icon-lg"></i>
                     </a>
@@ -65,8 +65,8 @@
                             </div>
                         </a>
                     </div>
-                </li>
-                <li class="nav-item dropdown">
+                </li> -->
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <i class="icon-bell"></i>
@@ -107,7 +107,7 @@
                             </div>
                         </a>
                     </div>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown d-none d-lg-block user-dropdown">
                     <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                         <img class="img-xs rounded-circle" src="/admin/images/faces/face8.jpg" alt="Profile image">
@@ -118,12 +118,12 @@
                             <p class="mb-1 mt-3 font-weight-semibold">{{ user.name }}</p>
                             <p class="fw-light text-muted mb-0">{{ user.email }}</p>
                         </div>
-                        <a class="dropdown-item"><i
+                        <router-link to="/admin/profile" class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
-                        </a>
-                        <a class="dropdown-item"><i
+                        </router-link>
+                        <router-link to="/admin/messege" class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i>
-                            Messages</a>
+                            Messages</router-link>
                         <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
                             Out</a>
                     </div>

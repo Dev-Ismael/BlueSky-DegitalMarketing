@@ -15,6 +15,12 @@
                     <span class="menu-title">Services</span>
                 </router-link>
             </li>
+            <li class="nav-item">
+                <router-link to="/admin/messege" class="nav-link" >
+                    <i class="mdi mdi-message-reply menu-icon"></i>
+                    <span class="menu-title">Messeges</span>
+                </router-link>
+            </li>
             <li class="nav-item nav-category">Help</li>
             <li class="nav-item">
                 <router-link to="/admin/seo-managment" class="nav-link" >

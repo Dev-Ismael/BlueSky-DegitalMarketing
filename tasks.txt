@@ -5,15 +5,13 @@ secondry ==> Yellow Color: #ebb010
 
 Menna tasks:
 ==============
-- genral setting (Social Media , footer content , address , email)
 - subscripers table
-- messeges
-- mail
-- show messege table in admin
+- add profile page
 - create admin session
+- add seo management
 - fix logo (Dark & white)
--
-
+- add services data
+- add image if not data in table
 
 
 Advanced feature in blueskyint project:
