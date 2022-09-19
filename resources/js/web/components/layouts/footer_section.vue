@@ -75,13 +75,15 @@
                                                 <a :href=" 'tel:' + settings.phone_formatted "> {{ settings.phone }} </a>
                                             </li>
                                         </ul>
-                                        <form class="newsletter-form mt-3">
-                                            <input type="text" class="input-newsletter" placeholder="Enter your email"
-                                                name="EMAIL" required autocomplete="off">
+                                        <form class="newsletter-form mt-3" @submit.prevent=" storeSubscriber() "
+                                        enctype="multipart/form-data" method="POST" >
+                                            <input type="email" class="input-newsletter" v-model="email" placeholder="Enter your email"
+                                                name="email" required autocomplete="off">
                                             <button type="submit" class="disabled"
                                                 style="pointer-events: all; cursor: pointer;"><i
                                                     class="fas fa-paper-plane"></i></button>
                                         </form>
+                                        <small class="text-white" v-if="errors.email"> {{errors.email[0] }}</small>
                                     </div>
                                 </div>
                             </div>
@@ -121,6 +123,7 @@ export default {
     data() {
         return {
             settings: {},
+            email: '',
             errors: {},     // create empty object to insert errors in it to show
         }
     },
@@ -146,6 +149,81 @@ export default {
                 .catch(
                     error => console.log(error)
                 )
+        },
+
+
+        /*======================================================
+        ====== store Subscriber
+        ======================================================*/
+
+        storeSubscriber() {
+
+
+            // Set Config var to send it with data request
+            const config = {
+                headers: {
+                    'content-type': 'multipart/form-data',
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
+                }
+            }
+
+
+            // set var from FormData Class
+            let formData = new FormData();
+
+
+            formData.append( 'email' , this.email );
+
+            // Send request with axios
+            axios.post("/api/subscriber/store" , formData, config)
+                .then(
+                    response => {  // if there success request
+
+                        // console.log(response.data);
+
+                        // if response status
+                        if (response.data.status == "success") {
+
+
+                            // Sweet Alert
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 2000
+                            });
+
+
+                            // redirect to home page
+                            setTimeout(function () {
+                                window.location.href = '/';
+                            }, 2000);
+
+                        }
+                        // if response validation error
+                        else if (response.data.status == "error" && response.data.msg == "validation failed") {
+
+                            this.errors = response.data.errors
+
+                        }
+                        // if Settings not Found
+                        else if (response.data.status == "error") {
+
+                            // Sweet Alert
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+
+                        }
+
+                    }
+                )
+                .catch(error => console.log(error));
         },
 
 

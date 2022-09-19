@@ -23,10 +23,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 /*===========================================================
 ====== Web APIs
 ============================================================*/
+
+// services
 Route::get('services' , [App\Http\Controllers\ServiceController::class, 'index'])->name("service.index");
 Route::get('service/show/{slug}' , [App\Http\Controllers\ServiceController::class, 'getService'])->name("service.show");
+
+// settings
 Route::get('settings' , [App\Http\Controllers\SettingController::class, 'show'])->name("settings.show");
-Route::post('messege/store' , [App\Http\Controllers\MessegeController::class, 'store'])->name("settings.store");
+
+// messege
+Route::post('messege/store' , [App\Http\Controllers\MessegeController::class, 'store'])->name("messege.store");
+
+// subscriber
+Route::post('subscriber/store' , [App\Http\Controllers\SubscriberController::class, 'store'])->name("subscriber.store");
+
+
 
 
 /*===========================================================

@@ -101,7 +101,7 @@
 
 
             /*======================================================
-            ====== Update Settings
+            ====== store Messege
             ======================================================*/
 
             storeMessege() {
@@ -155,7 +155,7 @@
                                 setTimeout(function () {
                                     window.location.href = '/';
                                 }, 2000);
-                                
+
                             }
                             // if response validation error
                             else if (response.data.status == "error" && response.data.msg == "validation failed") {
