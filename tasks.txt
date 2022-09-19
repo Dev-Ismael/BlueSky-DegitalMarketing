@@ -5,9 +5,8 @@ secondry ==> Yellow Color: #ebb010
 
 Menna tasks:
 ==============
-- subscripers table
-- add profile page
 - create admin session
+- add profile page
 - add seo management
 - fix logo (Dark & white)
 - add services data

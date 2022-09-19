@@ -3,8 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
-class StorenewsletterRequest extends FormRequest
+class StoreNewsletterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +15,7 @@ class StorenewsletterRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +26,19 @@ class StorenewsletterRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'subject'      => ['required' , 'string' , 'max:100' ],
+            'content'      => ['required' , 'string' ],
         ];
     }
+
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'status' => 'error',
+            'msg'    => 'validation failed',
+            'errors'  => $validator->errors()
+        ], 200));
+    }
+
 }

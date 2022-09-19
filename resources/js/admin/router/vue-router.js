@@ -8,6 +8,7 @@ import DashboardPage from '../views/dashboard.vue';
 import ServicePage from '../views/service.vue';
 import MessegePage from '../views/messege.vue';
 import SeoManagmentPage from '../views/seoManagment.vue';
+import NewsletterPage from '../views/newsletter.vue';
 import SubscriberPage from '../views/subscriber.vue';
 import ProfilePage from '../views/profile.vue';
 import SettingsPage from '../views/settings.vue';
@@ -17,6 +18,7 @@ import notFoundPage from '../views/notFoundPage.vue';
 const routes = [
     { path: '/admin/profile' , component: ProfilePage },
     { path: '/admin/service' , component: ServicePage },
+    { path: '/admin/newsletter' , component: NewsletterPage },
     { path: '/admin/subscriber' , component: SubscriberPage },
     { path: '/admin/messege' , component: MessegePage },
     { path: '/admin/seo-managment' , component: SeoManagmentPage },

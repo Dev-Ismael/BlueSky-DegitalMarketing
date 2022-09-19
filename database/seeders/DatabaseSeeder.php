@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        \App\Models\Newsletter::factory()->create([
+        \App\Models\Newsletter::factory(10)->create([
             'subject'      => 'subject',
             'content'      => 'content',
         ]);

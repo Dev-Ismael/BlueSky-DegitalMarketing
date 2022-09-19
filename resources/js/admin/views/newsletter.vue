@@ -4,11 +4,11 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <h4 class="card-title"> <i class="fa-solid mdi mdi-book-multiple"></i> Services table</h4>
+                    <h4 class="card-title"> <i class="fa-solid mdi mdi-book-multiple"></i> Newsletters table</h4>
                 </div>
                 <div class="col-6 text-end">
                     <button type="button" class="btn btn-danger btn-rounded btn-icon p-2" data-bs-toggle="modal"
-                        data-bs-target="#formModal" data-whatever="@mdo" @click="createService()">Create New</button>
+                        data-bs-target="#formModal" data-whatever="@mdo" @click="createNewsletter()">Send New Newsletter </button>
                 </div>
             </div>
             <div class="row">
@@ -22,7 +22,7 @@
                                             <select name="action" v-model="multiAction.action"
                                                 class="js-example-basic-single">
                                                 <option value="">Choose Action</option>
-                                                <option value="delete">Delete Service</option>
+                                                <option value="delete">Delete Newsletter</option>
                                             </select>
                                             <div class="input-group-append">
                                                 <button class="btn btn-facebook" type="button"
@@ -37,8 +37,8 @@
                                 <div class="col-sm-12 col-md-3 offset-md-6 ml-auto">
                                     <div id="order-listing_filter" class="dataTables_filter">
                                         <label class="w-100">
-                                            <input type="text" class="form-control w-100" placeholder="Search By Title..."
-                                                name="searchVal" v-model="searchVal" @keyup="searchService()"
+                                            <input type="text" class="form-control w-100" placeholder="Search By Subject..."
+                                                name="searchVal" v-model="searchVal" @keyup="searchNewsletter()"
                                                 maxlength="55" aria-controls="order-listing" autocomplete="nope" />
                                         </label>
                                     </div>
@@ -59,44 +59,37 @@
                                                         </label>
                                                     </div>
                                                 </th>
-                                                <th> Image </th>
-                                                <th> Title </th>
-                                                <th> Summary </th>
+                                                <th> Subject </th>
                                                 <th> Action </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="service in services.data" :key="service.id">
+                                            <tr v-for="newsletter in newsletters.data" :key="newsletter.id">
                                                 <td class="jsgrid-cell" style="width: 100px;">
                                                     <div class="form-check mt-0">
                                                         <label class="form-check-label">
                                                             <input type="checkbox" class="form-check-input check-item"
-                                                            :value="service.id" v-model="multiAction.id" >
+                                                            :value="newsletter.id" v-model="multiAction.id" >
                                                             <i class="input-helper"></i>
                                                         </label>
                                                     </div>
                                                 </td>
-                                                <td class="py-1">
-                                                    <img :src=" '/images/services/'+ service.img " alt="image">
-                                                </td>
-                                                <td> {{ service.title.length > 20 ? service.title.slice(0, 20) + '...' :
-                                                service.title }} </td>
-                                                <td> {{ service.summary.length > 50 ? service.summary.slice(0, 50) +
-                                                '...' : service.summary }} </td>
+                                                <td> {{ newsletter.subject.length > 20 ? newsletter.subject.slice(0, 20) + '...' :
+                                                newsletter.subject }} </td>
                                                 <td>
                                                     <button type="button" data-bs-toggle="modal"
-                                                        data-bs-target="#showDataModal" @click="showService(service)"
+                                                        data-bs-target="#showDataModal" @click="showNewsletter(newsletter)"
                                                         class="btn btn-secondary btn-rounded btn-icon p-2">
                                                         <i class="mdi mdi-eye"></i>
                                                     </button>
                                                     &nbsp;
                                                     <button type="button" data-bs-toggle="modal"
-                                                        data-bs-target="#formModal" @click="editService(service)"
+                                                        data-bs-target="#formModal" @click="editNewsletter(newsletter)"
                                                         class="btn btn-primary btn-rounded btn-icon p-2">
                                                         <i class="ti-marker-alt"></i>
                                                     </button>
                                                     &nbsp;
-                                                    <button type="button" @click="deletePost(service)"
+                                                    <button type="button" @click="deletePost(newsletter)"
                                                         class="btn btn-danger btn-rounded btn-icon p-2">
                                                         <i class="ti-close"></i>
                                                     </button>
@@ -109,14 +102,14 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-5">
                                     <div class="dataTables_info" id="order-listing_info" role="status"
-                                        aria-live="polite">Showing {{ ( (services.total + 1) - services.from) }} to {{ (
-                                        (services.total + 1) - services.to) }} of {{ services.total }} entries</div>
+                                        aria-live="polite">Showing {{ ( (newsletters.total + 1) - newsletters.from) }} to {{ (
+                                        (newsletters.total + 1) - newsletters.to) }} of {{ newsletters.total }} entries</div>
                                 </div>
                                 <div class="col-sm-12 col-md-7">
                                     <div class="dataTables_paginate paging_simple_numbers">
                                         <!-- pagination Component -->
-                                        <!-- <Pagination :data="services" @pagination-change-page="getServices" :limit="1"/> -->
-                                        <pagination :data="services" @pagination-change-page="getServices" :limit="2">
+                                        <!-- <Pagination :data="newsletters" @pagination-change-page="getNewsletters" :limit="1"/> -->
+                                        <pagination :data="newsletters" @pagination-change-page="getNewsletters" :limit="2">
                                             <template #prev-nav>
                                                 <span>&lt; </span>
                                             </template>
@@ -145,39 +138,21 @@
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="ModalLabel">Show Service Data</h5>
+                                    <h5 class="modal-title" id="ModalLabel">Show Newsletter Data</h5>
                                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <span class="h4 fw-bold"> <i class="mdi mdi-format-title"></i> title : </span>
-                                        <span class="h6"> {{ service.title }} </span>
+                                        <span class="h4 fw-bold"> <i class="mdi mdi-format-title"></i> Subject : </span>
+                                        <span class="h6"> {{ newsletter.subject }} </span>
                                     </div>
                                     <hr>
                                     <div class="form-group">
-                                        <span class="h4 fw-bold"> <i class="mdi mdi-format-align-left"></i> summary :
+                                        <span class="h4 fw-bold"> <i class="mdi mdi-format-align-left"></i> Content :
                                         </span>
-                                        <span class="h6"> {{ service.summary }} </span>
-                                    </div>
-                                    <hr>
-                                    <div class="form-group">
-                                        <span class="h4 fw-bold"> <i class="mdi mdi-format-align-left"></i> content :
-                                        </span>
-                                        <span class="h6"> {{ service.content }} </span>
-                                    </div>
-                                    <hr>
-                                    <div class="form-group">
-                                        <span class="h4 fw-bold"> <i class="mdi mdi-file-image"></i> icon : </span>
-                                        <span class="h6"> <img :src="'/images/services/' + service.icon "
-                                                alt="service-icon" width="160"> </span>
-                                    </div>
-                                    <hr>
-                                    <div class="form-group">
-                                        <span class="h4 fw-bold"> <i class="mdi mdi-file-image"></i> img : </span>
-                                        <span class="h6"> <img :src="'/images/services/' + service.img "
-                                                alt="service-img" width="160"> </span>
+                                        <span class="h6" v-html="newsletter.content">  </span>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -201,74 +176,23 @@
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="ModalLabel">{{ edit ? "Edit Service" : "Create Service"
-                                    }}</h5>
+                                    <h5 class="modal-title" id="ModalLabel">  New Newsletter </h5>
                                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <form @submit.prevent=" edit ? updateService() :  storeService() "
+                                <form @submit.prevent=" storeNewsletter() "
                                     enctype="multipart/form-data" method="POST">
                                     <div class="modal-body">
 
 
-                                        <!-- title -->
+                                        <!-- subject -->
                                         <div class="form-group">
                                             <label for="recipient-name" class="col-form-label"> <i
-                                                    class="mdi mdi-format-title"></i> Title </label>
-                                            <input type="text" name="title" v-model="service.title" class="form-control"
-                                                :class=" errors.title ? 'border-danger' : ''  " id="recipient-name">
-                                            <small class="text-danger" v-if="errors.title"> {{errors.title[0] }}
-                                            </small>
-                                        </div>
-
-
-                                        <!-- seo_title -->
-                                        <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
-                                                SEO Title </label>
-                                            <textarea name="seo_title" v-model="service.seo_title" class="form-control"
-                                                :class=" errors.seo_title ? 'border-danger' : ''  " id="message-text"
-                                                rows="4" cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.seo_title"> {{errors.seo_title[0] }}
-                                            </small>
-                                        </div>
-
-
-                                        <!-- seo_keywords -->
-                                        <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
-                                                SEO KeyWords </label>
-                                            <textarea name="seo_keywords" v-model="service.seo_keywords"
-                                                class="form-control"
-                                                :class=" errors.seo_keywords ? 'border-danger' : ''  " id="message-text"
-                                                rows="4" cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.seo_keywords">
-                                                {{errors.seo_keywords[0] }} </small>
-                                        </div>
-
-
-                                        <!-- seo_description -->
-                                        <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
-                                                SEO Description </label>
-                                            <textarea name="seo_description" v-model="service.seo_description"
-                                                class="form-control"
-                                                :class=" errors.seo_description ? 'border-danger' : ''  "
-                                                id="message-text" rows="4" cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.seo_description">
-                                                {{errors.seo_description[0] }} </small>
-                                        </div>
-
-
-                                        <!-- summary -->
-                                        <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i
-                                                    class="mdi mdi-format-align-left"></i> Summary </label>
-                                            <textarea name="summary" v-model="service.summary" class="form-control"
-                                                :class=" errors.summary ? 'border-danger' : ''  " id="message-text"
-                                                rows="4" cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.summary"> {{errors.summary[0] }}
+                                                    class="mdi mdi-format-title"></i> Subject </label>
+                                            <input type="text" name="subject" v-model="newsletter.subject" class="form-control"
+                                                :class=" errors.subject ? 'border-danger' : ''  " id="recipient-name">
+                                            <small class="text-danger" v-if="errors.subject"> {{errors.subject[0] }}
                                             </small>
                                         </div>
 
@@ -277,56 +201,15 @@
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label"> <i
                                                     class="mdi mdi-format-align-left"></i> Content </label>
-                                            <ckeditor :editor="editor" v-model="service.content" name="content"></ckeditor>
+                                            <ckeditor :editor="editor" v-model="newsletter.content" name="content"></ckeditor>
                                             <small class="text-danger" v-if="errors.content"> {{errors.content[0] }}
                                             </small>
                                         </div>
 
 
-                                        <!-- Icon -->
-                                        <div class="form-group">
-                                            <label> <i class="mdi mdi-file-image"></i> Upload Icon
-                                                <!-- &nbsp; &nbsp; <img :src=" '/images/services/' + service.icon " class="img-service" alt="img-service" height="60" v-if="edit" > -->
-                                            </label>
-                                            <input type="file" name="icon" class="file-upload-default"
-                                                @change="getImageName( $event , 'icon' )">
-                                            <div class="input-group col-xs-12">
-                                                <input type="text" name="icon" class="form-control file-upload-info"
-                                                    :class=" errors.icon ? 'border-danger' : ''  " disabled
-                                                    placeholder="Upload Image">
-                                                <span class="input-group-append">
-                                                    <button class="file-upload-browse btn btn-primary"
-                                                        type="button">Upload</button>
-                                                </span>
-                                            </div>
-                                            <small class="text-danger" v-if="errors.icon"> {{errors.icon[0] }} </small>
-                                        </div>
-
-
-                                        <!-- Image -->
-                                        <div class="form-group">
-                                            <label> <i class="mdi mdi-file-image"></i> Upload Big Image
-                                                <!-- &nbsp; &nbsp; <img :src=" '/images/services/' + service.img " class="img-service" alt="img-service" height="60" v-if="edit" > -->
-                                            </label>
-                                            <input type="file" name="img" class="file-upload-default"
-                                                @change="getImageName( $event , 'img' )">
-                                            <div class="input-group col-xs-12">
-                                                <input type="text" name="img" class="form-control file-upload-info"
-                                                    :class=" errors.img ? 'border-danger' : ''  " disabled
-                                                    placeholder="Upload Image">
-                                                <span class="input-group-append">
-                                                    <button class="file-upload-browse btn btn-primary"
-                                                        type="button">Upload</button>
-                                                </span>
-                                            </div>
-                                            <small class="text-danger" v-if="errors.img"> {{errors.img[0] }} </small>
-                                        </div>
-
-
                                     </div>
                                     <div class="modal-footer">
-                                        <button @submit.prevent="storeService()" class="btn btn-success">{{ edit ?
-                                        'Edit' : 'Save'}}</button>
+                                        <button @submit.prevent="storeNewsletter()" class="btn btn-success"> Send </button>
                                         <!-- <button class="btn btn-light" data-bs-dismiss="modal">Close</button> -->
                                     </div>
                                 </form>
@@ -353,19 +236,12 @@ export default {
     data() {
         return {
             editor: ClassicEditor,   // import ClassicEditor theme to use in checkEditor package
-            services: {},
-            service: {
-                title: '',
-                summary: '',
+            newsletters: {},
+            newsletter: {
+                subject : '',
                 content: '',
-                icon: '',
-                img: '',
-                seo_title: '',
-                seo_description: '',
-                seo_keywords: '',
             },
             errors: {},  // create empty object to insert errors in it to show
-            edit: false, // set this var to know if modal for create or edit
             searchVal: '',
             multiAction: {
                 id: [],
@@ -374,7 +250,7 @@ export default {
         }
     },
     mounted() {
-        this.getServices();
+        this.getNewsletters();
     },
     methods: {
 
@@ -387,8 +263,8 @@ export default {
             if (event.target.checked) { // check if main checker checked
 
                 // Push all serivces id multiAction object
-                this.services.data.forEach( service => {
-                    this.multiAction.id.push(service.id)
+                this.newsletters.data.forEach( newsletter => {
+                    this.multiAction.id.push(newsletter.id)
                 });
 
                 // add checked to checkbox
@@ -412,23 +288,14 @@ export default {
 
 
         /*======================================================
-        ====== Get Image Name Input File
+        ====== GET Newsletters
         ======================================================*/
-        getImageName(event, imgName) {  // at change input set service img name
-            this.service[imgName] = event.target.files[0];
-        },
-
-
-
-        /*======================================================
-        ====== GET Services
-        ======================================================*/
-        getServices(page = 1) {
-            axios.get('/api/admin/service?page=' + page)
+        getNewsletters(page = 1) {
+            axios.get('/api/admin/newsletter?page=' + page)
                 .then(
                     response => {
                         // console.log(response.data);
-                        this.services = response.data;
+                        this.newsletters = response.data;
                     }
                 )
                 .catch(
@@ -439,15 +306,15 @@ export default {
 
 
         /*======================================================
-        ====== GET Service
+        ====== GET Newsletter
         ======================================================*/
-        showService(service) {
-            axios.get('/api/admin/service/' + service.id)
+        showNewsletter(newsletter) {
+            axios.get('/api/admin/newsletter/' + newsletter.id)
                 .then(
                     response => {
                         // console.log(response.data);
                         if (response.data.status == "success") {
-                            this.service = response.data.data
+                            this.newsletter = response.data.data
                         } else if (response.data.status == "error") {
                             /*=== Sweet Alert ===*/
                             this.$swal({
@@ -468,24 +335,16 @@ export default {
 
 
         /*======================================================
-        ====== Create Service
+        ====== Create Newsletter
         ======================================================*/
-        createService() {
+        createNewsletter() {
             this.errors = {}, // empty error var
-                this.edit = false // set var edit equale 'false' to know that this modal for update
-
-            this.service = {
-                title: '',
-                summary: '',
+            this.newsletter = {
+                subject : '',
                 content: '',
-                icon: '',
-                img: '',
-                seo_title: '',
-                seo_keywords: '',
-                seo_description: '',
             }
         },
-        storeService() {
+        storeNewsletter() {
 
             // Set Config var to send it with data request
             const config = {
@@ -499,15 +358,15 @@ export default {
             let formData = new FormData();
 
             // Array of inputs
-            const inputs = ['title', 'summary', 'content', 'img', 'icon', 'seo_title', 'seo_description', 'seo_keywords'];
+            const inputs = ['subject', 'content'];
 
             // For Loop To append every item in inputs array
             inputs.forEach(input => {
-                formData.append(String(input), this.service[input]);
+                formData.append(String(input), this.newsletter[input]);
             });
 
             // Send request with axios
-            axios.post("/api/admin/service", formData, config)
+            axios.post("/api/admin/newsletter", formData, config)
                 .then(
                     response => {  // if there success request
 
@@ -517,14 +376,14 @@ export default {
                             // Close Model
                             $("#formModal").modal('hide');
 
-                            // reload getServices()
-                            this.getServices();
+                            // reload getNewsletters()
+                            this.getNewsletters();
 
                             // empty error var
                             this.errors = {}
 
-                            // empty service var
-                            this.service = {}
+                            // empty newsletter var
+                            this.newsletter = {}
 
                             // Sweet Alert
                             this.$swal({
@@ -563,139 +422,13 @@ export default {
 
 
 
-        /*======================================================
-        ====== Update Service
-        ======================================================*/
-        editService(service) {
-            this.errors = {}, // empty error var
-                this.edit = true // set var edit equale 'true' to know that this modal for update
-
-            axios.get('/api/admin/service/' + service.id)
-                .then(
-                    response => {
-                        // console.log(response.data);
-                        if (response.data.status == "success") {
-
-                            // save response data in var
-                            this.service = response.data.data
-
-                            // empty img , icon to send empty if it was
-                            this.service.img = ''
-                            this.service.icon = ''
-
-                        } else if (response.data.status == "error") {
-                            /*=== Sweet Alert ===*/
-                            this.$swal({
-                                position: 'top-end',
-                                icon: response.data.status,
-                                text: response.data.msg,
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                        }
-                    }
-                )
-                .catch(
-                    error => console.log(error)
-                )
-
-        },
-        updateService() {
-
-
-            // Set Config var to send it with data request
-            const config = {
-                headers: {
-                    'content-type': 'multipart/form-data',
-                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
-                }
-            }
-
-
-            // set var from FormData Class
-            let formData = new FormData();
-
-
-            // Add method put in form field
-            formData.append('_method', 'PUT');
-
-
-            // Array of inputs
-            const inputs = ['title', 'summary', 'content', 'img', 'icon', 'seo_title', 'seo_description', 'seo_keywords'];
-
-
-            // For Loop To append every item in inputs array
-            inputs.forEach(input => {
-                formData.append(String(input), this.service[input]);
-            });
-
-
-            // Send request with axios
-            axios.post("/api/admin/service/" + this.service.id, formData, config)
-                .then(
-                    response => {  // if there success request
-
-                        // console.log(response.data);
-
-                        // if response status
-                        if (response.data.status == "success") {
-
-                            // Close Model
-                            $("#formModal").modal('hide');
-
-                            // reload getServices()
-                            this.getServices();
-
-                            // empty error var
-                            this.errors = {}
-
-                            // empty service var
-                            this.service = {}
-
-                            // Sweet Alert
-                            this.$swal({
-                                position: 'top-end',
-                                icon: response.data.status,
-                                text: response.data.msg,
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-
-                        }
-                        // if response validation error
-                        else if (response.data.status == "error" && response.data.msg == "validation failed") {
-
-                            this.errors = response.data.errors
-
-                        }
-                        // if service not Found
-                        else if (response.data.status == "error") {
-
-                            // Sweet Alert
-                            this.$swal({
-                                position: 'top-end',
-                                icon: response.data.status,
-                                text: response.data.msg,
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-
-                        }
-
-                    }
-                )
-                .catch(error => console.log(error));
-        },
-
-
-
 
         /*======================================================
-        ====== Update Service
+        ====== Delete Newsletter
         ======================================================*/
-        deletePost(service) {
+        deletePost(newsletter) {
             this.$swal({
-                text: 'Are you sure delete service ?',
+                text: 'Are you sure delete newsletter ?',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -704,14 +437,14 @@ export default {
             }).then((result) => {
                 if (result.value) {
                     // do delete response
-                    axios.delete("/api/admin/service/" + service.id)
+                    axios.delete("/api/admin/newsletter/" + newsletter.id)
                         .then(
                             response => {  // if there success request
 
                                 if (response.data.status == "success") {
 
-                                    this.getServices(); // reload getServices()
-                                    this.service = {}      // empty service var
+                                    this.getNewsletters(); // reload getNewsletters()
+                                    this.newsletter = {}      // empty newsletter var
 
                                     /*======== Sweet Alert ============*/
                                     this.$swal({
@@ -749,9 +482,9 @@ export default {
 
 
         /*======================================================
-        ====== Search Service
+        ====== Search Newsletter
         ======================================================*/
-        searchService() {
+        searchNewsletter() {
 
             // Set Config var to send it with data request
             const config = {
@@ -768,7 +501,7 @@ export default {
             formData.append('searchVal', this.searchVal);
 
             // Send request with axios
-            axios.post("/api/admin/service/search", formData, config)
+            axios.post("/api/admin/newsletter/search", formData, config)
                 .then(
                     response => {  // if there success request
 
@@ -776,10 +509,10 @@ export default {
 
                         // if response status
                         if (response.data.status == "success") {
-                            this.services = response.data.data;
+                            this.newsletters = response.data.data;
                         }
 
-                        // if service not Found
+                        // if newsletter not Found
                         else if (response.data.status == "error") {
 
                             // Sweet Alert
@@ -859,7 +592,7 @@ export default {
                         });
 
                         // Send request with axios
-                        axios.post("/api/admin/service/multiAction", formData, config)
+                        axios.post("/api/admin/newsletter/multiAction", formData, config)
                         .then(
                             response => {  // if there success request
 
@@ -868,8 +601,8 @@ export default {
                                     const mainChecker = document.getElementById("main-ckecker");
                                     mainChecker.checked = false;
 
-                                    this.getServices(); // reload getServices()
-                                    this.service = {}      // empty service var
+                                    this.getNewsletters(); // reload getNewsletters()
+                                    this.newsletter = {}      // empty newsletter var
 
                                     /*======== Sweet Alert ============*/
                                     this.$swal({
