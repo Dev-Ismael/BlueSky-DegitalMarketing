@@ -14,7 +14,7 @@ class Messege extends Model
         'name',
         'email',
         'subject',
-        'messege',
+        'body',
     ];
 
 

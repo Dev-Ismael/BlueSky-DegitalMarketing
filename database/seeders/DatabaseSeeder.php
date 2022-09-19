@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'name',
             'email' => 'email',
             'subject' => 'subject',
-            'messege' => 'messege',
+            'body' => 'messege',
         ]);
 
 

@@ -2,33 +2,43 @@
 
     <section class="contact-us-section ptb-100">
         <div class="container contact">
-            <div class="col-12 pb-3 message-box d-none">
+            <div class="col-12 pb-3 messege-box d-none">
                 <div class="alert alert-danger"></div>
             </div>
             <div class="row justify-content-around">
                 <div class="col-md-6">
                     <div class="contact-us-form gray-light-bg rounded p-5">
                         <h4>Ready to get started?</h4>
-                        <form action="#" method="POST" id="contactForm" class="contact-us-form" novalidate="true">
+                        <form @submit.prevent=" storeMessege() "
+                        enctype="multipart/form-data" method="POST" id="contactForm" class="contact-us-form">
                             <div class="form-row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="name" placeholder="Enter Company Name..." required/>
+                                        <input type="text" class="form-control" :class=" errors.name ? 'border-danger' : ''  " name="name" v-model="messege.name" placeholder="Company Name..." />
+                                        <small class="text-danger" v-if="errors.name"> {{errors.name[0] }}</small>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" name="email" placeholder="Enter E-mail Address..." required/>
+                                        <input type="email" class="form-control" :class=" errors.email ? 'border-danger' : ''  " name="email"  v-model="messege.email" placeholder="E-mail Address..." />
+                                        <small class="text-danger" v-if="errors.email"> {{errors.email[0] }}</small>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea name="message" id="message" class="form-control" rows="7" cols="25" placeholder="Message..."></textarea>
+                                        <input type="text" class="form-control" :class=" errors.subject ? 'border-danger' : ''  " name="subject"  v-model="messege.subject" placeholder="Subject..." />
+                                        <small class="text-danger" v-if="errors.subject"> {{errors.subject[0] }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea  id="body" name="body" :class=" errors.body ? 'border-danger' : ''  " class="form-control"  v-model="messege.body" rows="7" cols="25" placeholder="Messege..." ></textarea>
+                                        <small class="text-danger" v-if="errors.body"> {{errors.body[0] }}</small>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 mt-3">
                                     <button type="submit" class="btn secondary-solid-btn disabled" id="btnContactUs" style="pointer-events: all; cursor: pointer;">
-                                        Send Message
+                                        Send messege
                                     </button>
                                 </div>
                             </div>
@@ -61,6 +71,12 @@
 
         data() {
             return {
+                messege: {
+                    name: '',
+                    email: '',
+                    subject: '',
+                    body: '',
+                },
                 settings: {},
                 errors: {},     // create empty object to insert errors in it to show
             }
@@ -89,6 +105,88 @@
                     )
             },
 
+
+
+            /*======================================================
+            ====== Update Settings
+            ======================================================*/
+
+            storeMessege() {
+
+
+                // Set Config var to send it with data request
+                const config = {
+                    headers: {
+                        'content-type': 'multipart/form-data',
+                        "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
+                    }
+                }
+
+
+                // set var from FormData Class
+                let formData = new FormData();
+
+
+                // Array of inputs
+                const inputs = ['name', 'email', 'subject', 'body'];
+
+
+                // For Loop To append every item in inputs array
+                inputs.forEach(input => {
+                    formData.append(String(input), this.messege[input]);
+                });
+
+
+                // Send request with axios
+                axios.post("/api/messege/store" , formData, config)
+                    .then(
+                        response => {  // if there success request
+
+                            // console.log(response.data);
+
+                            // if response status
+                            if (response.data.status == "success") {
+
+                                // empty error var
+                                this.messege = {}
+
+                                // empty error var
+                                this.errors = {}
+
+                                // Sweet Alert
+                                this.$swal({
+                                    position: 'top-end',
+                                    icon: response.data.status,
+                                    text: response.data.msg,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+
+                            }
+                            // if response validation error
+                            else if (response.data.status == "error" && response.data.msg == "validation failed") {
+
+                                this.errors = response.data.errors
+
+                            }
+                            // if Settings not Found
+                            else if (response.data.status == "error") {
+
+                                // Sweet Alert
+                                this.$swal({
+                                    position: 'top-end',
+                                    icon: response.data.status,
+                                    text: response.data.msg,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+
+                            }
+
+                        }
+                    )
+                    .catch(error => console.log(error));
+            },
 
         },
 
