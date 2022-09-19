@@ -90,14 +90,23 @@ class LoginController extends Controller
     ======================================================*/
     public function logout(Request $request)
     {
+        try {
 
-        return response()-> json([
-            "connection" => 'good',
-        ]);
-        
-        $user = Auth::user()->token();
-        $user->revoke();
+            Auth::logout();
 
+            return response() -> json([
+                "status" => 'success' ,
+                'msg'    => 'logout successfully',
+            ]);
+
+        } catch (\Exception $e) {
+
+            return response() -> json([
+                "status" => 'error' ,
+                'msg'    => 'logout failed',
+            ]);
+
+        }
     }
 
 

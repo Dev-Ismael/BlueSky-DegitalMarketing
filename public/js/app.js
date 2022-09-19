@@ -7675,7 +7675,9 @@ function queuePostFlushCb(cb) {
     }
     queueFlush();
 }
-function flushPreFlushCbs(seen, i = flushIndex) {
+function flushPreFlushCbs(seen, 
+// if currently flushing, skip the current job itself
+i = isFlushing ? flushIndex + 1 : 0) {
     if ((true)) {
         seen = seen || new Map();
     }
@@ -14627,7 +14629,8 @@ function finishComponentSetup(instance, isSSR, skipOptions) {
         // only do on-the-fly compile if not in SSR - SSR on-the-fly compilation
         // is done by server-renderer
         if (!isSSR && compile && !Component.render) {
-            const template = Component.template;
+            const template = Component.template ||
+                resolveMergedOptions(instance).template;
             if (template) {
                 if ((true)) {
                     startMeasure(instance, `compile`);
@@ -15188,7 +15191,7 @@ function isMemoSame(cached, memo) {
 }
 
 // Core API ------------------------------------------------------------------
-const version = "3.2.38";
+const version = "3.2.39";
 const _ssrUtils = {
     createComponentInstance,
     setupComponent,
@@ -19944,41 +19947,37 @@ __webpack_require__.r(__webpack_exports__);
     ====== Logout opration
     ======================================================*/
     logout: function logout() {
-      // alert("good")
-      document.getElementById('logout-form').submit();
-    } // /*======================================================
-    // ====== Logout opration
-    // ======================================================*/
-    // logout(){
-    //     // Send request with axios
-    //     axios.post("/logout" )
-    //     .then(
-    //         response => {  // if there success request
-    //             // console.log(response.data);
-    //             // if response status
-    //             if (response.data.status == "success") {
-    //                 // Sweet Alert
-    //                 this.$swal({
-    //                     position: 'top-end',
-    //                     icon: response.data.status,
-    //                     text: response.data.msg,
-    //                     showConfirmButton: false,
-    //                     timer: 2000
-    //                 });
-    //                 // redirect to home page
-    //                 setTimeout(function () {
-    //                     window.location.href = '/admin/dashboard';
-    //                 }, 2000);
-    //             }
-    //             // if response validation error
-    //             else if (response.data.status == "error" && response.data.msg == "validation failed") {
-    //                 this.errors = response.data.errors
-    //             }
-    //         }
-    //     )
-    //     .catch(error => console.log(error));
-    // }
+      var _this2 = this;
 
+      // Set Config var to send it with data request
+      var config = {
+        headers: {
+          'content-type': 'multipart/form-data',
+          "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
+        }
+      }; // Send request with axios
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/logout", config).then(function (response) {
+        // if there success request
+        // console.log(response.data);
+        // if response status
+        if (response.data.status == "success") {
+          window.location.href = '/';
+        } // if Settings not Found
+        else if (response.data.status == "error") {
+          // Sweet Alert
+          _this2.$swal({
+            position: 'top-end',
+            icon: response.data.status,
+            text: response.data.msg,
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
   }
 });
 
@@ -22162,17 +22161,18 @@ var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 
 var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Messages");
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "submit",
+  "class": "dropdown-item"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "dropdown-item-icon mdi mdi-power text-primary me-2"
-}, null, -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Sign Out")], -1
 /* HOISTED */
 );
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Sign Out");
+var _hoisted_23 = [_hoisted_22];
 
-var _hoisted_24 = [_hoisted_22, _hoisted_23];
-
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "navbar-toggler navbar-toggler-right d-lg-none align-self-center",
   type: "button",
   "data-bs-toggle": "offcanvas"
@@ -22211,12 +22211,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return $options.logout();
     }, ["prevent"])),
-    "class": "dropdown-item"
-  }, _hoisted_24)])])]), _hoisted_25])])], 2112
+    enctype: "multipart/form-data",
+    id: "logout-form",
+    action: "/logout",
+    method: "POST"
+  }, _hoisted_23, 32
+  /* HYDRATE_EVENTS */
+  )])])]), _hoisted_24])])], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }
@@ -25212,7 +25217,7 @@ var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "h4 fw-bold"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "mdi mdi-file-document"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Name : ")], -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Email : ")], -1
 /* HOISTED */
 );
 
@@ -26185,7 +26190,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Submit "), _hoisted_20], 32
   /* HYDRATE_EVENTS */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"card-footer bg-transparent border-top px-md-5\"><small>Not registered?</small>\n                            <a href=\"sign-up.html\" class=\"small\"> Create account</a></div> ")])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("hero background image with content slider end")], 2112
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"card-footer bg-transparent border-top px-md-5\"><small>Not registered?</small>\r\n                            <a href=\"sign-up.html\" class=\"small\"> Create account</a></div> ")])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("hero background image with content slider end")], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }
@@ -27925,13 +27930,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _admin_navbar_vue_vue_type_template_id_6c7630ec__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin_navbar.vue?vue&type=template&id=6c7630ec */ "./resources/js/admin/components/layout/admin_navbar.vue?vue&type=template&id=6c7630ec");
 /* harmony import */ var _admin_navbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin_navbar.vue?vue&type=script&lang=js */ "./resources/js/admin/components/layout/admin_navbar.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_admin_navbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_admin_navbar_vue_vue_type_template_id_6c7630ec__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/components/layout/admin_navbar.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_admin_navbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_admin_navbar_vue_vue_type_template_id_6c7630ec__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/components/layout/admin_navbar.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -27952,12 +27957,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _admin_sidebar_vue_vue_type_template_id_401fa95c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin_sidebar.vue?vue&type=template&id=401fa95c */ "./resources/js/admin/components/layout/admin_sidebar.vue?vue&type=template&id=401fa95c");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_admin_sidebar_vue_vue_type_template_id_401fa95c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/components/layout/admin_sidebar.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_admin_sidebar_vue_vue_type_template_id_401fa95c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/components/layout/admin_sidebar.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -27978,12 +27983,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _right_sidebar_vue_vue_type_template_id_3d211e9f__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./right_sidebar.vue?vue&type=template&id=3d211e9f */ "./resources/js/admin/components/layout/right_sidebar.vue?vue&type=template&id=3d211e9f");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_right_sidebar_vue_vue_type_template_id_3d211e9f__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/components/layout/right_sidebar.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_right_sidebar_vue_vue_type_template_id_3d211e9f__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/components/layout/right_sidebar.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28005,13 +28010,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _dashboard_vue_vue_type_template_id_0c1acf36__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dashboard.vue?vue&type=template&id=0c1acf36 */ "./resources/js/admin/views/dashboard.vue?vue&type=template&id=0c1acf36");
 /* harmony import */ var _dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard.vue?vue&type=script&lang=js */ "./resources/js/admin/views/dashboard.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_dashboard_vue_vue_type_template_id_0c1acf36__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/dashboard.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_dashboard_vue_vue_type_template_id_0c1acf36__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/dashboard.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28033,13 +28038,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _messege_vue_vue_type_template_id_6770b8c8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./messege.vue?vue&type=template&id=6770b8c8 */ "./resources/js/admin/views/messege.vue?vue&type=template&id=6770b8c8");
 /* harmony import */ var _messege_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./messege.vue?vue&type=script&lang=js */ "./resources/js/admin/views/messege.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_messege_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_messege_vue_vue_type_template_id_6770b8c8__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/messege.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_messege_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_messege_vue_vue_type_template_id_6770b8c8__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/messege.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28061,13 +28066,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _newsletter_vue_vue_type_template_id_3ab7f4b8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./newsletter.vue?vue&type=template&id=3ab7f4b8 */ "./resources/js/admin/views/newsletter.vue?vue&type=template&id=3ab7f4b8");
 /* harmony import */ var _newsletter_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newsletter.vue?vue&type=script&lang=js */ "./resources/js/admin/views/newsletter.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_newsletter_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_newsletter_vue_vue_type_template_id_3ab7f4b8__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/newsletter.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_newsletter_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_newsletter_vue_vue_type_template_id_3ab7f4b8__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/newsletter.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28088,12 +28093,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _notFoundPage_vue_vue_type_template_id_1b50e75d__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./notFoundPage.vue?vue&type=template&id=1b50e75d */ "./resources/js/admin/views/notFoundPage.vue?vue&type=template&id=1b50e75d");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_notFoundPage_vue_vue_type_template_id_1b50e75d__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/notFoundPage.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_notFoundPage_vue_vue_type_template_id_1b50e75d__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/notFoundPage.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28114,12 +28119,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _profile_vue_vue_type_template_id_37509f3a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./profile.vue?vue&type=template&id=37509f3a */ "./resources/js/admin/views/profile.vue?vue&type=template&id=37509f3a");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_profile_vue_vue_type_template_id_37509f3a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/profile.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_profile_vue_vue_type_template_id_37509f3a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/profile.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28140,12 +28145,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _seoManagment_vue_vue_type_template_id_ce597a80__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./seoManagment.vue?vue&type=template&id=ce597a80 */ "./resources/js/admin/views/seoManagment.vue?vue&type=template&id=ce597a80");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_seoManagment_vue_vue_type_template_id_ce597a80__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/seoManagment.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_seoManagment_vue_vue_type_template_id_ce597a80__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/seoManagment.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28167,13 +28172,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _service_vue_vue_type_template_id_8c6f1374__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./service.vue?vue&type=template&id=8c6f1374 */ "./resources/js/admin/views/service.vue?vue&type=template&id=8c6f1374");
 /* harmony import */ var _service_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./service.vue?vue&type=script&lang=js */ "./resources/js/admin/views/service.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_service_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_service_vue_vue_type_template_id_8c6f1374__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/service.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_service_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_service_vue_vue_type_template_id_8c6f1374__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/service.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28195,13 +28200,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _settings_vue_vue_type_template_id_e76b963c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./settings.vue?vue&type=template&id=e76b963c */ "./resources/js/admin/views/settings.vue?vue&type=template&id=e76b963c");
 /* harmony import */ var _settings_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./settings.vue?vue&type=script&lang=js */ "./resources/js/admin/views/settings.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_settings_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_settings_vue_vue_type_template_id_e76b963c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/settings.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_settings_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_settings_vue_vue_type_template_id_e76b963c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/settings.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28223,13 +28228,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _subscriber_vue_vue_type_template_id_a69b6632__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./subscriber.vue?vue&type=template&id=a69b6632 */ "./resources/js/admin/views/subscriber.vue?vue&type=template&id=a69b6632");
 /* harmony import */ var _subscriber_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./subscriber.vue?vue&type=script&lang=js */ "./resources/js/admin/views/subscriber.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_subscriber_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_subscriber_vue_vue_type_template_id_a69b6632__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/subscriber.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_subscriber_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_subscriber_vue_vue_type_template_id_a69b6632__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/subscriber.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28250,12 +28255,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _our_expertise_vue_vue_type_template_id_5e870554__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./our_expertise.vue?vue&type=template&id=5e870554 */ "./resources/js/web/components/elements/about/our_expertise.vue?vue&type=template&id=5e870554");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_our_expertise_vue_vue_type_template_id_5e870554__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/about/our_expertise.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_our_expertise_vue_vue_type_template_id_5e870554__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/about/our_expertise.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28276,12 +28281,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _our_features_vue_vue_type_template_id_66761dca__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./our_features.vue?vue&type=template&id=66761dca */ "./resources/js/web/components/elements/about/our_features.vue?vue&type=template&id=66761dca");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_our_features_vue_vue_type_template_id_66761dca__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/about/our_features.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_our_features_vue_vue_type_template_id_66761dca__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/about/our_features.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28302,12 +28307,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _work_progress_vue_vue_type_template_id_0f51f191__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./work_progress.vue?vue&type=template&id=0f51f191 */ "./resources/js/web/components/elements/about/work_progress.vue?vue&type=template&id=0f51f191");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_work_progress_vue_vue_type_template_id_0f51f191__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/about/work_progress.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_work_progress_vue_vue_type_template_id_0f51f191__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/about/work_progress.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28329,13 +28334,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _contact_form_vue_vue_type_template_id_728b146c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contact_form.vue?vue&type=template&id=728b146c */ "./resources/js/web/components/elements/contact/contact_form.vue?vue&type=template&id=728b146c");
 /* harmony import */ var _contact_form_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact_form.vue?vue&type=script&lang=js */ "./resources/js/web/components/elements/contact/contact_form.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_contact_form_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_contact_form_vue_vue_type_template_id_728b146c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/contact/contact_form.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_contact_form_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_contact_form_vue_vue_type_template_id_728b146c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/contact/contact_form.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28357,13 +28362,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _contact_info_vue_vue_type_template_id_95cc6e98__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contact_info.vue?vue&type=template&id=95cc6e98 */ "./resources/js/web/components/elements/contact/contact_info.vue?vue&type=template&id=95cc6e98");
 /* harmony import */ var _contact_info_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact_info.vue?vue&type=script&lang=js */ "./resources/js/web/components/elements/contact/contact_info.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_contact_info_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_contact_info_vue_vue_type_template_id_95cc6e98__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/contact/contact_info.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_contact_info_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_contact_info_vue_vue_type_template_id_95cc6e98__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/contact/contact_info.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28384,12 +28389,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _about_vue_vue_type_template_id_3c984395__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./about.vue?vue&type=template&id=3c984395 */ "./resources/js/web/components/elements/home/about.vue?vue&type=template&id=3c984395");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_about_vue_vue_type_template_id_3c984395__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/home/about.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_about_vue_vue_type_template_id_3c984395__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/home/about.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28410,12 +28415,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _our_clients_vue_vue_type_template_id_2f57b81d__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./our_clients.vue?vue&type=template&id=2f57b81d */ "./resources/js/web/components/elements/home/our_clients.vue?vue&type=template&id=2f57b81d");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_our_clients_vue_vue_type_template_id_2f57b81d__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/home/our_clients.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_our_clients_vue_vue_type_template_id_2f57b81d__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/home/our_clients.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28436,12 +28441,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _pricing_vue_vue_type_template_id_56fc8164__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pricing.vue?vue&type=template&id=56fc8164 */ "./resources/js/web/components/elements/home/pricing.vue?vue&type=template&id=56fc8164");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_pricing_vue_vue_type_template_id_56fc8164__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/home/pricing.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_pricing_vue_vue_type_template_id_56fc8164__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/home/pricing.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28463,13 +28468,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _services_vue_vue_type_template_id_d596bbf4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services.vue?vue&type=template&id=d596bbf4 */ "./resources/js/web/components/elements/home/services.vue?vue&type=template&id=d596bbf4");
 /* harmony import */ var _services_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services.vue?vue&type=script&lang=js */ "./resources/js/web/components/elements/home/services.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_services_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_services_vue_vue_type_template_id_d596bbf4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/home/services.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_services_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_services_vue_vue_type_template_id_d596bbf4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/home/services.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28490,12 +28495,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _youtube_video_vue_vue_type_template_id_0490f367__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./youtube_video.vue?vue&type=template&id=0490f367 */ "./resources/js/web/components/elements/home/youtube_video.vue?vue&type=template&id=0490f367");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_youtube_video_vue_vue_type_template_id_0490f367__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/home/youtube_video.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_youtube_video_vue_vue_type_template_id_0490f367__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/home/youtube_video.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28517,13 +28522,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _login_vue_vue_type_template_id_59b98461__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./login.vue?vue&type=template&id=59b98461 */ "./resources/js/web/components/elements/login.vue?vue&type=template&id=59b98461");
 /* harmony import */ var _login_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./login.vue?vue&type=script&lang=js */ "./resources/js/web/components/elements/login.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_login_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_login_vue_vue_type_template_id_59b98461__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/login.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_login_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_login_vue_vue_type_template_id_59b98461__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/login.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28544,12 +28549,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _our_portfolio_vue_vue_type_template_id_46552e06__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./our_portfolio.vue?vue&type=template&id=46552e06 */ "./resources/js/web/components/elements/portfolio/our_portfolio.vue?vue&type=template&id=46552e06");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_our_portfolio_vue_vue_type_template_id_46552e06__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/portfolio/our_portfolio.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_our_portfolio_vue_vue_type_template_id_46552e06__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/portfolio/our_portfolio.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28570,12 +28575,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _project_details_vue_vue_type_template_id_5d02669e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./project_details.vue?vue&type=template&id=5d02669e */ "./resources/js/web/components/elements/project/project_details.vue?vue&type=template&id=5d02669e");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_project_details_vue_vue_type_template_id_5d02669e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/project/project_details.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_project_details_vue_vue_type_template_id_5d02669e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/project/project_details.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28597,13 +28602,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _service_details_vue_vue_type_template_id_198aedd6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./service_details.vue?vue&type=template&id=198aedd6 */ "./resources/js/web/components/elements/service/service_details.vue?vue&type=template&id=198aedd6");
 /* harmony import */ var _service_details_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./service_details.vue?vue&type=script&lang=js */ "./resources/js/web/components/elements/service/service_details.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_service_details_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_service_details_vue_vue_type_template_id_198aedd6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/service/service_details.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_service_details_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_service_details_vue_vue_type_template_id_198aedd6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/elements/service/service_details.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28625,13 +28630,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _footer_section_vue_vue_type_template_id_c8cff4d2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./footer_section.vue?vue&type=template&id=c8cff4d2 */ "./resources/js/web/components/layouts/footer_section.vue?vue&type=template&id=c8cff4d2");
 /* harmony import */ var _footer_section_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer_section.vue?vue&type=script&lang=js */ "./resources/js/web/components/layouts/footer_section.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_footer_section_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_footer_section_vue_vue_type_template_id_c8cff4d2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/layouts/footer_section.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_footer_section_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_footer_section_vue_vue_type_template_id_c8cff4d2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/layouts/footer_section.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28652,12 +28657,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _main_header_vue_vue_type_template_id_10b23326__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main_header.vue?vue&type=template&id=10b23326 */ "./resources/js/web/components/layouts/main_header.vue?vue&type=template&id=10b23326");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_main_header_vue_vue_type_template_id_10b23326__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/layouts/main_header.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_main_header_vue_vue_type_template_id_10b23326__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/layouts/main_header.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28679,13 +28684,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _main_navbar_vue_vue_type_template_id_7526a670__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main_navbar.vue?vue&type=template&id=7526a670 */ "./resources/js/web/components/layouts/main_navbar.vue?vue&type=template&id=7526a670");
 /* harmony import */ var _main_navbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main_navbar.vue?vue&type=script&lang=js */ "./resources/js/web/components/layouts/main_navbar.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_main_navbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_main_navbar_vue_vue_type_template_id_7526a670__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/layouts/main_navbar.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_main_navbar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_main_navbar_vue_vue_type_template_id_7526a670__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/layouts/main_navbar.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -28707,13 +28712,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _min_header_vue_vue_type_template_id_50ce08f0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./min_header.vue?vue&type=template&id=50ce08f0 */ "./resources/js/web/components/layouts/min_header.vue?vue&type=template&id=50ce08f0");
 /* harmony import */ var _min_header_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./min_header.vue?vue&type=script&lang=js */ "./resources/js/web/components/layouts/min_header.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_min_header_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_min_header_vue_vue_type_template_id_50ce08f0__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/layouts/min_header.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_devis_OneDrive_Desktop_Works_BlueSky_DegitalMarketing_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_min_header_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_min_header_vue_vue_type_template_id_50ce08f0__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/web/components/layouts/min_header.vue"]])
 /* hot reload */
 if (false) {}
 

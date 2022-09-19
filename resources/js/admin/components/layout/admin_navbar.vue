@@ -124,9 +124,12 @@
                         <router-link to="/admin/messege" class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i>
                             Messages</router-link>
-                        <a @click.prevent="logout()" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
-                            Out</a>
 
+                            <form @submit.prevent="logout() "
+                                    enctype="multipart/form-data" id="logout-form" action="/logout" method="POST">
+                            <button type="submit" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
+                            Out</button>
+                        </form>
                     </div>
                 </li>
             </ul>
@@ -173,56 +176,46 @@ export default {
         ====== Logout opration
         ======================================================*/
         logout(){
-            // alert("good")
-            document.getElementById('logout-form').submit();
+
+            // Set Config var to send it with data request
+            const config = {
+                headers: {
+                    'content-type': 'multipart/form-data',
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
+                }
+            }
+
+            // Send request with axios
+            axios.post("/logout" , config )
+                .then(
+                    response => {  // if there success request
+
+                        // console.log(response.data);
+
+                        // if response status
+                        if (response.data.status == "success") {
+
+                            window.location.href = '/';
+
+                        }
+                        // if Settings not Found
+                        else if (response.data.status == "error") {
+
+                            // Sweet Alert
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+
+                        }
+
+                    }
+                )
+                .catch(error => console.log(error));
         }
-
-
-
-        // /*======================================================
-        // ====== Logout opration
-        // ======================================================*/
-        // logout(){
-
-        //     // Send request with axios
-        //     axios.post("/logout" )
-        //     .then(
-        //         response => {  // if there success request
-
-        //             // console.log(response.data);
-
-        //             // if response status
-        //             if (response.data.status == "success") {
-
-
-        //                 // Sweet Alert
-        //                 this.$swal({
-        //                     position: 'top-end',
-        //                     icon: response.data.status,
-        //                     text: response.data.msg,
-        //                     showConfirmButton: false,
-        //                     timer: 2000
-        //                 });
-
-
-        //                 // redirect to home page
-        //                 setTimeout(function () {
-        //                     window.location.href = '/admin/dashboard';
-        //                 }, 2000);
-
-        //             }
-        //             // if response validation error
-        //             else if (response.data.status == "error" && response.data.msg == "validation failed") {
-
-        //                 this.errors = response.data.errors
-
-        //             }
-
-
-        //         }
-        //     )
-        //     .catch(error => console.log(error));
-        // }
 
     }
 }

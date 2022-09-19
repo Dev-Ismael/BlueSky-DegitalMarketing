@@ -135,7 +135,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <span class="h4 fw-bold"> <i class="mdi mdi-file-document"></i> Name : </span>
+                                        <span class="h4 fw-bold"> <i class="mdi mdi-file-document"></i> Email : </span>
                                         <span class="h6"> {{ subscriber.email }} </span>
                                     </div>
                                 </div>
