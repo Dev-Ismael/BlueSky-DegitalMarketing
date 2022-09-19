@@ -21,6 +21,19 @@
                     <span class="menu-title">Messeges</span>
                 </router-link>
             </li>
+            <li class="nav-item nav-category">Mail</li>
+            <li class="nav-item">
+                <router-link to="/admin/subscriber" class="nav-link" >
+                    <i class="menu-icon mdi mdi-account-circle-outline"></i>
+                    <span class="menu-title"> Subscribers </span>
+                </router-link>
+            </li>
+            <li class="nav-item">
+                <router-link to="/admin/newsletter" class="nav-link" >
+                    <i class="menu-icon mdi mdi-email-outline"></i>
+                    <span class="menu-title"> Newsletters </span>
+                </router-link>
+            </li>
             <li class="nav-item nav-category">Help</li>
             <li class="nav-item">
                 <router-link to="/admin/seo-managment" class="nav-link" >

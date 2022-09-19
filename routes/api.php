@@ -58,6 +58,11 @@ Route::group([ 'prefix' => 'admin' ] , function(){     // URL ==> 'api/admin' ,
     Route::post('messege/search' , [App\Http\Controllers\Admin\MessegeController::class, 'search'])->name("messege.search");
     Route::post('messege/multiAction' , [App\Http\Controllers\Admin\MessegeController::class, 'multiAction'])->name("messege.multiAction");
 
+    // Subscribers
+    Route::resource('subscriber', '\App\Http\Controllers\Admin\SubscriberController');
+    Route::post('subscriber/search' , [App\Http\Controllers\Admin\SubscriberController::class, 'search'])->name("subscriber.search");
+    Route::post('subscriber/multiAction' , [App\Http\Controllers\Admin\SubscriberController::class, 'multiAction'])->name("subscriber.multiAction");
+
     // Settings
     Route::get('settings' , [App\Http\Controllers\Admin\SettingController::class, 'show'])->name("settings.show");
     Route::post('settings' , [App\Http\Controllers\Admin\SettingController::class, 'update'])->name("settings.update");
