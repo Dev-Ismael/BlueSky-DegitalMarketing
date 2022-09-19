@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Messege;
+use App\Models\Subscriber;
 use Illuminate\Http\Request;
 
 
@@ -16,8 +16,8 @@ class SubscriberController extends Controller
      */
     public function index()
     {
-        $messeges = Messege::orderBy('id','desc')->paginate(10);
-        return response()->json($messeges);
+        $subscribers = Subscriber::orderBy('id','desc')->paginate(10);
+        return response()->json($subscribers);
     }
 
     /**
@@ -37,9 +37,9 @@ class SubscriberController extends Controller
     {
         try{
             // Find Record In Db Column
-            $messege = Messege::where('id', $id )->first();
+            $subscriber = Subscriber::where('id', $id )->first();
 
-            if( !$messege ){  // If Not Found
+            if( !$subscriber ){  // If Not Found
                 return response()->json([
                     'status' => 'error',
                     'msg'    => '404 not found'
@@ -48,8 +48,8 @@ class SubscriberController extends Controller
 
             return response()->json([ // If Found Success
                 'status' => 'success',
-                "msg"    => "messege get successfully",
-                'data'   => $messege
+                "msg"    => "subscriber get successfully",
+                'data'   => $subscriber
             ]);
         } catch (\Exception $e) {
             return response([
@@ -71,9 +71,9 @@ class SubscriberController extends Controller
     {
 
         // Find Record In Db Column
-        $messege = Messege::where('id', $id )->first();
+        $subscriber = Subscriber::where('id', $id )->first();
 
-        if( !$messege ){  // If Not Found
+        if( !$subscriber ){  // If Not Found
             return response()->json([
                 'status' => 'error',
                 'msg'    => '404 not found'
@@ -84,7 +84,7 @@ class SubscriberController extends Controller
         // Delete Record from DB
         try {
 
-            $delete = $messege->delete();
+            $delete = $subscriber->delete();
             // If Delete Error
             if( !$delete ){
                 return response()->json([
@@ -96,7 +96,7 @@ class SubscriberController extends Controller
             // If Delete Succesffuly
             return response()->json([
                 'status' => 'success',
-                'msg'    => 'Messege deleted successfully'
+                'msg'    => 'Subscriber deleted successfully'
             ]);
 
         } catch (\Exception $e) {
@@ -117,10 +117,10 @@ class SubscriberController extends Controller
         try {
 
             // Find Matchs records
-            $messeges = Messege::where('name', 'like', "%{$request->searchVal}%")->paginate( 10 );
+            $subscribers = Subscriber::where('email', 'like', "%{$request->searchVal}%")->paginate( 10 );
 
             // If Not Delete Record
-            if( !$messeges ){
+            if( !$subscribers ){
                 return response()->json([
                     'status' => 'error',
                     'msg'    => 'Error at search opration'
@@ -130,7 +130,7 @@ class SubscriberController extends Controller
             return response()->json([
                 'status'   => 'success',
                 'msg'      => 'Searching opration successfully',
-                'data'     => $messeges,
+                'data'     => $subscribers,
             ]);
 
         } catch (\Exception $e) {
@@ -164,7 +164,7 @@ class SubscriberController extends Controller
 
 
             try {
-                $delete = Messege::destroy( $ids );
+                $delete = Subscriber::destroy( $ids );
 
                 if( !$delete ){
                     return response()->json([
@@ -176,7 +176,7 @@ class SubscriberController extends Controller
                 // If Delete Succesffuly
                 return response()->json([
                     'status' => 'success',
-                    'msg'    => 'Messeges deleted successfully'
+                    'msg'    => 'Subscribers deleted successfully'
                 ]);
 
             } catch (\Exception $e) {

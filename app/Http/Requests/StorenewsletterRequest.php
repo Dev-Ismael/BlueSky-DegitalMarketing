@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\Rule;
 
 class StoreNewsletterRequest extends FormRequest
 {
@@ -26,7 +27,7 @@ class StoreNewsletterRequest extends FormRequest
     public function rules()
     {
         return [
-            'subject'      => ['required' , 'string' , 'max:100' ],
+            'subject'         => ['required' , 'string' , 'max:100' , Rule::unique('newsletters', 'subject')->ignore($this->newsletter)],
             'content'      => ['required' , 'string' ],
         ];
     }

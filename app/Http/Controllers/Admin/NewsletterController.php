@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreNewsletterRequest;
+use App\Mail\NewsletterMail;
+use App\Models\Subscriber;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class NewsletterController extends Controller
@@ -50,6 +53,17 @@ class NewsletterController extends Controller
                     'msg'    => 'Error at store opration'
                 ]);
             }
+
+
+            // Get All Subscribers
+            $subscribers = Subscriber::pluck('email')->toArray();
+
+
+            // Send Mail
+            Mail::to($subscribers)->            // Our Email 'reciever'
+            send( new NewsletterMail( $requestData ) );
+
+
 
             // If Found Success
             return response()->json([
