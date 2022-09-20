@@ -42,4 +42,4 @@ Route::get('/{service_slug}', [App\Http\Controllers\ServiceController::class, 's
 ====== Admin Routes
 ============================================================*/
 Route::get('admin/{any}', [App\Http\Controllers\Admin\AdminController::class, 'index'])
-    -> where([ "any" => ".*" ]);
+->middleware('auth')   -> where([ "any" => ".*" ]);

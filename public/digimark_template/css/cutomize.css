@@ -62,6 +62,18 @@ body::-webkit-scrollbar-thumb {
 /*==========================================================
 ====== navBar
 ===========================================================*/
+.home-logo-dark{
+    background: url('../../images/BlueSky-Logo.png') center center / cover no-repeat !important;
+}
+/*= LOGO ====*/
+.navbar a.navbar-brand{
+    background: url('../../images/BlueSky-WhiteLogo.png') center center / cover no-repeat;
+    width: 150px;
+    height: 70px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
 .menu li a {
     display: inline-block;
     font-size: 14px;
@@ -78,9 +90,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 /*=== Affix ====*/
+.header nav.navbar.affix{
+    padding: 10px 0px;
+}
 .navbar.affix .menu li a {
     color: #2662ab;
 }
+/*= LOGO ====*/
+.navbar.affix a.navbar-brand{
+    background: url('../../images/BlueSky-Logo.png') center center / cover no-repeat;
+}
+
 
 .navbar.affix .menu li a:hover, .navbar.affix .menu li:hover>a, .navbar.affix .menu li a.active {
     background: #2662ab;
@@ -222,7 +242,10 @@ button.navbar-toggler {
         background: #2662ab !important;
         color: #fff !important;
     }
-
+    /*= LOGO ====*/
+    .navbar a.navbar-brand{
+        background: url('../../images/BlueSky-Logo.png') center center / cover no-repeat !important;
+    }
 
     /*==========================================================
     ====== Header

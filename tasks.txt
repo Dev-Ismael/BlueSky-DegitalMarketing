@@ -8,7 +8,6 @@ Menna tasks:
 - create admin session
 - add profile page
 - add seo management
-- fix logo (Dark & white)
 - add services data
 - add image if not data in table
 - add clients table (img)

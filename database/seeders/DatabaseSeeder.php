@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(5)->create();
+        \App\Models\User::factory(1)->create();
 
-        \App\Models\Service::factory(100)->create([
+        \App\Models\Service::factory(1)->create([
             'title' => 'title',
             'slug' => 'slug',
             'seo_title' => 'seo_title',
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        \App\Models\Messege::factory(10)->create([
+        \App\Models\Messege::factory(1)->create([
             'name' => 'name',
             'email' => 'email',
             'body' => 'messege',
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        \App\Models\Newsletter::factory(10)->create([
+        \App\Models\Newsletter::factory(1)->create([
             'subject'      => 'subject',
             'content'      => 'content',
         ]);

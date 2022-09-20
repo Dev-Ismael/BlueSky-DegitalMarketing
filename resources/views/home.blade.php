@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <main_navbar :dark-logo="true"></main_navbar>
+    <main_navbar></main_navbar>
 
     <main_header></main_header>
 

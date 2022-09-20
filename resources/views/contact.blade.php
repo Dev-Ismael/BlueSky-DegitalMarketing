@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <main_navbar :dark-logo="false"></main_navbar>
+    <main_navbar></main_navbar>
 
     <min_header :icon="'fa-solid fa-message'" :title="'Contact Us'" :url="'contact'" :background="'contact'"></min_header>
 

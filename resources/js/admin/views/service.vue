@@ -77,7 +77,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="py-1">
-                                                    <img :src=" '/images/services/'+ service.img " alt="image">
+                                                    <img :src=" '/images/services/'+ service.icon " alt="image">
                                                 </td>
                                                 <td> {{ service.title.length > 20 ? service.title.slice(0, 20) + '...' :
                                                 service.title }} </td>
@@ -165,7 +165,7 @@
                                     <div class="form-group">
                                         <span class="h4 fw-bold"> <i class="mdi mdi-format-align-left"></i> content :
                                         </span>
-                                        <span class="h6"> {{ service.content }} </span>
+                                        <span class="h6" v-html="service.content">  </span>
                                     </div>
                                     <hr>
                                     <div class="form-group">

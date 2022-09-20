@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <main_navbar :dark-logo="false"></main_navbar>
+    <main_navbar></main_navbar>
 
     <login></login>
 

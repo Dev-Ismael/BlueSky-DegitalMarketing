@@ -32,10 +32,18 @@
                             </div>
                             <p>We are available in 24/7 hours for dedicated support</p>
                             <ul class="primary-list mt-25">
-                                <li><span class="ti-location-pin mr-2 color-primary"></span> 123 Yellow House, Mn 9007
+                                <li>
+                                    <span class="ti-location-pin mr-2 color-primary"></span>
+                                    <a :href="settings.location" class="d-inline" target="_blank"> {{ settings.address }} </a>
                                 </li>
-                                <li><span class="ti-mobile mr-2 color-primary"></span> (+123) 456-789-012</li>
-                                <li><span class="ti-email mr-2 color-primary"></span> youname@domail.com</li>
+                                <li>
+                                    <span class="ti-mobile mr-2 color-primary"></span>
+                                    <a :href=" 'tel:' + settings.phone_formatted " class="d-inline" > {{ settings.phone }} </a>
+                                </li>
+                                <li>
+                                    <span class="ti-email mr-2 color-primary"></span>
+                                    <a :href=" 'mailto:' + settings.email " class="d-inline" > {{ settings.email }} </a>
+                                </li>
                             </ul>
                         </aside>
 
@@ -45,13 +53,15 @@
                                 <h5>Newsletter</h5>
                             </div>
                             <p>Enter your email address below to subscribe to my newsletter</p>
-                            <form action="#" method="post" class="d-none d-md-block d-lg-block">
-                                <input type="text" class="form-control input" id="email-footer" name="email"
-                                    placeholder="info@yourdomain.com">
+                            <form @submit.prevent=" storeSubscriber() "
+                            enctype="multipart/form-data" method="POST" class="d-none d-md-block d-lg-block">
+                                <input type="email" class="form-control input" id="email-footer" name="email"
+                                    placeholder="info@yourdomain.com" required v-model="email">
                                 <button type="submit"
                                     class="btn secondary-solid-btn btn-block btn-not-rounded mt-3">Subscribe
                                 </button>
                             </form>
+                            <small class="text-danger" v-if="errors.email"> {{errors.email[0] }}</small>
                         </aside>
 
                     </div>
@@ -68,12 +78,17 @@ export default {
     data() {
         return {
             service: '',
-            services: ''
+            services: '',
+            settings: {},
+            email: '',
+            errors: {},     // create empty object to insert errors in it to show
+
         }
     },
     mounted(){
         this.getServices();
         this.showService();
+        this.showSettings();
     },
     methods: {
 
@@ -115,6 +130,107 @@ export default {
             )
 
         },
+
+
+
+
+
+        /*======================================================
+        ====== GET Settings
+        ======================================================*/
+        showSettings() {
+            axios.get('/api/settings/')
+                .then(
+                    response => {
+                        // console.log(response.data);
+                        if (response.data.status == "success") {
+                            this.settings = response.data.data
+                        }
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                )
+        },
+
+
+        /*======================================================
+        ====== store Subscriber
+        ======================================================*/
+
+        storeSubscriber() {
+
+
+            // Set Config var to send it with data request
+            const config = {
+                headers: {
+                    'content-type': 'multipart/form-data',
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
+                }
+            }
+
+
+            // set var from FormData Class
+            let formData = new FormData();
+
+
+            formData.append( 'email' , this.email );
+
+            // Send request with axios
+            axios.post("/api/subscriber/store" , formData, config)
+                .then(
+                    response => {  // if there success request
+
+                        // console.log(response.data);
+
+                        // if response status
+                        if (response.data.status == "success") {
+
+
+                            // Sweet Alert
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 2000
+                            });
+
+
+                            // redirect to home page
+                            setTimeout(function () {
+                                window.location.href = '/';
+                            }, 2000);
+
+                        }
+                        // if response validation error
+                        else if (response.data.status == "error" && response.data.msg == "validation failed") {
+
+                            this.errors = response.data.errors
+
+                        }
+                        // if Settings not Found
+                        else if (response.data.status == "error") {
+
+                            // Sweet Alert
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+
+                        }
+
+                    }
+                )
+                .catch(error => console.log(error));
+        },
+
+
+
+
     },
 }
 </script>

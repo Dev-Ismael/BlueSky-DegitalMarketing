@@ -37,8 +37,8 @@
                             <img src="/digimark_template/img/phonecall.gif" alt="prevention" width="75">
                         </div>
                         <h5>Call For Expert</h5>
-                        <a href="tel:+445431234567" class="emergency-btn">
-                            +44 543 1234567
+                        <a :href=" 'tel:' + settings.phone_formatted " class="emergency-btn">
+                            {{ settings.phone }}
                         </a>
                     </div>
                 </div>
@@ -47,3 +47,38 @@
     </section>
 
 </template>
+<script>
+    import axios from 'axios';
+
+    export default {
+        data() {
+            return {
+                settings: {},
+            }
+        },
+        mounted(){
+            this.showSettings();
+        },
+        methods: {
+
+            /*======================================================
+            ====== GET Settings
+            ======================================================*/
+            showSettings() {
+                axios.get('/api/settings/')
+                    .then(
+                        response => {
+                            // console.log(response.data);
+                            if (response.data.status == "success") {
+                                this.settings = response.data.data
+                            }
+                        }
+                    )
+                    .catch(
+                        error => console.log(error)
+                    )
+            },
+        }
+
+    }
+</script>

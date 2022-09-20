@@ -60,7 +60,11 @@ $(document).ready(function () {
         }
     });
 
-
+    // Check if Home Page Logo
+    var locationPath = window.location.pathname
+    if( locationPath == '/' ){
+        $('.navbar a.navbar-brand').addClass('home-logo-dark')
+    }
 
     // 3. back to top
     if ($('.scroll-to-target').length) {

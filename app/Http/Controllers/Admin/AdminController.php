@@ -9,17 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -37,8 +26,8 @@ class AdminController extends Controller
     {
 
 
-        $user_id = Auth::id();
-        $user = User::where("id", $user_id )->get();
+        // $user_id = Auth::id();
+        $user = User::where("id", 1 )->get();
         return response()->json([
             "user" => $user,
         ]);
