@@ -14,19 +14,19 @@
                             <div class="form-row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" :class=" errors.name ? 'border-danger' : ''  " name="name" v-model="messege.name" placeholder="Company Name..." />
+                                        <input type="text" class="form-control" :class=" errors.name ? 'border-danger' : ''  " name="name" v-model="messege.name" placeholder="Company Name..." required/>
                                         <small class="text-danger" v-if="errors.name"> {{errors.name[0] }}</small>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" :class=" errors.email ? 'border-danger' : ''  " name="email"  v-model="messege.email" placeholder="E-mail Address..." />
+                                        <input type="email" class="form-control" :class=" errors.email ? 'border-danger' : ''  " name="email"  v-model="messege.email" placeholder="E-mail Address..." required/>
                                         <small class="text-danger" v-if="errors.email"> {{errors.email[0] }}</small>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea  id="body" name="body" :class=" errors.body ? 'border-danger' : ''  " class="form-control"  v-model="messege.body" rows="7" cols="25" placeholder="Messege..." ></textarea>
+                                        <textarea  id="body" name="body" :class=" errors.body ? 'border-danger' : ''  " class="form-control"  v-model="messege.body" rows="7" cols="25" placeholder="Messege..." required></textarea>
                                         <small class="text-danger" v-if="errors.body"> {{errors.body[0] }}</small>
                                     </div>
                                 </div>

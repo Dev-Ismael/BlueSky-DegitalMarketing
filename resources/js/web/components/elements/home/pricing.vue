@@ -53,7 +53,7 @@
                                 <li><span>1</span> Project to optimize site</li>
                                 <li>24/7 Phone Support</li>
                             </ul>
-                            <a href="#" class="btn outline-btn mb-3" target="_blank">Purchase now</a>
+                            <a href="/contact" class="btn outline-btn mb-3" target="_blank">Purchase now</a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                                 <li><span>5</span> Project to optimize site</li>
                                 <li>24/7 Phone Support</li>
                             </ul>
-                            <a href="#" class="btn secondary-solid-btn mb-3" target="_blank">Purchase now</a>
+                            <a href="/contact" class="btn secondary-solid-btn mb-3" target="_blank">Purchase now</a>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                                 <li><span>10</span> Project to optimize site</li>
                                 <li>24/7 Phone Support</li>
                             </ul>
-                            <a href="#" class="btn outline-btn mb-3" target="_blank">Purchase now</a>
+                            <a href="/contact" class="btn outline-btn mb-3" target="_blank">Purchase now</a>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,8 @@
                     <div class="support-cta text-center mt-5">
                         <h5 class="mb-1"><span class="ti-headphone-alt color-primary mr-3"></span>We're Here to Help You
                         </h5>
-                        <p>Have some questions? <a href="#">Chat with us now</a>, or <a href="#">send us an email</a> to
+                        <p>Have some questions? <a href="/contact">Chat with us now</a>, or
+                            <a :href=" 'mailto:' + settings.email "> send us an email </a>
                             get in touch.</p>
                     </div>
                 </div>
@@ -119,3 +120,39 @@
 
 
 </template>
+<script>
+    import axios from 'axios';
+    export default {
+
+        data() {
+            return {
+                settings: {},
+            }
+        },
+        mounted() {
+            this.showSettings();
+        },
+        methods: {
+
+
+            /*======================================================
+            ====== GET Settings
+            ======================================================*/
+            showSettings() {
+                axios.get('/api/settings/')
+                    .then(
+                        response => {
+                            // console.log(response.data);
+                            if (response.data.status == "success") {
+                                this.settings = response.data.data
+                            }
+                        }
+                    )
+                    .catch(
+                        error => console.log(error)
+                    )
+            },
+
+        }
+    }
+</script>

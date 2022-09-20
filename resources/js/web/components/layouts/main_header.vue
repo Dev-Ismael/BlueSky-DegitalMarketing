@@ -17,7 +17,7 @@
                             Lead generation, inbound marketing, web development, and marketing automation solutions.
                         </p>
                         <div class="action-btns mt-3">
-                            <a href="#" class="btn secondary-solid-btn">
+                            <a href="/contact" class="btn secondary-solid-btn">
                                 Contact us
                                 &nbsp;
                                 <!-- <i class="fa-solid fa-message fa-beat-fade"></i> -->

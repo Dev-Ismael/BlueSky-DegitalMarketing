@@ -12,7 +12,7 @@
                 <div class="free-trial-content text-white">
                     <h2 class="text-white">Best Consulting Every Business</h2>
                     <p>Interactively evisculate performance based ROI whereas premier mindshare. Dramatically matrix real-time convergence rather than empowered manufactured products.</p>
-                    <a href="#" class="btn primary-solid-btn mt-3">Start Now</a>
+                    <a href="/contact" class="btn primary-solid-btn mt-3">Start Now</a>
                 </div>
             </div>
         </div>

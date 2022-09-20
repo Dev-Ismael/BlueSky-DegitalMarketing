@@ -11,7 +11,7 @@ Menna tasks:
 - fix logo (Dark & white)
 - add services data
 - add image if not data in table
-
+- add clients table (img)
 
 Advanced feature in blueskyint project:
 ==================================

@@ -39,8 +39,8 @@
                         </ul>
 
                         <div class="action-btns mt-4">
-                            <a href="#" class="btn secondary-solid-btn mr-3">Start Now</a>
-                            <a href="#" class="btn secondary-outline-btn">Learn More</a>
+                            <a :href=" 'mailto:' + settings.email " class="btn secondary-solid-btn mr-3">Start Now</a>
+                            <a href="/contact" class="btn secondary-outline-btn">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -53,3 +53,39 @@
         </div>
     </section>
 </template>
+<script>
+    import axios from 'axios';
+    export default {
+
+        data() {
+            return {
+                settings: {},
+            }
+        },
+        mounted() {
+            this.showSettings();
+        },
+        methods: {
+
+
+            /*======================================================
+            ====== GET Settings
+            ======================================================*/
+            showSettings() {
+                axios.get('/api/settings/')
+                    .then(
+                        response => {
+                            // console.log(response.data);
+                            if (response.data.status == "success") {
+                                this.settings = response.data.data
+                            }
+                        }
+                    )
+                    .catch(
+                        error => console.log(error)
+                    )
+            },
+
+        }
+    }
+</script>
