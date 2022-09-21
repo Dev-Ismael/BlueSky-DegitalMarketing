@@ -1,6 +1,9 @@
 /*==========================================================
 ====== Global
 ===========================================================*/
+.padding-heading-125 {
+    padding: 125px 0;
+}
 .gradient-bg{
     background: linear-gradient(75deg, #2662ab 10%, #2662abe0) !important;
 }
@@ -167,7 +170,7 @@ button.navbar-toggler {
     right: 0;
     z-index: -1;
     top: -30px;
-    color: #ebb11038;
+    color: #ebb11028;
     font-size: 180px;
     line-height: 120px;
     font-weight: 700;

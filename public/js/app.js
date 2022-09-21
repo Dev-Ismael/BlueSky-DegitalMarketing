@@ -21993,7 +21993,7 @@ __webpack_require__.r(__webpack_exports__);
     showService: function showService() {
       var _this2 = this;
 
-      var slug = window.location.pathname.substr(1);
+      var slug = window.location.pathname.replace('/service/', '');
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/service/show/' + slug).then(function (response) {
         // console.log( response.data )
         if (response.data.status == "success") {
@@ -26307,7 +26307,7 @@ var _hoisted_13 = ["href"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("--------- services ----------"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.services, function (service, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: '/' + service.slug
+      href: '/service/' + service.slug
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
       src: '/images/services/' + service.icon,
       alt: "promo",
@@ -26715,7 +26715,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       key: service.id
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: '/' + service.slug
+      href: '/service/' + service.slug
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.title), 9
     /* TEXT, PROPS */
     , _hoisted_14)]);
@@ -27216,7 +27216,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       key: service.id
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: '/' + service.slug
+      href: '/service/' + service.slug
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.title), 9
     /* TEXT, PROPS */
     , _hoisted_18)]);
@@ -27284,7 +27284,7 @@ var _hoisted_9 = {
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("---- Header ----"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
-    "class": "hero-section padding-heading-100 gradient-overlay",
+    "class": "hero-section padding-heading-125 gradient-overlay",
     style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)('background: url(/images/min-headers/' + $props.url + '.jpg)no-repeat center center / cover')
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.icon)

@@ -1,7 +1,7 @@
 <template>
 
     <!------ Header ------>
-    <section class="hero-section padding-heading-100 gradient-overlay" :style="'background: url(/images/min-headers/' + url + '.jpg)no-repeat center center / cover'">
+    <section class="hero-section padding-heading-125 gradient-overlay" :style="'background: url(/images/min-headers/' + url + '.jpg)no-repeat center center / cover'">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-7">

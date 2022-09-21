@@ -17,7 +17,7 @@
                         <li><a href="#" class="dropdown-toggle-inner" :class="{ active : currentUrl.includes('service') }"> <i class="fa-solid fa-handshake-angle"></i>
                                 Services </a>
                             <ul class="sub-menu">
-                                <li v-for=" service in services " :key="service.id"><a :href=" '/' + service.slug "> {{ service.title }} </a></li>
+                                <li v-for=" service in services " :key="service.id"><a :href=" '/service/' + service.slug "> {{ service.title }} </a></li>
                             </ul>
                         </li>
                         <!-- <li><a href="/portfolio" :class="{active : currentUrl.includes('portfolio') }"> <i class="fa-solid fa-sitemap"></i> Portfolio </a></li> -->

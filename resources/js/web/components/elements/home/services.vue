@@ -21,7 +21,7 @@
                 <div v-for=" ( service , index ) in services "  class="col-md-6 col-lg-4">
                     <div class="promo-single-wrap p-5 text-center custom-shadow rounded">
                         <div class="promo-icon mb-4">
-                            <a :href=" '/' + service.slug ">
+                            <a :href=" '/service/' + service.slug ">
                                 <img :src=" '/images/services/' + service.icon " alt="promo" width="220">
                             </a>
                             <span class="number-bg"> {{ '0' + (index + 1) }} </span>

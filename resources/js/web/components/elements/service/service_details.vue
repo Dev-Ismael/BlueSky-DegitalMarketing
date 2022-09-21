@@ -21,7 +21,7 @@
                                 <h5>All Services</h5>
                             </div>
                             <ul class="all-service-list">
-                                <li v-for=" service in services " :key="service.id"><a :href=" '/' + service.slug "> {{ service.title }} </a></li>
+                                <li v-for=" service in services " :key="service.id"><a :href=" '/service/' + service.slug "> {{ service.title }} </a></li>
                             </ul>
                         </aside>
 
@@ -112,8 +112,7 @@ export default {
         ======================================================*/
         showService() {
 
-            const slug = window.location.pathname.substr(1,);
-
+            const slug = window.location.pathname.replace('/service/','');
             axios.get('/api/service/show/' + slug )
             .then(
                 response => {

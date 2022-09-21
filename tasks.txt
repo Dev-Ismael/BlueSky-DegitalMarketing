@@ -11,6 +11,10 @@ Menna tasks:
 - add services data
 - add image if not data in table
 - add clients table (img)
+- make contact mail dynamic from DB setting
+- fix preloader and make it by vue.js
+
+
 
 Advanced feature in blueskyint project:
 ==================================
