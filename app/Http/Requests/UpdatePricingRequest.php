@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
 
 class UpdatePricingRequest extends FormRequest
 {
@@ -13,7 +15,7 @@ class UpdatePricingRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +26,19 @@ class UpdatePricingRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            // 'standard_price_us'   => ['required' , 'string' , 'max:255' ],
+            // 'standard_price_eg'   => ['required' , 'string' , 'max:255' ],
         ];
+    }
+
+
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'status' => 'error',
+            'msg'    => 'validation failed',
+            'errors'  => $validator->errors()
+        ], 200));
     }
 }

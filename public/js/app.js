@@ -20665,80 +20665,70 @@ __webpack_require__.r(__webpack_exports__);
     return {
       editor: (_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_1___default()),
       // import ClassicEditor theme to use in checkEditor package
-      settings: {
-        address: '',
-        location: '',
-        footer_content: '',
-        email: '',
-        phone: '',
-        phone_formatted: '',
-        linkedin: '',
-        facebook: '',
-        twitter: '',
-        youtube: ''
-      },
       errors: {},
       // create empty object to insert errors in it to show
       pricing: {
         standard: {
           price: {
-            eg: '',
-            other: ''
+            us: '',
+            eg: ''
           },
           content: ''
         },
         premium: {
           price: {
-            eg: '',
-            other: ''
+            us: '',
+            eg: ''
           },
           content: ''
         },
         unlimited: {
           price: {
-            eg: '',
-            other: ''
+            us: '',
+            eg: ''
           },
           content: ''
         }
       }
     };
   },
-  mounted: function mounted() {
-    this.showSettings();
+  mounted: function mounted() {// this.showSettings();
   },
   methods: {
-    /*======================================================
-    ====== GET Settings
-    ======================================================*/
-    showSettings: function showSettings() {
-      var _this = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/admin/settings/').then(function (response) {
-        // console.log(response.data);
-        if (response.data.status == "success") {
-          _this.settings = response.data.data;
-        } else if (response.data.status == "error") {
-          /*=== Sweet Alert ===*/
-          _this.$swal({
-            position: 'top-end',
-            icon: response.data.status,
-            text: response.data.msg,
-            showConfirmButton: false,
-            timer: 1500
-          });
-        }
-      })["catch"](function (error) {
-        return console.log(error);
-      });
-    },
+    // /*======================================================
+    // ====== GET Settings
+    // ======================================================*/
+    // showSettings() {
+    //     axios.get('/api/admin/settings/')
+    //         .then(
+    //             response => {
+    //                 // console.log(response.data);
+    //                 if (response.data.status == "success") {
+    //                     this.settings = response.data.data
+    //                 } else if (response.data.status == "error") {
+    //                     /*=== Sweet Alert ===*/
+    //                     this.$swal({
+    //                         position: 'top-end',
+    //                         icon: response.data.status,
+    //                         text: response.data.msg,
+    //                         showConfirmButton: false,
+    //                         timer: 1500
+    //                     });
+    //                 }
+    //             }
+    //         )
+    //         .catch(
+    //             error => console.log(error)
+    //         )
+    // },
 
     /*======================================================
     ====== Update Settings
     ======================================================*/
-    updateSettings: function updateSettings() {
-      var _this2 = this;
+    storePricing: function storePricing() {
+      var _this = this;
 
+      // console.log()
       // Set Config var to send it with data request
       var config = {
         headers: {
@@ -20747,26 +20737,27 @@ __webpack_require__.r(__webpack_exports__);
         }
       }; // set var from FormData Class
 
-      var formData = new FormData(); // Array of inputs
+      var formData = new FormData();
+      formData.append('pricing', JSON.stringify(this.pricing)); // // Array of inputs
+      // const inputs = ['address', 'location', 'footer_content', 'email', 'phone', 'phone_formatted', 'linkedin', 'facebook', 'twitter', 'youtube'];
+      // // For Loop To append every item in inputs array
+      // inputs.forEach(input => {
+      //     formData.append(String(input), this.settings[input]);
+      // });
+      // Send request with axios
 
-      var inputs = ['address', 'location', 'footer_content', 'email', 'phone', 'phone_formatted', 'linkedin', 'facebook', 'twitter', 'youtube']; // For Loop To append every item in inputs array
-
-      inputs.forEach(function (input) {
-        formData.append(String(input), _this2.settings[input]);
-      }); // Send request with axios
-
-      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/admin/settings", formData, config).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/admin/pricing", formData, config).then(function (response) {
         // if there success request
         // console.log(response.data);
         // if response status
         if (response.data.status == "success") {
           // reload showSettings()
-          _this2.showSettings(); // empty error var
+          _this.showSettings(); // empty error var
 
 
-          _this2.errors = {}; // Sweet Alert
+          _this.errors = {}; // Sweet Alert
 
-          _this2.$swal({
+          _this.$swal({
             position: 'top-end',
             icon: response.data.status,
             text: response.data.msg,
@@ -20775,11 +20766,11 @@ __webpack_require__.r(__webpack_exports__);
           });
         } // if response validation error
         else if (response.data.status == "error" && response.data.msg == "validation failed") {
-          _this2.errors = response.data.errors;
+          _this.errors = response.data.errors;
         } // if Settings not Found
         else if (response.data.status == "error") {
           // Sweet Alert
-          _this2.$swal({
+          _this.$swal({
             position: 'top-end',
             icon: response.data.status,
             text: response.data.msg,
@@ -24144,7 +24135,7 @@ var _hoisted_11 = {
 };
 
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "linkedin"
+  "for": "standard_price_us"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "/admin/images/icons/usa.png",
   alt: "usa-flag",
@@ -24162,10 +24153,10 @@ var _hoisted_14 = {
 };
 
 var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "linkedin"
+  "for": "standard_price_eg"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "/admin/images/icons/egypt.png",
-  alt: "usa-flag",
+  alt: "egypt-flag",
   width: "30"
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" EG Price ")], -1
 /* HOISTED */
@@ -24180,7 +24171,7 @@ var _hoisted_17 = {
 };
 
 var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "message-text",
+  "for": "standard_content",
   "class": "col-form-label"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "mdi mdi-format-align-left"
@@ -24210,7 +24201,7 @@ var _hoisted_23 = {
 };
 
 var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "linkedin"
+  "for": "premium_price_us"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "/admin/images/icons/usa.png",
   alt: "usa-flag",
@@ -24228,10 +24219,10 @@ var _hoisted_26 = {
 };
 
 var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "linkedin"
+  "for": "premium_price_eg"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "/admin/images/icons/egypt.png",
-  alt: "usa-flag",
+  alt: "egypt-flag",
   width: "30"
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" EG Price ")], -1
 /* HOISTED */
@@ -24246,7 +24237,7 @@ var _hoisted_29 = {
 };
 
 var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "message-text",
+  "for": "premium_content",
   "class": "col-form-label"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "mdi mdi-format-align-left"
@@ -24276,7 +24267,7 @@ var _hoisted_35 = {
 };
 
 var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "linkedin"
+  "for": "unlimited_price_us"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "/admin/images/icons/usa.png",
   alt: "usa-flag",
@@ -24294,10 +24285,10 @@ var _hoisted_38 = {
 };
 
 var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "linkedin"
+  "for": "unlimited_price_eg"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "/admin/images/icons/egypt.png",
-  alt: "usa-flag",
+  alt: "egypt-flag",
   width: "30"
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" EG Price ")], -1
 /* HOISTED */
@@ -24312,7 +24303,7 @@ var _hoisted_41 = {
 };
 
 var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "message-text",
+  "for": "unlimited_content",
   "class": "col-form-label"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "mdi mdi-format-align-left"
@@ -24324,127 +24315,138 @@ var _hoisted_43 = {
   key: 0,
   "class": "text-danger"
 };
+
+var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "submit",
+  "class": "btn btn-primary me-2"
+}, "Submit", -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ckeditor = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ckeditor");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: _cache[9] || (_cache[9] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
-      return _ctx.storePrice();
+      return $options.storePricing();
     }, ["prevent"])),
     enctype: "multipart/form-data",
     method: "POST"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" US Price "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("---- Standard Box ----"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" US Price "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $data.settings.linkedin = $event;
+      return $data.pricing.standard.price.us = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.linkedin ? 'border-danger' : '']),
-    name: "linkedin",
-    id: "linkedin",
-    placeholder: "Type Linkedin...."
+    name: "standard_price_us",
+    id: "standard_price_us",
+    placeholder: "Type US Price...."
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.settings.linkedin]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.pricing.standard.price.us]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" EG Price "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return $data.settings.linkedin = $event;
+      return $data.pricing.standard.price.eg = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.linkedin ? 'border-danger' : '']),
-    name: "linkedin",
-    id: "linkedin",
-    placeholder: "Type Linkedin...."
+    name: "standard_price_eg",
+    id: "standard_price_eg",
+    placeholder: "Type EG Price...."
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.settings.linkedin]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.pricing.standard.price.eg]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ckeditor, {
     editor: $data.editor,
-    modelValue: $data.settings.linkedin,
+    modelValue: $data.pricing.standard.content,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return $data.settings.linkedin = $event;
+      return $data.pricing.standard.content = $event;
     }),
-    name: "content"
+    name: "standard_content",
+    id: "standard_content"
   }, null, 8
   /* PROPS */
   , ["editor", "modelValue"]), $data.errors.content ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.content[0]), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" US Price "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("---- Premium Box ----"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" US Price "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
-      return $data.settings.linkedin = $event;
+      return $data.pricing.premium.price.us = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.linkedin ? 'border-danger' : '']),
-    name: "linkedin",
-    id: "linkedin",
-    placeholder: "Type Linkedin...."
+    name: "premium_price_us",
+    id: "premium_price_us",
+    placeholder: "Type US Price...."
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.settings.linkedin]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.pricing.premium.price.us]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" EG Price "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
-      return $data.settings.linkedin = $event;
+      return $data.pricing.premium.price.eg = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.linkedin ? 'border-danger' : '']),
-    name: "linkedin",
-    id: "linkedin",
-    placeholder: "Type Linkedin...."
+    name: "premium_price_eg",
+    id: "premium_price_eg",
+    placeholder: "Type EG Price...."
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.settings.linkedin]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.pricing.premium.price.eg]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ckeditor, {
     editor: $data.editor,
-    modelValue: $data.settings.linkedin,
+    modelValue: $data.pricing.premium.content,
     "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
-      return $data.settings.linkedin = $event;
+      return $data.pricing.premium.content = $event;
     }),
-    name: "content"
+    name: "premium_content",
+    id: "premium_content"
   }, null, 8
   /* PROPS */
   , ["editor", "modelValue"]), $data.errors.content ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.content[0]), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [_hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" US Price "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("---- Unlimited Box ----"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [_hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" US Price "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
-      return $data.settings.linkedin = $event;
+      return $data.pricing.unlimited.price.us = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.linkedin ? 'border-danger' : '']),
-    name: "linkedin",
-    id: "linkedin",
-    placeholder: "Type Linkedin...."
+    name: "unlimited_price_us",
+    id: "unlimited_price_us",
+    placeholder: "Type US Price...."
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.settings.linkedin]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.pricing.unlimited.price.us]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" EG Price "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [_hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
-      return $data.settings.linkedin = $event;
+      return $data.pricing.unlimited.price.eg = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.linkedin ? 'border-danger' : '']),
-    name: "linkedin",
-    id: "linkedin",
-    placeholder: "Type Linkedin...."
+    name: "unlimited_price_eg",
+    id: "unlimited_price_eg",
+    placeholder: "Type EG Price...."
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.settings.linkedin]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.pricing.unlimited.price.eg]]), $data.errors.linkedin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.linkedin[0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [_hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ckeditor, {
     editor: $data.editor,
-    modelValue: $data.settings.linkedin,
+    modelValue: $data.pricing.unlimited.content,
     "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
-      return $data.settings.linkedin = $event;
+      return $data.pricing.unlimited.content = $event;
     }),
-    name: "content"
+    name: "unlimited_content",
+    id: "unlimited_content"
   }, null, 8
   /* PROPS */
   , ["editor", "modelValue"]), $data.errors.content ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.content[0]), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])], 32
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]), _hoisted_44])], 32
   /* HYDRATE_EVENTS */
   )])])])]);
 }
@@ -27626,7 +27628,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"hero-equal-height ptb-70 header-section\"><div class=\"hero-shape\" style=\"background:url(&#39;/digimark_template/img/Header-01.svg&#39;)no-repeat top right;\"></div><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-path-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-1&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-circle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-2&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-tringle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-3&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-tringle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-4&quot;&gt;  --><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-md-12 col-lg-5\"><div class=\"hero-slider-content pt-5\"><strong class=\"color-secondary\">Digital Marketing</strong><h1>Ready <br> For Growth?</h1><p class=\"lead\"> Lead generation, inbound marketing, web development, and marketing automation solutions. </p><div class=\"action-btns mt-3\"><a href=\"/contact\" class=\"btn secondary-solid-btn\"> Contact us   <!-- &lt;i class=&quot;fa-solid fa-message fa-beat-fade&quot;&gt;&lt;/i&gt; --><i class=\"fa-solid fa-message\"></i></a></div></div></div><div class=\"col-md-12 col-lg-7\"><div class=\"img-wrap\"><img src=\"/digimark_template/img/final.gif\" alt=\"hero\" class=\"img-fluid custom-width\"><!-- &lt;img src=&quot;/digimark_template/img/about.png&quot; alt=&quot;hero&quot; class=&quot;img-fluid custom-width&quot;&gt; --></div></div></div></div></section>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"hero-equal-height ptb-70 header-section\"><div class=\"hero-shape\" style=\"background:url(&#39;/digimark_template/img/Header-01.svg&#39;)no-repeat top right;\"></div><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-path-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-1&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-circle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-2&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-tringle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-3&quot;&gt; --><!-- &lt;img src=&quot;{{ asset(&quot;/digimark_template/img/cta-2-tringle-shape.png&quot;) }}&quot; alt=&quot;group shape&quot; class=&quot;img-fluid group-shape-4&quot;&gt;  --><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-md-12 col-lg-5\"><div class=\"hero-slider-content pt-5\"><strong class=\"color-secondary\">Digital Marketing</strong><h1>Ready <br> For Growth?</h1><p class=\"lead\"> Lead generation, inbound marketing, web development, and marketing automation solutions. </p><div class=\"action-btns mt-3\"><a href=\"/contact\" class=\"btn secondary-solid-btn\"> Contact us   <!-- &lt;i class=&quot;fa-solid fa-message fa-beat-fade&quot;&gt;&lt;/i&gt; --><i class=\"fa-solid fa-message\"></i></a></div></div></div><div class=\"col-md-12 col-lg-7\"><div class=\"img-wrap\"><img src=\"/digimark_template/img/header.gif\" alt=\"hero\" class=\"img-fluid custom-width\"><!-- &lt;img src=&quot;/digimark_template/img/about.png&quot; alt=&quot;hero&quot; class=&quot;img-fluid custom-width&quot;&gt; --></div></div></div></div></section>", 1);
 
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("-------- Header ----------"), _hoisted_1], 2112

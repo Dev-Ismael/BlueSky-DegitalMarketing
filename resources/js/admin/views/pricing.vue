@@ -5,115 +5,127 @@
                 <div class="card-body">
                     <h4 class="card-title">Pricing Plans</h4>
 
-                    <form @submit.prevent="storePrice()" enctype="multipart/form-data" method="POST">
+                    <form @submit.prevent="storePricing()" enctype="multipart/form-data" method="POST">
                         <div class="container">
                             <div class="row pt-3 pb-3">
+
+
+                                <!------ Standard Box ------>
                                 <div class="col-md-4 mt-2">
                                     <div class="plan-box standard">
                                         <h3 class="plan-title"> Standard </h3>
                                         <!-- US Price -->
                                         <div class="form-group">
-                                            <label for="linkedin">
+                                            <label for="standard_price_us">
                                                 <img src="/admin/images/icons/usa.png" alt="usa-flag" width="30">
                                                 US Price
                                             </label>
-                                            <input type="text" v-model="settings.linkedin" class="form-control" name="linkedin"
-                                                id="linkedin" placeholder="Type Linkedin...." :class=" errors.linkedin ? 'border-danger' : ''  " >
+                                            <input type="text" v-model="pricing.standard.price.us" class="form-control" name="standard_price_us"
+                                                id="standard_price_us" placeholder="Type US Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
                                             <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
                                             </small>
                                         </div>
                                         <!-- EG Price -->
                                         <div class="form-group">
-                                            <label for="linkedin">
-                                                <img src="/admin/images/icons/egypt.png" alt="usa-flag" width="30">
+                                            <label for="standard_price_eg">
+                                                <img src="/admin/images/icons/egypt.png" alt="egypt-flag" width="30">
                                                 EG Price
                                             </label>
-                                            <input type="text" v-model="settings.linkedin" class="form-control" name="linkedin"
-                                                id="linkedin" placeholder="Type Linkedin...." :class=" errors.linkedin ? 'border-danger' : ''  " >
+                                            <input type="text" v-model="pricing.standard.price.eg" class="form-control" name="standard_price_eg"
+                                                id="standard_price_eg" placeholder="Type EG Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
                                             <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
                                             </small>
                                         </div>
                                         <!-- Content -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i
+                                            <label for="standard_content" class="col-form-label"> <i
                                                     class="mdi mdi-format-align-left"></i> Content </label>
-                                            <ckeditor :editor="editor" v-model="settings.linkedin" name="content"></ckeditor>
+                                            <ckeditor :editor="editor" v-model="pricing.standard.content" name="standard_content" id="standard_content"></ckeditor>
                                             <small class="text-danger" v-if="errors.content"> {{errors.content[0] }}
                                             </small>
                                         </div>
                                     </div>
                                 </div>
+
+
+
+                                <!------ Premium Box ------>
                                 <div class="col-md-4 mt-2">
                                     <div class="plan-box premium">
                                         <h3 class="plan-title"> Premium </h3>
                                         <!-- US Price -->
                                         <div class="form-group">
-                                            <label for="linkedin">
+                                            <label for="premium_price_us">
                                                 <img src="/admin/images/icons/usa.png" alt="usa-flag" width="30">
                                                 US Price
                                             </label>
-                                            <input type="text" v-model="settings.linkedin" class="form-control" name="linkedin"
-                                                id="linkedin" placeholder="Type Linkedin...." :class=" errors.linkedin ? 'border-danger' : ''  " >
+                                            <input type="text" v-model="pricing.premium.price.us" class="form-control" name="premium_price_us"
+                                                id="premium_price_us" placeholder="Type US Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
                                             <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
                                             </small>
                                         </div>
                                         <!-- EG Price -->
                                         <div class="form-group">
-                                            <label for="linkedin">
-                                                <img src="/admin/images/icons/egypt.png" alt="usa-flag" width="30">
+                                            <label for="premium_price_eg">
+                                                <img src="/admin/images/icons/egypt.png" alt="egypt-flag" width="30">
                                                 EG Price
                                             </label>
-                                            <input type="text" v-model="settings.linkedin" class="form-control" name="linkedin"
-                                                id="linkedin" placeholder="Type Linkedin...." :class=" errors.linkedin ? 'border-danger' : ''  " >
+                                            <input type="text" v-model="pricing.premium.price.eg" class="form-control" name="premium_price_eg"
+                                                id="premium_price_eg" placeholder="Type EG Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
                                             <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
                                             </small>
                                         </div>
                                         <!-- Content -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i
+                                            <label for="premium_content" class="col-form-label"> <i
                                                     class="mdi mdi-format-align-left"></i> Content </label>
-                                            <ckeditor :editor="editor" v-model="settings.linkedin" name="content"></ckeditor>
+                                            <ckeditor :editor="editor" v-model="pricing.premium.content" name="premium_content" id="premium_content"></ckeditor>
                                             <small class="text-danger" v-if="errors.content"> {{errors.content[0] }}
                                             </small>
                                         </div>
                                     </div>
                                 </div>
+
+
+
+                                <!------ Unlimited Box ------>
                                 <div class="col-md-4 mt-2">
                                     <div class="plan-box unlimited">
                                         <h3 class="plan-title"> Unlimited </h3>
                                         <!-- US Price -->
                                         <div class="form-group">
-                                            <label for="linkedin">
+                                            <label for="unlimited_price_us">
                                                 <img src="/admin/images/icons/usa.png" alt="usa-flag" width="30">
                                                 US Price
                                             </label>
-                                            <input type="text" v-model="settings.linkedin" class="form-control" name="linkedin"
-                                                id="linkedin" placeholder="Type Linkedin...." :class=" errors.linkedin ? 'border-danger' : ''  " >
+                                            <input type="text" v-model="pricing.unlimited.price.us" class="form-control" name="unlimited_price_us"
+                                                id="unlimited_price_us" placeholder="Type US Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
                                             <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
                                             </small>
                                         </div>
                                         <!-- EG Price -->
                                         <div class="form-group">
-                                            <label for="linkedin">
-                                                <img src="/admin/images/icons/egypt.png" alt="usa-flag" width="30">
+                                            <label for="unlimited_price_eg">
+                                                <img src="/admin/images/icons/egypt.png" alt="egypt-flag" width="30">
                                                 EG Price
                                             </label>
-                                            <input type="text" v-model="settings.linkedin" class="form-control" name="linkedin"
-                                                id="linkedin" placeholder="Type Linkedin...." :class=" errors.linkedin ? 'border-danger' : ''  " >
+                                            <input type="text" v-model="pricing.unlimited.price.eg" class="form-control" name="unlimited_price_eg"
+                                                id="unlimited_price_eg" placeholder="Type EG Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
                                             <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
                                             </small>
                                         </div>
                                         <!-- Content -->
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label"> <i
+                                            <label for="unlimited_content" class="col-form-label"> <i
                                                     class="mdi mdi-format-align-left"></i> Content </label>
-                                            <ckeditor :editor="editor" v-model="settings.linkedin" name="content"></ckeditor>
+                                            <ckeditor :editor="editor" v-model="pricing.unlimited.content" name="unlimited_content" id="unlimited_content"></ckeditor>
                                             <small class="text-danger" v-if="errors.content"> {{errors.content[0] }}
                                             </small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <button type="submit" class="btn btn-primary me-2">Submit</button>
                         </div>
                     </form>
 
@@ -131,77 +143,64 @@ export default {
     data() {
         return {
             editor: ClassicEditor,   // import ClassicEditor theme to use in checkEditor package
-            settings: {
-                address: '',
-                location: '',
-                footer_content: '',
-                email: '',
-                phone: '',
-                phone_formatted: '',
-                linkedin: '',
-                facebook: '',
-                twitter: '',
-                youtube: '',
-            },
             errors: {},     // create empty object to insert errors in it to show
-
             pricing: {
                 standard: {
                     price: {
+                        us: '',
                         eg: '',
-                        other: '',
                     },
                     content: ''
                 },
                 premium: {
                     price: {
+                        us: '',
                         eg: '',
-                        other: '',
                     },
                     content: ''
                 },
                 unlimited: {
                     price: {
+                        us: '',
                         eg: '',
-                        other: '',
                     },
                     content: ''
                 },
-            }
+            },
         }
     },
     mounted() {
-        this.showSettings();
+        // this.showSettings();
     },
     methods: {
 
 
-        /*======================================================
-        ====== GET Settings
-        ======================================================*/
-        showSettings() {
-            axios.get('/api/admin/settings/')
-                .then(
-                    response => {
-                        // console.log(response.data);
-                        if (response.data.status == "success") {
-                            this.settings = response.data.data
-                        } else if (response.data.status == "error") {
-                            /*=== Sweet Alert ===*/
-                            this.$swal({
-                                position: 'top-end',
-                                icon: response.data.status,
-                                text: response.data.msg,
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                        }
-                    }
-                )
-                .catch(
-                    error => console.log(error)
-                )
-        },
+        // /*======================================================
+        // ====== GET Settings
+        // ======================================================*/
+        // showSettings() {
+        //     axios.get('/api/admin/settings/')
+        //         .then(
+        //             response => {
+        //                 // console.log(response.data);
+        //                 if (response.data.status == "success") {
+        //                     this.settings = response.data.data
+        //                 } else if (response.data.status == "error") {
+        //                     /*=== Sweet Alert ===*/
+        //                     this.$swal({
+        //                         position: 'top-end',
+        //                         icon: response.data.status,
+        //                         text: response.data.msg,
+        //                         showConfirmButton: false,
+        //                         timer: 1500
+        //                     });
+        //                 }
+        //             }
+        //         )
+        //         .catch(
+        //             error => console.log(error)
+        //         )
+        // },
 
 
         /*======================================================
@@ -209,8 +208,9 @@ export default {
         ======================================================*/
 
 
-        updateSettings() {
+        storePricing() {
 
+            // console.log()
 
             // Set Config var to send it with data request
             const config = {
@@ -224,19 +224,21 @@ export default {
             // set var from FormData Class
             let formData = new FormData();
 
-
-            // Array of inputs
-            const inputs = ['address', 'location', 'footer_content', 'email', 'phone', 'phone_formatted', 'linkedin', 'facebook', 'twitter', 'youtube'];
+            formData.append('pricing', JSON.stringify(this.pricing) );
 
 
-            // For Loop To append every item in inputs array
-            inputs.forEach(input => {
-                formData.append(String(input), this.settings[input]);
-            });
+            // // Array of inputs
+            // const inputs = ['address', 'location', 'footer_content', 'email', 'phone', 'phone_formatted', 'linkedin', 'facebook', 'twitter', 'youtube'];
+
+
+            // // For Loop To append every item in inputs array
+            // inputs.forEach(input => {
+            //     formData.append(String(input), this.settings[input]);
+            // });
 
 
             // Send request with axios
-            axios.post("/api/admin/settings" , formData, config)
+            axios.post("/api/admin/pricing" , formData, config)
                 .then(
                     response => {  // if there success request
 

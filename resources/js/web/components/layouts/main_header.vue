@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-md-12 col-lg-7">
                     <div class="img-wrap">
-                        <img src="/digimark_template/img/final.gif" alt="hero" class="img-fluid custom-width">
+                        <img src="/digimark_template/img/header.gif" alt="hero" class="img-fluid custom-width">
                         <!-- <img src="/digimark_template/img/about.png" alt="hero" class="img-fluid custom-width"> -->
                     </div>
                 </div>
