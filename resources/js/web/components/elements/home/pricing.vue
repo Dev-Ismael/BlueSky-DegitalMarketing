@@ -33,14 +33,22 @@
                         </label>
                     </div>
                 </div>
+
+                <!------------- Standard ---------------->
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="card text-center single-pricing-pack">
                         <div class="price-img pt-5">
                             <img src="/digimark_template/img/priching-img-1.png" alt="price" width="120" class="img-fluid">
                         </div>
                         <div class="card-header py-4 border-0 pricing-header">
-                            <div class="price text-center mb-0 monthly-price">$19<span>.99</span></div>
-                            <div class="price text-center mb-0 yearly-price">$69<span>.99</span></div>
+                            <div class="us-price">
+                                <div class="price text-center mb-0 monthly-price">$19<span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price">$69<span>.99</span></div>
+                            </div>
+                            <div class="eg-price">
+                                <div class="price text-center mb-0 monthly-price">$19<span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price">$69<span>.99</span></div>
+                            </div>
                         </div>
                         <div class="price-name">
                             <h5 class="mb-0">Standard</h5>
@@ -57,14 +65,24 @@
                         </div>
                     </div>
                 </div>
+
+
+
+                <!------------- Premium ---------------->
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="card popular-price text-center single-pricing-pack">
                         <div class="price-img pt-5">
                             <img src="/digimark_template/img/priching-img-2.png" alt="price" width="120" class="img-fluid">
                         </div>
                         <div class="card-header py-4 border-0 pricing-header">
-                            <div class="price text-center mb-0 monthly-price">$49<span>.99</span></div>
-                            <div class="price text-center mb-0 yearly-price">$159<span>.99</span></div>
+                            <div class="eg-price" >
+                                <div class="price text-center mb-0 monthly-price">$ {{ visitorCountry }} <span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price">$159<span>.99</span></div>
+                            </div>
+                            <div class="us-price" >
+                                <div class="price text-center mb-0 monthly-price">$49<span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price">$159<span>.99</span></div>
+                            </div>
                         </div>
                         <div class="price-name">
                             <h5 class="mb-0">Premium</h5>
@@ -81,14 +99,24 @@
                         </div>
                     </div>
                 </div>
+
+
+
+                <!------------- Unlimited ---------------->
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="card text-center single-pricing-pack">
                         <div class="price-img pt-5">
                             <img src="/digimark_template/img/priching-img-3.png" alt="price" width="120" class="img-fluid">
                         </div>
                         <div class="card-header py-4 border-0 pricing-header">
-                            <div class="price text-center mb-0 monthly-price">$69<span>.99</span></div>
-                            <div class="price text-center mb-0 yearly-price">$259<span>.99</span></div>
+                            <div class="us-price">
+                                <div class="price text-center mb-0 monthly-price">$69<span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price">$259<span>.99</span></div>
+                            </div>
+                            <div class="eg-price">
+                                <div class="price text-center mb-0 monthly-price">$69<span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price">$259<span>.99</span></div>
+                            </div>
                         </div>
                         <div class="price-name">
                             <h5 class="mb-0">Unlimited</h5>
@@ -123,18 +151,23 @@
 <script>
     import axios from 'axios';
     export default {
-
+        props:{
+            visitorCountry: {
+                // type: String,
+                required: true
+            },
+        },
         data() {
             return {
                 settings: {},
+                plan: {},
             }
         },
         mounted() {
             this.showSettings();
+            this.showPlan();
         },
         methods: {
-
-
             /*======================================================
             ====== GET Settings
             ======================================================*/
@@ -153,6 +186,21 @@
                     )
             },
 
+            /*======================================================
+            ====== GET Plan
+            ======================================================*/
+            showPlan() {
+                axios.get('/api/admin/plan/')
+                    .then(
+                        response => {
+                            // console.log(response.data);
+                            this.plan = response.data.data
+                        }
+                    )
+                    .catch(
+                        error => console.log(error)
+                    )
+            },
         }
     }
 </script>

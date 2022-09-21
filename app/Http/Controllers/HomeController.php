@@ -25,8 +25,9 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $ip = $request->ip();
-        $position = Location::get('197.48.50.148');
-        return view('home' , compact('position'));
+        $visitorCountry = Location::get('197.48.50.148')->countryCode;
+        // dd($visitor);
+        return view('home' , compact('visitorCountry'));
     }
 
 
