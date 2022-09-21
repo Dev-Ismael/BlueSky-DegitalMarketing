@@ -16,6 +16,18 @@ Menna tasks:
 
 
 
+Haitham taskis :
+===================
+- Pricing table
+- Price by county
+- Google schedule meeting btn
+- 
+-
+-
+-
+-
+
+
 Advanced feature in blueskyint project:
 ==================================
 1- Add Vue router

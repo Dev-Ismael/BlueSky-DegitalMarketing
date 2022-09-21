@@ -85,3 +85,16 @@ small.text-danger
 {
     width: 28em !important;
 }
+/*======== Pricing Page =====*/
+.plan-title{
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 25px;
+}
+.plan-box
+{
+    border: 1px solid rgba(0, 0, 0, 0.384);
+    border-radius: 5px;
+    padding: 25px;
+}
