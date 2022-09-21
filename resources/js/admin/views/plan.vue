@@ -3,9 +3,9 @@
         <div class="col-md-12 col-xl-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Pricing Plans</h4>
+                    <h4 class="card-title">Plan Plans</h4>
 
-                    <form @submit.prevent="storePricing()" enctype="multipart/form-data" method="POST">
+                    <form @submit.prevent="storePlan()" enctype="multipart/form-data" method="POST">
                         <div class="container">
                             <div class="row pt-3 pb-3">
 
@@ -20,9 +20,9 @@
                                                 <img src="/admin/images/icons/usa.png" alt="usa-flag" width="30">
                                                 US Price
                                             </label>
-                                            <input type="text" v-model="pricing.standard.price.us" class="form-control" name="standard_price_us"
-                                                id="standard_price_us" placeholder="Type US Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
+                                            <input type="text" v-model="plan.standard.price.us" class="form-control" name="standard_price_us"
+                                                id="standard_price_us" placeholder="Type US Price...." :class=" errors[`standard.price.us`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`standard.price.us`]"> {{errors[`standard.price.us`][0] }}
                                             </small>
                                         </div>
                                         <!-- EG Price -->
@@ -31,17 +31,17 @@
                                                 <img src="/admin/images/icons/egypt.png" alt="egypt-flag" width="30">
                                                 EG Price
                                             </label>
-                                            <input type="text" v-model="pricing.standard.price.eg" class="form-control" name="standard_price_eg"
-                                                id="standard_price_eg" placeholder="Type EG Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
+                                            <input type="text" v-model="plan.standard.price.eg" class="form-control" name="standard_price_eg"
+                                                id="standard_price_eg" placeholder="Type EG Price...." :class=" errors[`standard.price.eg`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`standard.price.eg`]"> {{errors[`standard.price.eg`][0] }}
                                             </small>
                                         </div>
                                         <!-- Content -->
                                         <div class="form-group">
                                             <label for="standard_content" class="col-form-label"> <i
                                                     class="mdi mdi-format-align-left"></i> Content </label>
-                                            <ckeditor :editor="editor" v-model="pricing.standard.content" name="standard_content" id="standard_content"></ckeditor>
-                                            <small class="text-danger" v-if="errors.content"> {{errors.content[0] }}
+                                            <ckeditor :editor="editor" v-model="plan.standard.content" name="standard_content" id="standard_content"></ckeditor>
+                                            <small class="text-danger" v-if="errors[`standard.content`]"> {{errors[`standard.content`][0] }}
                                             </small>
                                         </div>
                                     </div>
@@ -59,9 +59,9 @@
                                                 <img src="/admin/images/icons/usa.png" alt="usa-flag" width="30">
                                                 US Price
                                             </label>
-                                            <input type="text" v-model="pricing.premium.price.us" class="form-control" name="premium_price_us"
-                                                id="premium_price_us" placeholder="Type US Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
+                                            <input type="text" v-model="plan.premium.price.us" class="form-control" name="premium_price_us"
+                                                id="premium_price_us" placeholder="Type US Price...." :class=" errors[`premium.price.us`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`premium.price.us`]"> {{errors[`premium.price.us`][0] }}
                                             </small>
                                         </div>
                                         <!-- EG Price -->
@@ -70,17 +70,17 @@
                                                 <img src="/admin/images/icons/egypt.png" alt="egypt-flag" width="30">
                                                 EG Price
                                             </label>
-                                            <input type="text" v-model="pricing.premium.price.eg" class="form-control" name="premium_price_eg"
-                                                id="premium_price_eg" placeholder="Type EG Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
+                                            <input type="text" v-model="plan.premium.price.eg" class="form-control" name="premium_price_eg"
+                                                id="premium_price_eg" placeholder="Type EG Price...." :class=" errors[`premium.price.eg`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`premium.price.eg`]"> {{errors[`premium.price.eg`][0] }}
                                             </small>
                                         </div>
                                         <!-- Content -->
                                         <div class="form-group">
                                             <label for="premium_content" class="col-form-label"> <i
                                                     class="mdi mdi-format-align-left"></i> Content </label>
-                                            <ckeditor :editor="editor" v-model="pricing.premium.content" name="premium_content" id="premium_content"></ckeditor>
-                                            <small class="text-danger" v-if="errors.content"> {{errors.content[0] }}
+                                            <ckeditor :editor="editor" v-model="plan.premium.content" name="premium_content" id="premium_content"></ckeditor>
+                                            <small class="text-danger" v-if="errors[`premium.content`]"> {{errors[`premium.content`][0] }}
                                             </small>
                                         </div>
                                     </div>
@@ -98,9 +98,9 @@
                                                 <img src="/admin/images/icons/usa.png" alt="usa-flag" width="30">
                                                 US Price
                                             </label>
-                                            <input type="text" v-model="pricing.unlimited.price.us" class="form-control" name="unlimited_price_us"
-                                                id="unlimited_price_us" placeholder="Type US Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
+                                            <input type="text" v-model="plan.unlimited.price.us" class="form-control" name="unlimited_price_us"
+                                                id="unlimited_price_us" placeholder="Type US Price...." :class=" errors[`unlimited.price.us`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`unlimited.price.us`]"> {{errors[`unlimited.price.us`][0] }}
                                             </small>
                                         </div>
                                         <!-- EG Price -->
@@ -109,21 +109,23 @@
                                                 <img src="/admin/images/icons/egypt.png" alt="egypt-flag" width="30">
                                                 EG Price
                                             </label>
-                                            <input type="text" v-model="pricing.unlimited.price.eg" class="form-control" name="unlimited_price_eg"
-                                                id="unlimited_price_eg" placeholder="Type EG Price...." :class=" errors.linkedin ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors.linkedin"> {{errors.linkedin[0] }}
+                                            <input type="text" v-model="plan.unlimited.price.eg" class="form-control" name="unlimited_price_eg"
+                                                id="unlimited_price_eg" placeholder="Type EG Price...." :class=" errors[`unlimited.price.eg`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`unlimited.price.eg`]"> {{errors[`unlimited.price.eg`][0] }}
                                             </small>
                                         </div>
                                         <!-- Content -->
                                         <div class="form-group">
                                             <label for="unlimited_content" class="col-form-label"> <i
                                                     class="mdi mdi-format-align-left"></i> Content </label>
-                                            <ckeditor :editor="editor" v-model="pricing.unlimited.content" name="unlimited_content" id="unlimited_content"></ckeditor>
-                                            <small class="text-danger" v-if="errors.content"> {{errors.content[0] }}
+                                            <ckeditor :editor="editor" v-model="plan.unlimited.content" name="unlimited_content" id="unlimited_content"></ckeditor>
+                                            <small class="text-danger" v-if="errors[`unlimited.content`]"> {{errors[`unlimited.content`][0] }}
                                             </small>
                                         </div>
                                     </div>
                                 </div>
+
+
                             </div>
                             <button type="submit" class="btn btn-primary me-2">Submit</button>
                         </div>
@@ -137,6 +139,7 @@
 <script>
 import axios from 'axios';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { serialize } from 'object-to-formdata';
 
 export default {
 
@@ -144,7 +147,7 @@ export default {
         return {
             editor: ClassicEditor,   // import ClassicEditor theme to use in checkEditor package
             errors: {},     // create empty object to insert errors in it to show
-            pricing: {
+            plan: {
                 standard: {
                     price: {
                         us: '',
@@ -170,37 +173,37 @@ export default {
         }
     },
     mounted() {
-        // this.showSettings();
+        this.showPlan();
     },
     methods: {
 
 
-        // /*======================================================
-        // ====== GET Settings
-        // ======================================================*/
-        // showSettings() {
-        //     axios.get('/api/admin/settings/')
-        //         .then(
-        //             response => {
-        //                 // console.log(response.data);
-        //                 if (response.data.status == "success") {
-        //                     this.settings = response.data.data
-        //                 } else if (response.data.status == "error") {
-        //                     /*=== Sweet Alert ===*/
-        //                     this.$swal({
-        //                         position: 'top-end',
-        //                         icon: response.data.status,
-        //                         text: response.data.msg,
-        //                         showConfirmButton: false,
-        //                         timer: 1500
-        //                     });
-        //                 }
-        //             }
-        //         )
-        //         .catch(
-        //             error => console.log(error)
-        //         )
-        // },
+        /*======================================================
+        ====== GET Plan
+        ======================================================*/
+        showPlan() {
+            axios.get('/api/admin/plan/')
+                .then(
+                    response => {
+                        // console.log(response.data);
+                        if (response.data.status == "success") {
+                            this.plan = response.data.data
+                        } else if (response.data.status == "error") {
+                            /*=== Sweet Alert ===*/
+                            this.$swal({
+                                position: 'top-end',
+                                icon: response.data.status,
+                                text: response.data.msg,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                )
+        },
 
 
         /*======================================================
@@ -208,9 +211,7 @@ export default {
         ======================================================*/
 
 
-        storePricing() {
-
-            // console.log()
+        storePlan() {
 
             // Set Config var to send it with data request
             const config = {
@@ -220,25 +221,12 @@ export default {
                 }
             }
 
-
-            // set var from FormData Class
-            let formData = new FormData();
-
-            formData.append('pricing', JSON.stringify(this.pricing) );
-
-
-            // // Array of inputs
-            // const inputs = ['address', 'location', 'footer_content', 'email', 'phone', 'phone_formatted', 'linkedin', 'facebook', 'twitter', 'youtube'];
-
-
-            // // For Loop To append every item in inputs array
-            // inputs.forEach(input => {
-            //     formData.append(String(input), this.settings[input]);
-            // });
-
+            const formData = serialize(
+                this.plan,
+            );
 
             // Send request with axios
-            axios.post("/api/admin/pricing" , formData, config)
+            axios.post("/api/admin/plan" , formData, config)
                 .then(
                     response => {  // if there success request
 
@@ -247,8 +235,8 @@ export default {
                         // if response status
                         if (response.data.status == "success") {
 
-                            // reload showSettings()
-                            this.showSettings();
+                            // reload showPlan()
+                            this.showPlan();
 
                             // empty error var
                             this.errors = {}

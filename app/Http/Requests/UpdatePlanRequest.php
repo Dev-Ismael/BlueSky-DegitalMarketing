@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-class UpdatePricingRequest extends FormRequest
+class UpdatePlanRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +26,22 @@ class UpdatePricingRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'standard_price_us'   => ['required' , 'string' , 'max:255' ],
-            // 'standard_price_eg'   => ['required' , 'string' , 'max:255' ],
+
+            // Standard
+            'standard.price.us'    => ['required' , 'string' , 'distinct' ],
+            'standard.price.eg'    => ['required' , 'string' , 'distinct' ],
+            'standard.content'     => ['required' , 'string' , 'distinct' ],
+
+            // premium
+            'premium.price.us'    => ['required' , 'string' , 'distinct' ],
+            'premium.price.eg'    => ['required' , 'string' , 'distinct' ],
+            'premium.content'     => ['required' , 'string' , 'distinct' ],
+
+            // unlimited
+            'unlimited.price.us'    => ['required' , 'string' , 'distinct' ],
+            'unlimited.price.eg'    => ['required' , 'string' , 'distinct' ],
+            'unlimited.content'     => ['required' , 'string' , 'distinct' ],
+
         ];
     }
 

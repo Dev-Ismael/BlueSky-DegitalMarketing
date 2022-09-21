@@ -68,9 +68,9 @@ Route::group([ 'prefix' => 'admin' ] , function(){     // URL ==> 'api/admin' ,
     Route::post('newsletter/search' , [App\Http\Controllers\Admin\NewsletterController::class, 'search'])->name("newsletter.search");
     Route::post('newsletter/multiAction' , [App\Http\Controllers\Admin\NewsletterController::class, 'multiAction'])->name("newsletter.multiAction");
 
-    // Procing
-    Route::get('pricing' , [App\Http\Controllers\Admin\PricingController::class, 'show'])->name("pricing.show");
-    Route::post('pricing' , [App\Http\Controllers\Admin\PricingController::class, 'update'])->name("pricing.update");
+    // plans
+    Route::get('plan' , [App\Http\Controllers\Admin\PlanController::class, 'show'])->name("plan.show");
+    Route::post('plan' , [App\Http\Controllers\Admin\PlanController::class, 'update'])->name("plan.update");
 
 
     // Settings

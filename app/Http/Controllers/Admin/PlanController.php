@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Setting;
+use App\Models\Plan;
+use App\Http\Requests\UpdatePlanRequest;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateSettingRequest;
+use Illuminate\Http\Request;
 
-class SettingController extends Controller
+class PlanController extends Controller
 {
-
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Setting  $setting
+     * @param  \App\Models\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function show(Setting $setting)
+    public function show(Plan $plan)
     {
         try{
             // Find Record In Db Column
-            $setting = Setting::where('id', 1 )->first();
+            $plan = Plan::where('id', 1 )->first();
 
-            if( !$setting ){  // If Not Found
+            if( !$plan ){  // If Not Found
                 return response()->json([
                     'status' => 'error',
                     'msg'    => '404 not found'
@@ -31,8 +31,8 @@ class SettingController extends Controller
 
             return response()->json([ // If Found Success
                 'status' => 'success',
-                "msg"    => "settings get successfully",
-                'data'   => $setting
+                "msg"    => "Plan pricing get successfully",
+                'data'   => $plan
             ]);
         } catch (\Exception $e) {
             return response([
@@ -45,22 +45,22 @@ class SettingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateSettingRequest  $request
-     * @param  \App\Models\Setting  $setting
+     * @param  \App\Http\Requests\UpdatePlanRequest  $request
+     * @param  \App\Models\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSettingRequest $request, Setting $setting)
+    public function update(Request $request, Plan $plan)
     {
         $requestData = $request->all();
 
         // Find Record In Db Column
-        $settings = Setting::where('id', 1 )->first();
+        $plan = Plan::where('id', 1 )->first();
 
-        // Update in DB
+
         try {
 
             // update row in table
-            $update = $settings-> update( $requestData );
+            $update = $plan-> update( $requestData );
 
             // if not save in DB
             if(!$update){
@@ -70,10 +70,10 @@ class SettingController extends Controller
                 ]);
             }
 
-            // If Found Success
+            // If store Success
             return response()->json([
                 'status' => 'success',
-                "msg"    => "Service updated successfully",
+                "msg"    => "Plan pricing updated successfully",
             ]);
 
         } catch (\Exception $e) {
@@ -82,6 +82,7 @@ class SettingController extends Controller
                 'msg'    => 'server error'
             ]);
         }
+
     }
 
 }
