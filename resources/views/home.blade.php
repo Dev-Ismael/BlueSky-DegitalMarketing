@@ -10,7 +10,7 @@
 
     <about></about>
 
-    <pricing :visitorCountry=" '{{$visitorCountry}}' "></pricing>
+    <pricing :visitor-country='"{{ $visitorCountry }}"'></pricing>
 
     <our_clients></our_clients>
 

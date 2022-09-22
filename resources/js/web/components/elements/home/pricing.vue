@@ -41,31 +41,24 @@
                             <img src="/digimark_template/img/priching-img-1.png" alt="price" width="120" class="img-fluid">
                         </div>
                         <div class="card-header py-4 border-0 pricing-header">
-                            <div class="us-price">
-                                <div class="price text-center mb-0 monthly-price">$19<span>.99</span></div>
-                                <div class="price text-center mb-0 yearly-price">$69<span>.99</span></div>
+                            <div class="price-us" v-if=" visitorCountry == 'EG' ">
+                                <div class="price text-center mb-0 monthly-price"><span>EGP</span>{{ Number(plan.standard.price.eg.monthly) - 1 }}<span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price"><span>EGP</span>{{ Number(plan.standard.price.eg.yearly) - 1 }}<span>.99</span></div>
                             </div>
-                            <div class="eg-price">
-                                <div class="price text-center mb-0 monthly-price">$19<span>.99</span></div>
-                                <div class="price text-center mb-0 yearly-price">$69<span>.99</span></div>
+                            <div class="price-us" v-else>
+                                <div class="price text-center mb-0 monthly-price">${{ Number(plan.standard.price.us.monthly) - 1 }}<span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price">${{ Number(plan.standard.price.us.yearly) - 1 }}<span>.99</span></div>
                             </div>
                         </div>
                         <div class="price-name">
                             <h5 class="mb-0">Standard</h5>
                         </div>
                         <div class="card-body">
-                            <ul class="list-unstyled mb-4 pricing-feature-list">
-                                <li><span>Track 15</span> Keywords with our tool</li>
-                                <li><span>50</span> Page Analysis</li>
-                                <li><span>50</span> Crawl Pages with our crawl</li>
-                                <li><span>1</span> Project to optimize site</li>
-                                <li>24/7 Phone Support</li>
-                            </ul>
-                            <a href="/contact" class="btn outline-btn mb-3" target="_blank">Purchase now</a>
+                            <span class="mb-3 mt-3 plan-pricing-content" v-html="plan.standard.content"></span>
+                            <a href="/contact" class="btn outline-btn mb-3 mt-3" target="_blank">Purchase now</a>
                         </div>
                     </div>
                 </div>
-
 
 
                 <!------------- Premium ---------------->
@@ -75,27 +68,21 @@
                             <img src="/digimark_template/img/priching-img-2.png" alt="price" width="120" class="img-fluid">
                         </div>
                         <div class="card-header py-4 border-0 pricing-header">
-                            <div class="eg-price" >
-                                <div class="price text-center mb-0 monthly-price">$ {{ visitorCountry }} <span>.99</span></div>
-                                <div class="price text-center mb-0 yearly-price">$159<span>.99</span></div>
+                            <div class="price-us" v-if=" visitorCountry == 'EG' ">
+                                <div class="price text-center mb-0 monthly-price"><span>EGP</span>{{ Number(plan.premium.price.eg.monthly) - 1 }}<span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price"><span>EGP</span>{{ Number(plan.premium.price.eg.yearly) - 1 }}<span>.99</span></div>
                             </div>
-                            <div class="us-price" >
-                                <div class="price text-center mb-0 monthly-price">$49<span>.99</span></div>
-                                <div class="price text-center mb-0 yearly-price">$159<span>.99</span></div>
+                            <div class="price-us" v-else>
+                                <div class="price text-center mb-0 monthly-price">${{ Number(plan.premium.price.us.monthly) - 1 }}<span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price">${{ Number(plan.premium.price.us.yearly) - 1 }}<span>.99</span></div>
                             </div>
                         </div>
                         <div class="price-name">
                             <h5 class="mb-0">Premium</h5>
                         </div>
                         <div class="card-body">
-                            <ul class="list-unstyled mb-4 pricing-feature-list">
-                                <li><span>Track 15o</span> Keywords with our tool</li>
-                                <li><span>100</span> Page Analysis</li>
-                                <li><span>100</span> Crawl Pages with our crawl</li>
-                                <li><span>5</span> Project to optimize site</li>
-                                <li>24/7 Phone Support</li>
-                            </ul>
-                            <a href="/contact" class="btn secondary-solid-btn mb-3" target="_blank">Purchase now</a>
+                            <span class="mb-3 mt-3 plan-pricing-content" v-html="plan.premium.content"></span>
+                            <a href="/contact" class="btn secondary-solid-btn mb-3 mt-3" target="_blank">Purchase now</a>
                         </div>
                     </div>
                 </div>
@@ -109,27 +96,21 @@
                             <img src="/digimark_template/img/priching-img-3.png" alt="price" width="120" class="img-fluid">
                         </div>
                         <div class="card-header py-4 border-0 pricing-header">
-                            <div class="us-price">
-                                <div class="price text-center mb-0 monthly-price">$69<span>.99</span></div>
-                                <div class="price text-center mb-0 yearly-price">$259<span>.99</span></div>
+                            <div class="price-us" v-if=" visitorCountry == 'EG' ">
+                                <div class="price text-center mb-0 monthly-price"><span>EGP</span>{{ Number(plan.unlimited.price.eg.monthly) - 1 }}<span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price"><span>EGP</span>{{ Number(plan.unlimited.price.eg.yearly) - 1 }}<span>.99</span></div>
                             </div>
-                            <div class="eg-price">
-                                <div class="price text-center mb-0 monthly-price">$69<span>.99</span></div>
-                                <div class="price text-center mb-0 yearly-price">$259<span>.99</span></div>
+                            <div class="price-us" v-else>
+                                <div class="price text-center mb-0 monthly-price">${{ Number(plan.unlimited.price.us.monthly) - 1 }}<span>.99</span></div>
+                                <div class="price text-center mb-0 yearly-price">${{ Number(plan.unlimited.price.us.yearly) - 1 }}<span>.99</span></div>
                             </div>
                         </div>
                         <div class="price-name">
                             <h5 class="mb-0">Unlimited</h5>
                         </div>
                         <div class="card-body">
-                            <ul class="list-unstyled mb-4 pricing-feature-list">
-                                <li><span>Track 500</span> Keywords with our tool</li>
-                                <li><span>250</span> Page Analysis</li>
-                                <li><span>250</span> Crawl Pages with our crawl</li>
-                                <li><span>10</span> Project to optimize site</li>
-                                <li>24/7 Phone Support</li>
-                            </ul>
-                            <a href="/contact" class="btn outline-btn mb-3" target="_blank">Purchase now</a>
+                            <span class="mb-3 mt-3 plan-pricing-content" v-html="plan.unlimited.content"></span>
+                            <a href="/contact" class="btn outline-btn mb-3 mt-3" target="_blank">Purchase now</a>
                         </div>
                     </div>
                 </div>
@@ -153,38 +134,61 @@
     export default {
         props:{
             visitorCountry: {
-                // type: String,
+                type: String,
                 required: true
             },
         },
         data() {
             return {
                 settings: {},
-                plan: {},
+                plan: {
+                    standard: {
+                        price: {
+                            us: {
+                                monthly: '',
+                                yearly: '',
+                            },
+                            eg: {
+                                monthly: '',
+                                yearly: '',
+                            }
+                        },
+                        content: ''
+                    },
+                    premium: {
+                        price: {
+                            us: {
+                                monthly: '',
+                                yearly: '',
+                            },
+                            eg: {
+                                monthly: '',
+                                yearly: '',
+                            }
+                        },
+                        content: ''
+                    },
+                    unlimited: {
+                        price: {
+                            us: {
+                                monthly: '',
+                                yearly: '',
+                            },
+                            eg: {
+                                monthly: '',
+                                yearly: '',
+                            }
+                        },
+                        content: ''
+                    },
+                },
             }
         },
         mounted() {
-            this.showSettings();
             this.showPlan();
         },
         methods: {
-            /*======================================================
-            ====== GET Settings
-            ======================================================*/
-            showSettings() {
-                axios.get('/api/settings/')
-                    .then(
-                        response => {
-                            // console.log(response.data);
-                            if (response.data.status == "success") {
-                                this.settings = response.data.data
-                            }
-                        }
-                    )
-                    .catch(
-                        error => console.log(error)
-                    )
-            },
+
 
             /*======================================================
             ====== GET Plan
@@ -193,7 +197,7 @@
                 axios.get('/api/admin/plan/')
                     .then(
                         response => {
-                            // console.log(response.data);
+                            // console.log(response.data.data);
                             this.plan = response.data.data
                         }
                     )

@@ -21952,46 +21952,69 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     visitorCountry: {
-      // type: String,
+      type: String,
       required: true
     }
   },
   data: function data() {
     return {
       settings: {},
-      plan: {}
+      plan: {
+        standard: {
+          price: {
+            us: {
+              monthly: '',
+              yearly: ''
+            },
+            eg: {
+              monthly: '',
+              yearly: ''
+            }
+          },
+          content: ''
+        },
+        premium: {
+          price: {
+            us: {
+              monthly: '',
+              yearly: ''
+            },
+            eg: {
+              monthly: '',
+              yearly: ''
+            }
+          },
+          content: ''
+        },
+        unlimited: {
+          price: {
+            us: {
+              monthly: '',
+              yearly: ''
+            },
+            eg: {
+              monthly: '',
+              yearly: ''
+            }
+          },
+          content: ''
+        }
+      }
     };
   },
   mounted: function mounted() {
-    this.showSettings();
     this.showPlan();
   },
   methods: {
     /*======================================================
-    ====== GET Settings
-    ======================================================*/
-    showSettings: function showSettings() {
-      var _this = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/settings/').then(function (response) {
-        // console.log(response.data);
-        if (response.data.status == "success") {
-          _this.settings = response.data.data;
-        }
-      })["catch"](function (error) {
-        return console.log(error);
-      });
-    },
-
-    /*======================================================
     ====== GET Plan
     ======================================================*/
     showPlan: function showPlan() {
-      var _this2 = this;
+      var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/admin/plan/').then(function (response) {
-        // console.log(response.data);
-        _this2.plan = response.data.data;
+        // console.log(response.data.data);
+        _this.plan = response.data.data;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -26929,16 +26952,104 @@ var _hoisted_4 = {
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-12\"><div class=\"switch-wrap text-center mb-5\"><label class=\"form-switch\"><span class=\"beforeinput text-success year-switch\"> Monthly </span><input type=\"checkbox\" id=\"js-contcheckbox\"><span class=\"switch-icon gray-light-bg\"></span><span class=\"afterinput year-switch\"> Yearly </span></label></div></div>", 1);
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-lg-4 col-md-4 col-12\"><div class=\"card text-center single-pricing-pack\"><div class=\"price-img pt-5\"><img src=\"/digimark_template/img/priching-img-1.png\" alt=\"price\" width=\"120\" class=\"img-fluid\"></div><div class=\"card-header py-4 border-0 pricing-header\"><div class=\"us-price\"><div class=\"price text-center mb-0 monthly-price\">$19<span>.99</span></div><div class=\"price text-center mb-0 yearly-price\">$69<span>.99</span></div></div><div class=\"eg-price\"><div class=\"price text-center mb-0 monthly-price\">$19<span>.99</span></div><div class=\"price text-center mb-0 yearly-price\">$69<span>.99</span></div></div></div><div class=\"price-name\"><h5 class=\"mb-0\">Standard</h5></div><div class=\"card-body\"><ul class=\"list-unstyled mb-4 pricing-feature-list\"><li><span>Track 15</span> Keywords with our tool</li><li><span>50</span> Page Analysis</li><li><span>50</span> Crawl Pages with our crawl</li><li><span>1</span> Project to optimize site</li><li>24/7 Phone Support</li></ul><a href=\"/contact\" class=\"btn outline-btn mb-3\" target=\"_blank\">Purchase now</a></div></div></div>", 1);
-
-var _hoisted_7 = {
+var _hoisted_6 = {
   "class": "col-lg-4 col-md-4 col-12"
 };
-var _hoisted_8 = {
+var _hoisted_7 = {
+  "class": "card text-center single-pricing-pack"
+};
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "price-img pt-5"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/digimark_template/img/priching-img-1.png",
+  alt: "price",
+  width: "120",
+  "class": "img-fluid"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_9 = {
+  "class": "card-header py-4 border-0 pricing-header"
+};
+var _hoisted_10 = {
+  key: 0,
+  "class": "price-us"
+};
+var _hoisted_11 = {
+  "class": "price text-center mb-0 monthly-price"
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "EGP", -1
+/* HOISTED */
+);
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+/* HOISTED */
+);
+
+var _hoisted_14 = {
+  "class": "price text-center mb-0 yearly-price"
+};
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "EGP", -1
+/* HOISTED */
+);
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+/* HOISTED */
+);
+
+var _hoisted_17 = {
+  key: 1,
+  "class": "price-us"
+};
+var _hoisted_18 = {
+  "class": "price text-center mb-0 monthly-price"
+};
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+/* HOISTED */
+);
+
+var _hoisted_20 = {
+  "class": "price text-center mb-0 yearly-price"
+};
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+/* HOISTED */
+);
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "price-name"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "mb-0"
+}, "Standard")], -1
+/* HOISTED */
+);
+
+var _hoisted_23 = {
+  "class": "card-body"
+};
+var _hoisted_24 = ["innerHTML"];
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "/contact",
+  "class": "btn outline-btn mb-3 mt-3",
+  target: "_blank"
+}, "Purchase now", -1
+/* HOISTED */
+);
+
+var _hoisted_26 = {
+  "class": "col-lg-4 col-md-4 col-12"
+};
+var _hoisted_27 = {
   "class": "card popular-price text-center single-pricing-pack"
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "price-img pt-5"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "/digimark_template/img/priching-img-2.png",
@@ -26949,48 +27060,176 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_10 = {
+var _hoisted_29 = {
   "class": "card-header py-4 border-0 pricing-header"
 };
-var _hoisted_11 = {
-  "class": "eg-price"
+var _hoisted_30 = {
+  key: 0,
+  "class": "price-us"
 };
-var _hoisted_12 = {
+var _hoisted_31 = {
   "class": "price text-center mb-0 monthly-price"
 };
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "EGP", -1
 /* HOISTED */
 );
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+/* HOISTED */
+);
+
+var _hoisted_34 = {
   "class": "price text-center mb-0 yearly-price"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("$159"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99")], -1
+};
+
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "EGP", -1
 /* HOISTED */
 );
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "us-price"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+/* HOISTED */
+);
+
+var _hoisted_37 = {
+  key: 1,
+  "class": "price-us"
+};
+var _hoisted_38 = {
   "class": "price text-center mb-0 monthly-price"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("$49"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "price text-center mb-0 yearly-price"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("$159"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99")])], -1
+};
+
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
 /* HOISTED */
 );
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"price-name\"><h5 class=\"mb-0\">Premium</h5></div><div class=\"card-body\"><ul class=\"list-unstyled mb-4 pricing-feature-list\"><li><span>Track 15o</span> Keywords with our tool</li><li><span>100</span> Page Analysis</li><li><span>100</span> Crawl Pages with our crawl</li><li><span>5</span> Project to optimize site</li><li>24/7 Phone Support</li></ul><a href=\"/contact\" class=\"btn secondary-solid-btn mb-3\" target=\"_blank\">Purchase now</a></div>", 2);
+var _hoisted_40 = {
+  "class": "price text-center mb-0 yearly-price"
+};
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-lg-4 col-md-4 col-12\"><div class=\"card text-center single-pricing-pack\"><div class=\"price-img pt-5\"><img src=\"/digimark_template/img/priching-img-3.png\" alt=\"price\" width=\"120\" class=\"img-fluid\"></div><div class=\"card-header py-4 border-0 pricing-header\"><div class=\"us-price\"><div class=\"price text-center mb-0 monthly-price\">$69<span>.99</span></div><div class=\"price text-center mb-0 yearly-price\">$259<span>.99</span></div></div><div class=\"eg-price\"><div class=\"price text-center mb-0 monthly-price\">$69<span>.99</span></div><div class=\"price text-center mb-0 yearly-price\">$259<span>.99</span></div></div></div><div class=\"price-name\"><h5 class=\"mb-0\">Unlimited</h5></div><div class=\"card-body\"><ul class=\"list-unstyled mb-4 pricing-feature-list\"><li><span>Track 500</span> Keywords with our tool</li><li><span>250</span> Page Analysis</li><li><span>250</span> Crawl Pages with our crawl</li><li><span>10</span> Project to optimize site</li><li>24/7 Phone Support</li></ul><a href=\"/contact\" class=\"btn outline-btn mb-3\" target=\"_blank\">Purchase now</a></div></div></div>", 1);
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+/* HOISTED */
+);
 
-var _hoisted_19 = {
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "price-name"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "mb-0"
+}, "Premium")], -1
+/* HOISTED */
+);
+
+var _hoisted_43 = {
+  "class": "card-body"
+};
+var _hoisted_44 = ["innerHTML"];
+
+var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "/contact",
+  "class": "btn secondary-solid-btn mb-3 mt-3",
+  target: "_blank"
+}, "Purchase now", -1
+/* HOISTED */
+);
+
+var _hoisted_46 = {
+  "class": "col-lg-4 col-md-4 col-12"
+};
+var _hoisted_47 = {
+  "class": "card text-center single-pricing-pack"
+};
+
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "price-img pt-5"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/digimark_template/img/priching-img-3.png",
+  alt: "price",
+  width: "120",
+  "class": "img-fluid"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_49 = {
+  "class": "card-header py-4 border-0 pricing-header"
+};
+var _hoisted_50 = {
+  key: 0,
+  "class": "price-us"
+};
+var _hoisted_51 = {
+  "class": "price text-center mb-0 monthly-price"
+};
+
+var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "EGP", -1
+/* HOISTED */
+);
+
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+/* HOISTED */
+);
+
+var _hoisted_54 = {
+  "class": "price text-center mb-0 yearly-price"
+};
+
+var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "EGP", -1
+/* HOISTED */
+);
+
+var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+/* HOISTED */
+);
+
+var _hoisted_57 = {
+  key: 1,
+  "class": "price-us"
+};
+var _hoisted_58 = {
+  "class": "price text-center mb-0 monthly-price"
+};
+
+var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+/* HOISTED */
+);
+
+var _hoisted_60 = {
+  "class": "price text-center mb-0 yearly-price"
+};
+
+var _hoisted_61 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, ".99", -1
+/* HOISTED */
+);
+
+var _hoisted_62 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "price-name"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "mb-0"
+}, "Unlimited")], -1
+/* HOISTED */
+);
+
+var _hoisted_63 = {
+  "class": "card-body"
+};
+var _hoisted_64 = ["innerHTML"];
+
+var _hoisted_65 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "/contact",
+  "class": "btn outline-btn mb-3 mt-3",
+  target: "_blank"
+}, "Purchase now", -1
+/* HOISTED */
+);
+
+var _hoisted_66 = {
   "class": "col-12"
 };
-var _hoisted_20 = {
+var _hoisted_67 = {
   "class": "support-cta text-center mt-5"
 };
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+var _hoisted_68 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
   "class": "mb-1"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "ti-headphone-alt color-primary mr-3"
@@ -26998,28 +27237,65 @@ var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Have some questions? ");
+var _hoisted_69 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Have some questions? ");
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_70 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "/contact"
 }, "Chat with us now", -1
 /* HOISTED */
 );
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(", or ");
+var _hoisted_71 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(", or ");
 
-var _hoisted_25 = ["href"];
+var _hoisted_72 = ["href"];
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" get in touch.");
+var _hoisted_73 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" get in touch.");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("--------  pricing ----------"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("----------- Standard --------------"), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("----------- Premium --------------"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("$ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.visitorCountry) + " ", 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("--------  pricing ----------"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("----------- Standard --------------"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [$props.visitorCountry == 'EG' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.standard.price.eg.monthly) - 1), 1
   /* TEXT */
-  ), _hoisted_13]), _hoisted_14]), _hoisted_15]), _hoisted_16])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("----------- Unlimited --------------"), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_22, _hoisted_23, _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  ), _hoisted_13]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.standard.price.eg.yearly) - 1), 1
+  /* TEXT */
+  ), _hoisted_16])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.standard.price.us.monthly) - 1), 1
+  /* TEXT */
+  ), _hoisted_19]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.standard.price.us.yearly) - 1), 1
+  /* TEXT */
+  ), _hoisted_21])]))]), _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "mb-3 mt-3 plan-pricing-content",
+    innerHTML: $data.plan.standard.content
+  }, null, 8
+  /* PROPS */
+  , _hoisted_24), _hoisted_25])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("----------- Premium --------------"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [_hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [$props.visitorCountry == 'EG' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [_hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.premium.price.eg.monthly) - 1), 1
+  /* TEXT */
+  ), _hoisted_33]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [_hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.premium.price.eg.yearly) - 1), 1
+  /* TEXT */
+  ), _hoisted_36])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.premium.price.us.monthly) - 1), 1
+  /* TEXT */
+  ), _hoisted_39]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.premium.price.us.yearly) - 1), 1
+  /* TEXT */
+  ), _hoisted_41])]))]), _hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "mb-3 mt-3 plan-pricing-content",
+    innerHTML: $data.plan.premium.content
+  }, null, 8
+  /* PROPS */
+  , _hoisted_44), _hoisted_45])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("----------- Unlimited --------------"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [_hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [$props.visitorCountry == 'EG' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_50, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_51, [_hoisted_52, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.unlimited.price.eg.monthly) - 1), 1
+  /* TEXT */
+  ), _hoisted_53]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_54, [_hoisted_55, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.unlimited.price.eg.yearly) - 1), 1
+  /* TEXT */
+  ), _hoisted_56])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_57, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_58, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.unlimited.price.us.monthly) - 1), 1
+  /* TEXT */
+  ), _hoisted_59]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_60, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Number($data.plan.unlimited.price.us.yearly) - 1), 1
+  /* TEXT */
+  ), _hoisted_61])]))]), _hoisted_62, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_63, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "mb-3 mt-3 plan-pricing-content",
+    innerHTML: $data.plan.unlimited.content
+  }, null, 8
+  /* PROPS */
+  , _hoisted_64), _hoisted_65])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_67, [_hoisted_68, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_69, _hoisted_70, _hoisted_71, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: 'mailto:' + $data.settings.email
   }, " send us an email ", 8
   /* PROPS */
-  , _hoisted_25), _hoisted_26])])])])])])], 2112
+  , _hoisted_72), _hoisted_73])])])])])])], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }
