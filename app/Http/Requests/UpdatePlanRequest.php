@@ -28,19 +28,28 @@ class UpdatePlanRequest extends FormRequest
         return [
 
             // Standard
-            'standard.price.us'    => ['required' , 'string' , 'distinct' ],
-            'standard.price.eg'    => ['required' , 'string' , 'distinct' ],
-            'standard.content'     => ['required' , 'string' , 'distinct' ],
+            'standard.price.us.monthly'    => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'standard.price.us.yearly'     => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'standard.price.eg.monthly'    => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'standard.price.eg.yearly'     => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'standard.content'             => ['required' , 'string' , 'distinct' ],
+
 
             // premium
-            'premium.price.us'    => ['required' , 'string' , 'distinct' ],
-            'premium.price.eg'    => ['required' , 'string' , 'distinct' ],
-            'premium.content'     => ['required' , 'string' , 'distinct' ],
+            'premium.price.us.monthly'    => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'premium.price.us.yearly'     => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'premium.price.eg.monthly'    => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'premium.price.eg.yearly'     => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'premium.content'             => ['required' , 'string' , 'distinct' ],
+
 
             // unlimited
-            'unlimited.price.us'    => ['required' , 'string' , 'distinct' ],
-            'unlimited.price.eg'    => ['required' , 'string' , 'distinct' ],
-            'unlimited.content'     => ['required' , 'string' , 'distinct' ],
+            'unlimited.price.us.monthly'    => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'unlimited.price.us.yearly'     => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'unlimited.price.eg.monthly'    => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'unlimited.price.eg.yearly'     => ['required' , 'integer' , 'digits_between:1,10' , 'distinct' ],
+            'unlimited.content'             => ['required' , 'string' , 'distinct' ],
+
 
         ];
     }

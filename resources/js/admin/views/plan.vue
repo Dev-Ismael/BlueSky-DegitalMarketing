@@ -16,24 +16,34 @@
                                         <h3 class="plan-title"> Standard </h3>
                                         <!-- US Price -->
                                         <div class="form-group">
-                                            <label for="standard_price_us">
+                                            <label>
                                                 <img src="/admin/images/icons/usa.png" alt="usa-flag" width="30">
                                                 US Price
                                             </label>
-                                            <input type="text" v-model="plan.standard.price.us" class="form-control" name="standard_price_us"
-                                                id="standard_price_us" placeholder="Type US Price...." :class=" errors[`standard.price.us`] ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors[`standard.price.us`]"> {{errors[`standard.price.us`][0] }}
+                                            <input type="number" min="0" v-model="plan.standard.price.us.monthly" class="form-control" name="standard_price_us_monthly"
+                                                id="standard_price_us_monthly" placeholder="Type Monthly Price...." :class=" errors[`standard.price.us.monthly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`standard.price.us.monthly`]"> {{errors[`standard.price.us.monthly`][0] }}
+                                            </small>
+                                            <br>
+                                            <input type="number" min="0" v-model="plan.standard.price.us.yearly" class="form-control" name="standard_price_us_yearly"
+                                                id="standard_price_us_yearly" placeholder="Type Yearly Price...." :class=" errors[`standard.price.us.yearly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`standard.price.us.yearly`]"> {{errors[`standard.price.us.yearly`][0] }}
                                             </small>
                                         </div>
                                         <!-- EG Price -->
                                         <div class="form-group">
-                                            <label for="standard_price_eg">
+                                            <label>
                                                 <img src="/admin/images/icons/egypt.png" alt="egypt-flag" width="30">
                                                 EG Price
                                             </label>
-                                            <input type="text" v-model="plan.standard.price.eg" class="form-control" name="standard_price_eg"
-                                                id="standard_price_eg" placeholder="Type EG Price...." :class=" errors[`standard.price.eg`] ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors[`standard.price.eg`]"> {{errors[`standard.price.eg`][0] }}
+                                            <input type="number" min="0" v-model="plan.standard.price.eg.monthly" class="form-control" name="standard_price_eg_monthly"
+                                                id="standard_price_eg_monthly" placeholder="Type Monthly Price...." :class=" errors[`standard.price.eg.monthly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`standard.price.eg.monthly`]"> {{errors[`standard.price.eg.monthly`][0] }}
+                                            </small>
+                                            <br>
+                                            <input type="number" min="0" v-model="plan.standard.price.eg.yearly" class="form-control" name="standard_price_eg_yearly"
+                                                id="standard_price_eg_yearly" placeholder="Type Yearly Price...." :class=" errors[`standard.price.eg.yearly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`standard.price.eg.yearly`]"> {{errors[`standard.price.eg.yearly`][0] }}
                                             </small>
                                         </div>
                                         <!-- Content -->
@@ -55,24 +65,34 @@
                                         <h3 class="plan-title"> Premium </h3>
                                         <!-- US Price -->
                                         <div class="form-group">
-                                            <label for="premium_price_us">
+                                            <label>
                                                 <img src="/admin/images/icons/usa.png" alt="usa-flag" width="30">
                                                 US Price
                                             </label>
-                                            <input type="text" v-model="plan.premium.price.us" class="form-control" name="premium_price_us"
-                                                id="premium_price_us" placeholder="Type US Price...." :class=" errors[`premium.price.us`] ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors[`premium.price.us`]"> {{errors[`premium.price.us`][0] }}
+                                            <input type="number" min="0" v-model="plan.premium.price.us.monthly" class="form-control" name="premium_price_us_monthly"
+                                                id="premium_price_us_monthly" placeholder="Type Monthly Price...." :class=" errors[`premium.price.us.monthly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`premium.price.us.monthly`]"> {{errors[`premium.price.us.monthly`][0] }}
+                                            </small>
+                                            <br>
+                                            <input type="number" min="0" v-model="plan.premium.price.us.yearly" class="form-control" name="premium_price_us_yearly"
+                                                id="premium_price_us_yearly" placeholder="Type Yearly Price...." :class=" errors[`premium.price.us.yearly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`premium.price.us.yearly`]"> {{errors[`premium.price.us.yearly`][0] }}
                                             </small>
                                         </div>
                                         <!-- EG Price -->
                                         <div class="form-group">
-                                            <label for="premium_price_eg">
+                                            <label>
                                                 <img src="/admin/images/icons/egypt.png" alt="egypt-flag" width="30">
                                                 EG Price
                                             </label>
-                                            <input type="text" v-model="plan.premium.price.eg" class="form-control" name="premium_price_eg"
-                                                id="premium_price_eg" placeholder="Type EG Price...." :class=" errors[`premium.price.eg`] ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors[`premium.price.eg`]"> {{errors[`premium.price.eg`][0] }}
+                                            <input type="number" min="0" v-model="plan.premium.price.eg.monthly" class="form-control" name="premium_price_eg_monthly"
+                                                id="premium_price_eg_monthly" placeholder="Type Monthly Price...." :class=" errors[`premium.price.eg.monthly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`premium.price.eg.monthly`]"> {{errors[`premium.price.eg.monthly`][0] }}
+                                            </small>
+                                            <br>
+                                            <input type="number" min="0" v-model="plan.premium.price.eg.yearly" class="form-control" name="premium_price_eg_yearly"
+                                                id="premium_price_eg_yearly" placeholder="Type Yearly Price...." :class=" errors[`premium.price.eg.yearly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`premium.price.eg.yearly`]"> {{errors[`premium.price.eg.yearly`][0] }}
                                             </small>
                                         </div>
                                         <!-- Content -->
@@ -94,24 +114,34 @@
                                         <h3 class="plan-title"> Unlimited </h3>
                                         <!-- US Price -->
                                         <div class="form-group">
-                                            <label for="unlimited_price_us">
+                                            <label>
                                                 <img src="/admin/images/icons/usa.png" alt="usa-flag" width="30">
                                                 US Price
                                             </label>
-                                            <input type="text" v-model="plan.unlimited.price.us" class="form-control" name="unlimited_price_us"
-                                                id="unlimited_price_us" placeholder="Type US Price...." :class=" errors[`unlimited.price.us`] ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors[`unlimited.price.us`]"> {{errors[`unlimited.price.us`][0] }}
+                                            <input type="number" min="0" v-model="plan.unlimited.price.us.monthly" class="form-control" name="premium_price_us_monthly"
+                                                id="unlimited_price_us_monthly" placeholder="Type Monthly Price...." :class=" errors[`unlimited.price.us.monthly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`unlimited.price.us.monthly`]"> {{errors[`unlimited.price.us.monthly`][0] }}
+                                            </small>
+                                            <br>
+                                            <input type="number" min="0" v-model="plan.unlimited.price.us.yearly" class="form-control" name="unlimited_price_us_yearly"
+                                                id="unlimited_price_us_yearly" placeholder="Type Yearly Price...." :class=" errors[`unlimited.price.us.yearly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`unlimited.price.us.yearly`]"> {{errors[`unlimited.price.us.yearly`][0] }}
                                             </small>
                                         </div>
                                         <!-- EG Price -->
                                         <div class="form-group">
-                                            <label for="unlimited_price_eg">
+                                            <label>
                                                 <img src="/admin/images/icons/egypt.png" alt="egypt-flag" width="30">
                                                 EG Price
                                             </label>
-                                            <input type="text" v-model="plan.unlimited.price.eg" class="form-control" name="unlimited_price_eg"
-                                                id="unlimited_price_eg" placeholder="Type EG Price...." :class=" errors[`unlimited.price.eg`] ? 'border-danger' : ''  " >
-                                            <small class="text-danger" v-if="errors[`unlimited.price.eg`]"> {{errors[`unlimited.price.eg`][0] }}
+                                            <input type="number" min="0" v-model="plan.unlimited.price.eg.monthly" class="form-control" name="unlimited_price_eg_monthly"
+                                                id="unlimited_price_eg_monthly" placeholder="Type Monthly Price...." :class=" errors[`unlimited.price.eg.monthly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`unlimited.price.eg.monthly`]"> {{errors[`unlimited.price.eg.monthly`][0] }}
+                                            </small>
+                                            <br>
+                                            <input type="number" min="0" v-model="plan.unlimited.price.eg.yearly" class="form-control" name="unlimited_price_eg_yearly"
+                                                id="unlimited_price_eg_yearly" placeholder="Type Yearly Price...." :class=" errors[`unlimited.price.eg.yearly`] ? 'border-danger' : ''  " >
+                                            <small class="text-danger" v-if="errors[`unlimited.price.eg.yearly`]"> {{errors[`unlimited.price.eg.yearly`][0] }}
                                             </small>
                                         </div>
                                         <!-- Content -->
@@ -150,22 +180,40 @@ export default {
             plan: {
                 standard: {
                     price: {
-                        us: '',
-                        eg: '',
+                        us: {
+                            monthly: '',
+                            yearly: '',
+                        },
+                        eg: {
+                            monthly: '',
+                            yearly: '',
+                        }
                     },
                     content: ''
                 },
                 premium: {
                     price: {
-                        us: '',
-                        eg: '',
+                        us: {
+                            monthly: '',
+                            yearly: '',
+                        },
+                        eg: {
+                            monthly: '',
+                            yearly: '',
+                        }
                     },
                     content: ''
                 },
                 unlimited: {
                     price: {
-                        us: '',
-                        eg: '',
+                        us: {
+                            monthly: '',
+                            yearly: '',
+                        },
+                        eg: {
+                            monthly: '',
+                            yearly: '',
+                        }
                     },
                     content: ''
                 },
@@ -230,7 +278,7 @@ export default {
                 .then(
                     response => {  // if there success request
 
-                        // console.log(response.data);
+                        console.log(response.data);
 
                         // if response status
                         if (response.data.status == "success") {

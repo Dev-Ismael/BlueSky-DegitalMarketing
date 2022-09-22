@@ -58,5 +58,13 @@ class DatabaseSeeder extends Seeder
             'subject'      => 'subject',
             'content'      => 'content',
         ]);
+
+
+        \App\Models\Plan::factory(1)->create([
+            'standard' => '[standard]',
+            'premium' => '[premium]',
+            'unlimited' => '[unlimited]',
+        ]);
+
     }
 }

@@ -49,7 +49,7 @@ class PlanController extends Controller
      * @param  \App\Models\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Plan $plan)
+    public function update(UpdatePlanRequest $request, Plan $plan)
     {
         $requestData = $request->all();
 
