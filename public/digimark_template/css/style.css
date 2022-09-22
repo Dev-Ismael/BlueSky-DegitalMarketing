@@ -4469,9 +4469,13 @@ a .single-promo-2 p {
 
 .loader1 {
     display: block;
-    position: relative;
-    left: 48%;
+    position: fixed;
     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: -webkit-translate(-50%, -50%);
+    transform: -moz-translate(-50%, -50%);
+    transform: -ms-translate(-50%, -50%);
 }
 
 .loader1 span {

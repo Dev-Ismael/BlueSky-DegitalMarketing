@@ -1,6 +1,9 @@
 /*==========================================================
 ====== Global
 ===========================================================*/
+.text-underline{
+    text-decoration: underline;
+}
 .padding-heading-125 {
     padding: 125px 0;
 }
@@ -204,8 +207,20 @@ button.navbar-toggler {
     animation-direction: normal;
 }
 
-
-
+/*==========================================================
+====== Contact Us
+===========================================================*/
+.contact-us-promo .row{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+.contact-us-promo .row > [class*='col-'] {
+    /* display: flex;
+    flex-direction: column; */
+}
 
 /*==========================================================
 ====== footer

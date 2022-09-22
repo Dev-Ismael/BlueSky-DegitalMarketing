@@ -26,6 +26,7 @@ class HomeController extends Controller
     {
         $ip = $request->ip();
         $visitorCountry = Location::get('89.238.178.198')->countryCode;
+        // $visitorCountry = Location::get('197.48.166.170')->countryCode;
         if(!$visitorCountry){
             $visitorCountry == "EG";
         }

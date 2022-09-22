@@ -36,9 +36,11 @@
                                     <span class="ti-location-pin mr-2 color-primary"></span>
                                     <a :href="settings.location" class="d-inline" target="_blank"> {{ settings.address }} </a>
                                 </li>
-                                <li>
+                                <li class="d-flex">
                                     <span class="ti-mobile mr-2 color-primary"></span>
-                                    <a :href=" 'tel:' + settings.phone_formatted " class="d-inline" > {{ settings.phone }} </a>
+                                    <a :href=" 'tel:' + settings.phone_formatted "> {{ settings.phone }} </a>
+                                    &nbsp; - &nbsp;
+                                    <a href="tel:+20034249015"> (20) 03 4249015 </a>
                                 </li>
                                 <li>
                                     <span class="ti-email mr-2 color-primary"></span>

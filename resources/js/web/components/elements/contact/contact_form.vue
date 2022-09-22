@@ -42,16 +42,30 @@
                 <div class="col-md-5">
                     <div class="contact-us-content">
                         <h2>Looking for a excellent Business idea?</h2>
-                        <p class="lead">Seamlessly deliver pandemic e-services and next-generation initiatives.</p>
+                        <p class="lead">Meet us now and visit our office using google maps.</p>
 
                         <a :href=" settings.location " target="_blank" class="btn outline-btn align-items-center">Get Directions <span class="ti-arrow-right pl-2"></span></a>
 
                         <hr class="my-5">
 
                         <h5>Our Headquarters</h5>
-                        <span>Address: <a class="text-muted" :href=" settings.location " target="_blank"> {{ settings.address }} </a> </span> <br>
-                        <span>Phone: <a class="text-muted" :href=" 'tel:' + settings.phone_formatted "> {{ settings.phone }} </a> </span> <br>
-                        <span>Email: <a class="text-muted" :href=" 'mailto:' + settings.email "> {{ settings.email }} </a> </span>
+                        <span>
+                            <span class="fas fa-map-marker-alt" aria-hidden="true"></span>
+                            <strong> Address : </strong>
+                            <a class="text-muted text-underline" :href=" settings.location " target="_blank"> {{ settings.address }} </a> </span> <br>
+                        <span>
+                            <span class="fas fa-phone-alt" aria-hidden="true"></span>
+                            <strong> Phone : </strong>
+                            <a :href=" 'tel:' + settings.phone_formatted " class="text-muted text-underline"> {{ settings.phone }} </a>
+                            &nbsp; - &nbsp;
+                            <a href="tel:+20034249015" class="text-muted text-underline"> (20) 03 4249015 </a>
+                        </span>
+                        <br>
+                        <span>
+                            <span class="fas fa-envelope" aria-hidden="true"></span>
+                            <strong> Email : </strong>
+                            <a class="text-muted text-underline" :href=" 'mailto:' + settings.email "> {{ settings.email }} </a>
+                        </span>
 
                     </div>
                 </div>

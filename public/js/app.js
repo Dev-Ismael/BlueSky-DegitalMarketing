@@ -26415,7 +26415,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"work-process-section ptb-100 gray-light-bg\"><div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-md-10 col-lg-9\"><div class=\"section-heading text-center\"><strong class=\"color-secondary\">Work Process</strong><h2>We follow Few Steps</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\">Globally reinvent cross-unit human capital whereas virtual catalysts for change. Assertively network accurate methods of empowerment rather than client-centered improvements.</p></div></div></div><!-- ============ step 1 =========== --><div class=\"row mt-5\"><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-left\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">01</h2></div></div><div class=\"col-md-7\"><h5>Set a goal</h5><p>Sounds simple, but requires you to come up with a detailed and specific set of goals.</p></div></div><div class=\"process-line-l\"></div></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-5 col-md-5 col-lg-5 process-none\"><div class=\"process-point-right\"></div></div></div><!-- ============ step 2 =========== --><div class=\"row\"><div class=\"col-md-5 col-lg-5 process-none\"><div class=\"process-point-left\"></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-right\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">02</h2></div></div><div class=\"col-md-7\"><h5>Evaluate </h5><p>This step will help you understand what to focus on to achieve your current goals.</p></div></div><div class=\"process-line-r\"></div></div></div></div><!-- ============ step 3 =========== --><div class=\"row\"><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-left\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">03</h2></div></div><div class=\"col-md-7\"><h5>Understand </h5><p>the arc of your buyer’s journey from a stranger to a repeat or long-term customer.</p></div></div><div class=\"process-line-l\"></div></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-5 col-lg-5 process-none\"><div class=\"process-point-right\"></div></div></div><!-- ============ step 4 =========== --><div class=\"row\"><div class=\"col-md-5 col-lg-5 process-none\"><div class=\"process-point-left\"></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-right\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">04</h2></div></div><div class=\"col-md-7\"><h5>Build </h5><p>know who your audience is before you attempt to successfully reach out to them.</p></div></div><div class=\"process-line-r\"></div></div></div></div><!-- ============ step 5 =========== --><div class=\"row\"><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-left\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">05</h2></div></div><div class=\"col-md-7\"><h5>Locate </h5><p>You have to locate your customers at different stages of the funnel.</p></div></div><div class=\"process-line-l\"></div></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-5 col-lg-5 process-none\"><div class=\"process-point-right\"></div></div></div><!-- ============ step 6 =========== --><div class=\"row\"><div class=\"col-md-5 col-lg-5 process-none\"><div class=\"process-point-left\"></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-right\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">06</h2></div></div><div class=\"col-md-7\"><h5> Create </h5><p>develop a specific marketing strategy for every channel that attracts your customers. </p></div></div><div class=\"process-line-r\"></div></div></div></div><!-- ============ step 7 =========== --><div class=\"row\"><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-left\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">07</h2></div></div><div class=\"col-md-7\"><h5>Analyze results</h5><p>Once you have a strategy in place, practice this step at intervals.</p></div></div><div class=\"process-line-l\"></div></div></div><div class=\"col-md-2 custom-none\"></div><div class=\"col-md-5 col-lg-5 custom-none\"><div class=\"process-point-right process-last\"></div></div></div></div></section>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"work-process-section ptb-100 gray-light-bg\"><div class=\"container\"><div class=\"row justify-content-center\"><div class=\"col-md-10 col-lg-9\"><div class=\"section-heading text-center\"><strong class=\"color-secondary\">Work Process</strong><h2>We follow Few Steps</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\"> To set a goal you need to decide what it is that you want to accomplish and – this is the important bit – write it down. It’s as simple as that. You have set your goal by writing it down. Goal setting is easy </p></div></div></div><!-- ============ step 1 =========== --><div class=\"row mt-5\"><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-left\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">01</h2></div></div><div class=\"col-md-7\"><h5>Set a goal</h5><p>Sounds simple, but requires you to come up with a detailed and specific set of goals.</p></div></div><div class=\"process-line-l\"></div></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-5 col-md-5 col-lg-5 process-none\"><div class=\"process-point-right\"></div></div></div><!-- ============ step 2 =========== --><div class=\"row\"><div class=\"col-md-5 col-lg-5 process-none\"><div class=\"process-point-left\"></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-right\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">02</h2></div></div><div class=\"col-md-7\"><h5>Evaluate </h5><p>This step will help you understand what to focus on to achieve your current goals.</p></div></div><div class=\"process-line-r\"></div></div></div></div><!-- ============ step 3 =========== --><div class=\"row\"><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-left\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">03</h2></div></div><div class=\"col-md-7\"><h5>Understand </h5><p>the arc of your buyer’s journey from a stranger to a repeat or long-term customer.</p></div></div><div class=\"process-line-l\"></div></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-5 col-lg-5 process-none\"><div class=\"process-point-right\"></div></div></div><!-- ============ step 4 =========== --><div class=\"row\"><div class=\"col-md-5 col-lg-5 process-none\"><div class=\"process-point-left\"></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-right\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">04</h2></div></div><div class=\"col-md-7\"><h5>Build </h5><p>know who your audience is before you attempt to successfully reach out to them.</p></div></div><div class=\"process-line-r\"></div></div></div></div><!-- ============ step 5 =========== --><div class=\"row\"><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-left\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">05</h2></div></div><div class=\"col-md-7\"><h5>Locate </h5><p>You have to locate your customers at different stages of the funnel.</p></div></div><div class=\"process-line-l\"></div></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-5 col-lg-5 process-none\"><div class=\"process-point-right\"></div></div></div><!-- ============ step 6 =========== --><div class=\"row\"><div class=\"col-md-5 col-lg-5 process-none\"><div class=\"process-point-left\"></div></div><div class=\"col-md-2 process-none\"></div><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-right\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">06</h2></div></div><div class=\"col-md-7\"><h5> Create </h5><p>develop a specific marketing strategy for every channel that attracts your customers. </p></div></div><div class=\"process-line-r\"></div></div></div></div><!-- ============ step 7 =========== --><div class=\"row\"><div class=\"col-md-12 col-lg-5 process-width\"><div class=\"process-box process-left\"><div class=\"row\"><div class=\"col-md-5\"><div class=\"process-step-number\"><strong>Step</strong><h2 class=\"m-0\">07</h2></div></div><div class=\"col-md-7\"><h5>Analyze results</h5><p>Once you have a strategy in place, practice this step at intervals.</p></div></div><div class=\"process-line-l\"></div></div></div><div class=\"col-md-2 custom-none\"></div><div class=\"col-md-5 col-lg-5 custom-none\"><div class=\"process-point-right process-last\"></div></div></div></div></section>", 1);
 
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("----- Work Process ------"), _hoisted_1], 2112
@@ -26528,7 +26528,7 @@ var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 
 var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "lead"
-}, "Seamlessly deliver pandemic e-services and next-generation initiatives.", -1
+}, "Meet us now and visit our office using google maps.", -1
 /* HOISTED */
 );
 
@@ -26554,29 +26554,63 @@ var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Address: ");
-
-var _hoisted_30 = ["href"];
-
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "fas fa-map-marker-alt",
+  "aria-hidden": "true"
+}, null, -1
 /* HOISTED */
 );
 
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Phone: ");
-
-var _hoisted_34 = ["href"];
-
-var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-
-var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, " Address : ", -1
 /* HOISTED */
 );
 
-var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Email: ");
+var _hoisted_31 = ["href"];
 
-var _hoisted_38 = ["href"];
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "fas fa-phone-alt",
+  "aria-hidden": "true"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, " Phone : ", -1
+/* HOISTED */
+);
+
+var _hoisted_36 = ["href"];
+
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("   -   ");
+
+var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "tel:+20034249015",
+  "class": "text-muted text-underline"
+}, " (20) 03 4249015 ", -1
+/* HOISTED */
+);
+
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "fas fa-envelope",
+  "aria-hidden": "true"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, " Email : ", -1
+/* HOISTED */
+);
+
+var _hoisted_42 = ["href"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
@@ -26635,23 +26669,23 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "btn outline-btn align-items-center"
   }, _hoisted_26, 8
   /* PROPS */
-  , _hoisted_23), _hoisted_27, _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [_hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    "class": "text-muted",
+  , _hoisted_23), _hoisted_27, _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [_hoisted_29, _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    "class": "text-muted text-underline",
     href: $data.settings.location,
     target: "_blank"
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.settings.address), 9
   /* TEXT, PROPS */
-  , _hoisted_30)]), _hoisted_31, _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [_hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    "class": "text-muted",
-    href: 'tel:' + $data.settings.phone_formatted
+  , _hoisted_31)]), _hoisted_32, _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [_hoisted_34, _hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: 'tel:' + $data.settings.phone_formatted,
+    "class": "text-muted text-underline"
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.settings.phone), 9
   /* TEXT, PROPS */
-  , _hoisted_34)]), _hoisted_35, _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [_hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    "class": "text-muted",
+  , _hoisted_36), _hoisted_37, _hoisted_38]), _hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [_hoisted_40, _hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    "class": "text-muted text-underline",
     href: 'mailto:' + $data.settings.email
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.settings.email), 9
   /* TEXT, PROPS */
-  , _hoisted_38)])])])])])]);
+  , _hoisted_42)])])])])])]);
 }
 
 /***/ }),
@@ -26804,7 +26838,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"about-with-promo ptb-100 gray-light-bg\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-lg-6\"><div class=\"about-content-wrap\"><strong class=\"color-secondary\">Digital Marketing Services</strong><h2>Why Your Business Need Digital Marketing</h2><span class=\"animate-border mb-4\"></span><p>Globally parallel task quality methodologies whereas inexpensive sources. Uniquely administrate ubiquitous web services through diverse quality vectors syndicate error-free intellectual capital. </p><ul class=\"check-list-info\"><li><strong>Advance Advisory Team</strong> – often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing. </li><li><strong>Professional Consulting Services</strong> – if spreading in your community. This is especially important for people who are at higher risk of getting very sick brand future-proof intellectual capital. </li><li><strong>24/7 Support Help Center</strong> – with a tissue when you cough or sneeze or use the inside of your elbow. </li><li><strong>Customer Service &amp; Operations</strong> – This includes phones, tables, light switches, doorknobs, countertops, handles, desks, toilets. </li></ul></div></div><div class=\"col-lg-6\"><div class=\"about-promo-wrap\"><div class=\"row\"><div class=\"col-md-6 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/increase_1.gif\" alt=\"services\" width=\"60\"></div><h5>Increased Traffic</h5><p>Wash your hands frequently more then 20s</p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/search-engine_188.gif\" alt=\"services\" width=\"60\"></div><h5>Site Optimisation</h5><p>Progressively leverage existing resource-leveling methodologies</p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div></div><div class=\"col-md-6 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/credit-card.gif\" alt=\"services\" width=\"60\"></div><h5>Cost-effectiveness</h5><p>If you have fever, cough and difficulty breathing, seek medical care early</p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/interface-2.gif\" alt=\"services\" width=\"60\"></div><h5>Page Rankings</h5><p>Rapidiously integrate viral infrastructures reliable. </p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div></div></div></div></div></div></div></section>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"about-with-promo ptb-100 gray-light-bg\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-lg-6\"><div class=\"about-content-wrap\"><strong class=\"color-secondary\">Digital Marketing Services</strong><h2>Why Your Business Need Digital Marketing</h2><span class=\"animate-border mb-4\"></span><p> Even how businesses interact with their clients has evolved with the times. Traditional marketing has retreated and introduced a fresh face to the sector. </p><ul class=\"check-list-info\"><li><strong>Increased Traffic</strong> – This is a marketing strategy that requires businesses to focus on increasing their websites ranking to increase their traffic. The higher your website ranks on Google&#39;s SERP, the more chances it is to grow your brand. </li><li><strong>Cost-effectiveness</strong> – Digital marketing is more affordable than traditional marketing. If you are a business that has limited resources, spending money to advertise traditionally is not enough. Even the need to print flyers for your business is expensive and time-consuming. </li><li><strong>Page Ranking</strong> – is a way of measuring the importance of website pages. According to Google: PageRank works by counting the number and quality of links to a page to determine a rough estimate of how important the website is. </li><li><strong>site optimization</strong> – is the process of using tools, advanced strategies, and experiments to improve the performance of your website, further drive more traffic, increase conversions, and grow revenue. </li></ul></div></div><div class=\"col-lg-6\"><div class=\"about-promo-wrap\"><div class=\"row\"><div class=\"col-md-6 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/increase_1.gif\" alt=\"services\" width=\"60\"></div><h5>Increased Traffic</h5><p>Marketing strategy that requires businesses to focus on.</p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/search-engine_188.gif\" alt=\"services\" width=\"60\"></div><h5>Site Optimisation</h5><p>Improve the performance of your website, further drive more traffic.</p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div></div><div class=\"col-md-6 col-sm-6 promo-col\"><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/credit-card.gif\" alt=\"services\" width=\"60\"></div><h5>Cost-effectiveness</h5><p>Spending money to advertise traditionally is not enough.</p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div><div class=\"promo-item\"><div class=\"promo-img\"><img src=\"/digimark_template/img/interface-2.gif\" alt=\"services\" width=\"60\"></div><h5>Page Rankings</h5><p>Works by counting the number and quality of how important the website is.</p><div class=\"promo-bottom-shape\"><img src=\"/digimark_template/img/promo-box-shape-bottom.png\" alt=\"shape\"></div></div></div></div></div></div></div></div></section>", 1);
 
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("--------  About ----------"), _hoisted_1], 2112
@@ -26842,7 +26876,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "col-md-6 col-lg-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "client-para"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Seamlessly administrate synergistic growth strategies and collaborative markets. Globally empower inexpensive infomediaries after sustainable mindshare customize principle-centered users with fully tested. Phosfluorescently brand professional collaboration and idea-sharing without principle-centered interfaces. ")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("clients logo start"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " We create winning brand strategies. Translate Brand Purpose into user-centric experience innovations throughout the customer journey. We create platforms, high-performance websites, E-Commerce solutions, and mobile apps. ")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("clients logo start"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "row align-items-center justify-content-center mb-4"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-md-10 col-lg-9"
@@ -26852,12 +26886,6 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "/digimark_template/img/clients-logo-01.png",
-  alt: "client logo",
-  "class": "client-img"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "item single-client"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "/digimark_template/img/clients-logo-02.png",
   alt: "client logo",
   "class": "client-img"
 })]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -26876,6 +26904,12 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "item single-client"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "/digimark_template/img/clients-logo-05.png",
+  alt: "client logo",
+  "class": "client-img"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "item single-client"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: "/digimark_template/img/clients-logo-01.png",
   alt: "client logo",
   "class": "client-img"
 })]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -27322,7 +27356,7 @@ var _hoisted_2 = {
   "class": "container"
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row justify-content-center\"><div class=\"col-md-8\"><div class=\"section-heading text-center mb-5\"><strong class=\"color-secondary\">Our Services</strong><h2>What Can We Do For You</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\">Efficiently aggregate end-to-end core competencies without maintainable ideas. Dynamically foster tactical solutions without enabled value.</p></div></div></div>", 1);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row justify-content-center\"><div class=\"col-md-8\"><div class=\"section-heading text-center mb-5\"><strong class=\"color-secondary\">Our Services</strong><h2>What Can We Do For You</h2><span class=\"animate-border mr-auto ml-auto mb-4\"></span><p class=\"lead\"> There are many paths to success, many routes businesses may take to reach their goals. helping our clients navigate the high seas of digital marketing. </p></div></div></div>", 1);
 
 var _hoisted_4 = {
   "class": "row justify-content-center"
@@ -27339,17 +27373,14 @@ var _hoisted_7 = {
 var _hoisted_8 = ["href"];
 var _hoisted_9 = ["src"];
 var _hoisted_10 = {
-  "class": "number-bg"
-};
-var _hoisted_11 = {
   "class": "promo-info"
 };
-var _hoisted_12 = {
+var _hoisted_11 = {
   "class": "color-secondary"
 };
-var _hoisted_13 = ["href"];
+var _hoisted_12 = ["href"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("--------- services ----------"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.services, function (service, index) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("--------- services ----------"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.services, function (service) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       href: '/service/' + service.slug
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
@@ -27360,14 +27391,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* PROPS */
     , _hoisted_9)], 8
     /* PROPS */
-    , _hoisted_8), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)('0' + (index + 1)), 1
-    /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <strong class=\"color-secondary\">Discuss with Users</strong> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    , _hoisted_8)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <strong class=\"color-secondary\">Discuss with Users</strong> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       "class": "color-secondary",
-      href: '/' + service.slug
+      href: '/service/' + service.slug
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.title), 9
     /* TEXT, PROPS */
-    , _hoisted_13)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.summary), 1
+    , _hoisted_12)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(service.summary), 1
     /* TEXT */
     )])])]);
   }), 256
@@ -27700,44 +27729,55 @@ var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_20 = ["href"];
+var _hoisted_21 = {
+  "class": "d-flex"
+};
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "ti-mobile mr-2 color-primary"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_22 = ["href"];
+var _hoisted_23 = ["href"];
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("   -   ");
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "tel:+20034249015"
+}, " (20) 03 4249015 ", -1
+/* HOISTED */
+);
+
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "ti-email mr-2 color-primary"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_24 = ["href"];
-var _hoisted_25 = {
+var _hoisted_27 = ["href"];
+var _hoisted_28 = {
   "class": "widget widget-categories"
 };
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "widget-title"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, "Newsletter")], -1
 /* HOISTED */
 );
 
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Enter your email address below to subscribe to my newsletter", -1
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Enter your email address below to subscribe to my newsletter", -1
 /* HOISTED */
 );
 
-var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit",
   "class": "btn secondary-solid-btn btn-block btn-not-rounded mt-3"
 }, "Subscribe ", -1
 /* HOISTED */
 );
 
-var _hoisted_29 = {
+var _hoisted_32 = {
   key: 0,
   "class": "text-danger"
 };
@@ -27771,17 +27811,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     target: "_blank"
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.settings.address), 9
   /* TEXT, PROPS */
-  , _hoisted_20)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: 'tel:' + $data.settings.phone_formatted,
-    "class": "d-inline"
+  , _hoisted_20)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: 'tel:' + $data.settings.phone_formatted
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.settings.phone), 9
   /* TEXT, PROPS */
-  , _hoisted_22)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  , _hoisted_23), _hoisted_24, _hoisted_25]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: 'mailto:' + $data.settings.email,
     "class": "d-inline"
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.settings.email), 9
   /* TEXT, PROPS */
-  , _hoisted_24)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Subscribe widget"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_25, [_hoisted_26, _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  , _hoisted_27)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Subscribe widget"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_28, [_hoisted_29, _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return $options.storeSubscriber();
     }, ["prevent"])),
@@ -27800,9 +27839,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]]), _hoisted_28], 32
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]]), _hoisted_31], 32
   /* HYDRATE_EVENTS */
-  ), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email[0]), 1
+  ), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email[0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])]);
 }
@@ -27956,7 +27995,10 @@ var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_36 = {
-  "class": "text-white"
+  "class": "text-white",
+  style: {
+    "font-size": "13px"
+  }
 };
 var _hoisted_37 = {
   "class": "col-md-3 col-sm-12"
@@ -28008,7 +28050,15 @@ var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 
 var _hoisted_49 = ["href"];
 
-var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("   -   ");
+
+var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "tel:+20034249015"
+}, " (20) 03 4249015 ", -1
+/* HOISTED */
+);
+
+var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit",
   "class": "disabled",
   style: {
@@ -28021,12 +28071,12 @@ var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_51 = {
+var _hoisted_53 = {
   key: 0,
   "class": "text-white"
 };
 
-var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "scroll-top scroll-to-target",
   "data-target": "html"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
@@ -28038,7 +28088,7 @@ var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   id: "preloader"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "loader1"
@@ -28086,7 +28136,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     href: 'tel:' + $data.settings.phone_formatted
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.settings.phone), 9
   /* TEXT, PROPS */
-  , _hoisted_49)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  , _hoisted_49), _hoisted_50, _hoisted_51])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     "class": "newsletter-form mt-3",
     onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return $options.storeSubscriber();
@@ -28105,11 +28155,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     autocomplete: "off"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]]), _hoisted_50], 32
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]]), _hoisted_52], 32
   /* HYDRATE_EVENTS */
-  ), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email[0]), 1
+  ), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_53, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email[0]), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("footer top end")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("footer section end"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("bottom to top button start"), _hoisted_52, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("bottom to top button end"), _hoisted_53]);
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("footer top end")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("footer section end"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("bottom to top button start"), _hoisted_54, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("bottom to top button end"), _hoisted_55]);
 }
 
 /***/ }),

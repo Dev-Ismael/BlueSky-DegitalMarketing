@@ -56,7 +56,7 @@
                                 <div class="col-md-6 col-sm-12 d-flex align-items-center">
                                     <div>
                                         <h5 class="text-white"> <i class="fa-solid fa-seedling"></i> Our Goal</h5>
-                                        <p class="text-white"> {{ settings.footer_content }} </p>
+                                        <p class="text-white" style="font-size: 13px;"> {{ settings.footer_content }} </p>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-12">
@@ -73,6 +73,8 @@
                                             </li>
                                             <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span>
                                                 <a :href=" 'tel:' + settings.phone_formatted "> {{ settings.phone }} </a>
+                                                &nbsp; - &nbsp;
+                                                <a href="tel:+20034249015"> (20) 03 4249015 </a>
                                             </li>
                                         </ul>
                                         <form class="newsletter-form mt-3" @submit.prevent=" storeSubscriber() "

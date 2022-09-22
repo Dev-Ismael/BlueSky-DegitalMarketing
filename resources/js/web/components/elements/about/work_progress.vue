@@ -13,14 +13,15 @@
                         <strong class="color-secondary">Work Process</strong>
                         <h2>We follow Few Steps</h2>
                         <span class="animate-border mr-auto ml-auto mb-4"></span>
-                        <p class="lead">Globally reinvent cross-unit human capital whereas virtual catalysts for change. Assertively
-                            network accurate methods of empowerment rather than client-centered improvements.</p>
+                        <p class="lead">
+                            To set a goal you need to decide what it is that you want to accomplish and – this is the important bit – write it down. It’s as simple as that. You have set your goal by writing it down. Goal setting is easy
+                        </p>
                     </div>
                 </div>
             </div>
 
 
-            
+
             <!-- ============ step 1 =========== -->
             <div class="row mt-5">
                 <div class="col-md-12 col-lg-5 process-width">

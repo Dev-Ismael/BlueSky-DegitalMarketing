@@ -12,16 +12,15 @@ Menna tasks:
 - add image if not data in table
 - add clients table (img)
 - make contact mail dynamic from DB setting
-- fix preloader and make it by vue.js
-
-
+- fix preloader style and make it by vue.js
+-
+-
+-
 
 Haitham taskis :
 ===================
-- Pricing table
-- Price by county
 - Google schedule meeting btn
-- 
+-
 -
 -
 -
@@ -30,10 +29,10 @@ Haitham taskis :
 
 Advanced feature in blueskyint project:
 ==================================
-1- Add Vue router
+1- Add Vue router in admin panel
 2- Add sign in page SPA & link it with
 5- Logo in min-header in screen sizes
-6-
+6- use package formData
 7- Add multi actions
 8-
 
