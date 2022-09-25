@@ -34,9 +34,12 @@ class StoreServiceRequest extends FormRequest
             'title'           => ['required' , 'string' , 'max:100' , Rule::unique('services', 'title')->ignore($this->service)],
             'summary'         => ['required' , 'string' ],
             'content'         => ['required' , 'string' ],
-            'seo_title'       => ['required' , 'string' , 'max:500'],
-            'seo_description' => ['required' , 'string' , 'max:1000'],
-            'seo_keywords'    => ['required' , 'string' , 'max:1000'],
+
+            // SEO Array
+            'seo.title'       => ['required' , 'string' , 'distinct' , 'max:100'],
+            'seo.description' => ['required' , 'string' , 'distinct' , 'max:500'],
+            'seo.keywords'    => ['required' , 'string' , 'distinct' , 'max:500'],
+
             'icon'            => ['required' , 'mimes:jpeg,png,jpg,gif' , 'max:2048'],
             'img'             => ['required' , 'mimes:jpeg,png,jpg,gif' , 'max:4096'],
         ];

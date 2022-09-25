@@ -21,9 +21,7 @@ return new class extends Migration
             $table->text('content');
             $table->string('icon');
             $table->string('img');
-            $table->string('seo_title', 500);
-            $table->string('seo_keywords', 500);
-            $table->string('seo_description', 1000);
+            $table->text('seo');
             $table->timestamps();
         });
     }

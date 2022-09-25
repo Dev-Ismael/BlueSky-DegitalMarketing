@@ -14,11 +14,12 @@ class Service extends Model
         'slug',
         'summary',
         'content',
+        'seo',
         'icon',
         'img',
-        'seo_title',
-        'seo_keywords',
-        'seo_description',
     ];
 
+    protected $casts = [
+        'seo' => 'array',
+    ];
 }

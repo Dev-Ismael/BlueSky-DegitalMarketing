@@ -20943,6 +20943,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var laravel_vue_pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.es.js");
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ckeditor/ckeditor5-build-classic */ "./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js");
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var object_to_formdata__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! object-to-formdata */ "./node_modules/object-to-formdata/src/index.js");
+/* harmony import */ var object_to_formdata__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(object_to_formdata__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -20959,11 +20962,13 @@ __webpack_require__.r(__webpack_exports__);
         title: '',
         summary: '',
         content: '',
+        seo: {
+          title: '',
+          keywords: '',
+          description: ''
+        },
         icon: '',
-        img: '',
-        seo_title: '',
-        seo_description: '',
-        seo_keywords: ''
+        img: ''
       },
       errors: {},
       // create empty object to insert errors in it to show
@@ -21061,17 +21066,18 @@ __webpack_require__.r(__webpack_exports__);
     ======================================================*/
     createService: function createService() {
       this.errors = {}, // empty error var
-      this.edit = false; // set var edit equale 'false' to know that this modal for update
-
+      this.edit = false, // set var edit equale 'false' to know that this modal for update
       this.service = {
         title: '',
         summary: '',
         content: '',
+        seo: {
+          title: '',
+          keywords: '',
+          description: ''
+        },
         icon: '',
-        img: '',
-        seo_title: '',
-        seo_keywords: '',
-        seo_description: ''
+        img: ''
       };
     },
     storeService: function storeService() {
@@ -21083,15 +21089,8 @@ __webpack_require__.r(__webpack_exports__);
           'content-type': 'multipart/form-data',
           "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
         }
-      }; // set var from FormData Class
-
-      var formData = new FormData(); // Array of inputs
-
-      var inputs = ['title', 'summary', 'content', 'img', 'icon', 'seo_title', 'seo_description', 'seo_keywords']; // For Loop To append every item in inputs array
-
-      inputs.forEach(function (input) {
-        formData.append(String(input), _this4.service[input]);
-      }); // Send request with axios
+      };
+      var formData = (0,object_to_formdata__WEBPACK_IMPORTED_MODULE_3__.serialize)(this.service); // Send request with axios
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/admin/service", formData, config).then(function (response) {
         // if there success request
@@ -25597,7 +25596,7 @@ var _hoisted_104 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElemen
   "class": "col-form-label"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "ti-search"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" SEO KeyWords ")], -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" SEO Keywords ")], -1
 /* HOISTED */
 );
 
@@ -25878,43 +25877,43 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.service.title]]), $data.errors.title ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_99, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.title[0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" seo_title "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_100, [_hoisted_101, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-    name: "seo_title",
+    name: "seo[title]",
     "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
-      return $data.service.seo_title = $event;
+      return $data.service.seo.title = $event;
     }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.seo_title ? 'border-danger' : '']),
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["seo.title"] ? 'border-danger' : '']),
     id: "message-text",
     rows: "4",
     cols: "50"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.service.seo_title]]), $data.errors.seo_title ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_102, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.seo_title[0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.service.seo.title]]), $data.errors["seo.title"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_102, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["seo.title"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" seo_keywords "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_103, [_hoisted_104, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-    name: "seo_keywords",
+    name: "seo[keywords]",
     "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
-      return $data.service.seo_keywords = $event;
+      return $data.service.seo.keywords = $event;
     }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.seo_keywords ? 'border-danger' : '']),
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["seo.keywords"] ? 'border-danger' : '']),
     id: "message-text",
     rows: "4",
     cols: "50"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.service.seo_keywords]]), $data.errors.seo_keywords ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_105, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.seo_keywords[0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.service.seo.keywords]]), $data.errors["seo.keywords"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_105, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["seo.keywords"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" seo_description "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_106, [_hoisted_107, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
-    name: "seo_description",
+    name: "seo[description]",
     "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
-      return $data.service.seo_description = $event;
+      return $data.service.seo.description = $event;
     }),
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.seo_description ? 'border-danger' : '']),
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["seo.description"] ? 'border-danger' : '']),
     id: "message-text",
     rows: "4",
     cols: "50"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.service.seo_description]]), $data.errors.seo_description ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_108, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.seo_description[0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.service.seo.description]]), $data.errors["seo.description"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_108, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["seo.description"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" summary "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_109, [_hoisted_110, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     name: "summary",

@@ -227,10 +227,10 @@
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
                                                 SEO Title </label>
-                                            <textarea name="seo_title" v-model="service.seo_title" class="form-control"
-                                                :class=" errors.seo_title ? 'border-danger' : ''  " id="message-text"
+                                            <textarea name="seo[title]" v-model="service.seo.title" class="form-control"
+                                                :class=" errors[`seo.title`] ? 'border-danger' : ''  " id="message-text"
                                                 rows="4" cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.seo_title"> {{errors.seo_title[0] }}
+                                            <small class="text-danger" v-if="errors[`seo.title`]"> {{errors[`seo.title`][0] }}
                                             </small>
                                         </div>
 
@@ -238,28 +238,24 @@
                                         <!-- seo_keywords -->
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
-                                                SEO KeyWords </label>
-                                            <textarea name="seo_keywords" v-model="service.seo_keywords"
-                                                class="form-control"
-                                                :class=" errors.seo_keywords ? 'border-danger' : ''  " id="message-text"
+                                                SEO Keywords </label>
+                                            <textarea name="seo[keywords]" v-model="service.seo.keywords" class="form-control"
+                                                :class=" errors[`seo.keywords`] ? 'border-danger' : ''  " id="message-text"
                                                 rows="4" cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.seo_keywords">
-                                                {{errors.seo_keywords[0] }} </small>
+                                            <small class="text-danger" v-if="errors[`seo.keywords`]"> {{errors[`seo.keywords`][0] }}
+                                            </small>
                                         </div>
-
 
                                         <!-- seo_description -->
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label"> <i class="ti-search"></i>
                                                 SEO Description </label>
-                                            <textarea name="seo_description" v-model="service.seo_description"
-                                                class="form-control"
-                                                :class=" errors.seo_description ? 'border-danger' : ''  "
-                                                id="message-text" rows="4" cols="50"></textarea>
-                                            <small class="text-danger" v-if="errors.seo_description">
-                                                {{errors.seo_description[0] }} </small>
+                                            <textarea name="seo[description]" v-model="service.seo.description" class="form-control"
+                                                :class=" errors[`seo.description`] ? 'border-danger' : ''  " id="message-text"
+                                                rows="4" cols="50"></textarea>
+                                            <small class="text-danger" v-if="errors[`seo.description`]"> {{errors[`seo.description`][0] }}
+                                            </small>
                                         </div>
-
 
                                         <!-- summary -->
                                         <div class="form-group">
@@ -345,6 +341,7 @@
 import axios from 'axios';
 import LaravelVuePagination from 'laravel-vue-pagination';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { serialize } from 'object-to-formdata';
 
 export default {
     components: {
@@ -358,11 +355,13 @@ export default {
                 title: '',
                 summary: '',
                 content: '',
+                seo: {
+                    title: '',
+                    keywords: '',
+                    description: '',
+                },
                 icon: '',
                 img: '',
-                seo_title: '',
-                seo_description: '',
-                seo_keywords: '',
             },
             errors: {},  // create empty object to insert errors in it to show
             edit: false, // set this var to know if modal for create or edit
@@ -472,17 +471,18 @@ export default {
         ======================================================*/
         createService() {
             this.errors = {}, // empty error var
-                this.edit = false // set var edit equale 'false' to know that this modal for update
-
+            this.edit = false, // set var edit equale 'false' to know that this modal for update
             this.service = {
                 title: '',
                 summary: '',
                 content: '',
+                seo: {
+                    title: '',
+                    keywords: '',
+                    description: '',
+                },
                 icon: '',
                 img: '',
-                seo_title: '',
-                seo_keywords: '',
-                seo_description: '',
             }
         },
         storeService() {
@@ -495,16 +495,11 @@ export default {
                 }
             }
 
-            // set var from FormData Class
-            let formData = new FormData();
 
-            // Array of inputs
-            const inputs = ['title', 'summary', 'content', 'img', 'icon', 'seo_title', 'seo_description', 'seo_keywords'];
+            const formData = serialize(
+                this.service,
+            );
 
-            // For Loop To append every item in inputs array
-            inputs.forEach(input => {
-                formData.append(String(input), this.service[input]);
-            });
 
             // Send request with axios
             axios.post("/api/admin/service", formData, config)
@@ -568,7 +563,7 @@ export default {
         ======================================================*/
         editService(service) {
             this.errors = {}, // empty error var
-                this.edit = true // set var edit equale 'true' to know that this modal for update
+            this.edit = true // set var edit equale 'true' to know that this modal for update
 
             axios.get('/api/admin/service/' + service.id)
                 .then(
