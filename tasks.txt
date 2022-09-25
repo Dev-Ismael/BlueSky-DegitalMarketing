@@ -8,12 +8,11 @@ Menna tasks:
 - create admin session
 - add profile page
 - add seo management
-- add services data
 - add image if not data in table
 - add clients table (img)
 - make contact mail dynamic from DB setting
-- fix preloader style and make it by vue.js
--
+- make preloader by vue.js
+- fix upload jq libarary
 -
 -
 

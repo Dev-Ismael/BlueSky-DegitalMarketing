@@ -2,27 +2,26 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Setting;
+use App\Models\SeoManagement;
+use App\Http\Requests\UpdateSeoManagementRequest;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateSettingRequest;
 
-class SettingController extends Controller
+class SeoManagementController extends Controller
 {
-
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Setting  $setting
+     * @param  \App\Models\SeoManagement  $seoManagement
      * @return \Illuminate\Http\Response
      */
-    public function show(Setting $setting)
+    public function show(SeoManagement $seoManagement)
     {
         try{
             // Find Record In Db Column
-            $setting = Setting::where('id', 1 )->first();
+            $seo = SeoManagement::where('id', 1 )->first();
 
-            if( !$setting ){  // If Not Found
+            if( !$seo ){  // If Not Found
                 return response()->json([
                     'status' => 'error',
                     'msg'    => '404 not found'
@@ -31,8 +30,8 @@ class SettingController extends Controller
 
             return response()->json([ // If Found Success
                 'status' => 'success',
-                "msg"    => "settings get successfully",
-                'data'   => $setting
+                "msg"    => "seo get successfully",
+                'data'   => $seo
             ]);
         } catch (\Exception $e) {
             return response([
@@ -45,22 +44,23 @@ class SettingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateSettingRequest  $request
-     * @param  \App\Models\Setting  $setting
+     * @param  \App\Http\Requests\UpdateSeoManagementRequest  $request
+     * @param  \App\Models\SeoManagement  $seoManagement
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSettingRequest $request, Setting $setting)
+    public function update(UpdateSeoManagementRequest $request, SeoManagement $seoManagement)
     {
+
         $requestData = $request->all();
 
         // Find Record In Db Column
-        $settings = Setting::where('id', 1 )->first();
+        $seo = SeoManagement::where('id', 1 )->first();
 
         // Update in DB
         try {
 
             // update row in table
-            $update = $settings-> update( $requestData );
+            $update = $seo-> update( $requestData );
 
             // if not save in DB
             if(!$update){
@@ -73,7 +73,7 @@ class SettingController extends Controller
             // If Found Success
             return response()->json([
                 'status' => 'success',
-                "msg"    => "Setting updated successfully",
+                "msg"    => "Seo updated successfully",
             ]);
 
         } catch (\Exception $e) {

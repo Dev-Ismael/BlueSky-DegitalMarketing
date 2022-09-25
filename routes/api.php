@@ -73,6 +73,11 @@ Route::group([ 'prefix' => 'admin' ] , function(){     // URL ==> 'api/admin' ,
     Route::post('plan' , [App\Http\Controllers\Admin\PlanController::class, 'update'])->name("plan.update");
 
 
+    // Seo Managment
+    Route::get('seo-management' , [App\Http\Controllers\Admin\SeoManagementController::class, 'show'])->name("seo-management.show");
+    Route::post('seo-management' , [App\Http\Controllers\Admin\SeoManagementController::class, 'update'])->name("seo-management.update");
+
+
     // Settings
     Route::get('settings' , [App\Http\Controllers\Admin\SettingController::class, 'show'])->name("settings.show");
     Route::post('settings' , [App\Http\Controllers\Admin\SettingController::class, 'update'])->name("settings.update");

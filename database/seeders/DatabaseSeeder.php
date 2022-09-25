@@ -66,5 +66,12 @@ class DatabaseSeeder extends Seeder
             'unlimited' => '[unlimited]',
         ]);
 
+
+        \App\Models\SeoManagement::factory(1)->create([
+            'home' => '[home]',
+            'about' => '[about]',
+            'contact' => '[contact]',
+        ]);
+
     }
 }

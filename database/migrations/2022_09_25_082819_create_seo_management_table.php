@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('seo_managments', function (Blueprint $table) {
+        Schema::create('seo_management', function (Blueprint $table) {
             $table->id();
+            $table->text('home')->nullable();
+            $table->text('about')->nullable();
+            $table->text('contact')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seo_managments');
+        Schema::dropIfExists('seo_management');
     }
 };

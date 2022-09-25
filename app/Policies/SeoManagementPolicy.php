@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\SeoManagment;
+use App\Models\SeoManagement;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class SeoManagmentPolicy
+class SeoManagementPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class SeoManagmentPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\SeoManagment  $seoManagment
+     * @param  \App\Models\SeoManagement  $seoManagement
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, SeoManagment $seoManagment)
+    public function view(User $user, SeoManagement $seoManagement)
     {
         //
     }
@@ -48,10 +48,10 @@ class SeoManagmentPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\SeoManagment  $seoManagment
+     * @param  \App\Models\SeoManagement  $seoManagement
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, SeoManagment $seoManagment)
+    public function update(User $user, SeoManagement $seoManagement)
     {
         //
     }
@@ -60,10 +60,10 @@ class SeoManagmentPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\SeoManagment  $seoManagment
+     * @param  \App\Models\SeoManagement  $seoManagement
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, SeoManagment $seoManagment)
+    public function delete(User $user, SeoManagement $seoManagement)
     {
         //
     }
@@ -72,10 +72,10 @@ class SeoManagmentPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\SeoManagment  $seoManagment
+     * @param  \App\Models\SeoManagement  $seoManagement
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, SeoManagment $seoManagment)
+    public function restore(User $user, SeoManagement $seoManagement)
     {
         //
     }
@@ -84,10 +84,10 @@ class SeoManagmentPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\SeoManagment  $seoManagment
+     * @param  \App\Models\SeoManagement  $seoManagement
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, SeoManagment $seoManagment)
+    public function forceDelete(User $user, SeoManagement $seoManagement)
     {
         //
     }
