@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Stevebauman\Location\Facades\Location;
-
+use App\Traits\SEOTrait;
+use App\Models\SeoManagement;
 class HomeController extends Controller
 {
+    use SEOTrait;
+
     /**
      * Create a new controller instance.
      *
@@ -25,7 +28,10 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-        
+        $pageSEO = SeoManagement::where('id', 1 )->first();
+
+        // SEO Trait
+        $this->seo($pageSEO->home);
 
         try{
             $ip = $request->ip();
@@ -35,8 +41,8 @@ class HomeController extends Controller
         }
         // dd($visitorCountry);
 
-
         return view('home' , compact('visitorCountry'));
+
     }
 
 

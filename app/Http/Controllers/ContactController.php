@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Traits\SEOTrait;
+use App\Models\SeoManagement;
 
 class ContactController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    use SEOTrait;
 
     /**
      * Show the application dashboard.
@@ -19,6 +17,12 @@ class ContactController extends Controller
      */
     public function index()
     {
+        // Get Seo Management Row
+        $pageSEO = SeoManagement::where('id', 1 )->first();
+
+        // SEO Trait
+        $this->seo($pageSEO->about);
+
         return view('contact');
     }
 }
