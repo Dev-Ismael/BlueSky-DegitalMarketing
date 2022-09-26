@@ -21102,9 +21102,7 @@ __webpack_require__.r(__webpack_exports__);
           _this4.getServices(); // empty error var
 
 
-          _this4.errors = {}; // empty service var
-
-          _this4.service = {}; // Sweet Alert
+          _this4.errors = {}; // Sweet Alert
 
           _this4.$swal({
             position: 'top-end',
@@ -21171,17 +21169,10 @@ __webpack_require__.r(__webpack_exports__);
           'content-type': 'multipart/form-data',
           "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
         }
-      }; // set var from FormData Class
+      };
+      var formData = (0,object_to_formdata__WEBPACK_IMPORTED_MODULE_3__.serialize)(this.service); // Add method put in form field
 
-      var formData = new FormData(); // Add method put in form field
-
-      formData.append('_method', 'PUT'); // Array of inputs
-
-      var inputs = ['title', 'summary', 'content', 'img', 'icon', 'seo_title', 'seo_description', 'seo_keywords']; // For Loop To append every item in inputs array
-
-      inputs.forEach(function (input) {
-        formData.append(String(input), _this6.service[input]);
-      }); // Send request with axios
+      formData.append('_method', 'PUT'); // Send request with axios
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/admin/service/" + this.service.id, formData, config).then(function (response) {
         // if there success request
@@ -21194,9 +21185,7 @@ __webpack_require__.r(__webpack_exports__);
           _this6.getServices(); // empty error var
 
 
-          _this6.errors = {}; // empty service var
-
-          _this6.service = {}; // Sweet Alert
+          _this6.errors = {}; // Sweet Alert
 
           _this6.$swal({
             position: 'top-end',
@@ -25666,50 +25655,24 @@ var _hoisted_116 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElemen
 );
 
 var _hoisted_117 = {
-  "class": "input-group col-xs-12"
-};
-
-var _hoisted_118 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "input-group-append"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "file-upload-browse btn btn-primary",
-  type: "button"
-}, "Upload")], -1
-/* HOISTED */
-);
-
-var _hoisted_119 = {
   key: 0,
   "class": "text-danger"
 };
-var _hoisted_120 = {
+var _hoisted_118 = {
   "class": "form-group"
 };
 
-var _hoisted_121 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_119 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "mdi mdi-file-image"
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Upload Big Image "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" &nbsp; &nbsp; <img :src=\" '/images/services/' + service.img \" class=\"img-service\" alt=\"img-service\" height=\"60\" v-if=\"edit\" > ")], -1
 /* HOISTED */
 );
 
-var _hoisted_122 = {
-  "class": "input-group col-xs-12"
-};
-
-var _hoisted_123 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "input-group-append"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "file-upload-browse btn btn-primary",
-  type: "button"
-}, "Upload")], -1
-/* HOISTED */
-);
-
-var _hoisted_124 = {
+var _hoisted_120 = {
   key: 0,
   "class": "text-danger"
 };
-var _hoisted_125 = {
+var _hoisted_121 = {
   "class": "modal-footer"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -25941,43 +25904,31 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Icon "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_115, [_hoisted_116, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "file",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.icon ? 'border-danger' : '']),
     name: "icon",
-    "class": "file-upload-default",
+    id: "icon",
+    placeholder: "Upload Icon",
     onChange: _cache[13] || (_cache[13] = function ($event) {
       return $options.getImageName($event, 'icon');
     })
-  }, null, 32
-  /* HYDRATE_EVENTS */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_117, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    name: "icon",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control file-upload-info", $data.errors.icon ? 'border-danger' : '']),
-    disabled: "",
-    placeholder: "Upload Image"
-  }, null, 2
-  /* CLASS */
-  ), _hoisted_118]), $data.errors.icon ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_119, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.icon[0]), 1
+  }, null, 34
+  /* CLASS, HYDRATE_EVENTS */
+  ), $data.errors.icon ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_117, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.icon[0]), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Image "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_120, [_hoisted_121, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Image "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_118, [_hoisted_119, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "file",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.img ? 'border-danger' : '']),
     name: "img",
-    "class": "file-upload-default",
+    id: "img",
+    placeholder: "Upload Icon",
     onChange: _cache[14] || (_cache[14] = function ($event) {
       return $options.getImageName($event, 'img');
     })
-  }, null, 32
-  /* HYDRATE_EVENTS */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_122, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    name: "img",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control file-upload-info", $data.errors.img ? 'border-danger' : '']),
-    disabled: "",
-    placeholder: "Upload Image"
-  }, null, 2
-  /* CLASS */
-  ), _hoisted_123]), $data.errors.img ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_124, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.img[0]), 1
+  }, null, 34
+  /* CLASS, HYDRATE_EVENTS */
+  ), $data.errors.img ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_120, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.img[0]), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_125, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_121, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onSubmit: _cache[15] || (_cache[15] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return $options.storeService();
     }, ["prevent"])),

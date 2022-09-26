@@ -284,17 +284,8 @@
                                             <label> <i class="mdi mdi-file-image"></i> Upload Icon
                                                 <!-- &nbsp; &nbsp; <img :src=" '/images/services/' + service.icon " class="img-service" alt="img-service" height="60" v-if="edit" > -->
                                             </label>
-                                            <input type="file" name="icon" class="file-upload-default"
-                                                @change="getImageName( $event , 'icon' )">
-                                            <div class="input-group col-xs-12">
-                                                <input type="text" name="icon" class="form-control file-upload-info"
-                                                    :class=" errors.icon ? 'border-danger' : ''  " disabled
-                                                    placeholder="Upload Image">
-                                                <span class="input-group-append">
-                                                    <button class="file-upload-browse btn btn-primary"
-                                                        type="button">Upload</button>
-                                                </span>
-                                            </div>
+                                            <input type="file" class="form-control" name="icon" id="icon" placeholder="Upload Icon"
+                                            @change="getImageName( $event , 'icon' )" :class=" errors.icon ? 'border-danger' : ''  " >
                                             <small class="text-danger" v-if="errors.icon"> {{errors.icon[0] }} </small>
                                         </div>
 
@@ -304,17 +295,8 @@
                                             <label> <i class="mdi mdi-file-image"></i> Upload Big Image
                                                 <!-- &nbsp; &nbsp; <img :src=" '/images/services/' + service.img " class="img-service" alt="img-service" height="60" v-if="edit" > -->
                                             </label>
-                                            <input type="file" name="img" class="file-upload-default"
-                                                @change="getImageName( $event , 'img' )">
-                                            <div class="input-group col-xs-12">
-                                                <input type="text" name="img" class="form-control file-upload-info"
-                                                    :class=" errors.img ? 'border-danger' : ''  " disabled
-                                                    placeholder="Upload Image">
-                                                <span class="input-group-append">
-                                                    <button class="file-upload-browse btn btn-primary"
-                                                        type="button">Upload</button>
-                                                </span>
-                                            </div>
+                                            <input type="file" class="form-control" name="img" id="img" placeholder="Upload Icon"
+                                                @change="getImageName( $event , 'img' )" :class=" errors.img ? 'border-danger' : ''  " >
                                             <small class="text-danger" v-if="errors.img"> {{errors.img[0] }} </small>
                                         </div>
 
@@ -518,9 +500,6 @@ export default {
                             // empty error var
                             this.errors = {}
 
-                            // empty service var
-                            this.service = {}
-
                             // Sweet Alert
                             this.$swal({
                                 position: 'top-end',
@@ -606,23 +585,13 @@ export default {
                 }
             }
 
-
-            // set var from FormData Class
-            let formData = new FormData();
-
+            const formData = serialize(
+                this.service,
+            );
 
             // Add method put in form field
             formData.append('_method', 'PUT');
 
-
-            // Array of inputs
-            const inputs = ['title', 'summary', 'content', 'img', 'icon', 'seo_title', 'seo_description', 'seo_keywords'];
-
-
-            // For Loop To append every item in inputs array
-            inputs.forEach(input => {
-                formData.append(String(input), this.service[input]);
-            });
 
 
             // Send request with axios
@@ -643,9 +612,6 @@ export default {
 
                             // empty error var
                             this.errors = {}
-
-                            // empty service var
-                            this.service = {}
 
                             // Sweet Alert
                             this.$swal({
