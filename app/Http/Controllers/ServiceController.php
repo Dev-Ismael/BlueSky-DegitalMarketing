@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use Illuminate\Http\Request;
+use App\Traits\SEOTrait;
 
 class ServiceController extends Controller
 {
+    use SEOTrait;
+
     /**
      * Create a new controller instance.
      *
@@ -28,8 +31,14 @@ class ServiceController extends Controller
         ]);
     }
 
-    public function show()
+    public function show($slug)
     {
+        // Find Record In Db Column
+        $service = Service::where('slug', $slug )->first();
+
+        // SEO Trait
+        $this->seo($service->seo);
+
         return view('service');
     }
 

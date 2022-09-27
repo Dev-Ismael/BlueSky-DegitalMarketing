@@ -50,7 +50,7 @@
                                         <img src="/digimark_template/img/search-engine_188.gif" alt="services"
                                             width="60">
                                     </div>
-                                    <h5>Site Optimisation</h5>
+                                    <h5>Site Optimization</h5>
                                     <p>Improve the performance of your website, further drive more traffic.</p>
                                     <div class="promo-bottom-shape">
                                         <img src="/digimark_template/img/promo-box-shape-bottom.png" alt="shape">
