@@ -71,5 +71,11 @@ class DatabaseSeeder extends Seeder
             'contact' => '[contact]',
         ]);
 
+        \App\Models\Client::factory(1)->create([
+            'title' => 'title',
+            'img' => 'img',
+        ]);
+
+
     }
 }

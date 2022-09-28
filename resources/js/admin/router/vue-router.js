@@ -7,6 +7,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import DashboardPage from '../views/dashboard.vue';
 import ServicePage from '../views/service.vue';
 import MessegePage from '../views/messege.vue';
+import ClientPage from '../views/client.vue';
 import SeoManagmentPage from '../views/seoManagment.vue';
 import PlanPage from '../views/plan.vue';
 import NewsletterPage from '../views/newsletter.vue';
@@ -21,6 +22,7 @@ const routes = [
     { path: '/admin/service' , component: ServicePage },
     { path: '/admin/newsletter' , component: NewsletterPage },
     { path: '/admin/subscriber' , component: SubscriberPage },
+    { path: '/admin/client' , component: ClientPage },
     { path: '/admin/messege' , component: MessegePage },
     { path: '/admin/seo-managment' , component: SeoManagmentPage },
     { path: '/admin/plan' , component: PlanPage },

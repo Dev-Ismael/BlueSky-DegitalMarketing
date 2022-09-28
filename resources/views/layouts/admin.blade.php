@@ -45,6 +45,7 @@
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
 
+                {{-- {{ $admin }} --}}
 
 
             <right_sidebar></right_sidebar>

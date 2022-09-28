@@ -165,7 +165,7 @@ export default {
             .then(
                 response => {
                     // console.log(response.data.user[0]);
-                    this.user = response.data.user[0]
+                    this.user = response.data.user
                 }
             )
             .catch(error => console.log(error))

@@ -5,14 +5,10 @@ secondry ==> Yellow Color: #ebb010
 
 Menna tasks:
 ==============
-- create admin session
 - add profile page
-- add seo management
 - add image if not data in table
 - add clients table (img)
-- make contact mail dynamic from DB setting
 - make preloader by vue.js
-- fix upload jq libarary
 -
 -
 

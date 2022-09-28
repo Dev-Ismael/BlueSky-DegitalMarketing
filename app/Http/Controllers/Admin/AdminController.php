@@ -25,9 +25,8 @@ class AdminController extends Controller
     public function getAuthInfo()
     {
 
+        $user = User::get()->first();
 
-        // $user_id = Auth::id();
-        $user = User::where("id", 1 )->get();
         return response()->json([
             "user" => $user,
         ]);
