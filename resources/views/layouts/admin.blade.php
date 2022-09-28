@@ -2,8 +2,6 @@
 <html lang="en">
 
 
-<!-- Mirrored from www.bootstrapdash.com/demo/star-admin2-pro/template/demo/vertical-default-light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2022 12:44:50 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,15 +43,6 @@
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
 
-                {{-- {{ $admin }} --}}
-
-
-            <right_sidebar></right_sidebar>
-
-
-            <!-- partial -->
-            <!-- partial:../../partials/_sidebar.html -->
-
             <admin_sidebar></admin_sidebar>
 
             <!-- partial -->
@@ -69,32 +58,31 @@
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-
     <!--App Js -->
     <script defer src="{{ mix('js/app.js') }}"></script>
 
     <!-- plugins:js -->
     <script src="{{ asset('admin/vendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('admin/vendors/select2/select2.min.js') }}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <script src="{{ asset('admin/vendors/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('admin/vendors/progressbar.js/progressbar.min.js') }}"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
+    <script src="{{ asset('admin/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('admin/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('admin/js/template.js') }}"></script>
     <script src="{{ asset('admin/js/settings.js') }}"></script>
     <script src="{{ asset('admin/js/todolist.js') }}"></script>
-    <script src="{{ asset('admin/js/file-upload.js') }}"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="{{ asset('admin/js/jquery.cookie.js') }}"></script>
+    <script src="{{ asset('admin/js/jquery.cookie.js') }}" type="text/javascript"></script>
     <script src="{{ asset('admin/js/dashboard.js') }}"></script>
     <script src="{{ asset('admin/js/Chart.roundedBarCharts.js') }}"></script>
     <script src="{{ asset('admin/js/select2.js') }}"></script>
-    {{-- <script src="{{ asset('admin/js/custom.js') }}"></script> --}}
     <!-- End custom js for this page-->
-
-
 </body>
 
 

@@ -11,19 +11,20 @@
             <li class="nav-item nav-category">Tables</li>
             <li class="nav-item">
                 <router-link to="/admin/service" class="nav-link" >
-                    <i class="mdi mdi-book menu-icon"></i>
+                    <i class="mdi mdi-server-network menu-icon"></i>
                     <span class="menu-title">Services</span>
                 </router-link>
             </li>
             <li class="nav-item">
                 <router-link to="/admin/messege" class="nav-link" >
-                    <i class="mdi mdi-message-reply menu-icon"></i>
+                    <i class="mdi mdi-message-text-outline menu-icon"></i>
                     <span class="menu-title">Messeges</span>
                 </router-link>
             </li>
             <li class="nav-item">
                 <router-link to="/admin/client" class="nav-link" >
-                    <i class="mdi mdi-message-reply menu-icon"></i>
+                    <!-- <i class="mdi mdi-message-reply menu-icon"></i> -->
+                    <i class="menu-icon mdi mdi-human-greeting"></i>
                     <span class="menu-title">Clients</span>
                 </router-link>
             </li>
@@ -43,7 +44,7 @@
             <li class="nav-item nav-category">Help</li>
             <li class="nav-item">
                 <router-link to="/admin/plan" class="nav-link" >
-                    <i class="fa-solid fa-dollar-sign menu-icon"></i>
+                    <i class="mdi mdi-cash-usd menu-icon"></i>
                     <span class="menu-title"> Pricing </span>
                 </router-link>
             </li>

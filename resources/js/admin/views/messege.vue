@@ -16,7 +16,7 @@
                                     <div class="form-group multi-action">
                                         <div class="input-group">
                                             <select name="action" v-model="multiAction.action"
-                                                class="js-example-basic-single">
+                                                class="js-example-basic-single" style="margin-left:5px">
                                                 <option value="">Choose Action</option>
                                                 <option value="delete">Delete Messege</option>
                                             </select>
