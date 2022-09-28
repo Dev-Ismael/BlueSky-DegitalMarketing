@@ -166,7 +166,8 @@ return [
 
         /*
          * Package Service Providers...
-         */
+        */
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -178,8 +179,6 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 
-        // "image intervention" Package
-        Intervention\Image\ImageServiceProvider::class
 
     ],
 

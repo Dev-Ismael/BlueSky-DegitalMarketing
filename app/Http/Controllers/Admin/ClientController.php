@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Clients\StoreClientRequest;
 use App\Http\Requests\Clients\UpdateClientRequest;
 use Illuminate\Support\Str;
+use Image;
 
 class ClientController extends Controller
 {
@@ -28,57 +29,73 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreClientRequest $request)
+    public function store(Request $request)
     {
+        $image = $request->img;
 
-        // save all request in one variable
-        $requestData = $request->all();
-
-        // Create img name
         $img_extention = $request -> img -> getClientOriginalExtension();
         $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 32632.png
 
         // Path
         $path = "images/clients" ;
 
+        $resize_image = Image::make($image->getRealPath())->width(10);
+        // $resize_image->resize(100,100);
+
         // Upload
-        $request -> img -> move( $path , $img_name );
+        $resize_image->save( public_path('images/clients/'. $img_name ) );
 
 
-        // Add images names in request array
-        $requestData['img']  = $img_name;
+
+        // save all request in one variable
+        // $requestData = $request->all();
 
 
-        // return response()->json([
-        //     "requestData" => $requestData,
-        // ]);
+        // // Create img name
+        // $img_extention = $request -> img -> getClientOriginalExtension();
+        // $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 32632.png
 
-        // Store in DB
-        try {
+        // // Path
+        // $path = "images/clients" ;
 
-            // store row in table
-            $client = Client::create( $requestData );
+        // // Upload
+        // $request -> img -> move( $path , $img_name );
 
-            // if not save in DB
-            if(!$client){
-                return response()->json([
-                    'status' => 'error',
-                    'msg'    => 'Error at store opration'
-                ]);
-            }
 
-            // If Found Success
-            return response()->json([
-                'status' => 'success',
-                "msg"    => "Client store successfully",
-            ]);
+        // // Add images names in request array
+        // $requestData['img']  = $img_name;
 
-        } catch (\Exception $e) {
-            return response()->json([
-                'status' => 'error',
-                'msg'    => 'server error'
-            ]);
-        }
+
+        // // return response()->json([
+        // //     "requestData" => $requestData,
+        // // ]);
+
+        // // Store in DB
+        // try {
+
+        //     // store row in table
+        //     $client = Client::create( $requestData );
+
+        //     // if not save in DB
+        //     if(!$client){
+        //         return response()->json([
+        //             'status' => 'error',
+        //             'msg'    => 'Error at store opration'
+        //         ]);
+        //     }
+
+        //     // If Found Success
+        //     return response()->json([
+        //         'status' => 'success',
+        //         "msg"    => "Client store successfully",
+        //     ]);
+
+        // } catch (\Exception $e) {
+        //     return response()->json([
+        //         'status' => 'error',
+        //         'msg'    => 'server error'
+        //     ]);
+        // }
 
 
     }

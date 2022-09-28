@@ -86,6 +86,4 @@
 </body>
 
 
-<!-- Mirrored from www.bootstrapdash.com/demo/star-admin2-pro/template/demo/vertical-default-light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2022 12:47:34 GMT -->
-
 </html>
