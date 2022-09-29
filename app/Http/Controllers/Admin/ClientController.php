@@ -238,16 +238,6 @@ class ClientController extends Controller
         // Delete Record from DB
         try {
 
-            $delete_row = $client->delete();
-
-            // If Delete Error
-            if( !$delete_row ){
-                return response()->json([
-                    'status' => 'error',
-                    'msg'    => 'Error at delete opration'
-                ]);
-            }
-
             // Get Image Path
             $image_path = public_path("images/clients/". $client->img) ;
 
@@ -262,6 +252,16 @@ class ClientController extends Controller
                     ]);
                 }
 
+            }
+
+            $delete_row = $client->delete();
+
+            // If Delete Error
+            if( !$delete_row ){
+                return response()->json([
+                    'status' => 'error',
+                    'msg'    => 'Error at delete opration'
+                ]);
             }
 
             // If Delete Succesffuly
@@ -333,21 +333,46 @@ class ClientController extends Controller
 
             $ids = explode(",", $request->id);
 
-
             try {
-                $delete = Client::destroy( $ids );
 
-                if( !$delete ){
+                // Get All Selected rows by $ids
+                $images = Client::whereIn('id', $ids)->pluck('img');
+
+                foreach ($images as $image) {
+
+                    // Get Image Path
+                    $image_path = public_path("images/clients/". $image) ;
+
+                    if( File::exists($image_path) ) {
+
+                        $delete_file = File::delete($image_path);
+                        // If Delete Error
+                        if( !$delete_file ){
+                            return response()->json([
+                                'status' => 'error',
+                                'msg'    => 'Error at delete opration'
+                            ]);
+                        }
+
+                    }
+
+                }
+
+
+                $delete_rows = Client::destroy( $ids );
+
+                if( !$delete_rows ){
                     return response()->json([
                         'status' => 'error',
                         'msg'    => 'Error at delete opration'
                     ]);
                 }
 
+
                 // If Delete Succesffuly
                 return response()->json([
                     'status' => 'success',
-                    'msg'    => 'Clients deleted successfully'
+                    'msg'    => 'Client deleted successfully'
                 ]);
 
             } catch (\Exception $e) {
