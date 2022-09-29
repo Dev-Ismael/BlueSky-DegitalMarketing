@@ -29,73 +29,68 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreClientRequest $request)
     {
-        $image = $request->img;
 
+        // save all request in one variable
+        $requestData = $request->all();
+
+
+        // get Image extention
         $img_extention = $request -> img -> getClientOriginalExtension();
+        // Create Image name
         $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 32632.png
 
         // Path
-        $path = "images/clients" ;
+        $path = "images/clients/" ;
 
-        $resize_image = Image::make($image->getRealPath())->width(10);
-        // $resize_image->resize(100,100);
+        $resize_image = Image::make($request->img);
+
+        // resize the image to a height of 200 and constrain aspect ratio (auto width)
+        $resize_image->resize( null , 50, function ($constraint) {
+            $constraint->aspectRatio();
+        });
 
         // Upload
-        $resize_image->save( public_path('images/clients/'. $img_name ) );
+        $resize_image->save( public_path( $path . $img_name  ) );
+        // Or Us laravel Function move
+        // $resize_image -> move( $path , $img_name );
 
 
-
-        // save all request in one variable
-        // $requestData = $request->all();
-
-
-        // // Create img name
-        // $img_extention = $request -> img -> getClientOriginalExtension();
-        // $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 32632.png
-
-        // // Path
-        // $path = "images/clients" ;
-
-        // // Upload
-        // $request -> img -> move( $path , $img_name );
+        // Add images names in request array
+        $requestData['img']  = $img_name;
 
 
-        // // Add images names in request array
-        // $requestData['img']  = $img_name;
+        // return response()->json([
+        //     "requestData" => $requestData,
+        // ]);
 
+        // Store in DB
+        try {
 
-        // // return response()->json([
-        // //     "requestData" => $requestData,
-        // // ]);
+            // store row in table
+            $client = Client::create( $requestData );
 
-        // // Store in DB
-        // try {
+            // if not save in DB
+            if(!$client){
+                return response()->json([
+                    'status' => 'error',
+                    'msg'    => 'Error at store opration'
+                ]);
+            }
 
-        //     // store row in table
-        //     $client = Client::create( $requestData );
+            // If Found Success
+            return response()->json([
+                'status' => 'success',
+                "msg"    => "Client store successfully",
+            ]);
 
-        //     // if not save in DB
-        //     if(!$client){
-        //         return response()->json([
-        //             'status' => 'error',
-        //             'msg'    => 'Error at store opration'
-        //         ]);
-        //     }
-
-        //     // If Found Success
-        //     return response()->json([
-        //         'status' => 'success',
-        //         "msg"    => "Client store successfully",
-        //     ]);
-
-        // } catch (\Exception $e) {
-        //     return response()->json([
-        //         'status' => 'error',
-        //         'msg'    => 'server error'
-        //     ]);
-        // }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'msg'    => 'server error'
+            ]);
+        }
 
 
     }
@@ -157,14 +152,26 @@ class ClientController extends Controller
         $requestData = $request->all();
 
         // Check If There Images Uploaded
-        $path = "images/clients" ;
+        $path = "images/clients/" ;
 
 
         if( $request -> hasFile("img") ){
-            //  Upload image & Create name img
+
+            // get Image extention
             $img_extention = $request -> img -> getClientOriginalExtension();
-            $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 3628.png
-            $request -> img -> move( $path , $img_name );
+            // Create Image name
+            $img_name = rand(1000000,10000000) . "." . $img_extention;   // name => 32632.png
+
+            $resize_image = Image::make($request->img);
+
+            // resize the image to a height of 200 and constrain aspect ratio (auto width)
+            $resize_image->resize( null , 50, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+
+            // Upload
+            $resize_image->save( public_path( $path . $img_name  ) );
+
         }else{
             $img_name = $client->img;
         }
