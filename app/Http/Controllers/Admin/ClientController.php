@@ -7,6 +7,7 @@ use App\Models\Client;
 use Illuminate\Http\Request;
 use App\Http\Requests\Clients\StoreClientRequest;
 use App\Http\Requests\Clients\UpdateClientRequest;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Image;
 
@@ -237,13 +238,30 @@ class ClientController extends Controller
         // Delete Record from DB
         try {
 
-            $delete = $client->delete();
+            $delete_row = $client->delete();
+
             // If Delete Error
-            if( !$delete ){
+            if( !$delete_row ){
                 return response()->json([
                     'status' => 'error',
                     'msg'    => 'Error at delete opration'
                 ]);
+            }
+
+            // Get Image Path
+            $image_path = public_path("images/clients/". $client->img) ;
+
+            if( File::exists($image_path) ) {
+
+                $delete_file = File::delete($image_path);
+                // If Delete Error
+                if( !$delete_file ){
+                    return response()->json([
+                        'status' => 'error',
+                        'msg'    => 'Error at delete opration'
+                    ]);
+                }
+
             }
 
             // If Delete Succesffuly
