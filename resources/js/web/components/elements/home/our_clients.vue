@@ -17,47 +17,80 @@
                     </div>
                 </div>
             </div>
+
             <!--clients logo start-->
-            <div class="row align-items-center justify-content-center mb-4">
+            <div v-if="clients.length > 0" class="row align-items-center justify-content-center mb-4">
                 <div class="col-md-10 col-lg-9">
-                    <div class="owl-carousel owl-theme clients-carousel dot-indicator client-logo-wrap owl-loaded owl-drag">
-
+                    <div class="owl-carousel owl-theme clients-carousel dot-indicator client-logo-wrap">
+<!--
                         <div class="item single-client">
-                            <img src="/digimark_template/img/clients-logo-01.png" alt="client logo" class="client-img">
+                            <img src="img/clients-logo-01.png" alt="client logo" class="client-img">
                         </div>
                         <div class="item single-client">
-                            <img src="/digimark_template/img/clients-logo-03.png" alt="client logo" class="client-img">
+                            <img src="img/clients-logo-02.png" alt="client logo" class="client-img">
                         </div>
                         <div class="item single-client">
-                            <img src="/digimark_template/img/clients-logo-04.png" alt="client logo" class="client-img">
+                            <img src="img/clients-logo-03.png" alt="client logo" class="client-img">
                         </div>
                         <div class="item single-client">
-                            <img src="/digimark_template/img/clients-logo-05.png" alt="client logo" class="client-img">
-                        </div>
-
-                        <div class="item single-client">
-                            <img src="/digimark_template/img/clients-logo-01.png" alt="client logo" class="client-img">
+                            <img src="img/clients-logo-04.png" alt="client logo" class="client-img">
                         </div>
                         <div class="item single-client">
-                            <img src="/digimark_template/img/clients-logo-03.png" alt="client logo" class="client-img">
+                            <img src="img/clients-logo-05.png" alt="client logo" class="client-img">
                         </div>
                         <div class="item single-client">
-                            <img src="/digimark_template/img/clients-logo-04.png" alt="client logo" class="client-img">
+                            <img src="img/clients-logo-06.png" alt="client logo" class="client-img">
                         </div>
                         <div class="item single-client">
-                            <img src="/digimark_template/img/clients-logo-05.png" alt="client logo" class="client-img">
+                            <img src="img/clients-logo-07.png" alt="client logo" class="client-img">
                         </div>
-
+                        <div class="item single-client">
+                            <img src="img/clients-logo-08.png" alt="client logo" class="client-img">
+                        </div> -->
 
 
-                        <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span
-                                    aria-label="Previous">‹</span></button><button type="button" role="presentation"
-                                class="owl-next"><span aria-label="Next">›</span></button></div>
-                        <div class="owl-dots disabled"></div>
+                        <div class="item single-client" v-for=" client in clients " :key="client.id" >
+                            <img :src="'/images/clients/' + client.img" alt="client logo" class="client-img">
+                        </div>
+
+
                     </div>
                 </div>
             </div>
             <!--clients logo end-->
+
         </div>
     </div>
 </template>
+<script>
+    import axios from 'axios';
+    export default {
+        data() {
+            return {
+                clients: '',
+            }
+        },
+        mounted() {
+            this.showClients();
+        },
+        methods: {
+
+            /*======================================================
+            ====== GET Clients
+            ======================================================*/
+            showClients() {
+                axios.get('/api/clients')
+                    .then(
+                        response => {
+                            // console.log(response.data);
+                            this.clients = response.data
+                        }
+                    )
+                    .catch(
+                        error => console.log(error)
+                    )
+            },
+
+        }
+    }
+</script>

@@ -3614,7 +3614,7 @@ a.video-play-icon-without-bip:hover{
     align-items: center;
     -ms-grid-column-align: center;
     justify-items: center;
-    width: 60%;
+    width: 20%;
     height: auto;
     -webkit-transition: -webkit-transform .5s ease-in;
     transition: -webkit-transform .5s ease-in;

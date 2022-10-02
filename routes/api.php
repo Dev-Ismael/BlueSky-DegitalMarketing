@@ -37,6 +37,9 @@ Route::post('messege/store' , [App\Http\Controllers\MessegeController::class, 's
 // subscriber
 Route::post('subscriber/store' , [App\Http\Controllers\SubscriberController::class, 'store'])->name("subscriber.store");
 
+// Clients
+Route::get('clients' , [App\Http\Controllers\ClientController::class, 'index'])->name("clients.index");
+
 
 
 

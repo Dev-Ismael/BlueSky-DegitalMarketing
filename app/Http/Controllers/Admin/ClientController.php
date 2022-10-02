@@ -165,7 +165,7 @@ class ClientController extends Controller
 
             $resize_image = Image::make($request->img);
 
-            // resize the image to a height of 200 and constrain aspect ratio (auto width)
+            // resize the image to a height of 50 and constrain aspect ratio (auto width)
             $resize_image->resize( null , 50, function ($constraint) {
                 $constraint->aspectRatio();
             });
