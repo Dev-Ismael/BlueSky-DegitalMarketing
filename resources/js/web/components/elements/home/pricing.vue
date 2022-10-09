@@ -186,6 +186,7 @@
         },
         mounted() {
             this.showPlan();
+            this.showSettings();
         },
         methods: {
 
@@ -205,6 +206,26 @@
                         error => console.log(error)
                     )
             },
+
+
+
+            /*======================================================
+            ====== GET Setting
+            ======================================================*/
+            showSettings() {
+                axios.get('/api/settings/')
+                    .then(
+                        response => {
+                            // console.log(response.data.data);
+                            this.settings = response.data.data
+                        }
+                    )
+                    .catch(
+                        error => console.log(error)
+                    )
+            },
+
+
         }
     }
 </script>

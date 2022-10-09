@@ -21,13 +21,12 @@
                     <span class="menu-title">Messeges</span>
                 </router-link>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <router-link to="/admin/client" class="nav-link" >
-                    <!-- <i class="mdi mdi-message-reply menu-icon"></i> -->
                     <i class="menu-icon mdi mdi-human-greeting"></i>
                     <span class="menu-title">Clients</span>
                 </router-link>
-            </li>
+            </li> -->
             <li class="nav-item nav-category">Mail</li>
             <li class="nav-item">
                 <router-link to="/admin/subscriber" class="nav-link" >

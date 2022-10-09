@@ -51,6 +51,8 @@ Route::group([ 'prefix' => 'admin' ] , function(){     // URL ==> 'api/admin' ,
 
     Route::get('info',  [\App\Http\Controllers\Admin\AdminController::class, 'getAuthInfo']);
 
+    Route::get('statistics',  [\App\Http\Controllers\Admin\AdminController::class, 'statistics']);
+
     // Services
     Route::resource('service', '\App\Http\Controllers\Admin\ServiceController');
     Route::post('service/search' , [App\Http\Controllers\Admin\ServiceController::class, 'search'])->name("service.search");
