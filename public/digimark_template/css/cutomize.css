@@ -160,14 +160,14 @@ button.navbar-toggler {
     margin: 20px 0px;
     min-height: 460px;
 }
-/* .promo-single-wrap img{
+.promo-single-wrap img{
     animation-name: up-move-animation;
-    animation-duration: 7s;
+    animation-duration: 6s;
     animation-timing-function: linear;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-direction: normal;
-} */
+}
 .number-bg {
     left: 0;
     right: 0;

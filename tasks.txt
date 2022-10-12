@@ -5,10 +5,9 @@ secondry ==> Yellow Color: #ebb010
 
 Tasks:
 ==============
-- add profile page
-- add image if not data in table
 - make preloader by vue.js
 - fix owl-carsoul-vue with API
+- Organize js files
 - 
 
 Haitham taskis :

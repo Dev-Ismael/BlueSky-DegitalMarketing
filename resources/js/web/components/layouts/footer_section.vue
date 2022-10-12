@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="action-btn text-lg-right text-sm-left">
-                            <a href="/contact" class="btn secondary-solid-btn">Contact With Us</a>
+                            <a href="https://calendar.app.google/tx46i3biL9xdHrHG9" target="_blank" class="btn secondary-solid-btn"> <i class="fa-solid fa-calendar-days"></i> Schedule Meeting </a>
                         </div>
                     </div>
                 </div>
