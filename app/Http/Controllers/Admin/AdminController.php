@@ -10,6 +10,8 @@ use App\Models\Service;
 use App\Models\Subscriber;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UpdateAdminInfoRequest;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -23,7 +25,6 @@ class AdminController extends Controller
     {
 
         return view('layouts.admin');
-
 
     }
 
@@ -47,10 +48,61 @@ class AdminController extends Controller
     public function getAuthInfo()
     {
 
-        $user = User::get()->first();
+        $admin = User::get()->first();
         return response()->json([
-            "user" => $user,
+            "admin" => $admin,
         ]);
 
     }
+
+    public function updateAdminInfo( Request $request)
+    {
+
+
+        $admin = User::get()->first();
+
+        // save all request in one variable
+        $requestData = $request->all();
+
+        // Hash Password
+        if( !isset( $requestData['password'] ) || $requestData['password'] == '' ){
+                $requestData['password'] = $admin->password;
+        }else{
+            $requestData['password'] = Hash::make($request->password);
+        }
+
+        // Update in DB
+        try {
+            // store row in table
+            $update = $admin-> update( $requestData );
+
+            // if not save in DB
+            if(!$update){
+                return response()->json([
+                    'status' => 'error',
+                    'msg'    => 'Error at update opration'
+                ]);
+            }
+
+            // If update Success
+            return response()->json([
+                'status' => 'success',
+                "msg"    => "Info update successfully",
+            ]);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'msg'    => 'server error'
+            ]);
+        }
+
+
+
+    }
+
+
+
+
+
 }

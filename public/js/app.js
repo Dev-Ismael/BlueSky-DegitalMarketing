@@ -19927,22 +19927,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      user: {}
+      admin: {}
     };
   },
   mounted: function mounted() {
-    this.getSiteName();
+    this.getAdminInfo();
   },
   methods: {
     /*======================================================
-    ====== Login opration
+    ====== Get Admin Information
     ======================================================*/
-    getSiteName: function getSiteName() {
+    getAdminInfo: function getAdminInfo() {
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/admin/info").then(function (response) {
-        // console.log(response.data.user[0]);
-        _this.user = response.data.user;
+        // console.log(response.data.admin);
+        _this.admin = response.data.admin;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -21287,6 +21287,108 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/admin/views/profile.vue?vue&type=script&lang=js":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/admin/views/profile.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var object_to_formdata__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! object-to-formdata */ "./node_modules/object-to-formdata/src/index.js");
+/* harmony import */ var object_to_formdata__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(object_to_formdata__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      errors: {},
+      // create empty object to insert errors in it to show
+      admin: {
+        name: '',
+        email: '',
+        password: ''
+      }
+    };
+  },
+  mounted: function mounted() {
+    this.getAdminInfo();
+  },
+  methods: {
+    /*======================================================
+    ====== Get Admin Information
+    ======================================================*/
+    getAdminInfo: function getAdminInfo() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/admin/info").then(function (response) {
+        // console.log(response.data.admin[0]);
+        _this.admin = response.data.admin;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+
+    /*======================================================
+    ====== Update Admin Information
+    ======================================================*/
+    UpdateAdminInfo: function UpdateAdminInfo() {
+      var _this2 = this;
+
+      // Set Config var to send it with data request
+      var config = {
+        headers: {
+          'content-type': 'multipart/form-data',
+          "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
+        }
+      };
+      var formData = (0,object_to_formdata__WEBPACK_IMPORTED_MODULE_1__.serialize)(this.admin); // Send request with axios
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/admin/update-info", formData, config).then(function (response) {
+        // if there success request
+        console.log(response); // if response status
+
+        if (response.data.status == "success") {
+          // reload getServices()
+          _this2.getAdminInfo(); // empty error var
+
+
+          _this2.errors = {}; // Sweet Alert
+
+          _this2.$swal({
+            position: 'top-end',
+            icon: response.data.status,
+            text: response.data.msg,
+            showConfirmButton: false,
+            timer: 1500
+          });
+        } // if response validation failed
+        else if (response.data.status == "error" && response.data.msg == "validation failed") {
+          _this2.errors = response.data.errors;
+        } else if (response.data.status == "error") {
+          // Sweet Alert
+          _this2.$swal({
+            position: 'top-end',
+            icon: response.data.status,
+            text: response.data.msg,
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/admin/views/seoManagment.vue?vue&type=script&lang=js":
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/admin/views/seoManagment.vue?vue&type=script&lang=js ***!
@@ -21307,108 +21409,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      errors: {},
-      // create empty object to insert errors in it to show
-      seo: {
-        home: {
-          title: '',
-          keywords: '',
-          description: ''
-        },
-        about: {
-          title: '',
-          keywords: '',
-          description: ''
-        },
-        contact: {
-          title: '',
-          keywords: '',
-          description: ''
-        }
-      }
+      errors: {} // create empty object to insert errors in it to show
+
     };
   },
   mounted: function mounted() {
     this.showSeo();
   },
-  methods: {
-    /*======================================================
-    ====== GET Seo
-    ======================================================*/
-    showSeo: function showSeo() {
-      var _this = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/admin/seo-management').then(function (response) {
-        // console.log(response.data);
-        if (response.data.status == "success") {
-          _this.seo = response.data.data;
-        } else if (response.data.status == "error") {
-          /*=== Sweet Alert ===*/
-          _this.$swal({
-            position: 'top-end',
-            icon: response.data.status,
-            text: response.data.msg,
-            showConfirmButton: false,
-            timer: 1500
-          });
-        }
-      })["catch"](function (error) {
-        return console.log(error);
-      });
-    },
-
-    /*======================================================
-    ====== Update SEO
-    ======================================================*/
-    UpdateSeo: function UpdateSeo() {
-      var _this2 = this;
-
-      // Set Config var to send it with data request
-      var config = {
-        headers: {
-          'content-type': 'multipart/form-data',
-          "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
-        }
-      };
-      var formData = (0,object_to_formdata__WEBPACK_IMPORTED_MODULE_1__.serialize)(this.seo); // Send request with axios
-
-      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/admin/seo-management", formData, config).then(function (response) {
-        // if there success request
-        console.log(response.data); // if response status
-
-        if (response.data.status == "success") {
-          // reload showSeo()
-          _this2.showSeo(); // empty error var
-
-
-          _this2.errors = {}; // Sweet Alert
-
-          _this2.$swal({
-            position: 'top-end',
-            icon: response.data.status,
-            text: response.data.msg,
-            showConfirmButton: false,
-            timer: 1500
-          });
-        } // if response validation error
-        else if (response.data.status == "error" && response.data.msg == "validation failed") {
-          _this2.errors = response.data.errors;
-        } // if Settings not Found
-        else if (response.data.status == "error") {
-          // Sweet Alert
-          _this2.$swal({
-            position: 'top-end',
-            icon: response.data.status,
-            text: response.data.msg,
-            showConfirmButton: false,
-            timer: 1500
-          });
-        }
-      })["catch"](function (error) {
-        return console.log(error);
-      });
-    }
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -23241,11 +23249,11 @@ var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" partial:../../partials/_navbar.html "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Good Morning, "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.user.name), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" partial:../../partials/_navbar.html "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Good Morning, "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.admin.name), 1
   /* TEXT */
-  )]), _hoisted_8])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li class=\"nav-item dropdown\">\r\n                    <a class=\"nav-link count-indicator\" id=\"notificationDropdown\" href=\"#\" data-bs-toggle=\"dropdown\">\r\n                        <i class=\"icon-mail icon-lg\"></i>\r\n                    </a>\r\n                    <div class=\"dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0\"\r\n                        aria-labelledby=\"notificationDropdown\">\r\n                        <a class=\"dropdown-item py-3 border-bottom\">\r\n                            <p class=\"mb-0 font-weight-medium float-left\">You have 4 new notifications </p>\r\n                            <span class=\"badge badge-pill badge-primary float-right\">View all</span>\r\n                        </a>\r\n                        <a class=\"dropdown-item preview-item py-3\">\r\n                            <div class=\"preview-thumbnail\">\r\n                                <i class=\"mdi mdi-alert m-auto text-primary\"></i>\r\n                            </div>\r\n                            <div class=\"preview-item-content\">\r\n                                <h6 class=\"preview-subject fw-normal text-dark mb-1\">Application Error</h6>\r\n                                <p class=\"fw-light small-text mb-0\"> Just now </p>\r\n                            </div>\r\n                        </a>\r\n                        <a class=\"dropdown-item preview-item py-3\">\r\n                            <div class=\"preview-thumbnail\">\r\n                                <i class=\"mdi mdi-settings m-auto text-primary\"></i>\r\n                            </div>\r\n                            <div class=\"preview-item-content\">\r\n                                <h6 class=\"preview-subject fw-normal text-dark mb-1\">Settings</h6>\r\n                                <p class=\"fw-light small-text mb-0\"> Private message </p>\r\n                            </div>\r\n                        </a>\r\n                        <a class=\"dropdown-item preview-item py-3\">\r\n                            <div class=\"preview-thumbnail\">\r\n                                <i class=\"mdi mdi-airballoon m-auto text-primary\"></i>\r\n                            </div>\r\n                            <div class=\"preview-item-content\">\r\n                                <h6 class=\"preview-subject fw-normal text-dark mb-1\">New user registration</h6>\r\n                                <p class=\"fw-light small-text mb-0\"> 2 days ago </p>\r\n                            </div>\r\n                        </a>\r\n                    </div>\r\n                </li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li class=\"nav-item dropdown\">\r\n                    <a class=\"nav-link count-indicator\" id=\"countDropdown\" href=\"#\" data-bs-toggle=\"dropdown\"\r\n                        aria-expanded=\"false\">\r\n                        <i class=\"icon-bell\"></i>\r\n                        <span class=\"count\"></span>\r\n                    </a>\r\n                    <div class=\"dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0\"\r\n                        aria-labelledby=\"countDropdown\">\r\n                        <a class=\"dropdown-item py-3\">\r\n                            <p class=\"mb-0 font-weight-medium float-left\">You have 7 unread mails </p>\r\n                            <span class=\"badge badge-pill badge-primary float-right\">View all</span>\r\n                        </a>\r\n                        <div class=\"dropdown-divider\"></div>\r\n                        <a class=\"dropdown-item preview-item\">\r\n                            <div class=\"preview-thumbnail\">\r\n                                <img src=\"/admin/images/faces/face10.jpg\" alt=\"image\" class=\"img-sm profile-pic\">\r\n                            </div>\r\n                            <div class=\"preview-item-content flex-grow py-2\">\r\n                                <p class=\"preview-subject ellipsis font-weight-medium text-dark\">Marian Garner </p>\r\n                                <p class=\"fw-light small-text mb-0\"> The meeting is cancelled </p>\r\n                            </div>\r\n                        </a>\r\n                        <a class=\"dropdown-item preview-item\">\r\n                            <div class=\"preview-thumbnail\">\r\n                                <img src=\"/admin/images/faces/face12.jpg\" alt=\"image\" class=\"img-sm profile-pic\">\r\n                            </div>\r\n                            <div class=\"preview-item-content flex-grow py-2\">\r\n                                <p class=\"preview-subject ellipsis font-weight-medium text-dark\">David Grey </p>\r\n                                <p class=\"fw-light small-text mb-0\"> The meeting is cancelled </p>\r\n                            </div>\r\n                        </a>\r\n                        <a class=\"dropdown-item preview-item\">\r\n                            <div class=\"preview-thumbnail\">\r\n                                <img src=\"/admin/images/faces/face1.jpg\" alt=\"image\" class=\"img-sm profile-pic\">\r\n                            </div>\r\n                            <div class=\"preview-item-content flex-grow py-2\">\r\n                                <p class=\"preview-subject ellipsis font-weight-medium text-dark\">Travis Jenkins </p>\r\n                                <p class=\"fw-light small-text mb-0\"> The meeting is cancelled </p>\r\n                            </div>\r\n                        </a>\r\n                    </div>\r\n                </li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.user.name), 1
+  )]), _hoisted_8])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li class=\"nav-item dropdown\">\n                    <a class=\"nav-link count-indicator\" id=\"notificationDropdown\" href=\"#\" data-bs-toggle=\"dropdown\">\n                        <i class=\"icon-mail icon-lg\"></i>\n                    </a>\n                    <div class=\"dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0\"\n                        aria-labelledby=\"notificationDropdown\">\n                        <a class=\"dropdown-item py-3 border-bottom\">\n                            <p class=\"mb-0 font-weight-medium float-left\">You have 4 new notifications </p>\n                            <span class=\"badge badge-pill badge-primary float-right\">View all</span>\n                        </a>\n                        <a class=\"dropdown-item preview-item py-3\">\n                            <div class=\"preview-thumbnail\">\n                                <i class=\"mdi mdi-alert m-auto text-primary\"></i>\n                            </div>\n                            <div class=\"preview-item-content\">\n                                <h6 class=\"preview-subject fw-normal text-dark mb-1\">Application Error</h6>\n                                <p class=\"fw-light small-text mb-0\"> Just now </p>\n                            </div>\n                        </a>\n                        <a class=\"dropdown-item preview-item py-3\">\n                            <div class=\"preview-thumbnail\">\n                                <i class=\"mdi mdi-settings m-auto text-primary\"></i>\n                            </div>\n                            <div class=\"preview-item-content\">\n                                <h6 class=\"preview-subject fw-normal text-dark mb-1\">Settings</h6>\n                                <p class=\"fw-light small-text mb-0\"> Private message </p>\n                            </div>\n                        </a>\n                        <a class=\"dropdown-item preview-item py-3\">\n                            <div class=\"preview-thumbnail\">\n                                <i class=\"mdi mdi-airballoon m-auto text-primary\"></i>\n                            </div>\n                            <div class=\"preview-item-content\">\n                                <h6 class=\"preview-subject fw-normal text-dark mb-1\">New user registration</h6>\n                                <p class=\"fw-light small-text mb-0\"> 2 days ago </p>\n                            </div>\n                        </a>\n                    </div>\n                </li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li class=\"nav-item dropdown\">\n                    <a class=\"nav-link count-indicator\" id=\"countDropdown\" href=\"#\" data-bs-toggle=\"dropdown\"\n                        aria-expanded=\"false\">\n                        <i class=\"icon-bell\"></i>\n                        <span class=\"count\"></span>\n                    </a>\n                    <div class=\"dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0\"\n                        aria-labelledby=\"countDropdown\">\n                        <a class=\"dropdown-item py-3\">\n                            <p class=\"mb-0 font-weight-medium float-left\">You have 7 unread mails </p>\n                            <span class=\"badge badge-pill badge-primary float-right\">View all</span>\n                        </a>\n                        <div class=\"dropdown-divider\"></div>\n                        <a class=\"dropdown-item preview-item\">\n                            <div class=\"preview-thumbnail\">\n                                <img src=\"/admin/images/faces/face10.jpg\" alt=\"image\" class=\"img-sm profile-pic\">\n                            </div>\n                            <div class=\"preview-item-content flex-grow py-2\">\n                                <p class=\"preview-subject ellipsis font-weight-medium text-dark\">Marian Garner </p>\n                                <p class=\"fw-light small-text mb-0\"> The meeting is cancelled </p>\n                            </div>\n                        </a>\n                        <a class=\"dropdown-item preview-item\">\n                            <div class=\"preview-thumbnail\">\n                                <img src=\"/admin/images/faces/face12.jpg\" alt=\"image\" class=\"img-sm profile-pic\">\n                            </div>\n                            <div class=\"preview-item-content flex-grow py-2\">\n                                <p class=\"preview-subject ellipsis font-weight-medium text-dark\">David Grey </p>\n                                <p class=\"fw-light small-text mb-0\"> The meeting is cancelled </p>\n                            </div>\n                        </a>\n                        <a class=\"dropdown-item preview-item\">\n                            <div class=\"preview-thumbnail\">\n                                <img src=\"/admin/images/faces/face1.jpg\" alt=\"image\" class=\"img-sm profile-pic\">\n                            </div>\n                            <div class=\"preview-item-content flex-grow py-2\">\n                                <p class=\"preview-subject ellipsis font-weight-medium text-dark\">Travis Jenkins </p>\n                                <p class=\"fw-light small-text mb-0\"> The meeting is cancelled </p>\n                            </div>\n                        </a>\n                    </div>\n                </li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.admin.name), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.user.email), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.admin.email), 1
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/admin/profile",
@@ -25781,8 +25789,129 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-function render(_ctx, _cache) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, " Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile Profile ");
+var _hoisted_1 = {
+  "class": "row"
+};
+var _hoisted_2 = {
+  "class": "col-md-6 grid-margin stretch-card"
+};
+var _hoisted_3 = {
+  "class": "card"
+};
+var _hoisted_4 = {
+  "class": "card-body"
+};
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
+  "class": "card-title"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-solid fa-house-user"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Admin Info ")], -1
+/* HOISTED */
+);
+
+var _hoisted_6 = {
+  "class": "form-group"
+};
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "name"
+}, " Name ", -1
+/* HOISTED */
+);
+
+var _hoisted_8 = {
+  key: 0,
+  "class": "text-danger"
+};
+var _hoisted_9 = {
+  "class": "form-group"
+};
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "email"
+}, "Email", -1
+/* HOISTED */
+);
+
+var _hoisted_11 = {
+  key: 0,
+  "class": "text-danger"
+};
+var _hoisted_12 = {
+  "class": "form-group"
+};
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "password"
+}, " New Password ", -1
+/* HOISTED */
+);
+
+var _hoisted_14 = {
+  key: 0,
+  "class": "text-danger"
+};
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "submit",
+  "class": "btn btn-primary me-2"
+}, "Submit")], -1
+/* HOISTED */
+);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
+    onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $options.UpdateAdminInfo();
+    }, ["prevent"])),
+    enctype: "multipart/form-data",
+    method: "POST"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.name ? 'border-danger' : '']),
+    id: "name",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.admin.name = $event;
+    }),
+    name: "name",
+    placeholder: "Type Admin name...",
+    autocomplete: "new-password"
+  }, null, 2
+  /* CLASS */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.admin.name]]), $data.errors.name ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.name[0]), 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "email",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.email ? 'border-danger' : '']),
+    id: "email",
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.admin.email = $event;
+    }),
+    name: "email",
+    placeholder: "Type Admin Email...",
+    autocomplete: "new-password"
+  }, null, 2
+  /* CLASS */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.admin.email]]), $data.errors.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email[0]), 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "password",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors.password ? 'border-danger' : '']),
+    id: "password",
+    name: "password",
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $data.admin.password = $event;
+    }),
+    placeholder: "Type New Password...",
+    autocomplete: "new-password"
+  }, null, 2
+  /* CLASS */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.admin.password]]), $data.errors.password ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.password[0]), 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]), _hoisted_15])], 32
+  /* HYDRATE_EVENTS */
+  );
 }
 
 /***/ }),
@@ -25994,7 +26123,7 @@ var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
     onSubmit: _cache[9] || (_cache[9] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
-      return $options.UpdateSeo();
+      return _ctx.UpdateSeo();
     }, ["prevent"])),
     enctype: "multipart/form-data",
     method: "POST"
@@ -26003,20 +26132,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["home.title"] ? 'border-danger' : '']),
     id: "HomeSEOTitle",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $data.seo.home.title = $event;
+      return _ctx.seo.home.title = $event;
     }),
     name: "home[seo_title]",
     placeholder: "Type Home Page Seo Title...",
     autocomplete: "off"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.seo.home.title]]), $data.errors["home.title"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["home.title"][0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.seo.home.title]]), $data.errors["home.title"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["home.title"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["home.keywords"] ? 'border-danger' : '']),
     id: "HomeSEOKeywords",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return $data.seo.home.keywords = $event;
+      return _ctx.seo.home.keywords = $event;
     }),
     cols: "30",
     rows: "10",
@@ -26025,13 +26154,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     autocomplete: "off"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.seo.home.keywords]]), $data.errors["home.keywords"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["home.keywords"][0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.seo.home.keywords]]), $data.errors["home.keywords"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["home.keywords"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["home.description"] ? 'border-danger' : '']),
     id: "HomeSEODescription",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return $data.seo.home.description = $event;
+      return _ctx.seo.home.description = $event;
     }),
     cols: "30",
     rows: "10",
@@ -26040,27 +26169,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     autocomplete: "off"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.seo.home.description]]), $data.errors["home.description"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["home.description"][0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.seo.home.description]]), $data.errors["home.description"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["home.description"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["about.title"] ? 'border-danger' : '']),
     id: "AboutSEOTitle",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
-      return $data.seo.about.title = $event;
+      return _ctx.seo.about.title = $event;
     }),
     name: "about[seo_title]",
     placeholder: "Type About Page Seo Title...",
     autocomplete: "off"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.seo.about.title]]), $data.errors["about.title"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["about.title"][0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.seo.about.title]]), $data.errors["about.title"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["about.title"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["about.keywords"] ? 'border-danger' : '']),
     id: "AboutSEOKeywords",
     "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
-      return $data.seo.about.keywords = $event;
+      return _ctx.seo.about.keywords = $event;
     }),
     cols: "30",
     rows: "10",
@@ -26069,13 +26198,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     autocomplete: "off"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.seo.about.keywords]]), $data.errors["about.keywords"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["about.keywords"][0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.seo.about.keywords]]), $data.errors["about.keywords"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["about.keywords"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["about.description"] ? 'border-danger' : '']),
     id: "AboutSEODescription",
     "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
-      return $data.seo.about.description = $event;
+      return _ctx.seo.about.description = $event;
     }),
     cols: "30",
     rows: "10",
@@ -26084,27 +26213,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     autocomplete: "off"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.seo.about.description]]), $data.errors["about.description"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["about.description"][0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.seo.about.description]]), $data.errors["about.description"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["about.description"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [_hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["contact.title"] ? 'border-danger' : '']),
     id: "ContactSEOTitle",
     "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
-      return $data.seo.contact.title = $event;
+      return _ctx.seo.contact.title = $event;
     }),
     name: "contact[seo_title]",
     placeholder: "Type Contact Page Seo Title...",
     autocomplete: "off"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.seo.contact.title]]), $data.errors["contact.title"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["contact.title"][0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.seo.contact.title]]), $data.errors["contact.title"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["contact.title"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["contact.keywords"] ? 'border-danger' : '']),
     id: "ContactSEOKeywords",
     "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
-      return $data.seo.contact.keywords = $event;
+      return _ctx.seo.contact.keywords = $event;
     }),
     cols: "30",
     rows: "10",
@@ -26113,13 +26242,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     autocomplete: "off"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.seo.contact.keywords]]), $data.errors["contact.keywords"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["contact.keywords"][0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.seo.contact.keywords]]), $data.errors["contact.keywords"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["contact.keywords"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [_hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.errors["contact.description"] ? 'border-danger' : '']),
     id: "ContactSEODescription",
     "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
-      return $data.seo.contact.description = $event;
+      return _ctx.seo.contact.description = $event;
     }),
     cols: "30",
     rows: "10",
@@ -26128,7 +26257,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     autocomplete: "off"
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.seo.contact.description]]), $data.errors["contact.description"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["contact.description"][0]), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.seo.contact.description]]), $data.errors["contact.description"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("small", _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors["contact.description"][0]), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]), _hoisted_41])], 32
   /* HYDRATE_EVENTS */
@@ -31180,12 +31309,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _profile_vue_vue_type_template_id_37509f3a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./profile.vue?vue&type=template&id=37509f3a */ "./resources/js/admin/views/profile.vue?vue&type=template&id=37509f3a");
-/* harmony import */ var C_Users_PC_Desktop_Works_Blue_Sky_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _profile_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile.vue?vue&type=script&lang=js */ "./resources/js/admin/views/profile.vue?vue&type=script&lang=js");
+/* harmony import */ var C_Users_PC_Desktop_Works_Blue_Sky_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
-const script = {}
+
+
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_Blue_Sky_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_profile_vue_vue_type_template_id_37509f3a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/profile.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_PC_Desktop_Works_Blue_Sky_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_profile_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_profile_vue_vue_type_template_id_37509f3a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/admin/views/profile.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -31890,6 +32021,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_plan_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_plan_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./plan.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/admin/views/plan.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/admin/views/profile.vue?vue&type=script&lang=js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/admin/views/profile.vue?vue&type=script&lang=js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_profile_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_profile_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./profile.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/admin/views/profile.vue?vue&type=script&lang=js");
  
 
 /***/ }),

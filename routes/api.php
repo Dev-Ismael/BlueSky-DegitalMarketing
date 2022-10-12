@@ -48,9 +48,11 @@ Route::get('clients' , [App\Http\Controllers\ClientController::class, 'index'])-
 ============================================================*/
 Route::group([ 'prefix' => 'admin' ] , function(){     // URL ==> 'api/admin' ,
 
-
+    // Admin Info
     Route::get('info',  [\App\Http\Controllers\Admin\AdminController::class, 'getAuthInfo']);
+    Route::post('update-info',  [\App\Http\Controllers\Admin\AdminController::class, 'updateAdminInfo']);
 
+    // Statstics
     Route::get('statistics',  [\App\Http\Controllers\Admin\AdminController::class, 'statistics']);
 
     // Services

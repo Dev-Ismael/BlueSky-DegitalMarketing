@@ -22,7 +22,7 @@
         <div class="navbar-menu-wrapper d-flex align-items-top">
             <ul class="navbar-nav">
                 <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                    <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">{{ user.name }}</span></h1>
+                    <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">{{ admin.name }}</span></h1>
                     <h3 class="welcome-sub-text">Your Dashoard For Manage Website Data </h3>
                 </li>
             </ul>
@@ -115,8 +115,8 @@
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                         <div class="dropdown-header text-center">
                             <img class="img-xs rounded-circle" src="/admin/images/faces/avatardefault.png" alt="Profile image">
-                            <p class="mb-1 mt-3 font-weight-semibold">{{ user.name }}</p>
-                            <p class="fw-light text-muted mb-0">{{ user.email }}</p>
+                            <p class="mb-1 mt-3 font-weight-semibold">{{ admin.name }}</p>
+                            <p class="fw-light text-muted mb-0">{{ admin.email }}</p>
                         </div>
                         <router-link to="/admin/profile" class="dropdown-item"><i
                                 class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
@@ -148,24 +148,24 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            user: {}
+            admin: {}
         }
     },
     mounted() {
-        this.getSiteName();
+        this.getAdminInfo();
     },
     methods: {
 
 
         /*======================================================
-        ====== Login opration
+        ====== Get Admin Information
         ======================================================*/
-        getSiteName() {
+        getAdminInfo() {
             axios.get("/api/admin/info")
             .then(
                 response => {
-                    // console.log(response.data.user[0]);
-                    this.user = response.data.user
+                    // console.log(response.data.admin);
+                    this.admin = response.data.admin
                 }
             )
             .catch(error => console.log(error))
